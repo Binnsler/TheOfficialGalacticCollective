@@ -26,32 +26,64 @@ var eventPostTemplate = Handlebars.compile(eventPostHtml)
 $(document).on('ready', function(){
 
 	// Pull Local Storage (comment out when running page the first time)
-	$('.community-feed').html(JSON.parse(localStorage["html"]));
+	// $('.community-feed').html(JSON.parse(localStorage["html"]));
 
 
 	// Content, Event, and Job form injection into .submit-form-container
 
 	$('.content-button').on('click', function(){
 
-		$('.submit-form-container').empty();
+		if($(this).hasClass('active-button')){
 
-		$('.submit-form-container').append(contentFormTemplate());
+			$('.submit-form-container').empty();
+
+			$(this).removeClass('active-button');
+		}
+
+		else{
+
+			$(this).addClass('active-button');
+
+			$('.submit-form-container').append(contentFormTemplate());
+		}
+
 	})
 
 
 	$('.event-button').on('click', function(){
 
+		if($(this).hasClass('active-button')){
+
 		$('.submit-form-container').empty();
 
-		$('.submit-form-container').append(eventFormTemplate());
+		$(this).removeClass('active-button');
+		}
+
+		else{
+
+			$(this).addClass('active-button');
+
+			$('.submit-form-container').append(eventFormTemplate());
+		}
+
 	})
 
 
 	$('.job-button').on('click', function(){
 
+		if($(this).hasClass('active-button')){
+
 		$('.submit-form-container').empty();
 
-		$('.submit-form-container').append(jobFormTemplate());
+		$(this).removeClass('active-button');
+		}
+
+		else{
+
+			$(this).addClass('active-button');
+
+			$('.submit-form-container').append(jobFormTemplate());
+		}
 	})
 
 
@@ -79,8 +111,6 @@ $(document).on('ready', function(){
 		var tempDesc = $('#content-description').val();
 		var tempUrl = $('#content-url').val();
 
-
-
 		var tempContentPost = new Post('content', tempTitle, tempDesc, tempUrl, count);
 
 		communityFeed.push(tempContentPost);
@@ -89,13 +119,17 @@ $(document).on('ready', function(){
 
 		$('.submit-form-container').empty();
 
+		$('.content-button').removeClass('active-button');
+
 		// Stash Local Data Storage
 		setTimeout(function(){localStorage['html'] = JSON.stringify($('.community-feed').html())}, 1000);
+
 
 	})
 
 	$('body').on('click', '.event-submit', function(event){
 
+		console.log('hi', $('.event-button'))
 		event.preventDefault();
 
 		count++;
@@ -113,6 +147,7 @@ $(document).on('ready', function(){
 		$('.community-feed').prepend(eventPostTemplate(tempEventPost));
 
 		$('.submit-form-container').empty();
+		$('.event-button').removeClass('active-button');
 
 		// Stash Local Data Storage
 		setTimeout(function(){localStorage['html'] = JSON.stringify($('.community-feed').html())}, 1000);
@@ -136,6 +171,10 @@ $(document).on('ready', function(){
 		$('.community-feed').prepend(jobPostTemplate(tempJobPost));
 
 		$('.submit-form-container').empty();
+
+		$('.job-button').removeClass('active-button');
+
+
 
 		// Stash Local Data Storage
 		setTimeout(function(){localStorage['html'] = JSON.stringify($('.community-feed').html())}, 1000);

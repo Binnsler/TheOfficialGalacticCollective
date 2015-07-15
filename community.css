@@ -11,15 +11,16 @@
  	color: white;
  	border-radius: 4px;
  	margin: 0 2%;
+ 	padding: 1vh 2%;
 }
 
 .btn-white-galactic:hover {
-	color: #0ea2c9;;
+	color: #0ea2c9;
 	background-color: white;
 }
 
-.btn-white-galactic:focus {
-	color: #0ea2c9;;
+.active-button {
+	color: #0ea2c9;
 	background-color: white;
 	outline: 0;
 }
