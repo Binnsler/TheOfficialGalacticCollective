@@ -1,4 +1,5 @@
 /* Frequently Used Classes */
+
 .no-pad { 
 	padding: 0;
 }
@@ -13,8 +14,14 @@
 }
 
 .btn-white-galactic:hover {
-	color: #1ab193;
+	color: #0ea2c9;;
 	background-color: white;
+}
+
+.btn-white-galactic:focus {
+	color: #0ea2c9;;
+	background-color: white;
+	outline: 0;
 }
 
 .break-div {
@@ -40,11 +47,38 @@
 	color: #0ea2c9;
 }
 
+/* Nav Bar */
+
+.nav-header {
+	margin: 1vh 1%;
+}
+.nav-element {
+	color: #999999;
+	display: inline-block;
+	margin: 1.2vh 2.5%;
+}
+
+.nav-element:hover {
+	color: #0ea2c9;;
+}
+
+.header-logo {
+	float: left;
+}
+
+.search-bar {
+	width: 25%;
+	margin-left: 10%;
+	padding: .5vh 0 .5vh 1%;
+}
+
+
 /* Community Submit Page */
 
 .submit-container {
 	background-color: #1ab193;	
 	padding: 2vh 2%;
+	border-radius: 10px;
 }
 
 .submit-intro {
@@ -73,14 +107,23 @@
 	padding: 0 2%;
 }
 
+.has-error .form-control{
+	border-width: 3px;
+}
 
 .row-top-margin {
 	margin-top: 2vh;
 }
-/* Community Feed Page */
+
+
+/* Community Feed Page and Posts */
 
 .content-title, .event-title, .job-title {
 	color: #999999;
+}
+
+.community-content, .community-event, .community-job {
+	overflow: hidden;
 }
 
 .user-hashtag {
@@ -88,7 +131,6 @@
 }
 
 .content-likes {
-	display: inline;
 	text-align: right;
 }
 
@@ -104,3 +146,5 @@
 	text-decoration: underline;
 	color: #1ab193;
 }
+
+

@@ -1,7 +1,32 @@
+
+// Global Variables 
 var communityFeed = [];
 var count = 0;
 
+//Compile Templates
+var contentForm = $('#content-form-template').html();
+var contentFormTemplate = Handlebars.compile(contentForm);  
+
+var eventForm = $('#event-form-template').html();
+var eventFormTemplate = Handlebars.compile(eventForm);  
+
+var jobForm = $('#job-form-template').html();
+var jobFormTemplate = Handlebars.compile(jobForm);  
+
+var contentPostHtml = $('#content-post-template').html();
+var contentPostTemplate = Handlebars.compile(contentPostHtml);
+
+var jobPostHtml = $('#job-post-template').html();
+var jobPostTemplate = Handlebars.compile(jobPostHtml);
+
+var eventPostHtml = $('#event-post-template').html();
+var eventPostTemplate = Handlebars.compile(eventPostHtml)
+
+// Ready? Fight!
 $(document).on('ready', function(){
+
+	// Pull Local Storage (comment out when running page the first time)
+	$('.community-feed').html(JSON.parse(localStorage["html"]));
 
 
 	// Content, Event, and Job form injection into .submit-form-container
@@ -9,10 +34,6 @@ $(document).on('ready', function(){
 	$('.content-button').on('click', function(){
 
 		$('.submit-form-container').empty();
-
-		var contentForm = $('#content-form-template').html();
-
-		var contentFormTemplate = Handlebars.compile(contentForm);  
 
 		$('.submit-form-container').append(contentFormTemplate());
 	})
@@ -22,10 +43,6 @@ $(document).on('ready', function(){
 
 		$('.submit-form-container').empty();
 
-		var eventForm = $('#event-form-template').html();
-
-		var eventFormTemplate = Handlebars.compile(eventForm);  
-
 		$('.submit-form-container').append(eventFormTemplate());
 	})
 
@@ -34,16 +51,13 @@ $(document).on('ready', function(){
 
 		$('.submit-form-container').empty();
 
-		var jobForm = $('#job-form-template').html();
-
-		var jobFormTemplate = Handlebars.compile(jobForm);  
-
 		$('.submit-form-container').append(jobFormTemplate());
 	})
 
 
 	// Create and inject content, job, or event post into .community-feed
 
+	// Job, event, and content posts are all stored as Posts
 	var Post = function(postType, postTitle, postDescription, postUrl, dataId, postDate, postTime, likes){
 		this.postType = postType;
 		this.postTitle = postTitle;
@@ -66,17 +80,17 @@ $(document).on('ready', function(){
 		var tempUrl = $('#content-url').val();
 
 
+
 		var tempContentPost = new Post('content', tempTitle, tempDesc, tempUrl, count);
 
 		communityFeed.push(tempContentPost);
 
-		var contentPostHtml = $('#content-post-template').html();
-
-		var contentPostTemplate = Handlebars.compile(contentPostHtml);
-
 		$('.community-feed').prepend(contentPostTemplate(tempContentPost));
 
 		$('.submit-form-container').empty();
+
+		// Stash Local Data Storage
+		setTimeout(function(){localStorage['html'] = JSON.stringify($('.community-feed').html())}, 1000);
 
 	})
 
@@ -96,13 +110,12 @@ $(document).on('ready', function(){
 
 		communityFeed.push(tempEventPost);
 
-		var eventPostHtml = $('#event-post-template').html();
-
-		var eventPostTemplate = Handlebars.compile(eventPostHtml)
-
 		$('.community-feed').prepend(eventPostTemplate(tempEventPost));
 
 		$('.submit-form-container').empty();
+
+		// Stash Local Data Storage
+		setTimeout(function(){localStorage['html'] = JSON.stringify($('.community-feed').html())}, 1000);
 
 	})
 
@@ -120,23 +133,15 @@ $(document).on('ready', function(){
 
 		communityFeed.push(tempJobPost);
 
-		var jobPostHtml = $('#job-post-template').html();
-
-		var jobPostTemplate = Handlebars.compile(jobPostHtml);
-
 		$('.community-feed').prepend(jobPostTemplate(tempJobPost));
 
 		$('.submit-form-container').empty();
 
+		// Stash Local Data Storage
+		setTimeout(function(){localStorage['html'] = JSON.stringify($('.community-feed').html())}, 1000);
+
 	})
 
-
-	// Nuke, Repave, Repeat
-
-	var nukeRepave = function(){
-
-
-	}
 
 	// Liking a Post
 
@@ -154,8 +159,23 @@ $(document).on('ready', function(){
 
 		$(this).next().append(communityFeed[dataId - 1].likes + ' Likes')
 
+		// Stash Local Data Storage
+		setTimeout(function(){localStorage['html'] = JSON.stringify($('.community-feed').html())}, 1000);
+
 	})
 
+	// Flag input forms that are too long by adding .has-error
 
+	$('body').on('keyup', '.form-control', function(){
+		var thisLength = $(this).val().length;
+		var thisMaxLength = parseInt($(this).attr('maxlength'));
+
+		console.log(thisLength, thisMaxLength)
+		if(thisLength >= thisMaxLength){
+			$(this).closest('.form-group').addClass('has-error');
+		} else {
+			$(this).closest('.form-group').removeClass('has-error')
+		}
+	})
 
 })
