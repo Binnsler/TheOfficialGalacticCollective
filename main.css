@@ -19,6 +19,21 @@
 	background-color: white;
 }
 
+.btn-green-galactic {
+	border: 1.5px solid #1ab193;
+ 	background: transparent;
+ 	box-shadow: none;
+ 	color: #1ab193;
+ 	border-radius: 4px;
+ 	margin-right:2%;
+ 	padding: 1vh 2%;
+}
+
+.btn-green-galactic:hover {
+	color: white;
+	background-color: #1ab193;
+}
+
 .active-button {
 	color: #0ea2c9;
 	background-color: white;
@@ -73,8 +88,9 @@
 	padding: .5vh 0 .5vh 1%;
 }
 
+/*COMMUNITY PAGE*/
 
-/* Community Submit Page */
+		/* Community Submit Page */
 
 .submit-container {
 	background-color: #1ab193;	
@@ -117,7 +133,7 @@
 }
 
 
-/* Community Feed Page and Posts */
+		/* Community Feed Page and Posts */
 
 .content-title, .event-title, .job-title {
 	color: #999999;
@@ -147,5 +163,39 @@
 	text-decoration: underline;
 	color: #1ab193;
 }
+
+
+/* PROFILE PAGE */
+
+.profile-header {
+
+}
+
+.profile-pic {
+	padding: 0 2% 2vh 2%;
+}
+
+.button-container {
+	padding: 2vh 2%;
+}
+
+.profile-name {
+	margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
