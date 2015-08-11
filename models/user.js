@@ -9,20 +9,28 @@ var bcrypt = require('bcrypt');
  * saving if a duplicate entry is found.
  */
 var userSchema = mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  password: {
-    type: String,
-    required: true
-  }
+
+  username : {type: String, required: true, unique: true},
+  email : {type: String, required: true, unique: true},
+  password : {type: String, required: true},
+  profilePic : {type: String},
+  profileName : {type: String},
+  profileLocation : {type: String},
+  profileBlurb : {type: String},
+  buttonOneText : {type: String},
+  buttonOneUrl : {type: String},
+  buttonTwoText : {type: String},
+  buttonTwoUrl : {type: String},
+  buttonThreeText : {type: String},
+  buttonThreeUrl : {type: String},
+  skills : [{type: String}],
+  profileBio : {type: String},
+  backgroundColor : {type: String, default: '1ab193'},
+  textColor : {type: String, default: 'white'},
+  likes : {type: Number, default: 0},
+  creationTimeStamp : {type: Number}
+
+
 });
 
 /**

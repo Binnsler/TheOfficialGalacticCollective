@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(lang='en' ng-app="masterApp")
 	head
 		meta(charset="utf-8")
 		title Untitled
@@ -15,8 +15,12 @@ html(lang='en')
 						a(href="https://google.com" class="nav-element") Search
 					li.nav-element
 						a(href="https://google.com" class="nav-element") Community
-					li.nav-element
-						a(href="https://google.com" class="nav-element") Sign In/Sign Up
+					if user
+						li.nav-element(ng-click="logout()")
+							a(class="nav-element") Logout
+					else
+						li.nav-element
+							a(href="#/login" class="nav-element") Log In/Sign Up
 		block content
 
 	script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js")
@@ -24,4 +28,4 @@ html(lang='en')
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js")
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js")
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.js")
-	block scripts
+	script(src="masterApp.js")
