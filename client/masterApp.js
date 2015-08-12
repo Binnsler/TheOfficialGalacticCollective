@@ -13,17 +13,17 @@ masterApp.config(function($routeProvider){
 	});
 });
 
-masterApp.controller('loginController', function($scope, $http, $resource){
+masterApp.controller('loginController', function($scope, $http, $resource, $rootScope){
 
 
 	$scope.login = function(){
 		$http.post('/login', $scope.formData).
 	  		then(function(response) {
 		    	if(response.err){
-		    		console.log('Check your password or username')
+		    		console.log('Successful login:', response.data)
 		    	}
 		    	else{
-		    		console.log(response.data.username)
+		    		console.log('Login request complete, but errors.', response.data)
 		    	}
 	  		}, function(response) {
 			    console.log('Angular login error: ', response.data)
@@ -35,10 +35,13 @@ masterApp.controller('loginController', function($scope, $http, $resource){
 
 		$http.post('/signup', $scope.formData).
 	  		then(function(response) {
-	    		console.log(response)
+	  			$rootScope.currentUser = response.data;
+	    		console.log('Succesfully signed up as: ', $rootScope.currentUser.username)
 	  		}, function(response) {
-			    console.log(response.data)
+			    console.log('Error signing up: ', response.data)
 	  	});
+
+	  	console.log('Checking again that we are logged as :', $rootScope.currentUser.username)
 		
 	};
 
