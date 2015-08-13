@@ -2,7 +2,7 @@ block headContent
 	link(rel="stylesheet" href="stylesheets/profile.css")
 
 div.container
-	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="flipEditting()" ng-show="!editing") Edit {{profileUser.username}}					
+	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit {{profileUser.username}}					
 	form.edit-profile(ng-show="editing")
 		div.row
 			input(name="testing" placeholder="Profile Name", ng-model="profileUser.profileName", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25")

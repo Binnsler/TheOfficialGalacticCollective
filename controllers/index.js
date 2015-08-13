@@ -1,4 +1,5 @@
 var User = require('../models/user');
+var mongoose = require('mongoose');
 
 var indexController = {
 	index: function(req, res) {
@@ -14,6 +15,12 @@ var indexController = {
 		// findOne object, not an array of objects ex. [{one}]
 		User.findOne({username: req.params.username}, function(err, userData){
 			res.send(userData);
+		});
+	},
+	updateUser : function(req, res){
+
+		User.update({username: req.params.username}, req.body, function(err, userData){
+			console.log('Sucessful database update.')
 		});
 	}
 

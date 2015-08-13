@@ -57,12 +57,13 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 	$scope.editing = false;
 
 	// Turn on/off editing
-	$scope.flipEditting = function(){	
+	$scope.onEditting = function(){	
 		$scope.editing = true;
 	};
 
 	$scope.submitToServer = function(){
-		$http.post('/update-profile')
+		userFactory.model.save($scope.profileUser);
+		$scope.editing = false;
 	};
 
 });

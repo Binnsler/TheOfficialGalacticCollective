@@ -69,6 +69,10 @@ app.get('/views/:page', indexController.views)
 // Angular Dynamic Profile Rendering
 app.get('/api/profiles/:username', indexController.getUser)
 
+// Update Profile via Submit Button
+app.post('/api/profiles/:username', indexController.updateUser)
+
+
 // Authentication Routes
 app.post('/login', authenticationController.processLogin); 
 
