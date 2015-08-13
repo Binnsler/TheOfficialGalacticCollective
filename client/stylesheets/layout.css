@@ -1,0 +1,11 @@
+nav {
+	background-color: white;
+}
+
+.nav-element {
+	color: black;
+}
+
+.nav-element > a {
+	color: black;
+}

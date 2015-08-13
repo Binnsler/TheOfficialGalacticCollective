@@ -53,8 +53,17 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 
 	$scope.profileUser = userFactory.model.get({username : $routeParams.username})
 
-	console.log()
 
+	$scope.editing = false;
+
+	// Turn on/off editing
+	$scope.flipEditting = function(){	
+		$scope.editing = true;
+	};
+
+	$scope.submitToServer = function(){
+		$http.post('/update-profile')
+	};
 
 });
 

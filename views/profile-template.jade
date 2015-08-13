@@ -2,33 +2,54 @@ block headContent
 	link(rel="stylesheet" href="stylesheets/profile.css")
 
 div.container
+	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="flipEditting()" ng-show="!editing") Edit {{profileUser.username}}					
+	form.edit-profile(ng-show="editing")
+		div.row
+			input(name="testing" placeholder="Profile Name", ng-model="profileUser.profileName", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25")
+			input(placeholder="Profile Location", ng-model="profileUser.profileLocation", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25") 
+		div.row
+			input(placeholder="Profile Blurb", ng-model="profileUser.profileBlurb", type="text", class="validate col s9 offset-s1 profile-form" maxlength="160")
+		div.row
+			input(placeholder="Button 1 Text", ng-model="profileUser.buttonOneText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
+			input(placeholder="Button 1 URL", ng-model="profileUser.buttonOneUrl", type="text", class="validate col s4 offset-s1 profile-form")
+		div.row
+			input(placeholder="Button 2 Text", ng-model="profileUser.buttonTwoText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
+			input(placeholder="Button 2 URL", ng-model="profileUser.buttonTwoUrl", type="text", class="validate col s4 offset-s1 profile-form")
+		div.row
+			input(placeholder="Button 3 Text", ng-model="profileUser.buttonThreeText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
+			input(placeholder="Button 3 URL", ng-model="profileUser.buttonThreeUrl", type="text", class="validate col s4 offset-s1 profile-form")
+			
+		div.row
+			input(placeholder="Skills", ng-model="profileUser.skills", type="text", class="validate col s9 offset-s1 profile-form" maxlength="250")
+		div.row
+			input(placeholder="Bio", ng-model="profileUser.profileBio", type="text", class="validate col s9 offset-s1 profile-form" maxlength="250")
+		div.row
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitToServer()") Submit
 	div.top-profile(class="col s12")
-		div(class="col s4")
-			img(src="images/test_profile_pic.png")
-			p {{profileUser.likes}}
+		div.row
+			div(class="col s3 left-profile")
+				img(src="images/test_profile_pic.png")
+				p(class="profile-text") {{profileUser.likes}} Likes
 
-		div(class="col s8")
-			h2 {{profileUser.username}}
-			h4 {{profileUser.profileLocation}}
-			p {{profileUser.profileBlurb}}
-			div.button-container
-				button
-					a(class="waves-effect waves-white btn-flat" ng-href="https://{{profileUser.buttonOneUrl}}") {{profileUser.buttonOneText}}
-				button(class="btn btn-galactic") 
-					a(ng-href="https://{{profileUser.buttonTwoUrl}}") {{profileUser.buttonTwoText}}
-				button(class="btn btn-galactic") 
-					a(ng-href="https://{{profileUser.buttonThreeUrl}}") {{profileUser.buttonThreeText}}
+			div(class="col s9 right-profile")
+				h2(class="profile-text") {{profileUser.profileName}}
+				h4(class="profile-text") {{profileUser.profileLocation}}
+				p(class="profile-text") {{profileUser.profileBlurb}}
+				div.btn-container
+					a(class="waves-effect btn-flat white btn-profile" ng-href="https://{{profileUser.buttonOneUrl}}") {{profileUser.buttonOneText}}
+					a(class="waves-effect btn-flat white btn-profile" ng-href="https://{{profileUser.buttonTwoUrl}}") {{profileUser.buttonTwoText}}
+					a(class="waves-effect btn-flat white btn-profile" ng-href="https://{{profileUser.buttonThreeUrl}}") {{profileUser.buttonThreeText}}
 
-	div.break-div Break Div
 
 	div.bottom-profile(class="col s12")
-		div(class="col s6")
-				h5 Skills
-				p {{profileUser.skills}}
+		div.row
+			div(class="col s6 profile-skills")
+					h5 Skills
+					p {{profileUser.skills}}
 
-		div(class="col s6")
-			h5 Bio
-			p {{profileUser.profileBio}}
+			div(class="col s6 profile-bio")
+				h5 Bio
+				p {{profileUser.profileBio}}
 
 
 
