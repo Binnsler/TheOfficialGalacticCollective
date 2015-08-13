@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+
 // We need database persistence
 var mongoose = require('mongoose');
 
@@ -22,9 +23,8 @@ var passport = require('passport');
 // actually runs and authenticates
 var passportConfig = require('./config/passport');
 
-// Index Controller
+// Controllers
 var indexController = require('./controllers/index.js');
-// Passport Controller
 var authenticationController = require('./controllers/authenticate.js')
 
 var app = express();
@@ -37,7 +37,6 @@ app.use(bodyParser.json())
 // Connect to DB
 mongoose.connect('mongodb://localhost/galactic-collective');
 
-// Passport Stuff
 // Add in the cookieParser and flash middleware so we can
 // use them later
 app.use(cookieParser());
@@ -58,7 +57,8 @@ app.use(passport.initialize());
 // Hook in the passport session management into the middleware chain.
 app.use(passport.session());
 
-// ROUTES
+
+// HTTP ROUTES
 
 // Initial route to create Angular shell
 app.get('/', indexController.index);
@@ -66,19 +66,20 @@ app.get('/', indexController.index);
 // Angular Dynamic Page Rendering
 app.get('/views/:page', indexController.views)
 
-// Authentication Routes
-// app.get('/login', authenticationController.login);
+// Angular Dynamic Profile Rendering
+app.get('/api/profiles/:username', indexController.getUser)
 
-app.post('/login', authenticationController.processLogin); // Get route that res.sends data to be used by Angular callback
+// Authentication Routes
+app.post('/login', authenticationController.processLogin); 
 
 app.post('/signup', authenticationController.processSignup)
 
-// Successful Login
-// app.get('/successfullogin', passportConfig.ensureAuthenticated, indexController.successfullogin)
+app.post('/logout', authenticationController.logout)
 
 
+// Check who is currently logged in
+app.get('/api/me', indexController.authenticate)
 
-// app.get('/profiles', indexController.profiles)
 
 // PASSPORT PROTECTED ROUTES
 // ***** IMPORTANT ***** //
@@ -87,7 +88,7 @@ app.post('/signup', authenticationController.processSignup)
 // to .use()
 // app.use(passportConfig.ensureAuthenticated);
 
-
+// Our server
 var server = app.listen(9359, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });

@@ -1,14 +1,20 @@
+var User = require('../models/user');
+
 var indexController = {
 	index: function(req, res) {
-		res.render('index');
+		res.render('index', {user: req.user});
 	},
 	views : function(req, res){
-		// req.params.templateName
-		res.render(req.params.page);
+		res.render(req.params.page, {user: req.user});
 	},
-	successfullogin : function(req, res){
+	authenticate : function(req, res){
 		res.send(req.user);
-		console.log('We have successfully logged in')
+	},
+	getUser : function(req, res){
+		// findOne object, not an array of objects ex. [{one}]
+		User.findOne({username: req.params.username}, function(err, userData){
+			res.send(userData);
+		});
 	}
 
 };

@@ -23,8 +23,8 @@ var performLogin = function(req, res, next, user){
     // If there was an error, allow execution to move to the next middleware
     if(err) return next(err);
 
-    // Otherwise, send the user to the homepage.
-    return res.redirect('/');
+    // Otherwise, res.send the data to Angular masterApp.js
+    res.send(user)
   });
 };
 
@@ -65,14 +65,14 @@ var authenticationController = {
       // which will be read and used in the "login" handler above and then redirect
       // to that handler.
       if(!user) {
-        req.flash('error', 'Error logging in. Please try again.');
+        req.flash('error', 'User not in the database or password mismatch');
         return res.send({err: 'ERROR WILL ROBINSON'});
       }
       
       // If we make it this far, the user has correctly authenticated with passport
       // so now, we'll just log the user in to the system.
       // performLogin(req, res, next, user);
-      res.send(user);
+     performLogin(req, res, next, user)
     });
 
     // Now that we have the authentication method created, we'll call it here.
@@ -141,7 +141,7 @@ var authenticationController = {
     req.logout();
 
     // Redirect back to the login page
-    res.redirect('/login');
+    res.send('Logged out')
   }
 };
 

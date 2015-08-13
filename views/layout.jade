@@ -4,23 +4,25 @@ html(lang='en' ng-app="masterApp")
 		meta(charset="utf-8")
 		title Untitled
 		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css")
-
+		block headContent
 	body
-		nav
+
+		nav(ng-controller="loginController")
 			div.nav-wrapper
 				a(href="https://google.com", class="brand-logo left")
 					img(src="/images/Header_Solo_Logo.png", alt="")
 				ul.right
 					li.nav-element
-						a(href="https://google.com" class="nav-element") Search
+						a(href="#/", class="nav-element") Search
 					li.nav-element
-						a(href="https://google.com" class="nav-element") Community
-					if user
-						li.nav-element(ng-click="logout()")
-							a(class="nav-element") Logout
-					else
-						li.nav-element
-							a(href="#/login" class="nav-element") Log In/Sign Up
+						a(href="https://google.com", class="nav-element") Community
+					li.nav-element(ng-show="userContainer.user", ng-click="logout()")
+						a(href="") Logout
+					li.nav-element(ng-show="!userContainer.user")
+						a(href="#/login" class="nav-element") Log In/Sign Up
+					li.nav-element(ng-show="userContainer.user")
+						a(ng-href="#/profile/{{userContainer.user.username}}") My Profile
+
 		block content
 
 	script(type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js")

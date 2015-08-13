@@ -1,37 +1,34 @@
-	div.container
-		div.top-profile(class="col s12")
-			div(class="col s4")
-				img(src="images/test_profile_pic.png")
-				p Number of Likes
+block headContent
+	link(rel="stylesheet" href="stylesheets/profile.css")
 
-			div(class="col s8")
-				h2 User Name
-				h4 User Location
-				p User blurb that is limited to 160 characters so they don't talk ad nauseum.
-				div.button-container
-					button Button 1
-					button Button 2
-					button Button 3
+div.container
+	div.top-profile(class="col s12")
+		div(class="col s4")
+			img(src="images/test_profile_pic.png")
+			p {{profileUser.likes}}
 
-		div.break-div Break Div
+		div(class="col s8")
+			h2 {{profileUser.username}}
+			h4 {{profileUser.profileLocation}}
+			p {{profileUser.profileBlurb}}
+			div.button-container
+				button
+					a(class="waves-effect waves-white btn-flat" ng-href="https://{{profileUser.buttonOneUrl}}") {{profileUser.buttonOneText}}
+				button(class="btn btn-galactic") 
+					a(ng-href="https://{{profileUser.buttonTwoUrl}}") {{profileUser.buttonTwoText}}
+				button(class="btn btn-galactic") 
+					a(ng-href="https://{{profileUser.buttonThreeUrl}}") {{profileUser.buttonThreeText}}
 
-		div.bottom-profile(class="col s12")
-			div(class="col s6")
-				div.left-skills
-					p Skill 1
-					p Skill 2
-					p Skill 3
-					p Skill 4
-					p Skill 5
-				div.right-skills
-					p Skill 6
-					p Skill 7
-					p Skill 8
-					p Skill 9
-					p Skill 10
+	div.break-div Break Div
 
-			div(class="col s6")
-				p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec.
+	div.bottom-profile(class="col s12")
+		div(class="col s6")
+				h5 Skills
+				p {{profileUser.skills}}
+
+		div(class="col s6")
+			h5 Bio
+			p {{profileUser.profileBio}}
 
 
 
