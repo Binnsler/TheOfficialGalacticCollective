@@ -13,6 +13,6 @@ div.container
 					img(src="images/test_profile_pic.png" alt="" class="profilePicCircle")
 				div(class="col s9 right-profile")
 					a(ng-href="#/profile/{{profile.username}}" class="galactic-green-text profile-nav") {{profile.profileName}}
-					h5.search-location{{profile.profileLocation}}
+					h5.search-location {{profile.profileLocation}}
 					p {{profile.skills}}
 					h5.search-likes Likes {{profile.likes}}
