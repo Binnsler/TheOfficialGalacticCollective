@@ -75,6 +75,15 @@ app.post('/api/profiles/:username', indexController.updateUser)
 // Get all users
 app.get('/api/allUsers', indexController.getAllUsers)
 
+// Create a Post (on Community Page)
+app.post('/api/posts', indexController.createPost)
+
+// Get all Posts
+app.get('/api/allPosts', indexController.getAllPosts)
+
+// Get all of a User's Posts
+app.get('/api/allUserPosts', indexController.getAllUserPosts)
+
 
 // Authentication Routes
 app.post('/login', authenticationController.processLogin); 

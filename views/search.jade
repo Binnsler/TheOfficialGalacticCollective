@@ -1,9 +1,18 @@
+block headContent
+	link(rel="stylesheet" href="stylesheets/main.css")
+
 div.container
-	h1 Search for Local Creatives
-	input(type="text" ng-model="query")
+	p Currently logged in as : {{userContainer.user.username}}
+	h3.search-intro(class="centerize-me galactic-green-text") Search for Local Creatives Near You
+	input(type="text" ng-model="query" placeholder="Search by name, location or skills")
 
-	ul
-		li(ng-repeat="profile in profiles | filter: query")
-			h2 {{profile.username}}
-
-	h3 Currently logged in as : {{userContainer.user.username}}
+	ul.collection
+		li(ng-repeat="profile in profiles | filter: query" class="collection-item avatar")
+			div.row
+				div(class="col s2 offset-s1 left-profile")
+					img(src="images/test_profile_pic.png" alt="" class="profilePicCircle")
+				div(class="col s9 right-profile")
+					a(ng-href="#/profile/{{profile.username}}" class="galactic-green-text profile-nav") {{profile.profileName}}
+					h5.search-location{{profile.profileLocation}}
+					p {{profile.skills}}
+					h5.search-likes Likes {{profile.likes}}

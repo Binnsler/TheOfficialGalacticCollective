@@ -1,19 +1,24 @@
+block headContent
+	link(rel="stylesheet" href="stylesheets/main.css")
+
 div(class="container")
 	div(class="row")
 		form(class="col s6 offset-s3" ng-submit="login()")
-			h3 Sign In
+			h3(class="galactic-green-text") Welcome Back
 			div(class="input-field col s12")
 				input(placeholder="Username", ng-model="loginFormData.username", type="text", class="validate")
 				label(for="username") 
 			div(class="input-field col s12")
 				input(placeholder="Password", ng-model="loginFormData.password", type="password", class="validate")
 				label(for="signinPassword") 
-			input(type="submit" value="Login")
+			input(type="submit" value="Login" class="waves-effect btn-flat galactic-green col s2 btn-profile")
+
+	div
 
 
 	div(class="row")
 		form(class="col s6 offset-s3", ng-submit="signup()")
-			h3 Sign Up
+			h3(class="galactic-green-text") Join the Community
 			div(class="input-field col s12")
 				input(placeholder="Username (displayed as @username)", ng-model="signUpFormData.username", type="text", class="validate")
 				label(for="name") 
@@ -23,4 +28,4 @@ div(class="container")
 			div(class="input-field col s12")
 				input(placeholder="Password", ng-model="signUpFormData.password", type="password", class="validate")
 				label(for="password") 
-			input(type="submit" value="Sign Up")
+			input(type="submit" value="Sign Up" class="waves-effect btn-flat galactic-green col s2 btn-profile")

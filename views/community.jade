@@ -1,34 +1,64 @@
 block headContent
-	link(rel="stylesheet" href="stylesheets/profile.css")
+	link(rel="stylesheet" href="stylesheets/main.css")
 
 div.container
-	p(ng-if="!userContainer.user") Please sign up or login post to the Community
-		a(href="#/login" class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile") Sign Up / Login
-	div(class="button-container" ng-if="userContainer.user" )	
+	div.centerize-me
+		h3.galactic-green-text Welcome to the Galactic Collective Community
+		p Please feel free to post up any cool jobs, events, or content.
+	div.centerize-me
+		p(ng-if="!userContainer.user") Please sign up or login to post to the Community
+			a(href="#/login" class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile") Sign Up / Login
+	div(class="centerize-me" ng-if="userContainer.user")
 		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showJobForm()") Post Job
 		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showContentForm()") Post Content
-		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showEventForm()") Post Event"
+		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showEventForm()") Post Event
 
-	form.jobPost(ng-show="jobForm")
+	form(ng-show="jobForm")
 		div.row
-			input(placeholder="Job Title", ng-model="profileUser.profileName", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25")
-			input(placeholder="Job Description", ng-model="profileUser.profileLocation", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25") 
-			
+			input(placeholder="Job Title", ng-model="jobFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
+			input(placeholder="Job URL", ng-model="jobFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
+			input(placeholder="Job Description", ng-model="jobFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="300") 
 		div.row
-			input(placeholder="Profile Blurb", ng-model="profileUser.profileBlurb", type="text", class="validate col s9 offset-s1 profile-form" maxlength="160")
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitJob()") Submit
+
+	form(ng-show="contentForm")
 		div.row
-			input(placeholder="Button 1 Text", ng-model="profileUser.buttonOneText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
-			input(placeholder="Button 1 URL", ng-model="profileUser.buttonOneUrl", type="text", class="validate col s4 offset-s1 profile-form")
+			input(placeholder="Content Title", ng-model="contentFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
+			input(placeholder="Content URL", ng-model="contentFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
+			input(placeholder="Content Description", ng-model="contentFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="300") 
 		div.row
-			input(placeholder="Button 2 Text", ng-model="profileUser.buttonTwoText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
-			input(placeholder="Button 2 URL", ng-model="profileUser.buttonTwoUrl", type="text", class="validate col s4 offset-s1 profile-form")
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitContent()") Submit
+
+	form(ng-show="eventForm")
 		div.row
-			input(placeholder="Button 3 Text", ng-model="profileUser.buttonThreeText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
-			input(placeholder="Button 3 URL", ng-model="profileUser.buttonThreeUrl", type="text", class="validate col s4 offset-s1 profile-form")
-			
+			input(placeholder="Event Title", ng-model="eventFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
+			input(placeholder="Event URL", ng-model="eventFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
+			input(placeholder="Event Description", ng-model="eventFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="200") 
+			input(ng-model="eventFormData.time", type="date", class="datepicker col s4 offset-s1 profile-form")
+
 		div.row
-			input(placeholder="Skills", ng-model="profileUser.skills", type="text", class="validate col s9 offset-s1 profile-form" maxlength="250")
-		div.row
-			input(placeholder="Bio", ng-model="profileUser.profileBio", type="text", class="validate col s9 offset-s1 profile-form" maxlength="250")
-		div.row
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitToServer()") Submit
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitEvent()") Submit
+	
+	ul.collection
+		li(ng-repeat="post in posts" class="collection-item avatar")
+			div.row
+				div(class="col s6 offset-s3")
+					img(src="images/test_profile_pic.png" alt="" class="circle")
+					a(ng-href="#/profile/{{post.userCreated.profileName}}" class="galactic-green-text") {{post.userCreated}}
+					h3.galactic-green-text {{post.title}}
+					p {{post.body}}
+					a(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,13 +1,13 @@
 var masterApp = angular.module('masterApp', ['ngResource', 'ngRoute']);
 
 masterApp.config(function($routeProvider){
-	// Home slash Search Page
+	// Home-Search Page
 	$routeProvider
 	.when('/', {
 		templateUrl : '/views/search', 
 		controller : 'searchController'
 	});
-	// Login slash Signup Page
+	// Login-Signup Page
 	$routeProvider
 	.when('/login', {
 		templateUrl : '/views/login',
@@ -19,12 +19,12 @@ masterApp.config(function($routeProvider){
 		templateUrl : '/views/profile-template',
 		controller : 'profileController'
 	});
-	// Community Page
-	// $routeProvider
-	// .when('/profile/:username', {
-	// 	templateUrl : '/views/community',
-	// 	controller : 'communityController'
-	// })
+	//Community Page
+	$routeProvider
+	.when('/community', {
+		templateUrl : '/views/community',
+		controller : 'communityController'
+	})
 });
 
 // Factory to query who is currently logged in
@@ -44,65 +44,24 @@ masterApp.factory('authenticateUser', function($http){
 masterApp.factory('userFactory', function($resource){
 
 	var model = $resource('/api/profiles/:username', {username : '@username'})
-	// this._id
-	// @_id
 
 	return {
-		model : model,
-		users : model.query()
-	}
-
-});
-
-// Factory to search for Posts
-masterApp.factory('postFactory', function($resource){
-
-	var model = $resource('/api/posts')
-	// this._id
-	// @_id
-
-	return {
-		model : model,
-		posts : model.query()
+		model : model
 	}
 
 });
 
 // Community Controller
-masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, postFactory){
+masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser){
 	
 	$scope.userContainer = authenticateUser;
 
-	$scope.aPost = new postFactory.model.post({$scope.postData})
+	$http.get('/api/allPosts').
+		then(function(returnData){
+			$scope.posts = returnData.data;
+		})
 
-
-	
-	postFactory.model.post({createdById : $scope.postData})
-
-	// From profileContainer DELETE IMMEDIATELY
-	$scope.userContainer = authenticateUser;
-
-	$scope.profileUser = userFactory.model.get({username : $routeParams.username})
-
-
-	$scope.editing = false;
-
-	// Turn on/off editing
-	$scope.onEditting = function(){	
-		$scope.editing = true;
-	};
-
-	$scope.submitToServer = function(){
-		userFactory.model.save($scope.profileUser);
-		$scope.editing = false;
-	};
-
-	// DO NOT DELETE, part of Community Controller
-	$http.get('/api/allUsers').
-	 	then(function(returnData){
-	 		$scope.profiles = returnData.data;
-	 	})
-
+	// Show Post forms on respective button click
 	 $scope.showJobForm = function(){
 	 	$scope.contentForm = false;
 	 	$scope.eventForm = false;
@@ -120,6 +79,55 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 	 	$scope.contentForm = false;
 	 	$scope.eventForm = true;
 	 };
+
+	// Submit Posts to database
+	$scope.submitJob = function() {
+		$scope.jobFormData.type = 'job';
+		$http.post('/api/posts', $scope.jobFormData).
+
+		  		then(function(response) {
+		    		console.log(response)
+
+		  		}, function(response) {
+				    console.log('Successfully submitted a job')
+
+		  	});
+	};
+
+	$scope.submitContent = function() {
+		$scope.contentFormData.type = 'content';
+		$http.post('/api/posts', $scope.contentFormData).
+
+		  		then(function(response) {
+		    		console.log(response.err)
+
+		  		}, function(response) {
+				    console.log('Successfully submitted content')
+
+		  	});
+	};
+
+	$scope.submitEvent = function() {
+		$scope.eventFormData.type = 'event';
+		$http.post('/api/posts', $scope.eventFormData).
+
+		  		then(function(response) {
+		    		if(response.err){
+		    			console.log('There was an error creating the post.')
+		    		}
+
+		    		else{
+		    			console.log('Successfully submitted an event')
+		    		}
+
+		    		
+
+		  		}, function(response) {
+				    console.log('HTTP error for creating post.')
+
+		  	});
+	};
+
 
 });
 
@@ -144,8 +152,16 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 
 	$scope.profileUser = userFactory.model.get({username : $routeParams.username})
 
-
 	$scope.editing = false;
+
+	// WHY DOES $scope.profileUser give me an object, but $scope.profileUser._id give me 'undefined'????
+	console.log($scope.profileUser)
+
+	// Get request to get all the user's posts
+	// $http.get('/api/allUserPosts', $scope.profileUser._id).
+	// 	then(function(returnData){
+	// 		$scope.posts = returnData.data;
+	// 	})
 
 	// Turn on/off editing
 	$scope.onEditting = function(){	
@@ -193,7 +209,9 @@ masterApp.controller('loginController', function($scope, $http, $resource, $loca
 		$http.post('/signup', $scope.signUpFormData).
 
 	  		then(function(response) {
-	    		$scope.userContainer = response.data.data;
+
+	    		$scope.userContainer.user = response.data;
+
 	    		$location.url('/profile/' + response.data.username, {user: response.data.data})
 
 	  		}, function(response) {

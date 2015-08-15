@@ -1,28 +1,28 @@
 block headContent
-	link(rel="stylesheet" href="stylesheets/profile.css")
+	link(rel="stylesheet" href="stylesheets/main.css")
 
 div.container
 	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit {{profileUser.username}}					
 	form.edit-profile(ng-show="editing")
 		div.row
 			input(placeholder="Profile Name", ng-model="profileUser.profileName", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25")
-			input(placeholder="Profile Location", ng-model="profileUser.profileLocation", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25") 
+			input(placeholder="Profile Location", ng-model="profileUser.profileLocation", type="text", class="validate col s4 offset-s2 profile-form" maxlength="25") 
 		div.row
-			input(placeholder="Profile Blurb", ng-model="profileUser.profileBlurb", type="text", class="validate col s9 offset-s1 profile-form" maxlength="160")
+			input(placeholder="Profile Blurb", ng-model="profileUser.profileBlurb", type="text", class="validate col s10 offset-s1 profile-form" maxlength="160")
 		div.row
 			input(placeholder="Button 1 Text", ng-model="profileUser.buttonOneText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
-			input(placeholder="Button 1 URL", ng-model="profileUser.buttonOneUrl", type="text", class="validate col s4 offset-s1 profile-form")
+			input(placeholder="Button 1 URL", ng-model="profileUser.buttonOneUrl", type="text", class="validate col s4 offset-s2 profile-form")
 		div.row
 			input(placeholder="Button 2 Text", ng-model="profileUser.buttonTwoText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
-			input(placeholder="Button 2 URL", ng-model="profileUser.buttonTwoUrl", type="text", class="validate col s4 offset-s1 profile-form")
+			input(placeholder="Button 2 URL", ng-model="profileUser.buttonTwoUrl", type="text", class="validate col s4 offset-s2 profile-form")
 		div.row
 			input(placeholder="Button 3 Text", ng-model="profileUser.buttonThreeText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
-			input(placeholder="Button 3 URL", ng-model="profileUser.buttonThreeUrl", type="text", class="validate col s4 offset-s1 profile-form")
+			input(placeholder="Button 3 URL", ng-model="profileUser.buttonThreeUrl", type="text", class="validate col s4 offset-s2 profile-form")
 			
 		div.row
-			input(placeholder="Skills", ng-model="profileUser.skills", type="text", class="validate col s9 offset-s1 profile-form" maxlength="250")
+			input(placeholder="Skills", ng-model="profileUser.skills", type="text", class="validate col s10 offset-s1 profile-form" maxlength="250")
 		div.row
-			input(placeholder="Bio", ng-model="profileUser.profileBio", type="text", class="validate col s9 offset-s1 profile-form" maxlength="250")
+			input(placeholder="Bio", ng-model="profileUser.profileBio", type="text", class="validate col s10 offset-s1 profile-form" maxlength="250")
 		div.row
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitToServer()") Submit
 	div.top-profile(class="col s12")
@@ -50,6 +50,16 @@ div.container
 			div(class="col s6 profile-bio")
 				h5 Bio
 				p {{profileUser.profileBio}}
+
+	div.allPosts
+		h3(class="galactic-green-text centerize-me") Posts
+		ul.collection
+			li(ng-repeat="post in posts" class="collection-item avatar")
+				div.row
+					div(class="col s8 offset-s2")
+						h3.galactic-green-text {{post.title}}
+						p {{post.body}}
+						a(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
 
 
 

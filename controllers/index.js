@@ -32,51 +32,39 @@ var indexController = {
 
 	createPost : function(req, res){
 
+		console.log('The req.body of the post: ', req.body)
+
 		var post = new Post({
-			title: req.body.username,
-			body: req.body.password,
-			url: req.body.email,
+			title: req.body.title,
+			body: req.body.description,
+			type: req.body.type,
+			url: req.body.url,
 			dateCreated: new Date(),
-			userCreated: req.user._id
+			userCreated: req.user._id,
+			time: req.body.time
 
-    });
+		});
 
-    // Now that the user is created, we'll attempt to save them to the
-    // database.
-    user.save(function(err, user){
+		// save the post os the database
+    	post.save(function(err, post){
 
-      // If there is an error, it will come with some special codes and
-      // information. We can customize the printed message based on
-      // the error mongoose encounters
-      if(err) {
+	    	res.send('Saved post to database')
 
-        // By default, we'll show a generic message...
-        var errorMessage = 'An error occured, please try again';
+	    });
+  	},
 
-        // If we encounter this error, the duplicate key error,
-        // this means that one of our fields marked as "unique"
-        // failed to validate on this object.
-        if(err.code === 11000){
-          errorMessage = 'This user already exists.';
-        }
-
-        // Flash the message and redirect to the login view to
-        // show it.
-        req.flash('error', errorMessage);
-        console.log("ERROR : USER EXISTS")
-      }
-
-      // If we make it this far, we are ready to log the user in.
-      req.login(user, function(err){
-
-        if(!err){res.send(user)}
-
-        else{console.log('ERROR logging in!')}
-      });
-    });
-  },
+  	getAllPosts : function(req, res){
+		Post.find({}, function(err, allPosts){
+			res.send(allPosts);
+		});
+	},
+	
+	getAllUserPosts : function(req, res){
+		Post.find({}, function(err, allPosts){
+			res.send(allPosts);
+		});
 	}
+}
 
-};
 
 module.exports = indexController;

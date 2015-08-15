@@ -6,7 +6,7 @@ var postSchema = mongoose.Schema({
   body : {type: String, required: true},
   type : {type: String, required: true},
   url : {type: String},
-  dateCreated : {type: Number},
+  dateCreated : {type: Date},
   userCreated : {type: mongoose.Schema.ObjectId, ref: 'User'}, 
   time : {type: Number}
 
