@@ -8,6 +8,8 @@ var bcrypt = require('bcrypt');
  * given, the document is not inserted. Unique will prevent
  * saving if a duplicate entry is found.
  */
+
+// User Schema
 var userSchema = mongoose.Schema({
 
   username : {type: String, required: true, unique: true},
@@ -91,7 +93,7 @@ userSchema.methods.comparePassword = function(candidatePassword, next){
 };
 
 // Our user model
-var User = mongoose.model('user', userSchema);
+var User = mongoose.model('User', userSchema);
 
 // Make user model available through exports/require
 module.exports = User;

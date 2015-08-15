@@ -1,5 +1,9 @@
 div.container
 	h1 Search for Local Creatives
-	input(type="text")
+	input(type="text" ng-model="query")
+
+	ul
+		li(ng-repeat="profile in profiles | filter: query")
+			h2 {{profile.username}}
 
 	h3 Currently logged in as : {{userContainer.user.username}}

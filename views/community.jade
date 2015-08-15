@@ -1,0 +1,34 @@
+block headContent
+	link(rel="stylesheet" href="stylesheets/profile.css")
+
+div.container
+	p(ng-if="!userContainer.user") Please sign up or login post to the Community
+		a(href="#/login" class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile") Sign Up / Login
+	div(class="button-container" ng-if="userContainer.user" )	
+		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showJobForm()") Post Job
+		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showContentForm()") Post Content
+		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showEventForm()") Post Event"
+
+	form.jobPost(ng-show="jobForm")
+		div.row
+			input(placeholder="Job Title", ng-model="profileUser.profileName", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25")
+			input(placeholder="Job Description", ng-model="profileUser.profileLocation", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25") 
+			
+		div.row
+			input(placeholder="Profile Blurb", ng-model="profileUser.profileBlurb", type="text", class="validate col s9 offset-s1 profile-form" maxlength="160")
+		div.row
+			input(placeholder="Button 1 Text", ng-model="profileUser.buttonOneText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
+			input(placeholder="Button 1 URL", ng-model="profileUser.buttonOneUrl", type="text", class="validate col s4 offset-s1 profile-form")
+		div.row
+			input(placeholder="Button 2 Text", ng-model="profileUser.buttonTwoText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
+			input(placeholder="Button 2 URL", ng-model="profileUser.buttonTwoUrl", type="text", class="validate col s4 offset-s1 profile-form")
+		div.row
+			input(placeholder="Button 3 Text", ng-model="profileUser.buttonThreeText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
+			input(placeholder="Button 3 URL", ng-model="profileUser.buttonThreeUrl", type="text", class="validate col s4 offset-s1 profile-form")
+			
+		div.row
+			input(placeholder="Skills", ng-model="profileUser.skills", type="text", class="validate col s9 offset-s1 profile-form" maxlength="250")
+		div.row
+			input(placeholder="Bio", ng-model="profileUser.profileBio", type="text", class="validate col s9 offset-s1 profile-form" maxlength="250")
+		div.row
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitToServer()") Submit

@@ -72,6 +72,9 @@ app.get('/api/profiles/:username', indexController.getUser)
 // Update Profile via Submit Button
 app.post('/api/profiles/:username', indexController.updateUser)
 
+// Get all users
+app.get('/api/allUsers', indexController.getAllUsers)
+
 
 // Authentication Routes
 app.post('/login', authenticationController.processLogin); 

@@ -5,7 +5,7 @@ div.container
 	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit {{profileUser.username}}					
 	form.edit-profile(ng-show="editing")
 		div.row
-			input(name="testing" placeholder="Profile Name", ng-model="profileUser.profileName", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25")
+			input(placeholder="Profile Name", ng-model="profileUser.profileName", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25")
 			input(placeholder="Profile Location", ng-model="profileUser.profileLocation", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25") 
 		div.row
 			input(placeholder="Profile Blurb", ng-model="profileUser.profileBlurb", type="text", class="validate col s9 offset-s1 profile-form" maxlength="160")
