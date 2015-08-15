@@ -63,6 +63,10 @@
     width: 100%;
 }
 
+.posting-select {
+	border: 1px solid #1ab193;
+}
+
 /*Search/Home Page*/
 
 .search-intro {

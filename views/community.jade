@@ -4,40 +4,40 @@ block headContent
 div.container
 	div.centerize-me
 		h3.galactic-green-text Welcome to the Galactic Collective Community
-		p Please feel free to post up any cool jobs, events, or content.
-	div.centerize-me
-		p(ng-if="!userContainer.user") Please sign up or login to post to the Community
+
+	div(class="centerize-me")
+		p(ng-if="!userContainer.user" class="posting-select") Please sign up or login to post to the Community
 			a(href="#/login" class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile") Sign Up / Login
-	div(class="centerize-me" ng-if="userContainer.user")
+	div(class="centerize-me posting-select" ng-if="userContainer.user")
 		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showJobForm()") Post Job
 		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showContentForm()") Post Content
 		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showEventForm()") Post Event
 
-	form(ng-show="jobForm")
-		div.row
-			input(placeholder="Job Title", ng-model="jobFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
-			input(placeholder="Job URL", ng-model="jobFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
-			input(placeholder="Job Description", ng-model="jobFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="300") 
-		div.row
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitJob()") Submit
+		form(ng-show="jobForm")
+			div.row
+				input(placeholder="Job Title", ng-model="jobFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
+				input(placeholder="Job URL", ng-model="jobFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
+				input(placeholder="Job Description", ng-model="jobFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="300") 
+			div.row
+				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitJob()") Submit
 
-	form(ng-show="contentForm")
-		div.row
-			input(placeholder="Content Title", ng-model="contentFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
-			input(placeholder="Content URL", ng-model="contentFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
-			input(placeholder="Content Description", ng-model="contentFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="300") 
-		div.row
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitContent()") Submit
+		form(ng-show="contentForm")
+			div.row
+				input(placeholder="Content Title", ng-model="contentFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
+				input(placeholder="Content URL", ng-model="contentFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
+				input(placeholder="Content Description", ng-model="contentFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="300") 
+			div.row
+				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitContent()") Submit
 
-	form(ng-show="eventForm")
-		div.row
-			input(placeholder="Event Title", ng-model="eventFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
-			input(placeholder="Event URL", ng-model="eventFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
-			input(placeholder="Event Description", ng-model="eventFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="200") 
-			input(ng-model="eventFormData.time", type="date", class="datepicker col s4 offset-s1 profile-form")
+		form(ng-show="eventForm")
+			div.row
+				input(placeholder="Event Title", ng-model="eventFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
+				input(placeholder="Event URL", ng-model="eventFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
+				input(placeholder="Event Description", ng-model="eventFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="200") 
+				input(ng-model="eventFormData.time", type="date", class="datepicker col s4 offset-s1 profile-form")
 
-		div.row
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitEvent()") Submit
+			div.row
+				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitEvent()") Submit
 	
 	ul.collection
 		li(ng-repeat="post in posts" class="collection-item avatar")
