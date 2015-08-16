@@ -3,12 +3,12 @@ block headContent
 
 div.container
 	div.centerize-me
-		h3.galactic-green-text Welcome to the Galactic Collective Community
+		h3.galactic-green-text(class="bottom-space") The Denver/Boulder Galactic Community
 
 	div(class="centerize-me")
-		p(ng-if="!userContainer.user" class="posting-select") Please sign up or login to post to the Community
+		p(ng-if="!userContainer.user" class="posting-select galactic-grey-text") Sign in to share events, jobs and content with other creatives and freelancers in the Boulder/Denver area. 
 			a(href="#/login" class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile") Sign Up / Login
-	div(class="centerize-me posting-select" ng-if="userContainer.user")
+	div(class="centerize-me posting-select bottom-space" ng-if="userContainer.user")
 		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showJobForm()") Post Job
 		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showContentForm()") Post Content
 		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showEventForm()") Post Event
@@ -39,14 +39,16 @@ div.container
 			div.row
 				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitEvent()") Submit
 	
-	ul.collection
+	div.bottom-space
+
+	ul.collection(class="top-space")
 		li(ng-repeat="post in posts" class="collection-item avatar")
 			div.row
 				div(class="col s6 offset-s3")
 					img(src="images/test_profile_pic.png" alt="" class="circle")
 					a(ng-href="#/profile/{{post.userCreated.profileName}}" class="galactic-green-text") {{post.userCreated}}
 					h3.galactic-green-text {{post.title}}
-					p {{post.body}}
+					p.galactic-grey-text {{post.body}}
 					a(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
 
 

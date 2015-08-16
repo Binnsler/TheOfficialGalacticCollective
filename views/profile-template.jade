@@ -2,7 +2,7 @@ block headContent
 	link(rel="stylesheet" href="stylesheets/main.css")
 
 div.container
-	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit {{profileUser.username}}					
+	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit Profile					
 	form.edit-profile(ng-show="editing")
 		div.row
 			input(placeholder="Profile Name", ng-model="profileUser.profileName", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25")
@@ -34,7 +34,7 @@ div.container
 			div(class="col s9 right-profile")
 				h2(class="profile-text") {{profileUser.profileName}}
 				h4(class="profile-text") {{profileUser.profileLocation}}
-				p(class="profile-text") {{profileUser.profileBlurb}}
+				p(class="profile-text galactic-grey-text") {{profileUser.profileBlurb}}
 				div.btn-container
 					a(class="waves-effect btn-flat white btn-profile" ng-href="https://{{profileUser.buttonOneUrl}}") {{profileUser.buttonOneText}}
 					a(class="waves-effect btn-flat white btn-profile" ng-href="https://{{profileUser.buttonTwoUrl}}") {{profileUser.buttonTwoText}}
@@ -44,20 +44,20 @@ div.container
 	div.bottom-profile(class="col s12")
 		div.row
 			div(class="col s6 profile-skills")
-					h5 Skills
-					p {{profileUser.skills}}
+					h5.galactic-green-text Skills
+					p.galactic-grey-text {{profileUser.skills}}
 
 			div(class="col s6 profile-bio")
-				h5 Bio
-				p {{profileUser.profileBio}}
+				h5.galactic-green-text Bio
+				p.galactic-grey-text {{profileUser.profileBio}}
 
 	div.allPosts
-		h3(class="galactic-green-text centerize-me") Posts
+		h3(class="galactic-grey-text centerize-me") Posts
 		ul.collection
 			li(ng-repeat="post in posts" class="collection-item avatar")
 				div.row
 					div(class="col s8 offset-s2")
-						h3.galactic-green-text {{post.title}}
+						h3.galactic-greeen-text {{post.title}}
 						p {{post.body}}
 						a(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
 

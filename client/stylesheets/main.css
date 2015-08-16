@@ -4,6 +4,10 @@
 	color: #1ab193;
 }
 
+.galactic-grey-text {
+	color: #999999;
+}
+
 .centerize-me {
 	text-align: center;
 }
@@ -57,6 +61,13 @@
 
 /*Community Page*/
 
+.bottom-space {
+	margin-bottom : 1em;
+}
+
+.top-space {
+	margin-top : 1em;
+}
 .postForm {
 	margin-left: 25%;
     margin-right:25%;
@@ -69,9 +80,29 @@
 
 /*Search/Home Page*/
 
+.splashImageBox {
+	width: 100%;
+}
+
+.splashImageBox img {
+	width: 100%;
+}
+
 .search-intro {
+
+	margin: 2em 0;
+}
+
+.search-sub-intro {
+	font-size: 1.9em;
 	margin-bottom: 1em;
 }
+
+.search-div {
+	border: 1px solid #1ab193;
+	padding: 1vh 1em;
+}
+
 .profilePicCircle {
 	width: 125px; // These are your circle dimensions
     height: 125px;

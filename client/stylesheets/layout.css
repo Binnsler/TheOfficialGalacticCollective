@@ -8,5 +8,9 @@ nav {
 }
 
 .nav-element > a {
-	color: black;
+	color: #999999;
+}
+
+.brand-logo {
+	margin: 1vh 1em;
 }
