@@ -5,22 +5,19 @@ block headContent
 div.container
 	p Currently logged in as : {{userContainer.user.username}}
 	div.row
-		div(class="col 6 offset-s1")
+		div(class="col 8 offset-s1")
 			h2.splash-intro(class="centerize-me galactic-green-text") Welcome to the Galactic Collective
 			h4(class="search-sub-intro centerize-me galactic-grey-text") Your local community of professional, proven creatives.
 			div.row
 				p.galactic-grey-text(class="col s6 offset-s3") The Galactic Collective was formed to support the hardworking creative/freelancer industry. If you have any questions, please reach out on Twitter 
 					a(href="https://twitter.com/galacticboulder") @galacticboulder.
-	div.splashImageBox
-		div
-			img(src="images/Galactic-Splash.png")
-	div.
-	h3.search-intro(class="centerize-me galactic-green-text") Search for Local Creatives Near You
+	div
+	h4.search-intro(class="centerize-me galactic-green-text") Search for Local Creatives Near You
 	div.row
-		input(class="col s8 offset-s2" type="text" ng-model="query" placeholder="Search by name, location or skills")
+		input(class="col s8 offset-s2 search-box" type="text" ng-model="query" placeholder="Search by name, location or skills")
 
 	ul.collection
-		li(ng-repeat="profile in profiles | filter: query" class="collection-item avatar")
+		li(ng-repeat="profile in profiles | filter: query | limitTo: 10" class="collection-item avatar")
 			div.row
 				div(class="col s2 offset-s2 left-profile")
 					img(src="images/test_profile_pic.png" alt="" class="profilePicCircle")
