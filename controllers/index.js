@@ -1,6 +1,7 @@
 var User = require('../models/user');
 var Post = require('../models/post');
 var mongoose = require('mongoose');
+var moment = require('moment');
 
 var indexController = {
 	index: function(req, res) {
@@ -48,20 +49,57 @@ var indexController = {
 		// save the post os the database
     	post.save(function(err, post){
 
-	    	res.send('Saved post to database')
+    		Post.findOne({_id: post._id}).populate('userCreated').exec(function(err, post){
+	    		res.send(post)
+    		});
 
 	    });
   	},
 
   	getAllPosts : function(req, res){
-		Post.find({}, function(err, allPosts){
+		Post.find({}).populate('userCreated').exec(function(err, allPosts){
 			res.send(allPosts);
 		});
 	},
 	
 	getAllUserPosts : function(req, res){
-		Post.find({}, function(err, allPosts){
-			res.send(allPosts);
+		User.findOne({username : req.query.username}, function(err, user){
+			if(user){
+				Post.find({userCreated: user._id}, function(err, allPosts){
+					res.send(allPosts);
+				});
+			}
+			else {
+				res.send([]);
+			}
+
+		});
+	},
+
+	iLikeThisPostProfile : function(req, res){
+		Post.findOneAndUpdate({_id: req.body._id}, {$inc: {likes: 1}}, function(err, userData){
+			console.log('This is the backend error: ', err)
+			res.send(userData)
+		});
+		console.log(req.body.userCreated._id)
+		User.findOneAndUpdate({_id: req.body.userCreated}, {$inc: {likes: 1}}, function(err, userData){
+			console.log('This is the backend error: ', err)
+		});
+	},
+
+	iLikeThisPostCommunity : function(req, res){
+		Post.findOneAndUpdate({_id: req.body._id}, {$inc: {likes: 1}}, function(err, userData){
+			console.log('This is the backend error: ', err)
+			res.send(userData)
+		});
+		
+		User.findOneAndUpdate({_id: req.body.userCreated._id}, {$inc: {likes: 1}}, function(err, userData){
+			console.log('This is the backend error: ', err)
+		});
+	},
+	deletePost : function(req, res){
+		Post.remove({ _id: req.params.id }, function(err, response) {
+    		res.send(response);
 		});
 	}
 }

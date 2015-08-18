@@ -14,3 +14,15 @@ nav {
 .brand-logo {
 	margin: 1vh 1em;
 }
+
+h1, h2, h3 {
+	font-family: Helvetica;
+}
+
+p, h4, h5 {
+	font-family: Arial;
+}
+
+.btn-flat {
+	font-family: Arial;
+}

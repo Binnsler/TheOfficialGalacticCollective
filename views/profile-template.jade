@@ -1,5 +1,7 @@
 block headContent
 	link(rel="stylesheet" href="stylesheets/main.css")
+	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+
 
 div.container
 	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit Profile					
@@ -52,14 +54,24 @@ div.container
 				p.galactic-grey-text {{profileUser.profileBio}}
 
 	div.allPosts
-		h3(class="galactic-grey-text centerize-me") Posts
-		ul.collection
+		h3(class="galactic-grey-text") Posts
+		ul.collection(class="top-space")
 			li(ng-repeat="post in posts" class="collection-item avatar")
 				div.row
-					div(class="col s8 offset-s2")
-						h3.galactic-greeen-text {{post.title}}
-						p {{post.body}}
+					div(class="col s2")
+						a(ng-show="userContainer.user._id === post.userCreated" ng-click="deletePost(post)") Delete
+						div.likesContainer
+							div.number-div
+								p(class="col s1 post-likes") {{post.likes}}
+							div.likes-div
+								a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostProfile(post)")
+					div(class="col s8")
+						h4.galactic-green-text {{post.title}}
+						p.galactic-grey-text {{post.body}}
 						a(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
+						p.galactic-blue-text(ng-if="post.time") Event Date: {{post.time}}
+						div 
+							p.galactic-grey-text.date-created {{post.dateCreated}}
 
 
 

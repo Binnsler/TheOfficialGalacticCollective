@@ -30,7 +30,8 @@ var userSchema = mongoose.Schema({
   backgroundColor : {type: String, default: '1ab193'},
   textColor : {type: String, default: 'white'},
   likes : {type: Number, default: 0},
-  creationTimeStamp : {type: Number}
+  creationTimeStamp : {type: Number},
+  dateCreated : {type: Date}
 
 
 });

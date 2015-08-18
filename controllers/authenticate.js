@@ -33,20 +33,6 @@ var performLogin = function(req, res, next, user){
  */
 var authenticationController = {
 
-  // The route-handler for the /login route. Meant to be
-  // a page view that only shows login forms
-  login: function(req, res){
-    // Render the login jade template.
-    // We are using the "flash" system, which are variables
-    // that can be sent from view to view and are removed
-    // after use. Useful for quick messages like "failed to login."
-    // In this case, we pull any existing flash message id'd as "error"
-    // and pass it to the view.
-    res.render('login', {
-      error: req.flash('error')
-    });
-  },
-
   // This is the post handler for any incoming login attempts.
   // Passing "next" allows us to easily handle any errors that may occur.
   processLogin: function(req, res, next){
@@ -66,7 +52,7 @@ var authenticationController = {
       // to that handler.
       if(!user) {
         req.flash('error', 'User not in the database or password mismatch');
-        return res.send({err: 'ERROR WILL ROBINSON'});
+        res.send({err: 'ERROR WILL ROBINSON'});
       }
       
       // If we make it this far, the user has correctly authenticated with passport
@@ -96,7 +82,8 @@ var authenticationController = {
     var user = new User({
       username: req.body.username,
       password: req.body.password,
-      email: req.body.email
+      email: req.body.email,
+      dateCreated: new Date()
     });
 
     // Now that the user is created, we'll attempt to save them to the
@@ -122,6 +109,7 @@ var authenticationController = {
         // show it.
         req.flash('error', errorMessage);
         console.log("ERROR : USER EXISTS")
+        res.send({err: 'This user exists'})
       }
 
       // If we make it this far, we are ready to log the user in.

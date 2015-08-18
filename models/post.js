@@ -8,7 +8,9 @@ var postSchema = mongoose.Schema({
   url : {type: String},
   dateCreated : {type: Date},
   userCreated : {type: mongoose.Schema.ObjectId, ref: 'User'}, 
-  time : {type: Number}
+  time : {type: Date},
+  likes : {type: Number, default: 0},
+  type: {type: String}
 
 });
 

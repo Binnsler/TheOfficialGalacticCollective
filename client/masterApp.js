@@ -58,8 +58,43 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 	$http.get('/api/allPosts').
 		then(function(returnData){
-			$scope.posts = returnData.data;
+			$scope.posts = returnData.data.reverse();
+			$scope.posts.forEach(function(post){
+		    	post.dateCreated = (new Date(post.dateCreated)).toDateString();
+		    })
 		})
+
+	// $scope.theDate = post.dateCreated.toISOString();
+
+	// Delete a Post
+	$scope.deletePost = function(post, index){
+		console.log('This is the post: ', post, index)
+
+		$http.delete('/api/posts/' + post._id).
+		then(function(response){
+
+				$scope.posts.splice(index, 1)
+				
+		}, function(response){
+				$scope.posts.splice(index, 1)
+
+				
+		});
+	};
+	// Like a Post and Update Respective User
+	$scope.iLikeThisPostCommunity = function(post){
+		post.likes += 1;
+		console.log(post._id)
+		$http.post('/api/ilikethispostcommunity', post).
+		then(function(response) {
+		    		console.log(response.err)
+
+		  		}, function(response) {
+				    // post.likes = response.body
+				    console.log('Hi')
+
+		  	});
+	}
 
 	// Show Post forms on respective button click
 	 $scope.showJobForm = function(){
@@ -81,35 +116,43 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 	 };
 
 	// Submit Posts to database
-	$scope.submitJob = function() {
-		$scope.jobFormData.type = 'job';
-		$http.post('/api/posts', $scope.jobFormData).
+	$scope.submitJob = function(jobFormData) {
+		console.log(jobFormData)
+		jobFormData.type = 'job';
+		$http.post('/api/posts', jobFormData).
 
 		  		then(function(response) {
-		    		console.log(response)
+		    		$scope.posts.unshift(response.data)
+		    		$scope.posts.forEach(function(post){
+		    			post.dateCreated = (new Date(post.dateCreated)).toDateString();
+		    		})
 
 		  		}, function(response) {
-				    console.log('Successfully submitted a job')
+
+				    console.log('2nd Response Submit Job')
 
 		  	});
 	};
 
-	$scope.submitContent = function() {
-		$scope.contentFormData.type = 'content';
-		$http.post('/api/posts', $scope.contentFormData).
+	$scope.submitContent = function(contentFormData) {
+		contentFormData.type = 'content';
+		$http.post('/api/posts', contentFormData).
 
 		  		then(function(response) {
-		    		console.log(response.err)
+		    		$scope.posts.unshift(response.data)
+		    		$scope.posts.forEach(function(post){
+		    			post.dateCreated = (new Date(post.dateCreated)).toDateString();
+		    		})
 
 		  		}, function(response) {
-				    console.log('Successfully submitted content')
+				    console.log('2nd Response Submit Content')
 
 		  	});
 	};
 
-	$scope.submitEvent = function() {
-		$scope.eventFormData.type = 'event';
-		$http.post('/api/posts', $scope.eventFormData).
+	$scope.submitEvent = function(eventFormData) {
+		eventFormData.type = 'event';
+		$http.post('/api/posts', eventFormData).
 
 		  		then(function(response) {
 		    		if(response.err){
@@ -117,13 +160,16 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 		    		}
 
 		    		else{
-		    			console.log('Successfully submitted an event')
+		    			$scope.posts.unshift(response.data)
+		    			$scope.posts.forEach(function(post){
+		    			post.dateCreated = (new Date(post.dateCreated)).toDateString();
+		    			})
 		    		}
 
 		    		
 
 		  		}, function(response) {
-				    console.log('HTTP error for creating post.')
+				    console.log('2nd Response Submit Event')
 
 		  	});
 	};
@@ -154,14 +200,33 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 
 	$scope.editing = false;
 
-	// WHY DOES $scope.profileUser give me an object, but $scope.profileUser._id give me 'undefined'????
-	console.log($scope.profileUser)
-
 	// Get request to get all the user's posts
-	// $http.get('/api/allUserPosts', $scope.profileUser._id).
-	// 	then(function(returnData){
-	// 		$scope.posts = returnData.data;
-	// 	})
+	$http.get('/api/allUserPosts?username=' + $routeParams.username).
+		then(function(returnData){
+			$scope.posts = returnData.data.reverse();
+			$scope.posts.forEach(function(post){
+		    	post.dateCreated = (new Date(post.dateCreated)).toDateString();
+		    })
+
+
+		});
+
+	// Delete a Post
+	$scope.deletePost = function(post, index){
+		console.log('This is the post: ', post, index)
+
+		$http.delete('/api/posts/' + post._id).
+		then(function(response){
+
+				$scope.posts.splice(index, 1)
+				
+		}, function(response){
+				$scope.posts.splice(index, 1)
+
+				
+		})
+	};
+
 
 	// Turn on/off editing
 	$scope.onEditting = function(){	
@@ -169,9 +234,25 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 	};
 
 	$scope.submitToServer = function(){
-		userFactory.model.save($scope.profileUser);
+		// userFactory.model.save($scope.profileUser);
+		$scope.profileUser.$save();
 		$scope.editing = false;
 	};
+
+	// Like a Post and Update Respective User
+	$scope.iLikeThisPostProfile = function(post){
+		post.likes += 1;
+		$scope.profileUser.likes += 1;
+		$http.post('/api/ilikethispostprofile', post).
+		then(function(response) {
+		    		console.log(response.err)
+
+		  		}, function(response) {
+				    post.likes = response.body
+				    console.log('Hi')
+
+		  	});
+	}
 
 });
 
@@ -186,6 +267,8 @@ masterApp.controller('loginController', function($scope, $http, $resource, $loca
 
 	  		then(function(response) {
 
+	  			$scope.loginError = false;
+
 	  			// If the HTTP request is successful, but passport has errors:
 		    	if(response.err){
 		    		console.log('Login request complete, but errors:', response.err)
@@ -198,6 +281,7 @@ masterApp.controller('loginController', function($scope, $http, $resource, $loca
 		    	// HTTP error
 	  		}, function(response) {
 			    console.log('Angular login error: ', response.data)
+			    $scope.loginError = true;
 
 	  	});
 		
@@ -210,12 +294,22 @@ masterApp.controller('loginController', function($scope, $http, $resource, $loca
 
 	  		then(function(response) {
 
-	    		$scope.userContainer.user = response.data;
+	  			if(response.data.err){
+	  				$scope.signUpError = true;
 
-	    		$location.url('/profile/' + response.data.username, {user: response.data.data})
+	  			}
 
+	  			else{
+
+		  			$scope.signUpError = false;	
+
+		    		$scope.userContainer.user = response.data;
+
+		    		$location.url('/profile/' + response.data.username, {user: response.data.data})
+	    		}
 	  		}, function(response) {
-			    console.log('Error signing up: ', response.data)
+
+			    $scope.signUpError = true;
 
 	  	});
 		

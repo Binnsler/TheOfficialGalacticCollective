@@ -1,20 +1,22 @@
 block headContent
 	link(rel="stylesheet" href="stylesheets/main.css")
-	link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+	
 
 div.container
-	p Currently logged in as : {{userContainer.user.username}}
 	div.row
 		div(class="col 8 offset-s1")
-			h2.splash-intro(class="centerize-me galactic-green-text") Welcome to the Galactic Collective
+			h2.splash-intro(class="centerize-me galactic-blue-text") Welcome to the Galactic Collective
 			h4(class="search-sub-intro centerize-me galactic-grey-text") Your local community of professional, proven creatives.
 			div.row
-				p.galactic-grey-text(class="col s6 offset-s3") The Galactic Collective was formed to support the hardworking creative/freelancer industry. If you have any questions, please reach out on Twitter 
-					a(href="https://twitter.com/galacticboulder") @galacticboulder.
+				p.galactic-grey-text(class="col s8 offset-s2") The Galactic Collective was formed to create a community which would help to support the hardworking creative/freelancer industry. Please visit the community page to find user created events, jobs, and content. If you have any questions, please reach out on Twitter 
+					a.blue-link(href="https://twitter.com/galacticboulder") @galacticboulder.
 	div
-	h4.search-intro(class="centerize-me galactic-green-text") Search for Local Creatives Near You
-	div.row
-		input(class="col s8 offset-s2 search-box" type="text" ng-model="query" placeholder="Search by name, location or skills")
+	div.centerize-me
+		img(src="images/light-sabre.png")
+	div.row(class="search-container")
+		//- h5.search-intro(class="centerize-me galactic-green-text") Search for Local Creatives Near You
+		input(class="col s8 offset-s2 search-box" type="text" ng-model="query" placeholder="Search for creatives by name, location or skills")
 
 	ul.collection
 		li(ng-repeat="profile in profiles | filter: query | limitTo: 10" class="collection-item avatar")
@@ -25,4 +27,8 @@ div.container
 					a(ng-href="#/profile/{{profile.username}}" class="galactic-green-text profile-nav") {{profile.profileName}}
 					h5.search-location {{profile.profileLocation}}
 					p {{profile.skills}}
-					h5.search-likes Likes {{profile.likes}}
+					div
+						div.number-div
+							p(class="col s1") {{profile.likes}}
+						div.likes-div
+							a(class="col s1 fa fa-heart hearts")

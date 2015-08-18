@@ -84,6 +84,14 @@ app.get('/api/allPosts', indexController.getAllPosts)
 // Get all of a User's Posts
 app.get('/api/allUserPosts', indexController.getAllUserPosts)
 
+// Post +1 Community Page
+app.post('/api/ilikethispostcommunity', indexController.iLikeThisPostCommunity)
+
+// Post +1 Profile Page
+app.post('/api/ilikethispostprofile', indexController.iLikeThisPostProfile)
+
+// Delete Post Community Page
+app.delete('/api/posts/:id', indexController.deletePost)
 
 // Authentication Routes
 app.post('/login', authenticationController.processLogin); 
