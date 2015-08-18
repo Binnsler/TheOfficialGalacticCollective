@@ -1,7 +1,6 @@
 var User = require('../models/user');
 var Post = require('../models/post');
 var mongoose = require('mongoose');
-var moment = require('moment');
 
 var indexController = {
 	index: function(req, res) {
