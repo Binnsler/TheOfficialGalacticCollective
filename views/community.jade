@@ -47,7 +47,7 @@ div.container
 				div(class="col s2")
 					img(src="images/test_profile_pic.png" alt="" class="circle")
 					a(ng-href="#/profile/{{post.userCreated.username}}" class="galactic-blue-text") {{post.userCreated.profileName}}
-					a.delete-button(ng-show="userContainer.user._id === post.userCreated._id" ng-click="deletePost(post, $index)" class="delete-button") Delete
+					a.delete-button(ng-show="userContainer.user._id === post.userCreated._id" ng-click="deletePost(post, $index)") Delete
 					div.likesContainer
 						div.number-div
 							p(class="col s1 post-likes") {{post.likes}}

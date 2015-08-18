@@ -163,7 +163,9 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 		    			$scope.posts.unshift(response.data)
 		    			$scope.posts.forEach(function(post){
 		    			post.dateCreated = (new Date(post.dateCreated)).toDateString();
+		    			post.time = (new Date(post.time)).toDateString();
 		    			})
+		    			
 		    		}
 
 		    		
@@ -206,6 +208,7 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 			$scope.posts = returnData.data.reverse();
 			$scope.posts.forEach(function(post){
 		    	post.dateCreated = (new Date(post.dateCreated)).toDateString();
+		    	post.time = (new Date(post.time)).toDateString();
 		    })
 
 
