@@ -7,7 +7,7 @@ div(class="container")
 			img(src="images/Galactic-Splash.png")
 	div(class="row")
 		form(class="col s6 offset-s3" ng-submit="login()")
-			h3(class="galactic-green-text centerize-me") Welcome Back
+			h3(class="galactic-blue-text centerize-me") Welcome Back
 			p(ng-show="loginError" class="errorText") Username or password is incorrect.
 			div(class="input-field col s12")
 				input(placeholder="Username", ng-model="loginFormData.username", type="text", class="validate")
@@ -22,7 +22,7 @@ div(class="container")
 
 	div(class="row")
 		form(class="col s6 offset-s3", ng-submit="signup()")
-			h3(class="galactic-green-text centerize-me") Join the Community
+			h3(class="galactic-blue-text centerize-me") Join the Community
 			p(ng-show="signUpError" class="errorText") User already exists in userbase.
 			div(class="input-field col s12")
 				input(placeholder="Username (displayed as @username)", ng-model="signUpFormData.username", type="text", class="validate")
