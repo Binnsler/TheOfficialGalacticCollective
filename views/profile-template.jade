@@ -56,10 +56,10 @@ div.container
 	div.allPosts
 		h3(class="galactic-grey-text") Posts
 		ul.collection(class="top-space")
-			li(ng-repeat="post in posts" class="collection-item avatar")
+			li(ng-repeat="post in posts track by $index | orderBy : '-dateCreated'" class="collection-item avatar")
 				div.row
 					div(class="col s2")
-						a(ng-show="userContainer.user._id === post.userCreated" ng-click="deletePost(post)") Delete
+						a(ng-show="userContainer.user._id === post.userCreated" ng-click="deletePost(post, $index)") Delete
 						div.likesContainer
 							div.number-div
 								p(class="col s1 post-likes") {{post.likes}}

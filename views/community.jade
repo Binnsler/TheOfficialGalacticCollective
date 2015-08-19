@@ -57,7 +57,7 @@ div.container
 					h4.galactic-green-text {{post.title}}
 					p.galactic-grey-text {{post.body}}
 					a(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
-					p.galactic-blue-text(ng-if="post.time") Event Date: {{post.time}}
+					p.galactic-blue-text(ng-if="post.time !== null") Event Date: {{post.time}}
 					div 
 						p.galactic-grey-text.date-created {{post.dateCreated}}
 
