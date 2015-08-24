@@ -34,8 +34,8 @@ app.use(express.static(__dirname + '/client'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
-// Connect to DB
-mongoose.connect('mongodb://localhost/galactic-collective');
+// Connect to DB (for messing around in localhost)
+// mongoose.connect('mongodb://localhost/galactic-collective');
 
 // Add in the cookieParser and flash middleware so we can
 // use them later
