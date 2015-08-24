@@ -113,6 +113,6 @@ app.get('/api/me', indexController.authenticate)
 // app.use(passportConfig.ensureAuthenticated);
 
 // Our server
-var server = app.listen(9359, function() {
-	console.log('Express server listening on port ' + server.address().port);
-});
+// var server = app.listen(9359, function() {
+// 	console.log('Express server listening on port ' + server.address().port);
+// });
