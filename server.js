@@ -35,7 +35,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
 // Connect to DB (for messing around in localhost)
-// mongoose.connect('mongodb://localhost/galactic-collective');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/galactic-collective');
 
 // Add in the cookieParser and flash middleware so we can
 // use them later
@@ -113,6 +113,7 @@ app.get('/api/me', indexController.authenticate)
 // app.use(passportConfig.ensureAuthenticated);
 
 // Our server
-// var server = app.listen(9359, function() {
-// 	console.log('Express server listening on port ' + server.address().port);
-// });
+var port = process.env.PORT || 9359
+var server = app.listen(port, function() {
+	console.log('Express server listening on port ' + port);
+});
