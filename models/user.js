@@ -15,7 +15,7 @@ var userSchema = mongoose.Schema({
   username : {type: String, required: true, unique: true},
   email : {type: String, required: true, unique: true},
   password : {type: String, required: true},
-  profilePic : {type: String},
+  profilePic : {type: String, default: 'https://s3-us-west-2.amazonaws.com/galacticcollective/test_profile_pic.png'},
   profileName : {type: String, default: 'Profile Name'},
   profileLocation : {type: String, default: 'Location, LO'},
   profileBlurb : {type: String, default: '160 character blurb.' },
