@@ -12,6 +12,9 @@ div.container
 		div.row
 			input(placeholder="Profile Blurb", ng-model="profileUser.profileBlurb", type="text", class="validate col s10 offset-s1 profile-form" maxlength="160")
 		div.row
+			label(for="profilePicUpload") Profile Picture
+			input(type="file" id="profilePicUpload" file-model="profileUser.file")
+		div.row
 			input(placeholder="Button 1 Text", ng-model="profileUser.buttonOneText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
 			input(placeholder="Button 1 URL", ng-model="profileUser.buttonOneUrl", type="text", class="validate col s4 offset-s2 profile-form")
 		div.row
