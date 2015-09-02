@@ -194,7 +194,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory){
+masterApp.controller('profileController', ['$scope', 'multipartForm', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm){
 
 	$scope.userContainer = authenticateUser;
 
@@ -236,9 +236,20 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 		$scope.editing = true;
 	};
 
+	// Submit Profile Updates to Server
 	$scope.submitToServer = function(){
-		// userFactory.model.save($scope.profileUser);
-		$scope.profileUser.$save();
+		
+		multipartForm.postForm('/uploadForm', $scope.profileUser);
+
+		// $scope.profileUser.$save();
+		// $http.post('/uploadPic', $scope.uploadPic).
+		// then(function(response) {
+		//     		console.log(response.err)
+
+		//   		}, function(response) {
+		// 		    console.log(response.body)
+
+		//   	});
 		$scope.editing = false;
 	};
 
@@ -257,7 +268,7 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 		  	});
 	}
 
-});
+}]);
 
 // Controls all login/signup/logout functionality (see server.js and authenticate.js for backend routes and functionality)
 masterApp.controller('loginController', function($scope, $http, $resource, $location, authenticateUser){

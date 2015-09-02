@@ -27,6 +27,9 @@ var passportConfig = require('./config/passport');
 var indexController = require('./controllers/index.js');
 var authenticationController = require('./controllers/authenticate.js')
 
+// Allows you to accept multipart form data
+var multer = require('multer');
+
 var app = express();
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
@@ -71,6 +74,9 @@ app.get('/api/profiles/:username', indexController.getUser)
 
 // Update Profile via Submit Button
 app.post('/api/profiles/:username', indexController.updateUser)
+
+// Upload Profile Pic
+app.post('/uploadForm', indexController.uploadForm)
 
 // Get all users
 app.get('/api/allUsers', indexController.getAllUsers)

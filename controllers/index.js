@@ -96,10 +96,17 @@ var indexController = {
 			console.log('This is the backend error: ', err)
 		});
 	},
+
 	deletePost : function(req, res){
 		Post.remove({ _id: req.params.id }, function(err, response) {
     		res.send(response);
 		});
+	},
+
+	uploadForm : function(req, res){
+		console.log(req.body);
+		console.log(req.files);
+		res.send(data)
 	}
 }
 
