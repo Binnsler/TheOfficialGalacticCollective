@@ -194,7 +194,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', ['multipartForm', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm){
+masterApp.controller('profileController', ['userFactory','multipartForm', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm){
 
 	$scope.userContainer = authenticateUser;
 
