@@ -122,7 +122,7 @@ var indexController = {
 	 //    });
 		
 		console.log(req.body);
-		console.log(req.files);
+		console.log(req.file);
 		// res.send(data)
 	}
 }
