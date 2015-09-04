@@ -27,6 +27,26 @@ masterApp.config(function($routeProvider){
 	})
 });
 
+// Service for Multiform Upload
+masterApp.service('multipartForm', function($http){
+
+	this.postForm = function(uploadUrl, data){
+		var formData = new FormData();
+		// Convert data into formData (an object with key: value pairs)
+		for(var key in data){
+			formData.append(key, data[key]);
+		};
+
+		// Post formData - the third argument is a configuration
+		$http.post(uploadUrl, formData, {
+			// Don't serialize it (angular does automatically)
+			transformRequest: angular.identity,
+			headers: {'Content-Type': undefined}
+		})
+	}
+
+})
+
 // Factory to query who is currently logged in
 masterApp.factory('authenticateUser', function($http){
 
@@ -240,8 +260,8 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 	$scope.submitToServer = function(){
 		
 		console.log($scope.profileUser)
+		console.log('I just ran.')
 		multipartForm.postForm('/uploadForm', $scope.profileUser);
-
 		// $scope.profileUser.$save();
 		// $http.post('/uploadPic', $scope.uploadPic).
 		// then(function(response) {
