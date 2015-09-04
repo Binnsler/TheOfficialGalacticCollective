@@ -17,7 +17,7 @@ masterApp.service('multipartForm', function($http){
 		    		console.log(response.err)
 
 		  		}, function(response) {				
-				    console.log(response.body)
+				    console.log(response)
 
 		  	});
 	}
