@@ -29,7 +29,7 @@ var authenticationController = require('./controllers/authenticate.js')
 
 // Allows you to accept multipart form data
 var multer = require('multer');
-var upload = multer({ dest: '/uploads' })
+var upload = multer({ dest: './uploads' })
 
 // AWS Stuff
 var AWS = require('aws-sdk');
