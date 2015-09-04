@@ -239,6 +239,7 @@ masterApp.controller('profileController', ['$scope', 'multipartForm', function($
 	// Submit Profile Updates to Server
 	$scope.submitToServer = function(){
 		
+		console.log($scope.profileUser)
 		multipartForm.postForm('/uploadForm', $scope.profileUser);
 
 		// $scope.profileUser.$save();
