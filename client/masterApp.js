@@ -194,7 +194,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', ['userFactory','multipartForm', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm){
+masterApp.controller('profileController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm){
 
 	$scope.userContainer = authenticateUser;
 
@@ -269,7 +269,7 @@ masterApp.controller('profileController', ['userFactory','multipartForm', functi
 		  	});
 	}
 
-}]);
+});
 
 // Controls all login/signup/logout functionality (see server.js and authenticate.js for backend routes and functionality)
 masterApp.controller('loginController', function($scope, $http, $resource, $location, authenticateUser){
