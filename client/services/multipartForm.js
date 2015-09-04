@@ -1,4 +1,4 @@
-masterApp.service('multipartForm', ['$http', function($http){
+masterApp.service('multipartForm', function($http){
 
 	this.postForm = function(uploadUrl, data){
 		var formData = new FormData();
@@ -15,4 +15,4 @@ masterApp.service('multipartForm', ['$http', function($http){
 		})
 	}
 
-}])
+})
