@@ -123,7 +123,7 @@ var indexController = {
 		
 		console.log(req.body);
 		console.log(req.file);
-		res.send({data: 'Ping back from the server.'})
+		res.send('Ping back from the server.')
 	}
 }
 
