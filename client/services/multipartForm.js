@@ -12,7 +12,15 @@ masterApp.service('multipartForm', function($http){
 			// Don't serialize it (angular does automatically)
 			transformRequest: angular.identity,
 			headers: {'Content-Type': undefined}
-		})
+		}).
+		then(function(response) {
+		    		console.log(response.err)
+
+		  		}, function(response) {				
+				    console.log(response.body)
+
+		  	});
+	}
 	}
 
 })
