@@ -123,7 +123,8 @@ var indexController = {
 		
 		console.log(req.body);
 		console.log(req.file);
-		res.send('Ping back from the server.')
+		console.log('I am the SERVER, your leader.');
+		res.send('Ping back from the server.');
 	}
 }
 
