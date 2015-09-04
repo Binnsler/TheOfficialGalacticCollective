@@ -82,7 +82,7 @@ app.get('/api/profiles/:username', indexController.getUser)
 app.post('/api/profiles/:username', indexController.updateUser)
 
 // Upload Profile Pic
-app.post('/uploadForm', upload.single(), indexController.uploadForm)
+app.post('/uploadForm', upload.single('avatar'), indexController.uploadForm)
 
 // Get all users
 app.get('/api/allUsers', indexController.getAllUsers)
