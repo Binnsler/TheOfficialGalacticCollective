@@ -5,7 +5,7 @@ block headContent
 
 div.container
 	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit Profile					
-	form.edit-profile(ng-show="editing")
+	form.edit-profile(ng-show="editing" enctype="multipart/form-data")
 		div.row
 			input(placeholder="Profile Name", ng-model="profileUser.profileName", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25")
 			input(placeholder="Profile Location", ng-model="profileUser.profileLocation", type="text", class="validate col s4 offset-s2 profile-form" maxlength="25") 

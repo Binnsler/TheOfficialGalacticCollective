@@ -29,6 +29,12 @@ var authenticationController = require('./controllers/authenticate.js')
 
 // Allows you to accept multipart form data
 var multer = require('multer');
+var upload = multer({ dest: '/uploads' })
+
+// AWS Stuff
+var AWS = require('aws-sdk');
+var s3 = new AWS.S3();
+
 
 var app = express();
 app.set('view engine', 'jade');
@@ -76,7 +82,7 @@ app.get('/api/profiles/:username', indexController.getUser)
 app.post('/api/profiles/:username', indexController.updateUser)
 
 // Upload Profile Pic
-app.post('/uploadForm', indexController.uploadForm)
+app.post('/uploadForm', upload.single(), indexController.uploadForm)
 
 // Get all users
 app.get('/api/allUsers', indexController.getAllUsers)

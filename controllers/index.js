@@ -1,6 +1,8 @@
 var User = require('../models/user');
 var Post = require('../models/post');
 var mongoose = require('mongoose');
+var AWS = require('aws-sdk');
+var s3 = new AWS.S3();
 
 var indexController = {
 	index: function(req, res) {
@@ -104,9 +106,24 @@ var indexController = {
 	},
 
 	uploadForm : function(req, res){
+
+		// var params = {
+	 //      Bucket: 'galacticcollective',
+	 //      Key: req.file.name,
+	 //      Body: req.file
+  //   	};
+
+	 //    s3.putObject(params, function (perr, pres) {
+	 //      if (perr) {
+	 //        console.log("Error uploading data: ", perr);
+	 //      } else {
+	 //        console.log("Successfully uploaded data to myBucket/myKey");
+	 //      }
+	 //    });
+		
 		console.log(req.body);
 		console.log(req.files);
-		res.send(data)
+		// res.send(data)
 	}
 }
 
