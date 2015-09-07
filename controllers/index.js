@@ -4,6 +4,10 @@ var mongoose = require('mongoose');
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
 
+AWS.config.update({region: 'us-west-1'});
+
+
+
 var indexController = {
 	index: function(req, res) {
 		res.render('index', {user: req.user});
@@ -107,24 +111,29 @@ var indexController = {
 
 	uploadForm : function(req, res){
 
-		// var params = {
-	 //      Bucket: 'galacticcollective',
-	 //      Key: req.file.name,
-	 //      Body: req.file
-  //   	};
+		// Environment Keys In Heroku
+		// process.env.AWS_ACCESS_KEY
+		// process.env.AWS_SECRET_KEY
+		console.log("Req.body._id : " + req.body._id)
 
-	 //    s3.putObject(params, function (perr, pres) {
-	 //      if (perr) {
-	 //        console.log("Error uploading data: ", perr);
-	 //      } else {
-	 //        console.log("Successfully uploaded data to myBucket/myKey");
-	 //      }
-	 //    });
+		var params = {
+	      Bucket: 'galacticcollective',
+	      Key: req.body._id,
+	      Body: req.file
+    	};
+
+	    s3.putObject(params, function (perr, pres) {
+	      if (perr) {
+	        console.log("Error uploading data: ", perr);
+	      } else {
+	        console.log("Successfully uploaded data to myBucket/myKey");
+	      }
+	    });
 		
-		console.log(req.body);
-		console.log(req.file);
-		console.log('I am the SERVER, your leader.');
-		res.send('Ping back from the server.');
+		// console.log(req.body);
+		// console.log(req.file);
+		// console.log('I am the SERVER, your leader.');
+		// res.send('Ping back from the server.');
 	}
 }
 
