@@ -114,7 +114,7 @@ var indexController = {
 		// Environment Keys In Heroku
 		// process.env.AWS_ACCESS_KEY
 		// process.env.AWS_SECRET_KEY
-		console.log("Req.body._id : " + req.body._id)
+		console.log("Req.file : " + req.file)
 
 		var params = {
 	      Bucket: 'galacticcollective',
