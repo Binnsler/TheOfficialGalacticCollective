@@ -123,7 +123,7 @@ var indexController = {
 			Body: fs.createReadStream(req.file.path)
 		}, function(error, data) {
 			console.log("We've got an error here: " + error)
-			console.log("Here's the return data: " + data);
+			console.log("Here's the return data: " + data.Location);
 		});
 
 		// var params = {
