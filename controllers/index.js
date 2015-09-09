@@ -123,8 +123,8 @@ var indexController = {
 			Bucket: "galacticcollective",
 			ACL:"public-read-write",
 			Body: fs.createReadStream(req.file.path)
-		}, function(err, output) {
-			console.log("Post the file successfully!!!!!");
+		}, function(error, data) {
+			console.log("Here's the return data:" + data);
 		});
 
 		// var params = {
