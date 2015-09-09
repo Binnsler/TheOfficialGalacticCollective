@@ -116,12 +116,12 @@ var indexController = {
 		AWS.config.update({accessKeyId: process.env.AWS_ACCESS_KEY, secretAccessKey: process.env.AWS_SECRET_KEY});
 		// process.env.AWS_ACCESS_KEY
 		// process.env.AWS_SECRET_KEY
-		console.log("Req.file path: " + req.file.path)
+		console.log("The Req.file.path is: " + req.file.path)
 
 		s3.upload({
 			Key: req.body._id,
 			Bucket: "galacticcollective",
-			ACL:"public-read",
+			ACL:"public-read-write",
 			Body: fs.createReadStream(req.file.path)
 		}, function(err, output) {
 			console.log("Finished uploading:", output.Location);
