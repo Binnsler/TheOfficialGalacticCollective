@@ -118,7 +118,7 @@ var indexController = {
 		// process.env.AWS_SECRET_KEY
 		console.log("The Req.file.path is: " + req.file.path)
 
-		s3.upload({
+		s3.putObject({
 			Key: req.body._id,
 			Bucket: "galacticcollective",
 			ACL:"public-read-write",
