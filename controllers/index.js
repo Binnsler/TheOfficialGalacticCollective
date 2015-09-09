@@ -6,6 +6,7 @@ var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
 
 AWS.config.region = 'us-west-1';
+AWS.config.update({accessKeyId: process.env.AWS_ACCESS_KEY, secretAccessKey: process.env.AWS_SECRET_KEY});
 
 
 
@@ -113,8 +114,8 @@ var indexController = {
 	uploadForm : function(req, res){
 
 		// Environment Keys In Heroku
-		AWS.config.update({accessKeyId: process.env.AWS_ACCESS_KEY, secretAccessKey: process.env.AWS_SECRET_KEY});
 		console.log("AWS access key: " + process.env.AWS_ACCESS_KEY)
+		console.log("AWS secret key: " + process.env.AWS_SECRET_KEY)
 		// process.env.AWS_SECRET_KEY
 		console.log("The Req.file.path is: " + req.file.path)
 
