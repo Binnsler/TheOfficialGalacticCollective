@@ -114,7 +114,7 @@ var indexController = {
 
 		// Environment Keys In Heroku
 		AWS.config.update({accessKeyId: process.env.AWS_ACCESS_KEY, secretAccessKey: process.env.AWS_SECRET_KEY});
-		// process.env.AWS_ACCESS_KEY
+		console.log("AWS access key: " + process.env.AWS_ACCESS_KEY)
 		// process.env.AWS_SECRET_KEY
 		console.log("The Req.file.path is: " + req.file.path)
 
