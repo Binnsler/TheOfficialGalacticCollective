@@ -124,7 +124,7 @@ var indexController = {
 			ACL:"public-read-write",
 			Body: fs.createReadStream(req.file.path)
 		}, function(err, output) {
-			console.log("Finished uploading:", output.Location);
+			console.log("Post the file successfully!!!!!");
 		});
 
 		// var params = {
