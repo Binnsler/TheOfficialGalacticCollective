@@ -1,10 +1,11 @@
 var User = require('../models/user');
 var Post = require('../models/post');
 var mongoose = require('mongoose');
+var fs = require("fs");
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
 
-AWS.config.update({region: 'us-west-1'});
+AWS.config.region = 'us-west-1';
 
 
 
@@ -114,21 +115,30 @@ var indexController = {
 		// Environment Keys In Heroku
 		// process.env.AWS_ACCESS_KEY
 		// process.env.AWS_SECRET_KEY
-		console.log("Req.file : " + req.file)
+		console.log("Req.file path: " + req.file.path)
 
-		var params = {
-	      Bucket: 'galacticcollective',
-	      Key: req.body._id,
-	      Body: req.file
-    	};
+		s3.upload({
+			Key: req.body._id,
+			Bucket: "galacticcollective",
+			ACL:"public-read",
+			Body: fs.createReadStream(req.file.path)
+		}, function(err, output) {
+			console.log("Finished uploading:", output.Location);
+		});
 
-	    s3.putObject(params, function (perr, pres) {
-	      if (perr) {
-	        console.log("Error uploading data: ", perr);
-	      } else {
-	        console.log("Successfully uploaded data to myBucket/myKey");
-	      }
-	    });
+		// var params = {
+	 //      Bucket: 'galacticcollective',
+	 //      Key: req.body._id,
+	 //      Body: req.file
+  //   	};
+
+	 //    s3.putObject(params, function (error, data) {
+	 //      if (perr) {
+	 //        console.log("Error uploading data: ", error);
+	 //      } else {
+	 //        console.log("Successfully uploaded data to myBucket/myKey");
+	 //      }
+	 //    });
 		
 		// console.log(req.body);
 		// console.log(req.file);
