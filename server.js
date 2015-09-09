@@ -34,7 +34,6 @@ var upload = multer({ dest: './uploads' })
 // AWS Stuff
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
-AWS.config.region = 'us-west-1';
 
 
 var app = express();
