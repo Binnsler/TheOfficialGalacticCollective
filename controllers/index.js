@@ -113,6 +113,7 @@ var indexController = {
 	uploadForm : function(req, res){
 
 		// Environment Keys In Heroku
+		AWS.config.update({accessKeyId: process.env.AWS_ACCESS_KEY, secretAccessKey: process.env.AWS_SECRET_KEY});
 		// process.env.AWS_ACCESS_KEY
 		// process.env.AWS_SECRET_KEY
 		console.log("Req.file path: " + req.file.path)
