@@ -262,14 +262,7 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 		console.log($scope.profileUser)
 		console.log('I just ran.')
 		$scope.profileUser.$save();
-		multipartForm.postForm('/uploadForm', $scope.profileUser, function(response){
-			if(response.err){
-				console.log(response.err)
-			}
-			else{
-				console.log(response)
-			}
-		});
+		multipartForm.postForm('/uploadForm', $scope.profileUser);
 	
 		// $http.post('/uploadPic', $scope.uploadPic).
 		// then(function(response) {
