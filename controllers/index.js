@@ -130,7 +130,7 @@ var indexController = {
 		};
 
 		// console.log('https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id)
-		console.log('Here is req.body' + req.body)
+		console.log('Here is req.body' + JSON.stringify(req.body))
 
 		User.findOneAndUpdate({username: req.body.username}, req.body, function(err, userData){
 			console.log('Successful database update.')
