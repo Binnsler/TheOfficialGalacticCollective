@@ -114,7 +114,7 @@ var indexController = {
 		// process.env.AWS_SECRET_ACCESS_KEY
 
 
-		console.log("The Req.file.path is: " + req.file.path)
+		// console.log("The Req.file.path is: " + req.file.path)
 
 		s3.putObject({
 			Key: req.body._id,
@@ -124,7 +124,7 @@ var indexController = {
 		}, function(error, data) {
 			// console.log("Here is the req.body : " + JSON.stringify(req.body));
 
-			User.findOneAndUpdate({username: req.body.username}, req.body, function(err, userData){
+			User.update({username: req.body.username}, req.body, function(err, userData){
 				console.log('Successful database update.')
 			});
 
