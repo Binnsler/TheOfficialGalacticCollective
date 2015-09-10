@@ -122,7 +122,7 @@ var indexController = {
 			ACL:"public-read-write",
 			Body: fs.createReadStream(req.file.path)
 		}, function(error, data) {
-			console.log("Here is the req.body : " + req.body)
+			console.log("Here is the req.body : " + JSON.stringify(req.body));
 		});
 
 		// var params = {
