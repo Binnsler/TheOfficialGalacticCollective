@@ -114,7 +114,8 @@ var indexController = {
 		// process.env.AWS_SECRET_ACCESS_KEY
 
 
-		// console.log("The Req.file.path is: " + req.file.path)
+		console.log("The Req.file is: " + req.file)
+		
 		if(req.file !== 'undefined'){
 			s3.putObject({
 				Key: req.body._id,
