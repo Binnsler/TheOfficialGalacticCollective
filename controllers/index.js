@@ -110,8 +110,8 @@ var indexController = {
 	uploadForm : function(req, res){
 
 		// AWS Credientials are stored in the Environment Keys In Heroku
-		// process.env.AWS_ACCESS_KEY_ID)
-		// process.env.AWS_SECRET_ACCESS_KEY)
+		// process.env.AWS_ACCESS_KEY_ID
+		// process.env.AWS_SECRET_ACCESS_KEY
 
 
 		console.log("The Req.file.path is: " + req.file.path)
@@ -122,8 +122,7 @@ var indexController = {
 			ACL:"public-read-write",
 			Body: fs.createReadStream(req.file.path)
 		}, function(error, data) {
-			console.log("We've got an error here: " + error)
-			console.log("Here's the return data: " + JSON.stringify(data));
+			console.log("Here is the req.body : " + req.body)
 		});
 
 		// var params = {
