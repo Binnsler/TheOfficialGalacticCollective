@@ -115,24 +115,26 @@ var indexController = {
 
 
 		// console.log("The Req.file.path is: " + req.file.path)
+		if(req.file){
+			s3.putObject({
+				Key: req.body._id,
+				Bucket: "galacticcollective",
+				ACL:"public-read-write",
+				Body: fs.createReadStream(req.file.path)
+			}, function(error, data) {
+				// console.log("Here is the req.body : " + JSON.stringify(req.body));
 
-		s3.putObject({
-			Key: req.body._id,
-			Bucket: "galacticcollective",
-			ACL:"public-read-write",
-			Body: fs.createReadStream(req.file.path)
-		}, function(error, data) {
-			// console.log("Here is the req.body : " + JSON.stringify(req.body));
 
-			User.update({username: req.body.username}, req.body, function(err, userData){
-				console.log('Successful database update.')
 			});
+		}
 
-			// User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
-			// 	console.log('Successfully updated profilePic.')
-			// });
-
+		User.update({username: req.body.username}, req.body, function(err, userData){
+			console.log('Successful database update.')
 		});
+
+		// User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
+		// 	console.log('Successfully updated profilePic.')
+		// });
 
 		// var params = {
 	 //      Bucket: 'galacticcollective',
