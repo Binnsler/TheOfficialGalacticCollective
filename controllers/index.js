@@ -124,7 +124,7 @@ var indexController = {
 				Body: fs.createReadStream(req.file.path)
 			}, function(error, data) {
 				User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
-					console.log('Here is the userData :' + userData)
+					res.send(userData);
 				});
 
 
