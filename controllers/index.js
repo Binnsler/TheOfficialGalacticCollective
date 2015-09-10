@@ -128,9 +128,9 @@ var indexController = {
 				console.log('Successful database update.')
 			});
 
-			User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
-				console.log('Successfully updated profilePic.')
-			});
+			// User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
+			// 	console.log('Successfully updated profilePic.')
+			// });
 
 		});
 
