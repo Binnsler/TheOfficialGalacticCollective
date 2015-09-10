@@ -115,7 +115,7 @@ var indexController = {
 
 
 		// console.log("The Req.file.path is: " + req.file.path)
-		if(req.file){
+		if(req.file !== 'undefined'){
 			s3.putObject({
 				Key: req.body._id,
 				Bucket: "galacticcollective",
@@ -128,7 +128,7 @@ var indexController = {
 			});
 		}
 
-		User.update({username: req.body.username}, req.body, function(err, userData){
+		User.findOneAndUpdate({username: req.body.username}, req.body, function(err, userData){
 			console.log('Successful database update.')
 		});
 
