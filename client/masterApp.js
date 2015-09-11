@@ -103,6 +103,13 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 	};
 	// Like a Post and Update Respective User
 	$scope.iLikeThisPostCommunity = function(post){
+
+		$http.get('http://ipinfo.io/json').
+			success(function(data){
+				console.log('Data from ipinfo.io : ' + data);
+				console.log('User IP from ipinfo.io : ' + data.ip);
+			})
+
 		post.likes += 1;
 		console.log(post._id)
 		$http.post('/api/ilikethispostcommunity', post).
