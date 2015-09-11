@@ -21,7 +21,7 @@ div.container
 	ul.collection
 		li(ng-repeat="profile in profiles | filter: query | limitTo: 10" class="collection-item avatar")
 			div.row
-				div(class="col s2 offset-s2 left-profile")
+				div(class="col s2 offset-s2 left-profile search-thumbnail")
 					img(src="{{profile.profilePic}}" alt="" class="profilePicCircle")
 				div(class="col s6 right-profile")
 					a(ng-href="#/profile/{{profile.username}}" class="galactic-green-text profile-nav") {{profile.profileName}}
