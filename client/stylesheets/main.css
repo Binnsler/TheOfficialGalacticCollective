@@ -209,16 +209,32 @@ a.col.s1.fa.fa-heart.hearts {
 	padding: 1vh 1em;
 }
 
+.thumb {
+	position: relative;
+  	width: 125px;
+  	height: 125px;
+  	overflow: hidden;
+}
+
 .profilePicCircle {
-	width: 125px; // These are your circle dimensions
+	/*width: 125px; // These are your circle dimensions
     height: 125px !important;
     border-radius: 50%;
     background-repeat: no-repeat; 
     background-position: center center; // Center image in the circle
-    background-size: cover; // Make sure it covers the circle, as there is no bg repeat
+    background-size: cover; // Make sure it covers the circle, as there is no bg repeat*/
+
+     position: absolute;
+  	left: 50%;
+  	top: 50%;
+ 	 height: 100%;
+  	width: auto;
+  	-webkit-transform: translate(-50%,-50%);
+   	   -ms-transform: translate(-50%,-50%);
+   	       transform: translate(-50%,-50%);
 }
 
-.search-thumbnail {}
+
 
 .collection {
 	border: none;
