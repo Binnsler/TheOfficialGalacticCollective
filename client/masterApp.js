@@ -106,7 +106,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 		$http.get('http://ipinfo.io/json').
 			success(function(data){
-				console.log('Data from ipinfo.io : ' + data);
+				post.userIP = data.ip;
 				console.log('User IP from ipinfo.io : ' + data.ip);
 			})
 
@@ -114,14 +114,14 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 		console.log(post._id)
 		$http.post('/api/ilikethispostcommunity', post).
 		then(function(response) {
-		    		console.log(response.err)
-
-		  		}, function(response) {
-				    // post.likes = response.body
-				    console.log('Hi')
-
-		  	});
-	}
+			if(response.err){
+		    	console.log(response.err)				
+			}
+			else{
+				console.log(response)
+			}
+		});
+	};
 
 	// Show Post forms on respective button click
 	 $scope.showJobForm = function(){
