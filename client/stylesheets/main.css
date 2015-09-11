@@ -214,10 +214,10 @@ a.col.s1.fa.fa-heart.hearts {
   	width: 125px;
   	height: 125px;
   	overflow: hidden;
+    border-radius: 50%;
 }
 
 .profilePicCircle {
-    border-radius: 50%;
     position: absolute;
   	left: 50%;
   	top: 50%;
