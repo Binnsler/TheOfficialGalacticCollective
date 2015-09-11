@@ -211,7 +211,7 @@ a.col.s1.fa.fa-heart.hearts {
 
 .profilePicCircle {
 	width: 125px; // These are your circle dimensions
-    height: 125px;
+    height: 125px !important;
     border-radius: 50%;
     background-repeat: no-repeat; 
     background-position: center center; // Center image in the circle
