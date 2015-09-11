@@ -93,7 +93,7 @@ var indexController = {
 	iLikeThisPostCommunity : function(req, res){
 		Post.findOneAndUpdate({_id: req.body._id}, {$inc: {likes: 1}}, function(err, userData){
 			console.log('This is the backend error: ', err)
-			console.log('IP address of the liker : ' + req.body.ip)
+			console.log('IP address of the liker : ' + req.body.userIP)
 			res.send(userData)
 		});
 		
