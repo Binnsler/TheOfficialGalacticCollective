@@ -113,14 +113,14 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 		post.likes += 1;
 
 		$http.post('/api/ilikethispostcommunity', post).
-		then(function(response) {
-			if(response.err){
-		    	console.log(response.err)				
-			}
-			else{
-				console.log(response)
-				console.log('Got the response from the server.')
-			}
+			then(function(response) {
+
+			    	console.log(response.err)				
+
+			}, function(response){
+					console.log(response)
+					console.log('Got the response from the server.')
+				
 		});
 	};
 
