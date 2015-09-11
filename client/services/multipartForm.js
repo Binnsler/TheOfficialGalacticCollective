@@ -21,7 +21,5 @@ masterApp.service('multipartForm', function($http){
 				    console.log('I am the response from the post request.')
 
 		  	});
-	}
-	}
-
+	};
 })
