@@ -119,6 +119,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 			}
 			else{
 				console.log(response)
+				console.log('Got the response from the server.')
 			}
 		});
 	};
