@@ -107,11 +107,11 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 		$http.get('http://ipinfo.io/json').
 			success(function(data){
 				post.userIP = data.ip;
-				console.log('User IP from ipinfo.io : ' + data.ip);
 			})
 
+		console.log('User IP from ipinfo.io : ' + post.userIP);
 		post.likes += 1;
-		console.log(post._id)
+
 		$http.post('/api/ilikethispostcommunity', post).
 		then(function(response) {
 			if(response.err){
