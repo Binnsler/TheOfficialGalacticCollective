@@ -133,6 +133,7 @@ var indexController = {
 							console.log('Database error : ' + err)						
 						}
 						else{
+							console.log('User Data : ' + userData)
 							res.send(userData);
 							// console.log('User profile picture updated.')
 						}
