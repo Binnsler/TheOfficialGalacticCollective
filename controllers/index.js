@@ -124,11 +124,20 @@ var indexController = {
 				ACL:"public-read-write",
 				Body: fs.createReadStream(req.file.path)
 			}, function(error, data) {
-				User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
-					console.log('Database error : ' + err)
-					res.send(userData);
-				});
-
+				if(error){
+					console.log('AWS Error: ' + error)	
+				}
+				else{
+					User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
+						if(err){
+							console.log('Database error : ' + err)						
+						}
+						else{
+							// res.send(userData);
+							console.log('User profile picture updated.')
+						}
+					});
+				}
 
 			});
 		};
