@@ -91,16 +91,40 @@ var indexController = {
 	},
 
 	iLikeThisPostCommunity : function(req, res){
-		Post.findOneAndUpdate({_id: req.body._id}, {$inc: {likes: 1}}, function(err, userData){
-			// console.log('This is the backend error: ', err)
-			console.log(req.body)
-			console.log(req.body.userIP)
-			// res.send(req.body)
-		});
+
+		// CHECK IF THE IP USER ALREADY LIKED THIS POST
+		Post.find({_id: req.body._id}, function(err, userData){
+			
+			if(
+				userData.likedByIp.indexOf(req.body.userIP) === -1
+				){
+					Post.findOneAndUpdate({_id: req.body._id}, {$inc: {likes: 1}}, function(err, userData){
+						// console.log('This is the backend error: ', err)
+						userData
+						console.log(req.body)
+						console.log(req.body.userIP)
+						// res.send(req.body)
+					});
+
+					Post.findOneAndUpdate({_id: req.body._id}, {$push: {likedByIp: req.body.userIP}}, function(err, userData){
+						// console.log('This is the backend error: ', err)
+						console.log(req.body)
+						console.log(req.body.userIP)
+						// res.send(req.body)
+					});
+			
+					User.findOneAndUpdate({_id: req.body.userCreated._id}, {$inc: {likes: 1}}, function(err, userData){
+						console.log('This is the backend error: ', err)
+					});
+				};
+
+			else{
+				console.log('userIP already exists in server.')
+			}
+		})
+
 		
-		User.findOneAndUpdate({_id: req.body.userCreated._id}, {$inc: {likes: 1}}, function(err, userData){
-			console.log('This is the backend error: ', err)
-		});
+
 	},
 
 	deletePost : function(req, res){
