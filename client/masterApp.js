@@ -113,14 +113,14 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 		post.likes += 1;
 
 		$http.post('/api/ilikethispostcommunity', post).
-		then(function(response) {
-		    		console.log('1st request body: ' + response);
+			then(function(response) {
+			    		console.log('1st request body: ' + response);
 
-		  		}, function(response) {
+			  		}, function(response) {
 
-		    		console.log('2nd request body: ' + response);
+			    		console.log('2nd request body: ' + response);
 
-		  	});
+			});
 	};
 
 	// Show Post forms on respective button click
