@@ -114,11 +114,11 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 		$http.post('/api/ilikethispostcommunity', post).
 		then(function(response) {
-		    		console.log(response);
+		    		console.log('1st request body: ' + response);
 
 		  		}, function(response) {
 
-		    		console.log(response);
+		    		console.log('2nd request body: ' + response);
 
 		  	});
 	};
