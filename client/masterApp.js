@@ -225,7 +225,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm){
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm){
 
 	$scope.userContainer = authenticateUser;
 
@@ -284,7 +284,7 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 
 		//   	});
 		$scope.editing = false;
-		
+
 		// $window.location.reload();
 	};
 

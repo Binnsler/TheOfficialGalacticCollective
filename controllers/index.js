@@ -162,7 +162,7 @@ var indexController = {
 						}
 						else{
 							console.log('User Data : ' + userData)
-							res.send(userData);
+							// res.send(userData);
 							// console.log('User profile picture updated.')
 						}
 					});
