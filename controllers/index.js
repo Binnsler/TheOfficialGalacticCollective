@@ -116,11 +116,14 @@ var indexController = {
 					User.findOneAndUpdate({_id: req.body.userCreated._id}, {$inc: {likes: 1}}, function(err, userData){
 						console.log('This is the backend error: ', err)
 					});
-				};
+
+
+				}
 
 			else{
 				console.log('userIP already exists in server.')
-			}
+				}
+
 		})
 
 		
