@@ -93,8 +93,8 @@ var indexController = {
 	iLikeThisPostCommunity : function(req, res){
 		Post.findOneAndUpdate({_id: req.body._id}, {$inc: {likes: 1}}, function(err, userData){
 			console.log('This is the backend error: ', err)
-			console.log('Here is req.body : ' + req.body)
-			res.send(userData)
+			// console.log('Here is req.body : ' + req.body)
+			res.send(req.body)
 		});
 		
 		User.findOneAndUpdate({_id: req.body.userCreated._id}, {$inc: {likes: 1}}, function(err, userData){

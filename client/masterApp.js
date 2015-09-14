@@ -112,7 +112,15 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 		console.log('User IP from ipinfo.io : ' + post.userIP);
 		post.likes += 1;
 
-		$http.post('/api/ilikethispostcommunity', post)
+		$http.post('/api/ilikethispostcommunity', post).
+		then(function(response) {
+		    		console.log(response);
+
+		  		}, function(response) {
+
+		    		console.log(response);
+
+		  	});
 	};
 
 	// Show Post forms on respective button click
