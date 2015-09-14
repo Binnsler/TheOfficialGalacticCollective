@@ -285,7 +285,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 		//   	});
 		$scope.editing = false;
 
-		// $window.location.reload();
+		$window.location.reload(true);
 	};
 
 	// Like a Post and Update Respective User
