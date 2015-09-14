@@ -284,6 +284,8 @@ masterApp.controller('profileController', function($scope, $http, $resource, $lo
 
 		//   	});
 		$scope.editing = false;
+		
+		$route.reload();
 	};
 
 	// Like a Post and Update Respective User
