@@ -117,12 +117,12 @@ var indexController = {
 						console.log('This is the backend error: ', err)
 					});
 
+					res.send('Successfully liked this post.')
 
-				}
-
-			else{
-				console.log('userIP already exists in server.')
-				}
+				};
+				//  else {
+				// 	console.log('userIP already exists in server.')
+				// }
 
 		})
 
