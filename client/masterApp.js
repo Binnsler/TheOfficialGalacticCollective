@@ -117,7 +117,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 					  		}, function(response) {
 
-					    		console.log('2nd request body: ' + response);
+					    		console.log('2nd request body: ' + response.body);
 
 					});
 
