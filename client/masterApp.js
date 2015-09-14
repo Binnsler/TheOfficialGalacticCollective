@@ -106,21 +106,25 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 		$http.get('http://ipinfo.io/json').
 			success(function(data){
+				
 				post.userIP = data.ip;
+
+				post.likes += 1;
+
+				$http.post('/api/ilikethispostcommunity', post).
+					then(function(response) {
+					    		console.log('1st request body: ' + response);
+
+					  		}, function(response) {
+
+					    		console.log('2nd request body: ' + response);
+
+					});
+
+
+				
 			})
 
-		console.log('User IP from ipinfo.io : ' + post.userIP);
-		post.likes += 1;
-
-		$http.post('/api/ilikethispostcommunity', post).
-			then(function(response) {
-			    		console.log('1st request body: ' + response);
-
-			  		}, function(response) {
-
-			    		console.log('2nd request body: ' + response);
-
-			});
 	};
 
 	// Show Post forms on respective button click

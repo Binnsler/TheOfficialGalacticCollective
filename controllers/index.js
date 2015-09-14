@@ -94,6 +94,7 @@ var indexController = {
 		Post.findOneAndUpdate({_id: req.body._id}, {$inc: {likes: 1}}, function(err, userData){
 			// console.log('This is the backend error: ', err)
 			console.log(req.body)
+			console.log(req.body.userIP)
 			// res.send(req.body)
 		});
 		
