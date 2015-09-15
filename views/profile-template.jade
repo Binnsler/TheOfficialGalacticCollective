@@ -65,7 +65,7 @@ div.container
 				p(class="profile-text centerize-me") {{profileUser.likes}} Likes
 
 	div.allPosts
-		h3(class="galactic-grey-text") Posts
+		h3.post-headline(class="galactic-grey-text") Posts
 		ul.collection(class="top-space")
 			li(ng-repeat="post in posts track by $index | orderBy : '-dateCreated'" class="collection-item avatar")
 				div.row
