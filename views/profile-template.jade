@@ -33,12 +33,12 @@ div.container
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitToServer()") Submit
 	div.top-profile(class="col s12")
 		div.row
-			div.centrize-me
-				div(class="col s2 offset-s3 left-profile galactic-blue")
+			div.centrize-me(class="galactic-blue")
+				div(class="col s2 offset-s3 left-profile")
 					img.user-profile-pic(src="{{profileUser.profilePic}}?{{rand}}")
 					
 
-				div(class="col s4 right-profile galactic-blue")
+				div(class="col s4 right-profile")
 					h2(class="profile-text") {{profileUser.profileName}}
 					h4(class="profile-text") {{profileUser.profileLocation}}
 					p(class="profile-text galactic-grey-text profileBlurb") {{profileUser.profileBlurb}}
