@@ -240,6 +240,8 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 // Profile controller
 masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm){
 
+	$scope.rand = Math.random();
+
 	$scope.userContainer = authenticateUser;
 
 	$scope.profileUser = userFactory.model.get({username : $routeParams.username})
