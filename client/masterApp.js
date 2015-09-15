@@ -45,7 +45,7 @@ masterApp.service('multipartForm', function($http){
 		})
 	}
 
-})
+});
 
 // Service to query for new URL everytime profile pic loads
 masterApp.directive('noCacheSrc', function($window) {
