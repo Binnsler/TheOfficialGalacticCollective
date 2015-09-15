@@ -40,11 +40,14 @@ div.container
 			div(class="col s9 right-profile")
 				h2(class="profile-text") {{profileUser.profileName}}
 				h4(class="profile-text") {{profileUser.profileLocation}}
-				p(class="profile-text galactic-grey-text") {{profileUser.profileBlurb}}
-				div.btn-container
-					a(class="waves-effect btn-flat white btn-profile" ng-href="https://{{profileUser.buttonOneUrl}}") {{profileUser.buttonOneText}}
-					a(class="waves-effect btn-flat white btn-profile" ng-href="https://{{profileUser.buttonTwoUrl}}") {{profileUser.buttonTwoText}}
-					a(class="waves-effect btn-flat white btn-profile" ng-href="https://{{profileUser.buttonThreeUrl}}") {{profileUser.buttonThreeText}}
+
+		div.row
+			p(class="profile-text galactic-grey-text") {{profileUser.profileBlurb}}
+			div.btn-container
+				a(class="waves-effect btn-flat white btn-profile" ng-href="https://{{profileUser.buttonOneUrl}}") {{profileUser.buttonOneText}}
+				a(class="waves-effect btn-flat white btn-profile" ng-href="https://{{profileUser.buttonTwoUrl}}") {{profileUser.buttonTwoText}}
+				a(class="waves-effect btn-flat white btn-profile" ng-href="https://{{profileUser.buttonThreeUrl}}") {{profileUser.buttonThreeText}}		
+
 
 
 	div.bottom-profile(class="col s12")
