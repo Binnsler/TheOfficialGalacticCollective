@@ -47,6 +47,19 @@ masterApp.service('multipartForm', function($http){
 
 })
 
+// Service to query for new URL everytime profile pic loads
+masterApp.directive('noCacheSrc', function($window) {
+  return {
+    priority: 99,
+    link: function(scope, element, attrs) {
+      attrs.$observe('noCacheSrc', function(noCacheSrc) {
+        noCacheSrc += '?' + (new Date()).getTime();
+        attrs.$set('src', noCacheSrc);
+      });
+    }
+  }
+});
+
 // Factory to query who is currently logged in
 masterApp.factory('authenticateUser', function($http){
 
@@ -225,7 +238,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm){
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, noCacheSrc){
 
 	$scope.userContainer = authenticateUser;
 
