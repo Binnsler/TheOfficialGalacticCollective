@@ -74,7 +74,8 @@ h4 {
 }
 
 .btn-container {
-	padding-left: 10%;
+	text-align: center;
+
 }
 
 .profile-skills, .profile-bio {
@@ -89,8 +90,8 @@ h4 {
 }
 
 .user-profile-pic {
-	height: 200px;
-	width: 200px;
+	height: 125px;
+	width: 125px;
 }
 
 /*Community Page*/
