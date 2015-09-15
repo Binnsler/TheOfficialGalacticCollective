@@ -49,9 +49,6 @@ div.container
 				a(class="waves-effect btn-flat galactic-green btn-profile" ng-href="https://{{profileUser.buttonTwoUrl}}") {{profileUser.buttonTwoText}}
 				a(class="waves-effect btn-flat galactic-green btn-profile" ng-href="https://{{profileUser.buttonThreeUrl}}") {{profileUser.buttonThreeText}}		
 
-		div.row
-			div
-				p(class="profile-text centerize-me") {{profileUser.likes}} Likes
 
 
 	div.bottom-profile(class="col s12")
@@ -63,6 +60,9 @@ div.container
 			div(class="col s4 profile-bio")
 				h5.galactic-green-text Bio
 				p.galactic-grey-text {{profileUser.profileBio}}
+		div.row
+			div
+				p(class="profile-text centerize-me") {{profileUser.likes}} Likes
 
 	div.allPosts
 		h3(class="galactic-grey-text") Posts
