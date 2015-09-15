@@ -52,10 +52,10 @@ masterApp.directive('noCacheSrc', function($window) {
   return {
     priority: 99,
     link: function(scope, element, attrs) {
-      attrs.$observe('noCacheSrc', function(noCacheSrc) {
+      attrs.$observe('noCacheSrc', ['noCacheSrc', function(noCacheSrc) {
         noCacheSrc += '?' + (new Date()).getTime();
         attrs.$set('src', noCacheSrc);
-      });
+      }]);
     }
   }
 });
@@ -238,7 +238,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm){
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, noCacheSrc){
 
 	$scope.userContainer = authenticateUser;
 
