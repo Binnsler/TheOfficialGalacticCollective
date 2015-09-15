@@ -60,6 +60,11 @@ h4 {
 	margin: 0;
 }
 
+.profile-text-grey {
+	color: #999999;
+	margin: 0;
+}
+
 .profileBlurb {
 	margin-top: .5vh;
 }
