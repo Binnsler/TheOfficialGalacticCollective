@@ -66,12 +66,12 @@ h4 {
 }
 
 .left-profile {
-	text-align: center;
+	text-align: right;
 }
 
 .btn-profile {
 	margin: 2% 2vh;
-	text-align: center;
+	text-align: left;
 }
 
 .btn-container {
