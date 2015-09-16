@@ -138,8 +138,12 @@ h4 {
 .portfolioViewing {
 	width: 60%;
 	background-color: white;
-	padding: 25vh 20% 0 20%;
-	
+}
+
+.lightbox-container {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .portfolio-lightbox-text {
