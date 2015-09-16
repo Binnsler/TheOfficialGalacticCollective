@@ -80,7 +80,7 @@ div.container
 			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}")
 			h4.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioOneTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioOneDesc}}
-			a(src="https://{{profileUser.portfolioOneURL}}")
+			a.portfolio-lightbox-text(class="galactic-grey-text" src="https://{{profileUser.portfolioOneURL}}") {{profileUser.portfolioOneURL}}
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit collection-item
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioOne()") Close
 	
@@ -89,7 +89,7 @@ div.container
 			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}")
 			h4.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioTwoTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioTwoDesc}}
-			a(src="https://{{profileUser.portfolioTwoURL}}")
+			a.portfolio-lightbox-text(class="galactic-grey-text" src="https//:{{profileUser.portfolioTwoURL}}") {{profileUser.portfolioTwoURL}}
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit collection-item
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioTwo()") Close
 
@@ -98,7 +98,7 @@ div.container
 			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}")
 			h4.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioThreeTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioThreeDesc}}
-			a(src="https://{{profileUser.portfolioThreeURL}}")
+			a.portfolio-lightbox-text(class="galactic-grey-text" src="https://{{profileUser.portfolioThreeURL}}") {{profileUser.portfolioThreeURL}}
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit collection-item
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioThree()") Close
 
