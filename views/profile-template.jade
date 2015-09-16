@@ -65,15 +65,15 @@ div.container
 				p(class="profile-text centerize-me") {{profileUser.likes}} Likes
 	
 	div.portfolio(class="col s12")
-		div.portfolioOne(class="col s4" )
-			img.portfolio-pic(src="{{portfolioOnePic}}")
-			h4.portfolio-title(class="galactic-grey-text") {{portfolioOneTitle}}
-		div.portfolioTwo(class="col s4")
-			img.portfolio-pic(src="{{portfolioTwoPic}}")
-			h4.portfolio-title(class="galactic-grey-text") {{portfolioTwoTitle}}
-		div.portfolioThree(class="col s4")
-			img.portfolio-pic(src="{{portfolioThreePic}}")
-			h4.portfolio-title(class="galactic-grey-text") {{portfolioThreeTitle}}
+		div.portfolioOne(class="col s4" ng-click="editPortfolioItem()")
+			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}")
+			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneTitle}}
+		div.portfolioTwo(class="col s4" ng-click="editPortfolioItem()")
+			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}")
+			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioTwoTitle}}
+		div.portfolioThree(class="col s4" ng-click="editPortfolioItem()")
+			img.portfolio-pic(src="{{profileUser.portfolioThreePic}}")
+			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioThreeTitle}}
 
 
 	div.allPosts
