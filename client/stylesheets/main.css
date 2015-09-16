@@ -125,11 +125,12 @@ h4 {
 
 .portfolioOneLightbox {
 	text-align: center;
+	margin: 0 auto;
 }
 
 .portfolioOneViewing {
 	width: 60%;
-	background-color: blue;
+	background-color: white;
 }
 
 .portfolio-lightbox-text {
