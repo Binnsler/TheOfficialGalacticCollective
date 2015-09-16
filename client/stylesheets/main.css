@@ -115,7 +115,7 @@ h4 {
 
 .portfolioOne, .portfolioTwo, .portfolioThree {
 	display: inline-block;
-	text-align: center;
+	width: 33.33%;
 }
 
 .portfolio-pic {
