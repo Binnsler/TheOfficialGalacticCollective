@@ -116,11 +116,11 @@ h4 {
 .portfolioOne, .portfolioTwo, .portfolioThree {
 	display: inline-block;
 	width: 33.33%;
+	text-align: center;
 }
 
 .portfolio-pic {
 	/*margin: auto 0;*/
-	text-align: center;
 }
 
 /*Community Page*/
