@@ -123,7 +123,7 @@ h4 {
 	/*margin: auto 0;*/
 }
 
-.portfolioOneLightbox {
+.portfolioOneLightbox, .portfolioTwoLightbox, .portfolioThreeLightbox {
 	text-align: center;
 }
 
