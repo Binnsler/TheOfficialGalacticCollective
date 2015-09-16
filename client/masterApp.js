@@ -324,7 +324,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 		$scope.viewingPortfolioOne = true;
 
 	};
-
+	// Close first portfolio item
 	$scope.closePortfolioOne =function(){
 
 		$scope.viewingPortfolioOne = false;
@@ -338,10 +338,24 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 	};
 
+	// Close second portfolio item
+	$scope.closePortfolioTwo =function(){
+
+		$scope.viewingPortfolioTwo = false;
+
+	};
+
 	// View third portfolio item
 	$scope.viewPortfolioThree =function(){
 
 		$scope.viewingPortfolioThree = true;
+
+	};
+
+	// Close third portfolio item
+	$scope.closePortfolioThree =function(){
+
+		$scope.viewingPortfolioThree = false;
 
 	};
 

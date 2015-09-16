@@ -83,6 +83,24 @@ div.container
 			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioOneURL}}
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit collection-item
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioOne()") Close
+	
+	div.portfolioTwoLightbox(class="col s4 offset-s4" ng-show="viewingPortfolioTwo")
+		div.portfolioTwoViewing(ng-show="viewingPortfolioTwo")
+			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}")
+			h4.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioTwoTitle}}
+			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioTwoDesc}}
+			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioTwoURL}}
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit collection-item
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioTwo()") Close
+
+	div.portfolioThreeLightbox(class="col s4 offset-s4" ng-show="viewingPortfolioThree")
+		div.portfolioThreeViewing(ng-show="viewingPortfolioThree")
+			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}")
+			h4.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioThreeTitle}}
+			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioThreeDesc}}
+			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioThreeURL}}
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit collection-item
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioThree()") Close
 
 	div.allPosts
 		h3.post-headline(class="galactic-grey-text centerize-me") Posts
