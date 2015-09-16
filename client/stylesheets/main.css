@@ -148,6 +148,7 @@ h4 {
 
 .portfolio-lightbox-text {
 	text-align: center;
+	display: block;
 }
 
 /*Community Page*/
