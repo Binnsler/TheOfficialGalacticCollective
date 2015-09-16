@@ -85,6 +85,7 @@ div.container
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioOne()") Close
 	
 	div.portfolioTwoLightbox(class="col s4 offset-s4" ng-show="viewingPortfolioTwo")
+		div.lightbox-container
 			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}")
 			h4.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioTwoTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioTwoDesc}}
@@ -93,6 +94,7 @@ div.container
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioTwo()") Close
 
 	div.portfolioThreeLightbox(class="col s4 offset-s4" ng-show="viewingPortfolioThree")
+		div.lightbox-container
 			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}")
 			h4.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioThreeTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioThreeDesc}}
