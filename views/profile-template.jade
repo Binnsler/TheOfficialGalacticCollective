@@ -82,7 +82,7 @@ div.container
 			p.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneDesc}}
 			p.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneURL}}
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit collection-item
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioOne") Close
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioOne()") Close
 
 	div.allPosts
 		h3.post-headline(class="galactic-grey-text centerize-me") Posts
