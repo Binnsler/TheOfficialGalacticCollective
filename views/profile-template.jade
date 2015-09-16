@@ -65,16 +65,24 @@ div.container
 				p(class="profile-text centerize-me") {{profileUser.likes}} Likes
 	
 	div.portfolio(class="col s12")
-		div.portfolioOne(class="col s4" ng-click="editPortfolioItem()")
+		div.portfolioOne(class="col s4" ng-click="viewPortfolioOne()")
 			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneTitle}}
-		div.portfolioTwo(class="col s4" ng-click="editPortfolioItem()")
+		div.portfolioTwo(class="col s4" ng-click="viewPortfolioTwo()")
 			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioTwoTitle}}
-		div.portfolioThree(class="col s4" ng-click="editPortfolioItem()")
+		div.portfolioThree(class="col s4" ng-click="viewPortfolioThree()")
 			img.portfolio-pic(src="{{profileUser.portfolioThreePic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioThreeTitle}}
 
+	div.portfolioOneLightbox(class="col s12" ng-show="viewingPortfolioOne")
+		div.portfolioOneViewing
+			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}")
+			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneTitle}}
+			p.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneDesc}}
+			p.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneURL}}
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit collection-item
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="closePortfolioOne") Close
 
 	div.allPosts
 		h3.post-headline(class="galactic-grey-text centerize-me") Posts

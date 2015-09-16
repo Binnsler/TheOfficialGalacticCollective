@@ -277,7 +277,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	};
 
 
-	// Turn on/off editing
+	// Turn on/off top profile editing
 	$scope.onEditting = function(){	
 		$scope.editing = true;
 	};
@@ -316,7 +316,34 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 				    console.log('Hi')
 
 		  	});
-	}
+	};
+
+	// View first portfolio item
+	$scope.viewPortfolioOne =function(){
+
+		$scope.viewingPortfolioOne = true;
+
+	};
+
+	$scope.closePortfolioOne =function(){
+
+		$scope.viewingPortfolioOne = false;
+
+	};
+
+	// View second portfolio item
+	$scope.viewPortfolioTwo =function(){
+
+		$scope.viewingPortfolioTwo = true;
+
+	};
+
+	// View third portfolio item
+	$scope.viewPortfolioThree =function(){
+
+		$scope.viewingPortfolioThree = true;
+
+	};
 
 });
 
