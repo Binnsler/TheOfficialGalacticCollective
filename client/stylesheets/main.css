@@ -124,8 +124,12 @@ h4 {
 }
 
 .portfolioOneViewing {
-	width: 40%;
+	width: 60%;
 	background-color: blue;
+}
+
+.portfolio-viewing-text {
+	text-align: right;
 }
 
 /*Community Page*/

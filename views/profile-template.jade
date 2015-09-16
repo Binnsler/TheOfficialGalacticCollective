@@ -78,9 +78,9 @@ div.container
 	div.portfolioOneLightbox(class="col s12" ng-show="viewingPortfolioOne")
 		div.portfolioOneViewing
 			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}")
-			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneTitle}}
-			p.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneDesc}}
-			p.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneURL}}
+			h4.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioOneTitle}}
+			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioOneDesc}}
+			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioOneURL}}
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit collection-item
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioOne()") Close
 
