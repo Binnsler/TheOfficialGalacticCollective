@@ -75,8 +75,8 @@ div.container
 			img.portfolio-pic(src="{{profileUser.portfolioThreePic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioThreeTitle}}
 
-	div.portfolioOneLightbox(class="col s12" ng-show="viewingPortfolioOne")
-		div.portfolioOneViewing(class="col s12")
+	div.portfolioOneLightbox(ng-show="viewingPortfolioOne")
+		div.portfolioOneViewing(class="col s4 offset-s4")
 			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}")
 			h4.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioOneTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text") {{profileUser.portfolioOneDesc}}
