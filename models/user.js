@@ -31,7 +31,19 @@ var userSchema = mongoose.Schema({
   textColor : {type: String, default: 'white'},
   likes : {type: Number, default: 0},
   creationTimeStamp : {type: Number},
-  dateCreated : {type: Date}
+  dateCreated : {type: Date},
+  portfolioOnePic : {type: String, default: 'https://s3-us-west-2.amazonaws.com/galacticcollective/default-portfolio-item'},
+  portfolioOneTitle : {type: String, default: 'Portfolio One'},
+  portfolioOneDesc : {type: String, default: 'Here is where the portfolio item description should go - 160 characters'},
+  portfolioOneURL : {type: String, default: 'www.portfoliolink.com'},
+  portfolioTwoPic : {type: String, default: 'https://s3-us-west-2.amazonaws.com/galacticcollective/default-portfolio-item'},
+  portfolioTwoTitle : {type: String, default: 'Portfolio Two'},
+  portfolioTwoDesc : {type: String, default: 'Here is where the portfolio item description should go - 160 characters'},
+  portfolioTwoURL : {type: String, default: 'www.portfoliolink.com'},
+  portfolioThreePic : {type: String, default: 'https://s3-us-west-2.amazonaws.com/galacticcollective/default-portfolio-item'},
+  portfolioThreeTitle : {type: String, default: 'Portfolio Three'},
+  portfolioThreeDesc : {type: String, default: 'Here is where the portfolio item description should go - 160 characters'},
+  portfolioThreeURL : {type: String, default: 'www.portfoliolink.com'}
 
 
 });
