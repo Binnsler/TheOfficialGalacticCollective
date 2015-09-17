@@ -111,7 +111,7 @@ div.container
 
 	div.portfolioThreeLightbox(class="col s4 offset-s4" ng-show="viewingPortfolioThree")
 		div.lightbox-container
-			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}" ng-show="!portfolioThreeEditing")
+			img.portfolio-pic(src="{{profileUser.portfolioThreePic}}" ng-show="!portfolioThreeEditing")
 			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioThreeEditing") {{profileUser.portfolioThreeTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioThreeEditing") {{profileUser.portfolioThreeDesc}}
 			a.portfolio-lightbox-text(class="galactic-green-text" href="https://{{profileUser.portfolioThreeURL}}" ng-show="!portfolioThreeEditing") {{profileUser.portfolioThreeURL}}
