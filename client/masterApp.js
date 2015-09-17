@@ -238,7 +238,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm){
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout){
 
 	$scope.rand = Math.random();
 
@@ -300,7 +300,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 		//   	});
 		$scope.editing = false;
 
-		$window.location.reload(true);
+		$timeout($window.location.reload(true), 2000);
 	};
 
 	// Like a Post and Update Respective User
