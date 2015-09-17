@@ -302,3 +302,9 @@ a.col.s1.fa.fa-heart.hearts {
 .search-likes {
 	font-size: 1em;
 }
+
+/*Posts Page*/
+
+.left-column {
+	background-color: blue;
+}
