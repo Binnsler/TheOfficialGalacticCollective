@@ -93,6 +93,9 @@ app.post('/api/posts', indexController.createPost)
 // Get all Posts
 app.get('/api/allPosts', indexController.getAllPosts)
 
+// Get a single post (to render as a page)
+app.get('/api/posts/:id', indexController.getPost)
+
 // Get all of a User's Posts
 app.get('/api/allUserPosts', indexController.getAllUserPosts)
 

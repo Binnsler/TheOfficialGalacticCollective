@@ -1,0 +1,21 @@
+block headContent
+	link(rel="stylesheet" href="stylesheets/main.css")
+	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+
+div.row
+	div(class="col s2")
+		img(src="{{postData.userCreated.profilePic}}" alt="" class="circle")
+		a(ng-href="#/profile/{{postData.userCreated.username}}" class="galactic-blue-text") {{postData.userCreated.profileName}}
+
+		div.likesContainer
+			div.number-div
+				p(class="col s1 post-likes") {{postData.likes}}
+			div.likes-div
+				//- a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
+	div(class="col s8")
+		h2.galactic-green-text {{postData.title}}
+		p.galactic-grey-text {{postData.body}}
+		a(href="https://{{postData.url}}" class="galactic-green-text") {{postData.url}}
+		p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
+		div 
+			p.galactic-grey-text.date-created {{postData.dateCreated}}

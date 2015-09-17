@@ -24,7 +24,14 @@ masterApp.config(function($routeProvider){
 	.when('/community', {
 		templateUrl : '/views/community',
 		controller : 'communityController'
-	})
+	});
+	//Dynamic route for Posts
+	$routeProvider
+	.when('/profile/:username/:_id', {
+		templateUrl : '/views/post',
+		controller : 'postController'
+	});
+
 });
 
 // Service for Multiform Upload
@@ -77,6 +84,17 @@ masterApp.factory('authenticateUser', function($http){
 masterApp.factory('userFactory', function($resource){
 
 	var model = $resource('/api/profiles/:username', {username : '@username'})
+
+	return {
+		model : model
+	}
+
+});
+
+// Factory to search for Users
+masterApp.factory('postFactory', function($resource){
+
+	var model = $resource('/api/posts/:_id', {_id : '@_id'})
 
 	return {
 		model : model
@@ -490,3 +508,11 @@ masterApp.controller('loginController', function($scope, $http, $resource, $loca
 		
 	};
 });
+
+masterApp.controller('postController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, postFactory){
+
+	$scope.postData = postFactory.model.get({_id : $routeParams._id});
+
+
+}):
+

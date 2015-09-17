@@ -140,6 +140,7 @@ div.container
 								a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostProfile(post)")
 					div(class="col s8")
 						h4.galactic-green-text {{post.title}}
+							a(ng-href="#/{{post.userCreated.username}}/post._id")
 						p.galactic-grey-text {{post.body}}
 						a(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
 						p.galactic-blue-text(ng-if="post.time") {{post.time}}

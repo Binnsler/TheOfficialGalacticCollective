@@ -59,6 +59,13 @@ var indexController = {
 	    });
   	},
 
+  	getPost : function(req, res){
+  		console.log('Getting a post now.');
+  		Post.findOne({_id: req.params.id}, function(err, postData){
+			res.send(postData);
+		});
+  	},
+
   	getAllPosts : function(req, res){
 		Post.find({}).populate('userCreated').exec(function(err, allPosts){
 			res.send(allPosts);
