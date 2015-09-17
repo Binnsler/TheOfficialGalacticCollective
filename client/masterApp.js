@@ -324,6 +324,16 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 		$scope.viewingPortfolioOne = true;
 
 	};
+
+	// Update first portfolio item
+	$scope.updatePortfolioOne =function(){
+
+		$scope.profileUser.$save();
+		multipartForm.postForm('/uploadForm', $scope.profileUser);
+		$scope.editing = false;
+
+	};
+
 	// Close first portfolio item
 	$scope.closePortfolioOne =function(){
 
@@ -338,6 +348,15 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 	};
 
+	// Update second portfolio item
+	$scope.updatePortfolioTwo =function(){
+
+		$scope.profileUser.$save();
+		multipartForm.postForm('/uploadForm', $scope.profileUser);
+		$scope.editing = false;
+
+	};
+
 	// Close second portfolio item
 	$scope.closePortfolioTwo =function(){
 
@@ -349,6 +368,15 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.viewPortfolioThree =function(){
 
 		$scope.viewingPortfolioThree = true;
+
+	};
+
+	// Update third portfolio item
+	$scope.updatePortfolioThree =function(){
+
+		$scope.profileUser.$save();
+		multipartForm.postForm('/uploadForm', $scope.profileUser);
+		$scope.editing = false;
 
 	};
 
