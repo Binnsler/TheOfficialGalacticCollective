@@ -14,7 +14,8 @@ div.container
 				div.likes-div
 					//- a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
 		div(class="col s8")
-			h2.galactic-green-text {{postData.title}}
+			h2.galactic-green-text {{postData.title}} Testing Title 1
+			p Testing Title 2
 			p.galactic-grey-text {{postData.body}}
 			a(href="https://{{postData.url}}" class="galactic-green-text") {{postData.url}}
 			p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
