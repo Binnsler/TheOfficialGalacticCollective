@@ -322,6 +322,15 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.viewPortfolioOne =function(){
 
 		$scope.viewingPortfolioOne = true;
+		$scope.portfolioOneEditting = false;
+
+
+	};
+
+	// Turn on portfolio one editting
+	$scope.portfolioOneEditting = function(){
+
+		$scope.portfolioOneEditting = true;
 
 	};
 
@@ -330,7 +339,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 		$scope.profileUser.$save();
 		multipartForm.postForm('/uploadForm', $scope.profileUser);
-		$scope.editing = false;
+		$scope.portfolioOneEditting = false;
 
 	};
 
@@ -345,15 +354,25 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.viewPortfolioTwo =function(){
 
 		$scope.viewingPortfolioTwo = true;
+		$scope.portfolioTwoEditting = false;
 
 	};
+
+	// Turn on portfolio two editting
+	$scope.portfolioTwoEditting = function(){
+
+		$scope.portfolioTwoEditting = true;
+
+	};
+
+	
 
 	// Update second portfolio item
 	$scope.updatePortfolioTwo =function(){
 
 		$scope.profileUser.$save();
 		multipartForm.postForm('/uploadForm', $scope.profileUser);
-		$scope.editing = false;
+		$scope.portfolioTwoEditting = false;
 
 	};
 
@@ -368,6 +387,15 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.viewPortfolioThree =function(){
 
 		$scope.viewingPortfolioThree = true;
+		$scope.portfolioThreeEditting = false;
+
+
+	};
+
+	// Turn on portfolio three editting
+	$scope.portfolioThreeEditting = function(){
+
+		$scope.portfolioThreeEditting = true;
 
 	};
 
@@ -376,7 +404,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 		$scope.profileUser.$save();
 		multipartForm.postForm('/uploadForm', $scope.profileUser);
-		$scope.editing = false;
+		$scope.portfolioThreeEditting = false;
 
 	};
 

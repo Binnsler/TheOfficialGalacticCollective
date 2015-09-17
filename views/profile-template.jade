@@ -77,53 +77,53 @@ div.container
 
 	div.portfolioOneLightbox(class="col s4 offset-s4" ng-show="viewingPortfolioOne")
 		div.lightbox-container
-			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}" ng-show="!editing")
-			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!editing") {{profileUser.portfolioOneTitle}}
-			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!editing") {{profileUser.portfolioOneDesc}}
-			a.portfolio-lightbox-text(class="galactic-green-text" href="https://{{profileUser.portfolioOneURL}}" ng-show="!editing") {{profileUser.portfolioOneURL}}
+			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}" ng-show="!portfolioOneEditing")
+			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioOneEditing") {{profileUser.portfolioOneTitle}}
+			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioOneEditing") {{profileUser.portfolioOneDesc}}
+			a.portfolio-lightbox-text(class="galactic-green-text" href="https://{{profileUser.portfolioOneURL}}" ng-show="!portfolioOneEditing") {{profileUser.portfolioOneURL}}
 
 			form.edit-profile(ng-show="editing" enctype="multipart/form-data")
-			input(type="file" file-model="profileUser.portfolioOnePic", class="profile-form" name="portfolioOnePic" ng-show="editing")
-			input(placeholder="Portfolio Title", ng-model="profileUser.portfolioOneTitle", type="text", class="validate profile-form" maxlength="30" ng-show="editing")
-			input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfolioOneDesc", type="text", class="validate profile-form" maxlength="100" ng-show="editing")
-			input(placeholder="Portfolio Url", ng-model="profileUser.portfolioOneUrl", type="text", class="validate profile-form" maxlength="40" ng-show="editing")
+			input(type="file" file-model="profileUser.portfolioOnePic", class="profile-form" name="portfolioOnePic" ng-show="portfolioOneEditing")
+			input(placeholder="Portfolio Title", ng-model="profileUser.portfolioOneTitle", type="text", class="validate profile-form" maxlength="30" ng-show="portfolioOneEditing")
+			input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfolioOneDesc", type="text", class="validate profile-form" maxlength="100" ng-show="portfolioOneEditing")
+			input(placeholder="Portfolio Url", ng-model="profileUser.portfolioOneUrl", type="text", class="validate profile-form" maxlength="40" ng-show="portfolioOneEditing")
 			
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioOne()" ng-show="editing") Save
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="portfolioOneEditting()" ng-show="!portfolioOneEditing") Edit
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioOne()" ng-show="portfolioOneEditing") Save
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioOne()") Close
 	
 	div.portfolioTwoLightbox(class="col s4 offset-s4" ng-show="viewingPortfolioTwo")
 		div.lightbox-container
-			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}" ng-show="!editing")
-			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!editing") {{profileUser.portfolioTwoTitle}}
-			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!editing") {{profileUser.portfolioTwoDesc}}
-			a.portfolio-lightbox-text(class="galactic-green-text" href="https//:{{profileUser.portfolioTwoURL}}" ng-show="!editing") {{profileUser.portfolioTwoURL}}
+			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}" ng-show="!portfolioTwoEditing")
+			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioTwoEditing") {{profileUser.portfolioTwoTitle}}
+			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioTwoEditing") {{profileUser.portfolioTwoDesc}}
+			a.portfolio-lightbox-text(class="galactic-green-text" href="https//:{{profileUser.portfolioTwoURL}}" ng-show="!portfolioTwoEditing") {{profileUser.portfolioTwoURL}}
 
 			form.edit-profile(ng-show="editing" enctype="multipart/form-data")
-			input(type="file" file-model="profileUser.portfolioTwoPic", class="profile-form" name="portfolioOnePic" ng-show="editing")
-			input(placeholder="Portfolio Title", ng-model="profileUser.portfolioTwoTitle", type="text", class="validate profile-form" maxlength="30" ng-show="editing")
-			input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfolioTwoDesc", type="text", class="validate profile-form" maxlength="100" ng-show="editing")
-			input(placeholder="Portfolio Url", ng-model="profileUser.portfolioTwoUrl", type="text", class="validate profile-form" maxlength="40" ng-show="editing")
+			input(type="file" file-model="profileUser.portfolioTwoPic", class="profile-form" name="portfolioOnePic" ng-show="portfolioTwoEditing")
+			input(placeholder="Portfolio Title", ng-model="profileUser.portfolioTwoTitle", type="text", class="validate profile-form" maxlength="30" ng-show="portfolioTwoEditing")
+			input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfolioTwoDesc", type="text", class="validate profile-form" maxlength="100" ng-show="portfolioTwoEditing")
+			input(placeholder="Portfolio Url", ng-model="profileUser.portfolioTwoUrl", type="text", class="validate profile-form" maxlength="40" ng-show="portfolioOneEditing")
 
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioTwo()" ng-show="editing") Save
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="portfolioTwoEditting()" ng-show="!portfolioTwoEditing") Edit
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioTwo()" ng-show="portfolioTwoEditing") Save
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioTwo()") Close
 
 	div.portfolioThreeLightbox(class="col s4 offset-s4" ng-show="viewingPortfolioThree")
 		div.lightbox-container
-			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}" ng-show="!editing")
-			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!editing") {{profileUser.portfolioThreeTitle}}
-			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!editing") {{profileUser.portfolioThreeDesc}}
-			a.portfolio-lightbox-text(class="galactic-green-text" href="https://{{profileUser.portfolioThreeURL}}" ng-show="!editing") {{profileUser.portfolioThreeURL}}
+			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}" ng-show="!portfolioThreeEditing")
+			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioThreeEditing") {{profileUser.portfolioThreeTitle}}
+			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioThreeEditing") {{profileUser.portfolioThreeDesc}}
+			a.portfolio-lightbox-text(class="galactic-green-text" href="https://{{profileUser.portfolioThreeURL}}" ng-show="!portfolioThreeEditing") {{profileUser.portfolioThreeURL}}
 
 			form.edit-profile(ng-show="editing" enctype="multipart/form-data")
-			input(type="file" file-model="profileUser.portfolioThreePic", class="profile-form" name="portfolioThreePic" ng-show="editing")
-			input(placeholder="Portfolio Title", ng-model="profileUser.portfolioThreeTitle", type="text", class="validate profile-form" maxlength="30" ng-show="editing")
-			input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfoliThreeeDesc", type="text", class="validate profile-form" maxlength="100" ng-show="editing")
-			input(placeholder="Portfolio Url", ng-model="profileUser.portfolioThreeUrl", type="text", class="validate profile-form" maxlength="40" ng-show="editing")
+			input(type="file" file-model="profileUser.portfolioThreePic", class="profile-form" name="portfolioThreePic" ng-show="portfolioThreeEditing")
+			input(placeholder="Portfolio Title", ng-model="profileUser.portfolioThreeTitle", type="text", class="validate profile-form" maxlength="30" ng-show="portfolioThreeEditing")
+			input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfoliThreeeDesc", type="text", class="validate profile-form" maxlength="100" ng-show="portfolioThreeEditing")
+			input(placeholder="Portfolio Url", ng-model="profileUser.portfolioThreeUrl", type="text", class="validate profile-form" maxlength="40" ng-show="portfolioThreeEditing")
 
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioThree()" ng-show="editing") Save
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="portfolioThreeEditting()" ng-show="!portfolioThreeEditing") Edit
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioThree()" ng-show="portfolioThreeEditing") Save
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioThree()") Close
 
 	div.allPosts
