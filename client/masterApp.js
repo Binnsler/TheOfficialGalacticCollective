@@ -514,5 +514,5 @@ masterApp.controller('postController', function($window, $scope, $http, $resourc
 	$scope.postData = postFactory.model.get({_id : $routeParams._id});
 
 
-}):
+});
 
