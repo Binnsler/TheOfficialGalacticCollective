@@ -300,7 +300,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 		//   	});
 		$scope.editing = false;
 
-		$timeout($window.location.reload(true), 2000);
+		$timeout($window.location.reload(true), 3000);
 	};
 
 	// Like a Post and Update Respective User

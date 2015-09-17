@@ -163,7 +163,7 @@ var indexController = {
 						else{
 							console.log('User Data : ' + userData)
 							// res.send(userData);
-							// console.log('User profile picture updated.')
+							console.log('User profile picture updated.')
 						}
 					});
 				}
@@ -171,32 +171,6 @@ var indexController = {
 			});
 		};
 
-		// console.log('https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id)
-		// console.log('Here is req.body' + JSON.stringify(req.body))
-
-		// User.findOneAndUpdate({username: req.body.username}, req.body, 'new = true', function(err, userData){
-		// 	console.log('Here is the data back: ', userData)
-		// });
-
-
-		// var params = {
-	 //      Bucket: 'galacticcollective',
-	 //      Key: req.body._id,
-	 //      Body: req.file
-  //   	};
-
-	 //    s3.putObject(params, function (error, data) {
-	 //      if (perr) {
-	 //        console.log("Error uploading data: ", error);
-	 //      } else {
-	 //        console.log("Successfully uploaded data to myBucket/myKey");
-	 //      }
-	 //    });
-		
-		// console.log(req.body);
-		// console.log(req.file);
-		// console.log('I am the SERVER, your leader.');
-		// res.send('Ping back from the server.');
 	}
 }
 
