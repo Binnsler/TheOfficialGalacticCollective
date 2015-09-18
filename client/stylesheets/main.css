@@ -316,4 +316,5 @@ ul, li {
 .viewing-post-likes {
 	margin-right: none;
 	padding: 0;
+	padding-bottom: 4px;
 }
