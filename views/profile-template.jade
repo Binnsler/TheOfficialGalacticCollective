@@ -138,9 +138,9 @@ div.container
 								p(class="col s1 post-likes") {{post.likes}}
 							div.likes-div
 								a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostProfile(post)")
-					div(class="col s8")
+					div(class="col s8 offset-s1")
 						a.galactic-green-text(ng-href="#/profile/{{post.userCreated.username}}/{{post._id}}" class="postTitle") {{post.title}}
-						p.galactic-grey-text {{post.body | limitTo: 250}} ...
+						p.galactic-grey-text(class="post-body") {{post.body | limitTo: 250}} ...
 						a(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
 						p.galactic-blue-text(ng-if="post.time") {{post.time}}
 						div 
