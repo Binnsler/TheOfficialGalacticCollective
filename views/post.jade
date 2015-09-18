@@ -8,7 +8,7 @@ div.container
 					//- a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
 		div
 			h3.galactic-green-text {{postData.title}}
-			p.galactic-grey-text {{postData.dateCreated | date:'medium'}}
+			p.galactic-grey-text {{postData.dateCreated | date:'short'}}
 			p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
 
 			p.galactic-grey-text {{postData.body}}

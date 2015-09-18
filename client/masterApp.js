@@ -110,10 +110,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 	$http.get('/api/allPosts').
 		then(function(returnData){
 			$scope.posts = returnData.data.reverse();
-			$scope.posts.forEach(function(post){
-		    	post.dateCreated = (new Date(post.dateCreated)).toDateString();
-		    })
-		})
+		});
 
 	// $scope.theDate = post.dateCreated.toISOString();
 
