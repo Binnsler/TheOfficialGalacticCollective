@@ -3,10 +3,10 @@ block headContent
 	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
 
 div.container
-	div.row
+	div.row(class="col s6 offset-s3")
 
 					//- a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
-		div(class="col s6 offset-s3")
+		div
 			h3.galactic-green-text {{postData.title}}
 			p.galactic-grey-text {{postData.dateCreated}}
 			p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
