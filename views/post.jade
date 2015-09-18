@@ -15,10 +15,10 @@ div.container
 				div(class="top-space")
 					h3.galactic-green-text {{postData.title}}
 					div
-						div.number-div
+						div
 							p(class="col s1 viewing-post-likes") {{postData.likes}}
 							a(class="col s1 fa fa-heart viewing-hearts" ng-click="iLikeThisPostCommunity(postData)")
-						div.likes-div
+						
 
 					p.galactic-grey-text {{postData.body}}
 					p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
