@@ -514,7 +514,7 @@ masterApp.controller('postController', function($window, $scope, $http, $resourc
 	console.log("We're in to the post")
 	$scope.postData = postFactory.model.get({_id : $routeParams._id});
 
-	postData.dateCreated = (new Date(post.dateCreated)).toDateString();
+	$scope.postData.dateCreated = (new Date(post.dateCreated)).toDateString();
 
 
 
