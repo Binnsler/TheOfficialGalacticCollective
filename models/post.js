@@ -11,7 +11,7 @@ var postSchema = mongoose.Schema({
   time : {type: Date},
   likes : {type: Number, default: 0},
   type: {type: String},
-  likedByIp: [{type: String, default: [{0}]}
+  likedByIp: [{type: String}, default: 0]
 
 });
 
