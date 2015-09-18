@@ -6,17 +6,18 @@ div.container
 	div.row
 
 					//- a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
-		div(class="col s8 offset-s2")
-			img(src="{{postData.userCreated.profilePic}}" alt="" class="circle")
-			a(ng-href="#/profile/{{postData.userCreated.username}}" class="galactic-blue-text") {{postData.userCreated.profileName}}
+		div(class="col s6 offset-s3")
 			h3.galactic-green-text {{postData.title}}
+			p.galactic-grey-text {{postData.dateCreated}}
+			p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
+
 			p.galactic-grey-text {{postData.body}}
 			a(href="https://{{postData.url}}" class="galactic-green-text") {{postData.url}}
-			p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
-			div 
-				p.galactic-grey-text {{postData.dateCreated}}
 
 			div.likesContainer
 				div.number-div
 					p(class="col s1 post-likes") {{postData.likes}}
 				div.likes-div
+					
+			img(src="{{postData.userCreated.profilePic}}" alt="" class="circle")
+			a(ng-href="#/profile/{{postData.userCreated.username}}" class="galactic-blue-text") {{postData.userCreated.profileName}}
