@@ -103,7 +103,7 @@ var indexController = {
 		Post.find({_id: req.body._id}, function(err, userData){
 			console.log(userData);
 			if(
-				userData.likedByIp.indexOf(req.body.userIP) === -1
+				userData.likedByIp.indexOf(req.body.userIP) === -1 || userData.likedByIp.indexOf(req.body.userIP) === undefined
 				){
 					Post.findOneAndUpdate({_id: req.body._id}, {$inc: {likes: 1}}, function(err, userData){
 						// console.log('This is the backend error: ', err)
