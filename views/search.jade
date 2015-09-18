@@ -19,7 +19,7 @@ div.container
 		input(class="col s8 offset-s2 search-box" type="text" ng-model="query" placeholder="Search for creatives by name, location or skills")
 
 	ul.collection
-		li(ng-repeat="profile in profiles | filter: query | limitTo: 10" class="collection-item avatar")
+		li(ng-repeat="profile in profiles | filter: query | limitTo: 10" class="collection-item avatar profile-box")
 			div.row
 				div(class="col s2 offset-s2 left-profile")
 					div.thumb
