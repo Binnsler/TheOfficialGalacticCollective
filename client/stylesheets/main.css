@@ -318,3 +318,7 @@ ul, li {
 	padding: 0;
 	vertical-align: text-top;
 }
+
+.viewing-hearts {
+	padding-top: 3px;
+}
