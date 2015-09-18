@@ -4,13 +4,13 @@ block headContent
 
 div.container
 	div.collection
-		li(class="collection-item avatar")
+		li.no-bullet(class="collection-item avatar")
 			div.row(class="col s6 offset-s3")
 
 							//- a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
 				div.no-bullet
 					img(src="{{postData.userCreated.profilePic}}" alt="" class="circle")
-					a(ng-href="#/profile/{{postData.userCreated.username}}" class="galactic-blue-text") {{postData.userCreated.profileName}}
+					a.no-bullet(ng-href="#/profile/{{postData.userCreated.username}}" class="galactic-blue-text") {{postData.userCreated.profileName}}
 					p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
 					
 				div(class="top-space")
