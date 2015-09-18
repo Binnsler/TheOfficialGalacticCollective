@@ -18,7 +18,7 @@ div.container
 			div.row
 				input(placeholder="Job Title", ng-model="jobFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
 				input(placeholder="Job URL", ng-model="jobFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
-				input(placeholder="Job Description", ng-model="jobFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="300") 
+				input(placeholder="Job Description", ng-model="jobFormData.description", type="text", class="validate col s10 offset-s1 profile-form") 
 			div.row
 				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitJob(jobFormData)") Submit
 
@@ -26,7 +26,7 @@ div.container
 			div.row
 				input(placeholder="Content Title", ng-model="contentFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
 				input(placeholder="Content URL", ng-model="contentFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
-				input(placeholder="Content Description", ng-model="contentFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="300") 
+				input(placeholder="Content Description", ng-model="contentFormData.description", type="text", class="validate col s10 offset-s1 profile-form") 
 			div.row
 				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitContent(contentFormData)") Submit
 
@@ -34,7 +34,7 @@ div.container
 			div.row
 				input(placeholder="Event Title", ng-model="eventFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
 				input(placeholder="Event URL", ng-model="eventFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
-				input(placeholder="Event Description", ng-model="eventFormData.description", type="text", class="validate col s10 offset-s1 profile-form" maxlength="200") 
+				input(placeholder="Event Description", ng-model="eventFormData.description", type="text", class="validate col s10 offset-s1 profile-form") 
 				input(ng-model="eventFormData.time", type="date", class="datepicker col s4 offset-s1 profile-form")
 			div.row
 				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitEvent(eventFormData)") Submit
@@ -55,7 +55,7 @@ div.container
 							a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
 				div(class="col s8")
 					a.galactic-green-text(ng-href="#/profile/{{post.userCreated.username}}/{{post._id}}") {{post.title}}
-					p.galactic-grey-text {{post.body}}
+					p.galactic-grey-text {{post.body | limitTo: 250}} ...
 					a(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
 					p.galactic-blue-text(ng-if="post.time") {{post.time}}
 					div 

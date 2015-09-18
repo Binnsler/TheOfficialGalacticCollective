@@ -25,7 +25,7 @@ div.container
 					a(href="https://{{postData.url}}" class="galactic-green-text") {{postData.url}}
 
 
-				div(class="profile-line")			
+				div(class="profile-line col-s3")			
 					img(src="{{postData.userCreated.profilePic}}" ng-href="#/profile/{{postData.userCreated.username}}" alt="" class="circle")
 					a(ng-href="#/profile/{{postData.userCreated.username}}" class="galactic-blue-text") {{postData.userCreated.profileName}}
 					p.galactic-grey-text {{postData.userCreated.profileBlurb}}
