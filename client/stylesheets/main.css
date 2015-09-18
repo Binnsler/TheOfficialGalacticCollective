@@ -153,6 +153,10 @@ h4 {
 
 /*Community Page*/
 
+.post-url {
+	margin-top: 1em;
+}
+
 .postTitle {
 	font-size: 1.5em;
 }

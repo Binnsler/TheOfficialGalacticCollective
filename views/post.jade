@@ -22,7 +22,7 @@ div.container
 
 					p.galactic-grey-text {{postData.body}}
 					p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
-					a(href="https://{{postData.url}}" class="galactic-green-text") {{postData.url}}
+					a.post-url(href="https://{{postData.url}}" class="galactic-green-text") {{postData.url}}
 
 
 				div(class="profile-line col-s3")			
