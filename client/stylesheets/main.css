@@ -320,5 +320,6 @@ ul, li {
 }
 
 .viewing-hearts {
+	padding: 0;
 	padding-top: 3px;
 }
