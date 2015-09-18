@@ -267,11 +267,6 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$http.get('/api/allUserPosts?username=' + $routeParams.username).
 		then(function(returnData){
 			$scope.posts = returnData.data.reverse();
-			$scope.posts.forEach(function(post){
-		    	post.dateCreated = (new Date(post.dateCreated)).toDateString();
-		    	post.time = (new Date(post.time)).toDateString();
-		    })
-
 
 		});
 
