@@ -507,16 +507,16 @@ masterApp.controller('postController', function($window, $scope, $http, $resourc
 	console.log($scope.postData)
 
 
-	$scope.iLikeThisPostCommunity = function(post){
+	$scope.iLikeThisPostCommunity = function(postData){
 
 		$http.get('http://ipinfo.io/json').
 			success(function(data){
 				
-				$scope.post.userIP = data.ip;
+				$scope.postData.userIP = data.ip;
 
-				$scope.post.likes += 1;
+				$scope.postData.likes += 1;
 
-				$http.post('/api/ilikethispostcommunity', post).
+				$http.post('/api/ilikethispostcommunity', postData).
 					then(function(response) {
 					    		console.log('1st request body: ' + response);
 
