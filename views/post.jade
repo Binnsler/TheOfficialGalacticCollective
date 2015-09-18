@@ -14,10 +14,10 @@ div.container
 					
 				div(class="top-space")
 					h3.galactic-green-text {{postData.title}}
-					div.likesContainer
+					div
 						div.number-div
-							a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
 							p(class="col s1 post-likes") {{postData.likes}}
+							a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
 						div.likes-div
 
 					p.galactic-grey-text {{postData.body}}
