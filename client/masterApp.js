@@ -512,9 +512,9 @@ masterApp.controller('postController', function($window, $scope, $http, $resourc
 		$http.get('http://ipinfo.io/json').
 			success(function(data){
 				
-				post.userIP = data.ip;
+				$scope.post.userIP = data.ip;
 
-				post.likes += 1;
+				$scope.post.likes += 1;
 
 				$http.post('/api/ilikethispostcommunity', post).
 					then(function(response) {
