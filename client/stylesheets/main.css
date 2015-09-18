@@ -330,7 +330,7 @@ a.col.s1.fa.fa-heart.viewing-hearts {
 }
 
 .profile-line {
+	margin-top: 2em;
 	border-top: 1px solid #999999;
-	border-bottom: 1px solid #999999;
 	padding: 2% 0;
 }
