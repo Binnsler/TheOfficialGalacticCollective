@@ -504,7 +504,7 @@ masterApp.controller('loginController', function($scope, $http, $resource, $loca
 masterApp.controller('postController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, postFactory){
 
 	$scope.postData = postFactory.model.get({_id : $routeParams._id});
-	console.log("We're in to the post : " + $scope.postData)
+	console.log($scope.postData)
 
 
 
