@@ -313,6 +313,10 @@ ul, li {
 	list-style-type: none;
 }
 
+.blockify {
+	display: block;
+}
+
 .viewing-post-likes {
 	margin-right: none;
 	padding: 0;
