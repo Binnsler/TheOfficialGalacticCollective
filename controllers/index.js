@@ -61,7 +61,7 @@ var indexController = {
 
   	getPost : function(req, res){
   		console.log('Getting a post now.');
-  		Post.findOne({_id: req.params.id}, function(err, postData){
+  		Post.findOne({_id: req.params.id}).populate('userCreated').exec(function(err, postData){
 			res.send(postData);
 		});
   	},
