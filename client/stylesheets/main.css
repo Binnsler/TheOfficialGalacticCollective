@@ -308,3 +308,7 @@ a.col.s1.fa.fa-heart.hearts {
 .left-column {
 	background-color: blue;
 }
+
+.no-bullets {
+	list-style: none;
+}

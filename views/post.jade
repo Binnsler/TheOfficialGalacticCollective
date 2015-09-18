@@ -4,18 +4,18 @@ block headContent
 
 div.container
 	div.collection
-		li(class="collection-item avatar")
+		li(class="collection-item avatar no-bullet")
 			div.row(class="col s6 offset-s3")
 
 							//- a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
 				div
 					img(src="{{postData.userCreated.profilePic}}" alt="" class="circle")
 					a(ng-href="#/profile/{{postData.userCreated.username}}" class="galactic-blue-text") {{postData.userCreated.profileName}}
+					p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
 					
 				div(class="top-space")
 					h3.galactic-green-text {{postData.title}}
 					p.galactic-grey-text {{postData.dateCreated | date:'short'}}
-					p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
 
 					p.galactic-grey-text {{postData.body}}
 					a(href="https://{{postData.url}}" class="galactic-green-text") {{postData.url}}
