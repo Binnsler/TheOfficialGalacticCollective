@@ -101,7 +101,7 @@ var indexController = {
 
 		// CHECK IF THE IP USER ALREADY LIKED THIS POST
 		Post.find({_id: req.body._id}, function(err, userData){
-			
+			console.log(userData);
 			if(
 				userData.likedByIp.indexOf(req.body.userIP) === -1
 				){
