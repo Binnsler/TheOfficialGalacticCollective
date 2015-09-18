@@ -7,25 +7,25 @@ div.container
 		li(class="collection-item avatar")
 			div.row(class="col s6 offset-s3")
 
-							//- a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
 				div
-					img(src="{{postData.userCreated.profilePic}}" alt="" class="circle")
+					img(src="{{postData.userCreated.profilePic}}" ng-href="#/profile/{{postData.userCreated.username}}" alt="" class="circle")
 					a(ng-href="#/profile/{{postData.userCreated.username}}" class="galactic-blue-text") {{postData.userCreated.profileName}}
 					p.galactic-grey-text {{postData.dateCreated | date:'short'}}
 					
 				div(class="top-space")
 					h3.galactic-green-text {{postData.title}}
+					div.likesContainer
+						div.number-div
+							a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
+							p(class="col s1 post-likes") {{postData.likes}}
+						div.likes-div
 
 					p.galactic-grey-text {{postData.body}}
 					p.galactic-blue-text(ng-if="postData.time") {{postData.time}}
 					a(href="https://{{postData.url}}" class="galactic-green-text") {{postData.url}}
 
-					div.likesContainer
-						div.number-div
-							p(class="col s1 post-likes") {{postData.likes}}
-						div.likes-div
 
 				div(class="top-space")			
-					img(src="{{postData.userCreated.profilePic}}" alt="" class="circle")
+					img(src="{{postData.userCreated.profilePic}}" ng-href="#/profile/{{postData.userCreated.username}}" alt="" class="circle")
 					a(ng-href="#/profile/{{postData.userCreated.username}}" class="galactic-blue-text") {{postData.userCreated.profileName}}
 					p.galactic-grey-text {{postData.userCreated.profileBlurb}}

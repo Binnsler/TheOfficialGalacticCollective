@@ -507,7 +507,30 @@ masterApp.controller('postController', function($window, $scope, $http, $resourc
 	console.log($scope.postData)
 
 
+	$scope.iLikeThisPostCommunity = function(post){
 
+		$http.get('http://ipinfo.io/json').
+			success(function(data){
+				
+				post.userIP = data.ip;
+
+				post.likes += 1;
+
+				$http.post('/api/ilikethispostcommunity', post).
+					then(function(response) {
+					    		console.log('1st request body: ' + response);
+
+					  		}, function(response) {
+
+					    		console.log('2nd request body: ' + response.body);
+
+					});
+
+
+				
+			})
+
+	};
 
 
 });

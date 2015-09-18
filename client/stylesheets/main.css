@@ -312,3 +312,8 @@ a.col.s1.fa.fa-heart.hearts {
 ul, li {
 	list-style-type: none;
 }
+
+.viewing-post-likes {
+	margin-right: none;
+	padding: 0;
+}
