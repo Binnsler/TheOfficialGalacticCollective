@@ -188,7 +188,7 @@ var indexController = {
 		// process.env.AWS_SECRET_ACCESS_KEY
 
 
-		console.log("The Req.file is: " + req.file)
+		console.log("Starting upload to portfolioOnePic")
 
 		if(req.file !== undefined){
 			s3.putObject({
@@ -206,9 +206,8 @@ var indexController = {
 							console.log('Database error : ' + err)						
 						}
 						else{
-							console.log('User Data : ' + userData)
 							// res.send(userData);
-							console.log('User profile picture updated.')
+							console.log('Updated portfolioOnePic')
 						}
 					});
 				}
