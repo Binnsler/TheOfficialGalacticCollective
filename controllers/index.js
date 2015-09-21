@@ -36,7 +36,7 @@ var indexController = {
 
 	createPost : function(req, res){
 
-		console.lo`g('The req.body of the post: ', req.body)
+		console.log('The req.body of the post: ', req.body)
 
 		var post = new Post({
 			title: req.body.title,
