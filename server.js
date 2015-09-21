@@ -84,6 +84,15 @@ app.post('/api/profiles/:username', indexController.updateUser)
 // Upload Profile Pic
 app.post('/uploadForm', upload.single('uploadPic'), indexController.uploadForm)
 
+// Upload Portfolio One Pic 
+app.post('/uploadForm', upload.single('portfolioOnePic'), indexController.uploadPortfolioOneForm)
+
+// Upload Portfolio Two Pic 
+app.post('/uploadForm', upload.single('portfolioTwoPic'), indexController.uploadPortfolioTwoForm)
+
+// Upload Portfolio Three Pic 
+app.post('/uploadForm', upload.single('portfolioThreePic'), indexController.uploadPortfolioThreeForm)
+
 // Get all users
 app.get('/api/allUsers', indexController.getAllUsers)
 
