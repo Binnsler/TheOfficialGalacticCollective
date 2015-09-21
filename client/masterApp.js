@@ -348,8 +348,10 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.updatePortfolioOne =function(){
 
 		$scope.profileUser.$save();
-		multipartForm.postForm('/uploadForm', $scope.profileUser);
+		multipartForm.postForm('/uploadPortfolioOneForm', $scope.profileUser);
 		$scope.portfolioOneEditing = false;
+
+		$timeout(function(){ $window.location.reload(true); }, 1500);
 
 	};
 
@@ -381,8 +383,10 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.updatePortfolioTwo =function(){
 
 		$scope.profileUser.$save();
-		multipartForm.postForm('/uploadForm', $scope.profileUser);
+		multipartForm.postForm('/uploadPortfolioTwoForm', $scope.profileUser);
 		$scope.portfolioTwoEditing = false;
+
+		$timeout(function(){ $window.location.reload(true); }, 1500);
 
 	};
 
@@ -413,8 +417,10 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.updatePortfolioThree =function(){
 
 		$scope.profileUser.$save();
-		multipartForm.postForm('/uploadForm', $scope.profileUser);
+		multipartForm.postForm('/uploadPortfolioThreeForm', $scope.profileUser);
 		$scope.portfolioThreeEditing = false;
+
+		$timeout(function(){ $window.location.reload(true); }, 1500);
 
 	};
 

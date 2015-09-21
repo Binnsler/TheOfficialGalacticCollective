@@ -36,7 +36,7 @@ var indexController = {
 
 	createPost : function(req, res){
 
-		console.log('The req.body of the post: ', req.body)
+		console.lo`g('The req.body of the post: ', req.body)
 
 		var post = new Post({
 			title: req.body.title,
@@ -156,6 +156,117 @@ var indexController = {
 		if(req.file !== undefined){
 			s3.putObject({
 				Key: req.body._id,
+				Bucket: "galacticcollective",
+				ACL:"public-read-write",
+				Body: fs.createReadStream(req.file.path)
+			}, function(error, data) {
+				if(error){
+					console.log('AWS Error: ' + error)	
+				}
+				else{
+					User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
+						if(err){
+							console.log('Database error : ' + err)						
+						}
+						else{
+							console.log('User Data : ' + userData)
+							// res.send(userData);
+							console.log('User profile picture updated.')
+						}
+					});
+				}
+
+			});
+		};
+
+	},
+
+	uploadPortfolioOneForm : function(req, res){
+
+		// AWS Credientials are stored in the Environment Keys In Heroku
+		// process.env.AWS_ACCESS_KEY_ID
+		// process.env.AWS_SECRET_ACCESS_KEY
+
+
+		console.log("The Req.file is: " + req.file)
+
+		if(req.file !== undefined){
+			s3.putObject({
+				Key: "portfolioOnePic" + req.body._id,
+				Bucket: "galacticcollective",
+				ACL:"public-read-write",
+				Body: fs.createReadStream(req.file.path)
+			}, function(error, data) {
+				if(error){
+					console.log('AWS Error: ' + error)	
+				}
+				else{
+					User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
+						if(err){
+							console.log('Database error : ' + err)						
+						}
+						else{
+							console.log('User Data : ' + userData)
+							// res.send(userData);
+							console.log('User profile picture updated.')
+						}
+					});
+				}
+
+			});
+		};
+
+	},
+
+	uploadPortfolioTwoForm : function(req, res){
+
+		// AWS Credientials are stored in the Environment Keys In Heroku
+		// process.env.AWS_ACCESS_KEY_ID
+		// process.env.AWS_SECRET_ACCESS_KEY
+
+
+		console.log("The Req.file is: " + req.file)
+
+		if(req.file !== undefined){
+			s3.putObject({
+				Key: "portfolioTwoPic" + req.body._id,
+				Bucket: "galacticcollective",
+				ACL:"public-read-write",
+				Body: fs.createReadStream(req.file.path)
+			}, function(error, data) {
+				if(error){
+					console.log('AWS Error: ' + error)	
+				}
+				else{
+					User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
+						if(err){
+							console.log('Database error : ' + err)						
+						}
+						else{
+							console.log('User Data : ' + userData)
+							// res.send(userData);
+							console.log('User profile picture updated.')
+						}
+					});
+				}
+
+			});
+		};
+
+	},
+
+	uploadPortfolioThreeForm : function(req, res){
+
+		// AWS Credientials are stored in the Environment Keys In Heroku
+		// process.env.AWS_ACCESS_KEY_ID
+		// process.env.AWS_SECRET_ACCESS_KEY
+
+
+		console.log("The Req.file is: " + req.file)
+
+		if(req.file !== undefined){
+			s3.putObject({
+				Key: "portfolioThreePic" + req.body._id,
 				Bucket: "galacticcollective",
 				ACL:"public-read-write",
 				Body: fs.createReadStream(req.file.path)
