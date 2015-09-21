@@ -75,8 +75,8 @@ div.container
 			img.portfolio-pic(src="{{profileUser.portfolioThreePic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioThreeTitle}}
 
-	div.portfolioOneLightbox(class="col s4 offset-s4" ng-show="viewingPortfolioOne")
-		div.lightbox-container
+	div.portfolioOneLightbox(ng-show="viewingPortfolioOne")
+		div.lightbox-container(class="col s4 offset-s4")
 			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}" ng-show="!portfolioOneEditing")
 			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioOneEditing") {{profileUser.portfolioOneTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioOneEditing") {{profileUser.portfolioOneDesc}}
@@ -92,8 +92,8 @@ div.container
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioOne()" ng-show="portfolioOneEditing") Save
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioOne()") Close
 	
-	div.portfolioTwoLightbox(class="col s4 offset-s4" ng-show="viewingPortfolioTwo")
-		div.lightbox-container
+	div.portfolioTwoLightbox(ng-show="viewingPortfolioTwo")
+		div.lightbox-container(class="col s4 offset-s4")
 			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}" ng-show="!portfolioTwoEditing")
 			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioTwoEditing") {{profileUser.portfolioTwoTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioTwoEditing") {{profileUser.portfolioTwoDesc}}
@@ -109,8 +109,8 @@ div.container
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioTwo()" ng-show="portfolioTwoEditing") Save
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioTwo()") Close
 
-	div.portfolioThreeLightbox(class="col s4 offset-s4" ng-show="viewingPortfolioThree")
-		div.lightbox-container
+	div.portfolioThreeLightbox(ng-show="viewingPortfolioThree")
+		div.lightbox-container(class="col s4 offset-s4")
 			img.portfolio-pic(src="{{profileUser.portfolioThreePic}}" ng-show="!portfolioThreeEditing")
 			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioThreeEditing") {{profileUser.portfolioThreeTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioThreeEditing") {{profileUser.portfolioThreeDesc}}
