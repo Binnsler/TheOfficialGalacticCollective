@@ -90,7 +90,7 @@ div.container
 				div.row
 					input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfolioOneDesc", type="text", class="validate profile-form col s4 offset-s4 lightbox-form" maxlength="100")
 				div.row
-					input(placeholder="Portfolio Url", ng-model="profileUser.portfolioOneUrl", type="text", class="validate profile-form col s4 offset-s4 lightbox-form" maxlength="40")
+					input(placeholder="Portfolio Url", ng-model="profileUser.portfolioOneUrl", type="text", class="validate profile-form col s4 offset-s4 lightbox-form" maxlength="50")
 			
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="editPortfolioOne()" ng-show="!portfolioOneEditing") Edit
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioOne()" ng-show="portfolioOneEditing") Save
@@ -111,7 +111,7 @@ div.container
 				div.row
 					input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfolioTwoDesc", type="text", class="validate profile-form col s4 offset-s4 lightbox-form" maxlength="100")
 				div.row
-					input(placeholder="Portfolio Url", ng-model="profileUser.portfolioTwoUrl", type="text", class="validate profile-form col s4 offset-s4 lightbox-form" maxlength="40")
+					input(placeholder="Portfolio Url", ng-model="profileUser.portfolioTwoUrl", type="text", class="validate profile-form col s4 offset-s4 lightbox-form" maxlength="50")
 
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="editPortfolioTwo()" ng-show="!portfolioTwoEditing") Edit
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioTwo()" ng-show="portfolioTwoEditing") Save
@@ -132,7 +132,7 @@ div.container
 				div.row
 					input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfoliThreeeDesc", type="text", class="validate profile-form col s4 offset-s4 lightbox-form" maxlength="100")
 				div.row
-					input(placeholder="Portfolio Url", ng-model="profileUser.portfolioThreeUrl", type="text", class="validate profile-form col s4 offset-s4 lightbox-form" maxlength="40")
+					input(placeholder="Portfolio Url", ng-model="profileUser.portfolioThreeUrl", type="text", class="validate profile-form col s4 offset-s4 lightbox-form" maxlength="50")
 
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="editPortfolioThree()" ng-show="!portfolioThreeEditing") Edit
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioThree()" ng-show="portfolioThreeEditing") Save
