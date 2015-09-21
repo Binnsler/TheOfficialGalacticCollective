@@ -55,6 +55,11 @@ h4 {
 
 /*Profile Page Styling*/
 
+.portfolio-pic {
+	height: 200px;
+	width: 300px;
+}
+
 .lightbox-form {
 	color: white;
 }
@@ -123,9 +128,6 @@ h4 {
 	text-align: center;
 }
 
-.portfolio-pic {
-	/*margin: auto 0;*/
-}
 
 .portfolioOneLightbox, .portfolioTwoLightbox, .portfolioThreeLightbox {
   position: fixed;

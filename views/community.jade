@@ -45,7 +45,7 @@ div.container
 		li(ng-repeat="post in posts track by $index | orderBy : '-dateCreated'" class="collection-item avatar")
 			div.row
 				div(class="col s2")
-					img(src="{{post.userCreated.profilePic}}" alt="" class="circle")
+					img(src="{{post.userCreated.profilePic}}?{{rand}}" alt="" class="circle")
 					a(ng-href="#/profile/{{post.userCreated.username}}" class="galactic-blue-text") {{post.userCreated.profileName}}
 					a.delete-button(ng-show="userContainer.user._id === post.userCreated._id" ng-click="deletePost(post, $index)") Delete
 					div.likesContainer
