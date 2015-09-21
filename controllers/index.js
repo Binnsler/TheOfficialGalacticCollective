@@ -201,7 +201,7 @@ var indexController = {
 					console.log('AWS Error: ' + error)	
 				}
 				else{
-					User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
+					User.findOneAndUpdate({username: req.body.username}, {portfolioOnePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/portfolioOnePic' + req.body._id}, function(err, userData){
 						if(err){
 							console.log('Database error : ' + err)						
 						}
@@ -238,7 +238,7 @@ var indexController = {
 					console.log('AWS Error: ' + error)	
 				}
 				else{
-					User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
+					User.findOneAndUpdate({username: req.body.username}, {portfolioTwoPic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/portfolioTwoPic' + req.body._id}, function(err, userData){
 						if(err){
 							console.log('Database error : ' + err)						
 						}
@@ -275,7 +275,7 @@ var indexController = {
 					console.log('AWS Error: ' + error)	
 				}
 				else{
-					User.findOneAndUpdate({username: req.body.username}, {profilePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/' + req.body._id}, function(err, userData){
+					User.findOneAndUpdate({username: req.body.username}, {portfolioThreePic : 'https://s3-us-west-2.amazonaws.com/galacticcollective/portfolioThreePic' + req.body._id}, function(err, userData){
 						if(err){
 							console.log('Database error : ' + err)						
 						}
