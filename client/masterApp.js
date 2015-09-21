@@ -332,15 +332,15 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.viewPortfolioOne =function(){
 
 		$scope.viewingPortfolioOne = true;
-		$scope.portfolioOneEditting = false;
+		$scope.portfolioOneEditing = false;
 
 
 	};
 
 	// Turn on portfolio one editting
-	$scope.portfolioOneEditting = function(){
+	$scope.portfolioOneEditing = function(){
 
-		$scope.portfolioOneEditting = true;
+		$scope.portfolioOneEditing = true;
 
 	};
 
@@ -349,7 +349,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 		$scope.profileUser.$save();
 		multipartForm.postForm('/uploadForm', $scope.profileUser);
-		$scope.portfolioOneEditting = false;
+		$scope.portfolioOneEditing = false;
 
 	};
 
@@ -364,14 +364,14 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.viewPortfolioTwo =function(){
 
 		$scope.viewingPortfolioTwo = true;
-		$scope.portfolioTwoEditting = false;
+		$scope.portfolioTwoEditing = false;
 
 	};
 
 	// Turn on portfolio two editting
-	$scope.portfolioTwoEditting = function(){
+	$scope.portfolioTwoEditing = function(){
 
-		$scope.portfolioTwoEditting = true;
+		$scope.portfolioTwoEditing = true;
 
 	};
 
@@ -382,7 +382,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 		$scope.profileUser.$save();
 		multipartForm.postForm('/uploadForm', $scope.profileUser);
-		$scope.portfolioTwoEditting = false;
+		$scope.portfolioTwoEditing = false;
 
 	};
 
@@ -397,15 +397,15 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.viewPortfolioThree =function(){
 
 		$scope.viewingPortfolioThree = true;
-		$scope.portfolioThreeEditting = false;
+		$scope.portfolioThreeEditing = false;
 
 
 	};
 
 	// Turn on portfolio three editting
-	$scope.portfolioThreeEditting = function(){
+	$scope.portfolioThreeEditing = function(){
 
-		$scope.portfolioThreeEditting = true;
+		$scope.portfolioThreeEditing = true;
 
 	};
 
@@ -414,7 +414,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 		$scope.profileUser.$save();
 		multipartForm.postForm('/uploadForm', $scope.profileUser);
-		$scope.portfolioThreeEditting = false;
+		$scope.portfolioThreeEditing = false;
 
 	};
 
