@@ -88,7 +88,7 @@ div.container
 				input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfolioOneDesc", type="text", class="validate profile-form" maxlength="100" ng-show="portfolioOneEditing")
 				input(placeholder="Portfolio Url", ng-model="profileUser.portfolioOneUrl", type="text", class="validate profile-form" maxlength="40" ng-show="portfolioOneEditing")
 			
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="portfolioOneEditing()" ng-show="!portfolioOneEditing") Edit
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="editPortfolioOne()" ng-show="!portfolioOneEditing") Edit
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioOne()" ng-show="portfolioOneEditing") Save
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioOne()") Close
 	
@@ -105,7 +105,7 @@ div.container
 				input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfolioTwoDesc", type="text", class="validate profile-form" maxlength="100" ng-show="portfolioTwoEditing")
 				input(placeholder="Portfolio Url", ng-model="profileUser.portfolioTwoUrl", type="text", class="validate profile-form" maxlength="40" ng-show="portfolioTwoEditing")
 
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="portfolioTwoEditing()" ng-show="!portfolioTwoEditing") Edit
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="editPortfolioTwo()" ng-show="!portfolioTwoEditing") Edit
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioTwo()" ng-show="portfolioTwoEditing") Save
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioTwo()") Close
 
@@ -122,7 +122,7 @@ div.container
 				input(placeholder="Portfolio Description. 100 characters.", ng-model="profileUser.portfoliThreeeDesc", type="text", class="validate profile-form" maxlength="100" ng-show="portfolioThreeEditing")
 				input(placeholder="Portfolio Url", ng-model="profileUser.portfolioThreeUrl", type="text", class="validate profile-form" maxlength="40" ng-show="portfolioThreeEditing")
 
-			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="portfolioThreeEditing()" ng-show="!portfolioThreeEditing") Edit
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="editPortfolioThree()" ng-show="!portfolioThreeEditing") Edit
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioThree()" ng-show="portfolioThreeEditing") Save
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioThree()") Close
 

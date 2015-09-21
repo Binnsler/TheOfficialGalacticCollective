@@ -338,7 +338,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	};
 
 	// Turn on portfolio one editting
-	$scope.portfolioOneEditing = function(){
+	$scope.editPortfolioOne = function(){
 
 		$scope.portfolioOneEditing = true;
 
@@ -369,7 +369,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	};
 
 	// Turn on portfolio two editting
-	$scope.portfolioTwoEditing = function(){
+	$scope.editPortfolioTwo = function(){
 
 		$scope.portfolioTwoEditing = true;
 
@@ -403,7 +403,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	};
 
 	// Turn on portfolio three editting
-	$scope.portfolioThreeEditing = function(){
+	$scope.editPortfolioThree = function(){
 
 		$scope.portfolioThreeEditing = true;
 
