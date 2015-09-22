@@ -108,23 +108,27 @@ var indexController = {
 				){
 					Post.findOneAndUpdate({_id: req.body._id}, {$inc: {likes: 1}}, function(err, userData){
 						// console.log('This is the backend error: ', err)
-						console.log("Req.body.userIP.BELOW!!!")
-						console.log(req.body.userIP)
+
+						console.log("Incremented likes by one.")
 						// res.send(req.body)
 					});
 
 					Post.findOneAndUpdate({_id: req.body._id}, {$push: {likedByIp: req.body.userIP}}, function(err, userData){
 						// console.log('This is the backend error: ', err)
-						console.log(req.body)
+						console.log("Updated userIP below: ")
 						console.log(req.body.userIP)
 						// res.send(req.body)
 					});
 			
 					User.findOneAndUpdate({_id: req.body.userCreated._id}, {$inc: {likes: 1}}, function(err, userData){
-						console.log('This is the backend error: ', err)
+						
+						if(err){
+							console.log('This is the backend error: ', err)							
+						}
+
 					});
 
-					res.send('Successfully liked this post.')
+					console.log('Successfully liked this post.')
 
 				};
 				//  else {
