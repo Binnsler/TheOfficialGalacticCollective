@@ -117,6 +117,9 @@ app.post('/api/ilikethispostprofile', indexController.iLikeThisPostProfile)
 // Delete Post Community Page
 app.delete('/api/posts/:id', indexController.deletePost)
 
+// Change Password
+app.post('/changePassword/:username', indexController.changePassword)
+
 // Authentication Routes
 app.post('/login', authenticationController.processLogin); 
 
@@ -127,6 +130,8 @@ app.post('/logout', authenticationController.logout)
 
 // Check who is currently logged in
 app.get('/api/me', indexController.authenticate)
+
+
 
 
 // PASSPORT PROTECTED ROUTES

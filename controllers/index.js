@@ -305,6 +305,12 @@ var indexController = {
 			});
 		};
 
+	},
+
+	changePassword : function(req,res){
+		User.update({username: req.params.username}, {password: req.body.passwordOne}, function(err, userData){
+			console.log('Sucessful database update.')
+		});
 	}
 }
 

@@ -1,0 +1,19 @@
+block headContent
+	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+	link(rel="stylesheet" href="stylesheets/main.css")
+
+div.container
+	div.row
+		div(class="col 8 offset-s1")
+			h3.post-headline(class="galactic-grey-text centerize-me") Admin
+			form(class="col s6 offset-s3" ng-submit="changePassword()")
+			p(ng-show="passwordError" class="errorText") Passwords do not match
+			div(class="input-field col s12")
+				input(placeholder="Password", ng-model="passwordData.passwordOne", type="password", class="validate")
+				label(for="Password") 
+			div(class="input-field col s12")
+				input(placeholder="Password", ng-model="passwordData.passwordTwo", type="password", class="validate")
+				label(for="Password") 
+			input(type="submit" value="Change Password" class="waves-effect btn-flat galactic-green col s2 btn-profile")
+
+			p(ng-show="passwordSuccessful" class="errorText") Password updated

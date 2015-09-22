@@ -31,6 +31,12 @@ masterApp.config(function($routeProvider){
 		templateUrl : '/views/post',
 		controller : 'postController'
 	});
+	//Dynamic route for Posts
+	$routeProvider
+	.when('/profile/:username/admin', {
+		templateUrl : '/views/admin',
+		controller : 'adminController'
+	});
 
 });
 
@@ -560,3 +566,40 @@ masterApp.controller('postController', function($window, $scope, $http, $resourc
 
 });
 
+masterApp.controller('adminController', function($scope, $http, $resource, $location, authenticateUser){
+
+	$scope.userContainer = authenticateUser;
+
+	// Login a user
+	$scope.changePassword = function(){
+
+		if($scope.passwordData.passwordOne === $scope.passwordData.passwordTwo){
+
+			$http.post('/changePassword/' + userContainer.user.username, $scope.passwordData).
+
+	  		then(function(response) {
+
+	  			// If the HTTP request is successful, but errors
+		    	if(response.err){
+		    		console.log('Change password request complete, but errors:', response.err)
+		    	}
+		    	// Everything successful, so we receive user data
+		    	else{
+		    		$scope.passwordSuccessful = true;
+		    	}
+		    	// HTTP error
+	  		}, function(response) {
+			    console.log('Angular error: ', response.data)
+
+	  	});
+
+		}
+
+		else {
+			$scope.passwordError = true;
+		}
+		
+		
+	};
+
+});
