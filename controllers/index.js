@@ -147,7 +147,7 @@ var indexController = {
 				};
 			else {
 				res.send({message: "This user already liked this post."})
-
+			}
 		})
 
 		
