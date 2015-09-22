@@ -144,8 +144,10 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 					  		}, function(response) {
 
-					    		console.log('2nd request body: ' + response.body);
-								post.likes += 1;
+					    		if(response.success){
+									post.likes += 1;
+					    			
+					    		}
 
 					});
 

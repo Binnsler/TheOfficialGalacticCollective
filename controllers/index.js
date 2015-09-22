@@ -125,11 +125,12 @@ var indexController = {
 							User.findOneAndUpdate({_id: req.body.userCreated._id}, {$inc: {likes: 1}}, function(err, userData){
 								
 								if(err){
-									console.log('This is the backend error: ', err)							
+									console.log('This is the backend error: ', err)
+									res.send({success: false, error: err})							
 								}
 
 								else {
-									// console.log('Successfully liked this post.')
+									res.send({success: true})
 								}
 
 							});
