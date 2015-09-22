@@ -23,7 +23,7 @@ div.container
 			div.row(class="profile-box")
 				div(class="col s2 offset-s2 left-profile")
 					div.thumb
-						img.profilePicCircle(src="{{profile.profilePic}}?{{rand}}" alt="")
+						img.profilePicCircle(src="{{profile.profilePic}}" alt="")
 				div(class="col s6 right-profile")
 					a(ng-href="#/profile/{{profile.username}}" class="galactic-green-text profile-nav") {{profile.profileName}}
 					h5.search-location {{profile.profileLocation}}
