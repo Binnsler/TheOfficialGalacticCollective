@@ -100,10 +100,10 @@ var indexController = {
 	iLikeThisPostCommunity : function(req, res){
 
 		// CHECK IF THE IP USER ALREADY LIKED THIS POST
-		Post.find({_id: req.body._id}, function(err, userData){
+		Post.findOne({_id: req.body._id}, 'likedByIp' function(err, userData){
 
-			console.log("Top level post _id BELOW:");
-			console.log(userData.body._id);
+			console.log("Top level userData BELOW:");
+			console.log(userData);
 			if(
 				userData.likedByIp == undefined || userData.likedByIp.indexOf(req.body.userIP) === -1
 				){
