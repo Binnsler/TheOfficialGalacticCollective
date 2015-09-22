@@ -129,7 +129,7 @@ var indexController = {
 								}
 
 								else {
-									console.log('Successfully liked this post.')
+									// console.log('Successfully liked this post.')
 								}
 
 							});
