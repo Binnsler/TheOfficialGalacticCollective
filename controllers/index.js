@@ -145,9 +145,8 @@ var indexController = {
 					
 
 				};
-				//  else {
-				// 	console.log('userIP already exists in server.')
-				// }
+			else {
+				res.send({message: "This user already liked this post."})
 
 		})
 
