@@ -102,13 +102,13 @@ var indexController = {
 		// CHECK IF THE IP USER ALREADY LIKED THIS POST
 		Post.find({_id: req.body._id}, function(err, userData){
 
+			console.log("userData.likedByIp.indexOf(req.body.userIP) BELOW:");
+			console.log(userData.likedByIp.indexOf(req.body.userIP));
 			if(
 				userData.likedByIp == undefined || userData.likedByIp.indexOf(req.body.userIP) === -1
 				){
 					Post.findOneAndUpdate({_id: req.body._id}, {$inc: {likes: 1}}, function(err, userData){
 						// console.log('This is the backend error: ', err)
-
-						console.log("Incremented likes by one.")
 						// res.send(req.body)
 
 						Post.findOneAndUpdate({_id: req.body._id}, {$push: {likedByIp: req.body.userIP}}, function(err, userData){
@@ -121,13 +121,15 @@ var indexController = {
 							else {
 
 							// console.log('This is the backend error: ', err)
-							console.log("Updated userIP below: ")
-							console.log(req.body.userIP)
 							// res.send(req.body)
 							User.findOneAndUpdate({_id: req.body.userCreated._id}, {$inc: {likes: 1}}, function(err, userData){
 								
 								if(err){
 									console.log('This is the backend error: ', err)							
+								}
+
+								else {
+									console.log('Successfully liked this post.')
 								}
 
 							});
@@ -139,7 +141,7 @@ var indexController = {
 
 			
 
-					console.log('Successfully liked this post.')
+					
 
 				};
 				//  else {
