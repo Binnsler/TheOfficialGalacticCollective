@@ -103,7 +103,7 @@ var indexController = {
 		Post.find({_id: req.body._id}, function(err, userData){
 
 			console.log("Top level post _id BELOW:");
-			console.log(userData. body._id);
+			console.log(userData.body._id);
 			if(
 				userData.likedByIp == undefined || userData.likedByIp.indexOf(req.body.userIP) === -1
 				){
