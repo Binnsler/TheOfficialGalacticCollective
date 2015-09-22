@@ -115,7 +115,7 @@ var indexController = {
 							
 							if(err) {
 								console.log("Push into likedByIp error:")
-								console.log(err)
+								res.send({error: err})
 							}
 
 							else {
@@ -126,7 +126,7 @@ var indexController = {
 								
 								if(err){
 									console.log('This is the backend error: ', err)
-									res.send({success: false, error: err})							
+									res.send({error: err})							
 								}
 
 								else {
