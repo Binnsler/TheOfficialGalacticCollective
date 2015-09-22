@@ -19,19 +19,19 @@ masterApp.config(function($routeProvider){
 		templateUrl : '/views/profile-template',
 		controller : 'profileController'
 	});
-	//Community Page
+	// Community Page
 	$routeProvider
 	.when('/community', {
 		templateUrl : '/views/community',
 		controller : 'communityController'
 	});
-	//Dynamic route for Posts
+	// Dynamic route for Posts
 	$routeProvider
 	.when('/profile/:username/:_id', {
 		templateUrl : '/views/post',
 		controller : 'postController'
 	});
-	//Dynamic route for Posts
+	// Dynamic route Admin Page
 	$routeProvider
 	.when('/profile/:username/admin', {
 		templateUrl : '/views/admin',
