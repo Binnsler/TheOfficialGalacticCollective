@@ -101,8 +101,7 @@ var indexController = {
 
 		// CHECK IF THE IP USER ALREADY LIKED THIS POST
 		Post.find({_id: req.body._id}, function(err, userData){
-			console.log("userData.likedbyIP.length.BELOW!!!");
-			console.log(userData.likedByIp);
+
 			if(
 				userData.likedByIp == undefined || userData.likedByIp.indexOf(req.body.userIP) === -1
 				){
@@ -113,6 +112,14 @@ var indexController = {
 						// res.send(req.body)
 
 						Post.findOneAndUpdate({_id: req.body._id}, {$push: {likedByIp: req.body.userIP}}, function(err, userData){
+							
+							if(err) {
+								console.log("Push into likedByIp error:")
+								console.log(err)
+							}
+
+							else {
+
 							// console.log('This is the backend error: ', err)
 							console.log("Updated userIP below: ")
 							console.log(req.body.userIP)
@@ -124,6 +131,8 @@ var indexController = {
 								}
 
 							});
+								
+							}
 							
 						});
 					});
