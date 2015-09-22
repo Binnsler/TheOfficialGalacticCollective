@@ -141,10 +141,10 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 				$http.post('/api/ilikethispostcommunity', post).
 					then(function(response) {
 					    		if(response.success){
-									post.likes += 1;
 									console.log("Went through successfully");
 					    			
 					    		}
+								post.likes += 1;
 
 					  		}, function(response) {
 
