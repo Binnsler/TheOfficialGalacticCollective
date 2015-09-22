@@ -318,18 +318,33 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	};
 
 	// Like a Post and Update Respective User
-	$scope.iLikeThisPostProfile = function(post){
-		post.likes += 1;
-		$scope.profileUser.likes += 1;
-		$http.post('/api/ilikethispostprofile', post).
-		then(function(response) {
-		    		console.log(response.err)
+	$scope.iLikeThisPostCommunity = function(post){
 
-		  		}, function(response) {
-				    post.likes = response.body
-				    console.log('Hi')
+		$http.get('http://ipinfo.io/json').
+			success(function(data){
+				
+				post.userIP = data.ip;
 
-		  	});
+
+				$http.post('/api/ilikethispostcommunity', post).
+					then(function(response) {
+					    		if(response.success){
+									console.log("Went through successfully");
+					    			
+					    		}
+								post.likes += 1;
+
+					  		}, function(response) {
+
+					    		console.log('Error: ' + response.error);
+					    		console.log('Message: ' + response.message);
+
+					});
+
+
+				
+			})
+
 	};
 
 	// View first portfolio item
