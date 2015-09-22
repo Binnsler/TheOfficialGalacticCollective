@@ -137,7 +137,6 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 				
 				post.userIP = data.ip;
 
-				post.likes += 1;
 
 				$http.post('/api/ilikethispostcommunity', post).
 					then(function(response) {
@@ -146,6 +145,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 					  		}, function(response) {
 
 					    		console.log('2nd request body: ' + response.body);
+								post.likes += 1;
 
 					});
 
