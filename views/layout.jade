@@ -22,7 +22,7 @@ html(lang='en' ng-app="masterApp")
 					li.nav-element(ng-show="!userContainer.user")
 						a(href="#/login" class="nav-element") Log In/Sign Up
 					li.nav-element(ng-show="userContainer.user")
-						a(ng-href="#/profile/{{userContainer.user.username}}/admin") Admin
+						a(ng-href="#/profile/admin/{{userContainer.user.username}}") Admin
 					li.nav-element(ng-show="userContainer.user")
 						a(ng-href="#/profile/{{userContainer.user.username}}") My Profile
 
