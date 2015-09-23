@@ -33,7 +33,7 @@ masterApp.config(function($routeProvider){
 	});
 	// Dynamic route Admin Page
 	$routeProvider
-	.when('/profile/admin/:username', {
+	.when('/admin/:username', {
 		templateUrl : '/views/admin',
 		controller : 'adminController'
 	});
