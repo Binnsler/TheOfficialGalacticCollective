@@ -4,15 +4,14 @@ block headContent
 
 div.container
 	div.row
-		h3.post-headline(class="galactic-grey-text centerize-me") Admin
+		h3(class="galactic-grey-text centerize-me") Admin
 		form(class="col s6 offset-s3" ng-submit="changePassword()")
+			p.galactic-grey-text Change your password
+			div(class="input-field col s12")
+				input(placeholder="New Password", ng-model="passwordData.passwordOne", type="password", class="validate") 
+			div(class="input-field col s12")
+				input(placeholder="New Password Again", ng-model="passwordData.passwordTwo", type="password", class="validate")
 			p(ng-show="passwordError" class="errorText") Passwords do not match
-			div(class="input-field col s12")
-				input(placeholder="Password", ng-model="passwordData.passwordOne", type="password", class="validate")
-				label(for="Password") 
-			div(class="input-field col s12")
-				input(placeholder="Password", ng-model="passwordData.passwordTwo", type="password", class="validate")
-				label(for="Password") 
-		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="changePassword()") Submit
+			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="changePassword()") Submit
 
 		p(ng-show="passwordSuccessful" class="errorText") Password updated
