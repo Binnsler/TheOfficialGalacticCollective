@@ -3,7 +3,7 @@ block headContent
 	link(rel="stylesheet" href="stylesheets/main.css")
 
 div.container
-	div.row
+	div.row(ng-if="userContainer.user.username === params.username")
 		h3(class="galactic-grey-text") Admin
 		form(class="col s6 offset-s3" ng-submit="changePassword()")
 			h4.galactic-grey-text Change your password
@@ -15,3 +15,5 @@ div.container
 			a(class="waves-effect btn-flat galactic-green btn-profile" ng-click="changePassword()") Submit
 
 		p(ng-show="passwordSuccessful" class="errorText") Password updated
+	div.row(ng-if="userContainer.user.username !== params.username")
+		h2.galactic-grey-text You are not logged in

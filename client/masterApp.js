@@ -566,7 +566,7 @@ masterApp.controller('postController', function($window, $scope, $http, $resourc
 
 });
 
-masterApp.controller('adminController', function($scope, $http, $resource, $location, authenticateUser){
+masterApp.controller('adminController', function($scope, $http, $resource, $location, $routeParams, authenticateUser){
 
 	$scope.userContainer = authenticateUser;
 
