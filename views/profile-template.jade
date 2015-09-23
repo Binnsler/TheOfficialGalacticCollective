@@ -160,9 +160,9 @@ div.container
 							p.galactic-grey-text.date-created {{post.dateCreated | date:'short'}}
 
 div.loginLightbox(ng-show="loginLightbox")
-		div.lightbox-container
+		div.lightbox-container(class="col s4 offset-s4")
 				div.row
-					form(class="col s6 offset-s3" ng-submit="login()")
+					form(class="col s4 offset-s4" ng-submit="login()")
 						h3(class="portfolio-lightbox-text centerize-me") Welcome Back
 						p(ng-show="loginError" class="errorText") Username or password is incorrect.
 						div(class="input-field col s12")
