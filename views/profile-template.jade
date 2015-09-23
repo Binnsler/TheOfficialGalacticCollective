@@ -161,8 +161,8 @@ div.container
 
 div.loginLightbox(ng-show="loginLightbox")
 	div.lightbox-container(class="col s4 offset-s4")
-		div.row(class="col s4 offset-s4 white-background")
-			form(class="col s4 offset-s4" ng-submit="login()")
+		div.row(class="col s4 offset-s4")
+			form(class="col s4 offset-s4 white-background" ng-submit="login()")
 				h3(class="portfolio-lightbox-text centerize-me") Welcome Back
 				p(ng-show="loginError" class="errorText") Username or password is incorrect.
 				div(class="input-field col s12")
@@ -173,11 +173,11 @@ div.loginLightbox(ng-show="loginLightbox")
 					label(for="signinPassword") 
 				input(type="submit" value="Login" class="waves-effect btn-flat galactic-green col s2 btn-profile")
 
-		div
+		div(class="col s4 offset-s4 white-background")
 
 
-		div.row(class="col s4 offset-s4 white-background")
-			form(class="col s4 offset-s4", ng-submit="signup()")
+		div.row(class="col s4 offset-s4")
+			form(class="col s4 offset-s4 white-background", ng-submit="signup()")
 				h3(class="portfolio-lightbox-text centerize-me") Join the Community
 				p(ng-show="signUpError" class="errorText") User already exists in userbase.
 				div(class="input-field col s12")
