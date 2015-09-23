@@ -160,8 +160,8 @@ div.container
 							p.galactic-grey-text.date-created {{post.dateCreated | date:'short'}}
 
 div.loginLightbox(ng-show="loginLightbox")
-	div.lightbox-container(class="col s4 offset-s4")
-		div.row
+	div.lightbox-container
+		div.row(class="col s4 offset-s4")
 			form(class="col s4 offset-s4" ng-submit="login()")
 				h3(class="portfolio-lightbox-text centerize-me") Welcome Back
 				p(ng-show="loginError" class="errorText") Username or password is incorrect.
@@ -173,23 +173,23 @@ div.loginLightbox(ng-show="loginLightbox")
 					label(for="signinPassword") 
 				input(type="submit" value="Login" class="waves-effect btn-flat galactic-green col s2 btn-profile")
 
-			div
+		div
 
 
-			div.row
-				form(class="col s4 offset-s4", ng-submit="signup()")
-					h3(class="portfolio-lightbox-text centerize-me") Join the Community
-					p(ng-show="signUpError" class="errorText") User already exists in userbase.
-					div(class="input-field col s12")
-						input(placeholder="Username (displayed as @username)", ng-model="signUpFormData.username", type="text", class="validate")
-						label(for="name") 
-					div(class="input-field col s12")
-						input(placeholder="Email", ng-model="signUpFormData.email", type="email", class="validate")
-						label(for="email") 					
-					div(class="input-field col s12")
-						input(placeholder="Password", ng-model="signUpFormData.password", type="password", class="validate")
-						label(for="password") 
-					input(type="submit" value="Sign Up" class="waves-effect btn-flat galactic-green col s2 btn-profile")
+		div.row(class="col s4 offset-s4")
+			form(class="col s4 offset-s4", ng-submit="signup()")
+				h3(class="portfolio-lightbox-text centerize-me") Join the Community
+				p(ng-show="signUpError" class="errorText") User already exists in userbase.
+				div(class="input-field col s12")
+					input(placeholder="Username (displayed as @username)", ng-model="signUpFormData.username", type="text", class="validate")
+					label(for="name") 
+				div(class="input-field col s12")
+					input(placeholder="Email", ng-model="signUpFormData.email", type="email", class="validate")
+					label(for="email") 					
+				div(class="input-field col s12")
+					input(placeholder="Password", ng-model="signUpFormData.password", type="password", class="validate")
+					label(for="password") 
+				input(type="submit" value="Sign Up" class="waves-effect btn-flat galactic-green col s2 btn-profile")
 
 
 
