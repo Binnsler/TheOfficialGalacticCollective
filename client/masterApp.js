@@ -566,11 +566,11 @@ masterApp.controller('postController', function($window, $scope, $http, $resourc
 
 });
 
-masterApp.controller('adminController', function($scope, $http, $resource, $location, $routeParams, authenticateUser){
+masterApp.controller('adminController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory){
 
 	$scope.userContainer = authenticateUser;
 
-	$scope.profileUser.username = $routeParams.username;
+	$scope.profileUser = userFactory.model.get({username : $routeParams.username})
 
 	// Login a user
 	$scope.changePassword = function(){
