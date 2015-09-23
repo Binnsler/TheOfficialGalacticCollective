@@ -147,6 +147,7 @@ h4 {
 }
 
 .lightbox-container {
+	width: 50%;
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
