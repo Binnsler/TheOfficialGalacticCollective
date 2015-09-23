@@ -214,8 +214,8 @@ h4 {
 }
 
 .no-space {
-	margin: none;
-	padding: none;
+	margin: 0;
+	padding: 0;
 }
 
 .number-div {
