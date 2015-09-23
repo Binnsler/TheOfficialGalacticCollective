@@ -197,15 +197,12 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 	// Login Capabilities
 	$scope.login = function(){
-		$scope.loginLightbox = true;
 		loginService.login()
 	};
 	$scope.signup = function(){
-		$scope.loginLightbox = true;
 		loginService.signup()
 	};
 	$scope.logout = function(){
-		$scope.loginLightbox = true;
 		loginService.logout()
 	};
 
@@ -338,15 +335,26 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 });
 
 // Search Controller
-masterApp.controller('searchController', function($scope, $http, $resource, $location, $routeParams, authenticateUser){
+masterApp.controller('searchController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
 	
 	$scope.userContainer = authenticateUser;
 
-	
+
 	$http.get('/api/allUsers').
 	 	then(function(returnData){
 	 		$scope.profiles = returnData.data;
 	 	})
+
+	 // Login Capabilities
+	$scope.login = function(){
+		loginService.login()
+	};
+	$scope.signup = function(){
+		loginService.signup()
+	};
+	$scope.logout = function(){
+		loginService.logout()
+	};
 
 
 });
