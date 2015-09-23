@@ -129,7 +129,7 @@ h4 {
 }
 
 
-.portfolioOneLightbox, .portfolioTwoLightbox, .portfolioThreeLightbox {
+.portfolioOneLightbox, .portfolioTwoLightbox, .portfolioThreeLightbox, .loginLightbox {
   position: fixed;
   z-index: 9999;
   width: 100%;

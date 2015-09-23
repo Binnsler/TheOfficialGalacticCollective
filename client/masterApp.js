@@ -40,6 +40,81 @@ masterApp.config(function($routeProvider){
 
 });
 
+// Service for Login/Authenticate
+masterApp.service('loginService', function($scope, $http, $resource, $location, authenticateUser){
+
+$scope.userContainer = authenticateUser;
+
+	// Login a user
+	this.login = function(){
+		$http.post('/login', $scope.loginFormData).
+
+	  		then(function(response) {
+
+	  			$scope.loginError = false;
+
+	  			// If the HTTP request is successful, but passport has errors:
+		    	if(response.err){
+		    		console.log('Login request complete, but errors:', response.err)
+		    	}
+		    	// Everything successful, so we receive user data
+		    	else{
+		    		authenticateUser.user = response.data;
+	    			$location.url('/profile/' + response.data.username)
+		    	}
+		    	// HTTP error
+	  		}, function(response) {
+			    console.log('Angular login error: ', response.data)
+			    $scope.loginError = true;
+
+	  	});
+		
+	};
+
+	// Signup a user and log them in
+	this.signup = function(){
+
+		$http.post('/signup', $scope.signUpFormData).
+
+	  		then(function(response) {
+
+	  			if(response.data.err){
+	  				$scope.signUpError = true;
+
+	  			}
+
+	  			else{
+
+		  			$scope.signUpError = false;	
+
+		    		$scope.userContainer.user = response.data;
+
+		    		$location.url('/profile/' + response.data.username, {user: response.data.data})
+	    		}
+	  		}, function(response) {
+
+			    $scope.signUpError = true;
+
+	  	});
+		
+	};
+
+	// Logout 
+	this.logout = function(){
+		$http.post('/logout', {msg:'hello word!'}).
+
+	  		then(function(response) {
+	  			$location.path('/login')
+	  			authenticateUser.user = null;
+
+	  		}, function(response) {
+			    console.log('Error logging out: ', response)
+	  	});
+		
+	};
+
+});
+
 // Service for Multiform Upload
 masterApp.service('multipartForm', function($http){
 
@@ -109,7 +184,7 @@ masterApp.factory('postFactory', function($resource){
 });
 
 // Community Controller
-masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser){
+masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
 	
 	$scope.userContainer = authenticateUser;
 
@@ -119,6 +194,20 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 		});
 
 	// $scope.theDate = post.dateCreated.toISOString();
+
+	// Login Capabilities
+	$scope.login = function(){
+		$scope.loginLightbox = true;
+		loginService.login()
+	};
+	$scope.signup = function(){
+		$scope.loginLightbox = true;
+		loginService.signup()
+	};
+	$scope.logout = function(){
+		$scope.loginLightbox = true;
+		loginService.logout()
+	};
 
 	// Delete a Post
 	$scope.deletePost = function(post, index){
@@ -263,7 +352,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout){
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout, loginService){
 
 	$scope.rand = Math.random();
 
@@ -272,6 +361,20 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.profileUser = userFactory.model.get({username : $routeParams.username})
 
 	$scope.editing = false;
+
+	// Login Capabilities
+	$scope.showLogin = function(){
+		$scope.loginLightbox = true;		
+	};
+	$scope.login = function(){
+		loginService.login()
+	};
+	$scope.signup = function(){
+		loginService.signup()
+	};
+	$scope.logout = function(){
+		loginService.logout()
+	};
 
 	// Get request to get all the user's posts
 	$http.get('/api/allUserPosts?username=' + $routeParams.username).
@@ -462,6 +565,11 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 masterApp.controller('loginController', function($scope, $http, $resource, $location, authenticateUser){
 
 	$scope.userContainer = authenticateUser;
+
+	// Show login lightbox
+	$scope.showLogin = function(){
+		$scope.loginLightbox = true;		
+	};
 
 	// Login a user
 	$scope.login = function(){
