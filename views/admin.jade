@@ -16,6 +16,6 @@ div.container
 			a(class="waves-effect btn-flat galactic-green btn-profile" ng-click="changePassword()") Submit
 
 		p(ng-show="passwordSuccessful" class="errorText") Password updated
-		
+
 	div.row(ng-if="userContainer.user.username !== profileUser.username")
-		h2.galactic-grey-text You are not logged in
+		h3.galactic-grey-text(class="centerize-me") You are not logged in as {{profileUser.username}}. Please log in to access admin capabilities.
