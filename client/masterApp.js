@@ -570,6 +570,8 @@ masterApp.controller('adminController', function($scope, $http, $resource, $loca
 
 	$scope.userContainer = authenticateUser;
 
+	$scope.profileUser = userFactory.model.get({username : $routeParams.username})
+
 	// Login a user
 	$scope.changePassword = function(){
 
