@@ -3,7 +3,8 @@ block headContent
 	link(rel="stylesheet" href="stylesheets/main.css")
 
 div.container
-	div.row(ng-if="userContainer.user.username === profileUser.username")
+	div.row
+		//- (ng-if="userContainer.user.username === profileUser.username")
 		h3(class="galactic-grey-text") Admin
 		form(class="col s6 offset-s3" ng-submit="changePassword()")
 			h4.galactic-grey-text Change your password
