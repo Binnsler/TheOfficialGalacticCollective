@@ -145,13 +145,7 @@ h4 {
 	width: 60%;
 	background-color: white;
 }
-.fixed {
-  position: fixed;
-  z-index: 9999;
-  text-align: center;
-  top: 0;
-  left: 0;
-}
+
 .lightbox-container {
 	position: relative;
 	top: 50%;
