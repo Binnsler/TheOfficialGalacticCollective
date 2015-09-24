@@ -43,33 +43,33 @@ masterApp.config(function($routeProvider){
 // Service for Login/Authenticate
 masterApp.service('loginService', function($scope, $http, $resource, $location, authenticateUser){
 
-$scope.userContainer = authenticateUser;
+	$scope.userContainer = authenticateUser;
 
-	// Login a user
-	this.login = function(){
-		$http.post('/login', $scope.loginFormData).
+		// Login a user
+		this.login = function(){
+			$http.post('/login', $scope.loginFormData).
 
-	  		then(function(response) {
+		  		then(function(response) {
 
-	  			$scope.loginError = false;
+		  			$scope.loginError = false;
 
-	  			// If the HTTP request is successful, but passport has errors:
-		    	if(response.err){
-		    		console.log('Login request complete, but errors:', response.err)
-		    	}
-		    	// Everything successful, so we receive user data
-		    	else{
-		    		authenticateUser.user = response.data;
-	    			$location.url('/profile/' + response.data.username)
-		    	}
-		    	// HTTP error
-	  		}, function(response) {
-			    console.log('Angular login error: ', response.data)
-			    $scope.loginError = true;
-
-	  	});
+		  			// If the HTTP request is successful, but passport has errors:
+			    	if(response.err){
+			    		console.log('Login request complete, but errors:', response.err)
+			    	}
+			    	// Everything successful, so we receive user data
+			    	else{
+			    		authenticateUser.user = response.data;
+		    			$location.url('/profile/' + response.data.username)
+			    	}
+			    	// HTTP error
+		  		}, function(response) {
+				    console.log('Angular login error: ', response.data)
+				    $scope.loginError = true;
+				    }
+				)
+			};
 		
-	};
 
 	// Signup a user and log them in
 	this.signup = function(){
@@ -95,7 +95,7 @@ $scope.userContainer = authenticateUser;
 
 			    $scope.signUpError = true;
 
-	  	});
+	  	);
 		
 	};
 
@@ -109,7 +109,7 @@ $scope.userContainer = authenticateUser;
 
 	  		}, function(response) {
 			    console.log('Error logging out: ', response)
-	  	});
+	  	);
 		
 	};
 
