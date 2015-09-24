@@ -159,8 +159,8 @@ div.container
 						div 
 							p.galactic-grey-text.date-created {{post.dateCreated | date:'short'}}
 
-div.loginLightbox(ng-show="loginLightbox")
-div.fixed
+div.loginLightbox(ng-show="loginLightbox" ng-click="closeLogin()")
+div.fixed(ng-show="loginLightbox")
 	div.lightbox-container(class="col s4 offset-s4")
 		div.row(class="col s4 offset-s4 no-space")
 			form(class="col s4 offset-s4 white-background" ng-submit="login()")
