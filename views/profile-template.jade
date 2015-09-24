@@ -160,10 +160,10 @@ div.container
 							p.galactic-grey-text.date-created {{post.dateCreated | date:'short'}}
 
 div.loginLightbox(ng-show="loginLightbox")
-	div.lightbox-container(class="col s4 offset-s4")
+	div.lightbox-container(class="col s4 offset-s4" ng-click="closeLogin()")
 		div.row(class="col s4 offset-s4 no-space")
 			form(class="col s4 offset-s4 white-background" ng-submit="login()")
-				h3(class="portfolio-lightbox-text centerize-me") Welcome Back
+				h4(class="galactic-grey-text centerize-me") Welcome Back
 				p(ng-show="loginError" class="errorText") Username or password is incorrect.
 				div(class="input-field col s12")
 					input(placeholder="Username", ng-model="loginFormData.username", type="text", class="validate")
@@ -178,7 +178,7 @@ div.loginLightbox(ng-show="loginLightbox")
 
 		div.row(class="col s4 offset-s4")
 			form(class="col s4 offset-s4 white-background", ng-submit="signup()")
-				h3(class="portfolio-lightbox-text centerize-me") Join the Community
+				h4(class="galactic-grey-text centerize-me") Join the Community
 				p(ng-show="signUpError" class="errorText") User already exists in userbase.
 				div(class="input-field col s12")
 					input(placeholder="Username (displayed as @username)", ng-model="signUpFormData.username", type="text", class="validate")
