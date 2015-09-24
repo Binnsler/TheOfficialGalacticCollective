@@ -3,7 +3,7 @@ block headContent
 	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
 
 
-div.container(ng-click="closeLogin()")
+div.container
 	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showLogin()") Show Login Lightbox
 	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit Profile					
 	form.edit-profile(ng-show="editing" enctype="multipart/form-data")
@@ -32,7 +32,7 @@ div.container(ng-click="closeLogin()")
 			input(placeholder="Bio", ng-model="profileUser.profileBio", type="text", class="validate col s10 offset-s1 profile-form" maxlength="250")
 		div.row
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitToServer()") Submit
-	div.top-profile(class="col s12")
+	div.top-profile(class="col s12" ng-click="closeLogin()")
 		div.row
 			div.centrize-me(class="galactic-blue")
 				div(class="col s2 offset-s3 left-profile")
@@ -52,7 +52,7 @@ div.container(ng-click="closeLogin()")
 
 
 
-	div.bottom-profile(class="col s12")
+	div.bottom-profile(class="col s12" ng-click="closeLogin()")
 		div.row
 			div(class="col s4 offset-s2 profile-skills")
 					h5.galactic-green-text Skills
@@ -65,7 +65,7 @@ div.container(ng-click="closeLogin()")
 			div
 				p(class="profile-text centerize-me") {{profileUser.likes}} Likes
 	
-	div.portfolio(class="col s12")
+	div.portfolio(class="col s12" ng-click="closeLogin()")
 		div.portfolioOne(class="col s4" ng-click="viewPortfolioOne()")
 			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneTitle}}
@@ -139,7 +139,7 @@ div.container(ng-click="closeLogin()")
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="updatePortfolioThree()" ng-show="portfolioThreeEditing") Save
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioThree()") Close
 
-	div.allPosts
+	div.allPosts(ng-click="closeLogin()")
 		h3.post-headline(class="galactic-grey-text centerize-me") Posts
 		ul.collection(class="top-space")
 			li(ng-repeat="post in posts track by $index | orderBy : '-dateCreated'" class="collection-item avatar")
