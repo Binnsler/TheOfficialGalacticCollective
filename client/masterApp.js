@@ -66,8 +66,8 @@ masterApp.service('loginService', function($scope, $http, $resource, $location, 
 		  		}, function(response) {
 				    console.log('Angular login error: ', response.data)
 				    $scope.loginError = true;
-				    }
-				)
+				    
+				})
 			};
 		
 
@@ -95,7 +95,7 @@ masterApp.service('loginService', function($scope, $http, $resource, $location, 
 
 			    $scope.signUpError = true;
 
-	  	);
+	  	});
 		
 	};
 
@@ -109,7 +109,7 @@ masterApp.service('loginService', function($scope, $http, $resource, $location, 
 
 	  		}, function(response) {
 			    console.log('Error logging out: ', response)
-	  	);
+	  	});
 		
 	};
 
