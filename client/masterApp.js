@@ -43,7 +43,6 @@ masterApp.config(function($routeProvider){
 // Service for Login/Authenticate
 masterApp.service('loginService', function($scope, $http, $resource, $location, authenticateUser){
 
-return {
 	$scope.userContainer = authenticateUser;
 
 		// Login a user
@@ -113,7 +112,6 @@ return {
 	  	});
 		
 	};
-}
 });
 
 // Service for Multiform Upload
