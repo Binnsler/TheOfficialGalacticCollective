@@ -376,7 +376,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	};
 	$scope.closeLogin = function(){
 		$scope.loginLightbox = false;
-	}
+	};
 	$scope.login = function(){
 		loginService.login()
 	};
