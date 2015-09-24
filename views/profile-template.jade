@@ -3,7 +3,7 @@ block headContent
 	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
 
 
-div.container
+div.container(ng-click="closeLogin()")
 	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showLogin()") Show Login Lightbox
 	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit Profile					
 	form.edit-profile(ng-show="editing" enctype="multipart/form-data")
@@ -160,7 +160,7 @@ div.container
 							p.galactic-grey-text.date-created {{post.dateCreated | date:'short'}}
 
 div.loginLightbox(ng-show="loginLightbox")
-	div.lightbox-container(class="col s4 offset-s4" ng-click="closeLogin()")
+	div.lightbox-container(class="col s4 offset-s4")
 		div.row(class="col s4 offset-s4 no-space")
 			form(class="col s4 offset-s4 white-background" ng-submit="login()")
 				h4(class="galactic-grey-text centerize-me") Welcome Back
