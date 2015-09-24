@@ -359,7 +359,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout, loginService){
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout){
 
 	$scope.rand = Math.random();
 
