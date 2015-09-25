@@ -12,6 +12,7 @@
     "jade": "^1",
     "mongoose": "~3.8.24",
     "multer": "^1.0.3",
+    "ng-quill": "^1.1.0",
     "passport": "~0.2.1",
     "passport-local": "~1.0.0"
   }
