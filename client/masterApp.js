@@ -1,4 +1,4 @@
-var masterApp = angular.module('masterApp', ['ngResource', 'ngRoute']);
+var masterApp = angular.module('masterApp', ['ngResource', 'ngRoute', 'ngQuill']);
 
 masterApp.config(function($routeProvider){
 	// Home-Search Page
