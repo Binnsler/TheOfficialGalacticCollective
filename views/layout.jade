@@ -24,8 +24,8 @@ html(lang='en' ng-app="masterApp")
 					li.nav-element(ng-show="userContainer.user")
 						a(ng-href="#/admin/{{userContainer.user.username}}") Admin
 					li.nav-element(ng-show="userContainer.user")
-						img(src="{{post.userCreated.profilePic}}" alt="" class="circle")
-						a(ng-href="#/profile/{{userContainer.user.username}}") My Profile
+						img(src="{{userContainer.user.profilePic}}" alt="" class="circle")
+							a(ng-href="#/profile/{{userContainer.user.username}}") My Profile
 
 		block content
 
