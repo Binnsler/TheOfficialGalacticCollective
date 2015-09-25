@@ -57,12 +57,12 @@ masterApp.factory('authenticateUser', function($http){
 masterApp.service('loginService', function($http, $resource, $location){
 
 		// Login a user
-		this.login = function(){
-			$http.post('/login', this.loginFormData).
+		this.login = function(controllerScope){
+			$http.post('/login', controllerScope.loginFormData).
 
 		  		then(function(response) {
 
-		  			this.loginError = false;
+		  			$scope.loginError = false;
 
 		  			// If the HTTP request is successful, but passport has errors:
 			    	if(response.err){
@@ -76,42 +76,42 @@ masterApp.service('loginService', function($http, $resource, $location){
 			    	// HTTP error
 		  		}, function(response) {
 				    console.log('Angular login error: ', response.data)
-				    this.loginError = true;
+				    $scope.loginError = true;
 				    
 				})
 			};
 		
 
 	// Signup a user and log them in
-	this.signup = function(){
+	this.signup = function(controllerScope){
 
-		$http.post('/signup', this.signUpFormData).
+		$http.post('/signup', controllerScope.signUpFormData).
 
 	  		then(function(response) {
 
 	  			if(response.data.err){
-	  				this.signUpError = true;
+	  				$scope.signUpError = true;
 
 	  			}
 
 	  			else{
 
-		  			this.signUpError = false;	
+		  			$scope.signUpError = false;	
 
-		    		this.userContainer.user = response.data;
+		    		$scope.userContainer.user = response.data;
 
 		    		$location.url('/profile/' + response.data.username, {user: response.data.data})
 	    		}
 	  		}, function(response) {
 
-			    this.signUpError = true;
+			    $scope.signUpError = true;
 
 	  	});
 		
 	};
 
 	// Logout 
-	this.logout = function(){
+	this.logout = function(controllerScope){
 		$http.post('/logout', {msg:'hello word!'}).
 
 	  		then(function(response) {
@@ -358,7 +358,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout, loginService){
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout){
 
 	$scope.rand = Math.random();
 
@@ -375,14 +375,14 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.closeLogin = function(){
 		$scope.loginLightbox = false;
 	};
-	$scope.login = function(){
-		loginService.login()
+	$scope.login = function($scope){
+		loginService.login($scope)
 	};
-	$scope.signup = function(){
-		loginService.signup()
+	$scope.signup = function($scope){
+		loginService.signup($scope)
 	};
-	$scope.logout = function(){
-		loginService.logout()
+	$scope.logout = function($scope){
+		loginService.logout($scope)
 	};
 
 	// Get request to get all the user's posts
