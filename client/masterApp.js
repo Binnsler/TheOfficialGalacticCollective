@@ -54,15 +54,15 @@ masterApp.factory('authenticateUser', function($http){
 });
 
 // Service for Login/Authenticate
-masterApp.service('loginService', function($scope, $http, $resource, $location){
+masterApp.service('loginService', function($http, $resource, $location){
 
 		// Login a user
 		this.login = function(){
-			$http.post('/login', $scope.loginFormData).
+			$http.post('/login', this.loginFormData).
 
 		  		then(function(response) {
 
-		  			$scope.loginError = false;
+		  			this.loginError = false;
 
 		  			// If the HTTP request is successful, but passport has errors:
 			    	if(response.err){
@@ -76,7 +76,7 @@ masterApp.service('loginService', function($scope, $http, $resource, $location){
 			    	// HTTP error
 		  		}, function(response) {
 				    console.log('Angular login error: ', response.data)
-				    $scope.loginError = true;
+				    this.loginError = true;
 				    
 				})
 			};
@@ -85,26 +85,26 @@ masterApp.service('loginService', function($scope, $http, $resource, $location){
 	// Signup a user and log them in
 	this.signup = function(){
 
-		$http.post('/signup', $scope.signUpFormData).
+		$http.post('/signup', this.signUpFormData).
 
 	  		then(function(response) {
 
 	  			if(response.data.err){
-	  				$scope.signUpError = true;
+	  				this.signUpError = true;
 
 	  			}
 
 	  			else{
 
-		  			$scope.signUpError = false;	
+		  			this.signUpError = false;	
 
-		    		$scope.userContainer.user = response.data;
+		    		this.userContainer.user = response.data;
 
 		    		$location.url('/profile/' + response.data.username, {user: response.data.data})
 	    		}
 	  		}, function(response) {
 
-			    $scope.signUpError = true;
+			    this.signUpError = true;
 
 	  	});
 		
