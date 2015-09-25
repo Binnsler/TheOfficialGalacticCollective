@@ -30,4 +30,5 @@ p, h4, h5 {
 .circleHeaderProfile {
 	height: 45px;
 	width: 45px;
+	padding: 3px 3px 0 0;
 }
