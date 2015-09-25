@@ -40,10 +40,21 @@ masterApp.config(function($routeProvider){
 
 });
 
-// Service for Login/Authenticate
-masterApp.service('loginService', function($scope, $http, $resource, $location, authenticateUser){
+// Factory to query who is currently logged in
+masterApp.factory('authenticateUser', function($http){
 
-	$scope.userContainer = authenticateUser;
+	var userContainer = { user: null }
+
+	$http.get('/api/me').then(function(response) {
+		userContainer.user = response.data;
+	})
+
+	return userContainer;
+
+});
+
+// Service for Login/Authenticate
+masterApp.service('loginService', function($scope, $http, $resource, $location){
 
 		// Login a user
 		this.login = function(){
@@ -147,18 +158,6 @@ masterApp.directive('noCacheSrc', function($window) {
   }
 });
 
-// Factory to query who is currently logged in
-masterApp.factory('authenticateUser', function($http){
-
-	var userContainer = { user: null }
-
-	$http.get('/api/me').then(function(response) {
-		userContainer.user = response.data;
-	})
-
-	return userContainer;
-
-});
 
 // Factory to search for Users
 masterApp.factory('userFactory', function($resource){
