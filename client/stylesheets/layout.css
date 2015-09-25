@@ -26,3 +26,8 @@ p, h4, h5 {
 .btn-flat {
 	font-family: Arial;
 }
+
+.circleHeaderProfile {
+	height: 75px;
+	width: 75px;
+}
