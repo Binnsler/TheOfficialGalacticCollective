@@ -14,6 +14,7 @@
     "multer": "^1.0.3",
     "ng-quill": "^1.1.0",
     "passport": "~0.2.1",
-    "passport-local": "~1.0.0"
+    "passport-local": "~1.0.0",
+    "quill": "^0.20.0"
   }
 }
