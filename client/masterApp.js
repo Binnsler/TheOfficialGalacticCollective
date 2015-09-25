@@ -182,7 +182,7 @@ masterApp.factory('postFactory', function($resource){
 });
 
 // Community Controller
-masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser){
+masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
 	
 	$scope.userContainer = authenticateUser;
 
@@ -358,7 +358,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout, loginService){
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout){
 
 	$scope.rand = Math.random();
 
