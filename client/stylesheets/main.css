@@ -88,6 +88,8 @@ padding-top: 1vh;
 
 i > input {
 	background-color: #1ab193;
+	font-family: Arial;
+	border-style: none;
 }
 
 /*Login Page Styling*/
