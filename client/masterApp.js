@@ -530,7 +530,7 @@ masterApp.controller('loginController', function($scope, $http, $resource, $loca
 		$http.post('/logout', {msg:'hello word!'}).
 
 	  		then(function(response) {
-	  			$location.path('/login')
+	  			$location.path('/community')
 	  			authenticateUser.user = null;
 
 	  		}, function(response) {
