@@ -7,6 +7,12 @@ masterApp.config(function($routeProvider){
 		templateUrl : '/views/search', 
 		controller : 'searchController'
 	});
+	// Login-Signup Page
+	$routeProvider
+	.when('/login', {
+		templateUrl : '/views/login',
+		controller : 'loginController'
+	});
 	// Dynamic route for Profiles
 	$routeProvider
 	.when('/profile/:username', {
@@ -47,6 +53,77 @@ masterApp.factory('authenticateUser', function($http){
 
 });
 
+// Service for Login/Authenticate
+masterApp.service('loginService', function($http, $resource, $location){
+
+		// Login a user
+		this.login = function(controllerScope){
+			$http.post('/login', controllerScope.loginFormData).
+
+		  		then(function(response) {
+
+		  			$scope.loginError = false;
+
+		  			// If the HTTP request is successful, but passport has errors:
+			    	if(response.err){
+			    		console.log('Login request complete, but errors:', response.err)
+			    	}
+			    	// Everything successful, so we receive user data
+			    	else{
+			    		authenticateUser.user = response.data;
+		    			$location.url('/profile/' + response.data.username)
+			    	}
+			    	// HTTP error
+		  		}, function(response) {
+				    console.log('Angular login error: ', response.data)
+				    $scope.loginError = true;
+				    
+				})
+			};
+		
+
+	// Signup a user and log them in
+	this.signup = function(controllerScope){
+
+		$http.post('/signup', controllerScope.signUpFormData).
+
+	  		then(function(response) {
+
+	  			if(response.data.err){
+	  				$scope.signUpError = true;
+
+	  			}
+
+	  			else{
+
+		  			$scope.signUpError = false;	
+
+		    		$scope.userContainer.user = response.data;
+
+		    		$location.url('/profile/' + response.data.username, {user: response.data.data})
+	    		}
+	  		}, function(response) {
+
+			    $scope.signUpError = true;
+
+	  	});
+		
+	};
+
+	// Logout 
+	this.logout = function(controllerScope){
+		$http.post('/logout', {msg:'hello word!'}).
+
+	  		then(function(response) {
+	  			$location.path('/login')
+	  			authenticateUser.user = null;
+
+	  		}, function(response) {
+			    console.log('Error logging out: ', response)
+	  	});
+		
+	};
+});
 
 // Service for Multiform Upload
 masterApp.service('multipartForm', function($http){
@@ -242,6 +319,81 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 		  	});
 	};
 
+// Login Capabilities (Abstract into a service)
+	$scope.showLogin = function(){
+		$scope.loginLightbox = true;		
+	};
+	$scope.closeLogin = function(){
+		$scope.loginLightbox = false;
+	};
+	
+    // Login a user
+	$scope.login = function(){
+		$http.post('/login', $scope.loginFormData).
+
+	  		then(function(response) {
+
+	  			$scope.loginError = false;
+
+	  			// If the HTTP request is successful, but passport has errors:
+		    	if(response.err){
+		    		console.log('Login request complete, but errors:', response.err)
+		    	}
+		    	// Everything successful, so we receive user data
+		    	else{
+		    		authenticateUser.user = response.data;
+	    			$location.url('/profile/' + response.data.username)
+		    	}
+		    	// HTTP error
+	  		}, function(response) {
+			    console.log('Angular login error: ', response.data)
+			    $scope.loginError = true;
+			    
+			})
+		};
+		
+
+	// Signup a user and log them in
+	$scope.signup = function(){
+
+		$http.post('/signup', $scope.signUpFormData).
+
+	  		then(function(response) {
+
+	  			if(response.data.err){
+	  				$scope.signUpError = true;
+
+	  			}
+
+	  			else{
+
+		  			$scope.signUpError = false;	
+
+		    		$scope.userContainer.user = response.data;
+
+		    		$location.url('/profile/' + response.data.username, {user: response.data.data})
+	    		}
+	  		}, function(response) {
+
+			    $scope.signUpError = true;
+
+	  	});
+		
+	};
+
+	// Logout 
+	$scope.logout = function(){
+		$http.post('/logout', {msg:'hello word!'}).
+
+	  		then(function(response) {
+	  			$location.path('/login')
+	  			authenticateUser.user = null;
+
+	  		}, function(response) {
+			    console.log('Error logging out: ', response)
+	  	});
+		
+	};
 });
 
 // Search Controller
@@ -524,7 +676,7 @@ masterApp.controller('loginController', function($scope, $http, $resource, $loca
 		$http.post('/logout', {msg:'hello word!'}).
 
 	  		then(function(response) {
-	  			$location.path('/community')
+	  			$location.path('/login')
 	  			authenticateUser.user = null;
 
 	  		}, function(response) {
