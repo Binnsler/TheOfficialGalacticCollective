@@ -7,12 +7,6 @@ masterApp.config(function($routeProvider){
 		templateUrl : '/views/search', 
 		controller : 'searchController'
 	});
-	// Login-Signup Page
-	$routeProvider
-	.when('/login', {
-		templateUrl : '/views/login',
-		controller : 'loginController'
-	});
 	// Dynamic route for Profiles
 	$routeProvider
 	.when('/profile/:username', {
