@@ -31,7 +31,7 @@ div.container
 			input(placeholder="Bio", ng-model="profileUser.profileBio", type="text", class="validate col s10 offset-s1 profile-form" maxlength="250")
 		div.row
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitToServer()") Submit
-
+			
 	div.top-profile(class="col s12")
 		div.row
 			div.centrize-me(class="galactic-blue")
@@ -158,7 +158,6 @@ div.container
 						p.galactic-blue-text(ng-if="post.time") {{post.time}}
 						div 
 							p.galactic-grey-text.date-created {{post.dateCreated | date:'short'}}
-
 
 
 
