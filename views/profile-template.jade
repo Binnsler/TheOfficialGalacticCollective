@@ -4,7 +4,7 @@ block headContent
 
 
 div.container
-	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showLogin()") Show Login Lightbox
+	//- a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showLogin()") Show Login Lightbox
 	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit Profile					
 	form.edit-profile(ng-show="editing" enctype="multipart/form-data")
 		div.row
