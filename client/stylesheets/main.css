@@ -86,7 +86,7 @@ p, h4, h5 {
 padding-top: 1vh;
 }
 
-i.input {
+i > input {
 	background-color: #1ab193;
 }
 
