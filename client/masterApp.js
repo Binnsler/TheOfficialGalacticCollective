@@ -683,7 +683,8 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 // Login Capabilities (Abstract into a service)
 	$scope.showLogin = function(){
-		$scope.loginLightbox = true;		
+		$scope.loginLightbox = true;
+		console.log("Should be showing the lightbox")		
 	};
 	$scope.closeLogin = function(){
 		$scope.loginLightbox = false;
