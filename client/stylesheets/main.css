@@ -47,6 +47,45 @@ h4 {
 	font-style: italic;
 }
 
+/*Layout Styling*/
+nav {
+	background-color: white;
+	box-shadow: none;
+}
+
+.nav-element {
+	color: black;
+}
+
+.nav-element > a {
+	color: #999999;
+}
+
+.brand-logo {
+	margin: 1vh 1em;
+}
+
+h1, h2, h3 {
+	font-family: Helvetica;
+}
+
+p, h4, h5 {
+	font-family: Arial;
+}
+
+.btn-flat {
+	font-family: Arial;
+}
+
+.circleHeaderProfile {
+	height: 45px;
+	width: 45px;
+}
+
+.profile-nav {
+padding-top: 1vh;
+}
+
 /*Login Page Styling*/
 
 .errorText {
