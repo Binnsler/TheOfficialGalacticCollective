@@ -616,6 +616,11 @@ masterApp.controller('loginController', function($scope, $http, $resource, $loca
 		$scope.loginLightbox = true;		
 	};
 
+	// Close login lightbox
+	$scope.closeLogin = function(){
+		$scope.loginLightbox = false;
+	};
+
 	// Login a user
 	$scope.login = function(){
 		$http.post('/login', $scope.loginFormData).
