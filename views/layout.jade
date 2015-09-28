@@ -34,7 +34,37 @@ html(lang='en' ng-app="masterApp")
 						img(src="{{userContainer.user.profilePic}}" alt="" class="circleHeaderProfile")
 
 		block content
+		div.loginLightbox(ng-show="loginLightbox" ng-click="closeLogin()")
+			div.lightbox-container(class="col s4 offset-s4")
+				div.row(class="col s4 offset-s4 no-space")
+					form(class="col s4 offset-s4 white-background" ng-submit="login()" ng-click="$event.stopPropagation()")
+						h3(class="galactic-grey-text centerize-me") Welcome Back
+						p(ng-show="loginError" class="errorText") Username or password is incorrect.
+						div(class="input-field col s12")
+							input(placeholder="Username", ng-model="loginFormData.username", type="text", class="validate")
+							label(for="username") 
+						div(class="input-field col s12")
+							input(placeholder="Password", ng-model="loginFormData.password", type="password", class="validate")
+							label(for="signinPassword") 
+						input(type="submit" value="Login" class="waves-effect btn-flat galactic-green col s2 btn-profile")
 
+				div(class="col s4 offset-s4 white-background" ng-click="$event.stopPropagation()")
+
+
+				div.row(class="col s4 offset-s4")
+					form(class="col s4 offset-s4 white-background", ng-submit="signup()" ng-click="$event.stopPropagation()")
+						h3(class="galactic-grey-text centerize-me") Join the Community
+						p(ng-show="signUpError" class="errorText") User already exists in userbase.
+						div(class="input-field col s12")
+							input(placeholder="Username (displayed as @username)", ng-model="signUpFormData.username", type="text", class="validate")
+							label(for="name") 
+						div(class="input-field col s12")
+							input(placeholder="Email", ng-model="signUpFormData.email", type="email", class="validate")
+							label(for="email") 					
+						div(class="input-field col s12")
+							input(placeholder="Password", ng-model="signUpFormData.password", type="password", class="validate")
+							label(for="password") 
+						input(type="submit" value="Sign Up" class="waves-effect btn-flat galactic-green col s2 btn-profile")
 	
 	//- script(src="//cdn.quilljs.com/0.20.0/quill.js")
 	//- script(src="services/multipartForm.js")

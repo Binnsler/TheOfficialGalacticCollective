@@ -488,7 +488,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($window, $scope, $rootScope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout){
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout){
 
 	$scope.rand = Math.random();
 
@@ -683,7 +683,7 @@ masterApp.controller('profileController', function($window, $scope, $rootScope, 
 
 // Login Capabilities (Abstract into a service)
 	$scope.showLogin = function(){
-		$rootScope.loginLightbox = true;
+		$scope.loginLightbox = true;
 		console.log("Should be showing the lightbox")		
 	};
 	$scope.closeLogin = function(){
