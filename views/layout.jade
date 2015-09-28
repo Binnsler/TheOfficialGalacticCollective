@@ -26,7 +26,7 @@ html(lang='en' ng-app="masterApp")
 						a(href="#/community", class="nav-element") Community
 					li.nav-element(href="", ng-show="userContainer.user", ng-click="logout()")
 						a(href="") Logout
-					li.nav-element(ng-show="!userContainer.user" ng-click="showLogin()")
+					li.nav-element(ng-show="!userContainer.user" ng-click="showLogin()" class="button")
 						a(href="" class="nav-element") Log In/Sign Up
 					li.nav-element(ng-show="userContainer.user")
 						a(ng-href="#/admin/{{userContainer.user.username}}") Admin
