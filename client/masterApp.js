@@ -193,16 +193,6 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 	// $scope.theDate = post.dateCreated.toISOString();
 
-	// Login Capabilities
-	$scope.login = function(){
-		loginService.login()
-	};
-	$scope.signup = function(){
-		loginService.signup()
-	};
-	$scope.logout = function(){
-		loginService.logout()
-	};
 
 	// Delete a Post
 	$scope.deletePost = function(post, index){
@@ -329,46 +319,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 		  	});
 	};
 
-
-});
-
-// Search Controller
-masterApp.controller('searchController', function($scope, $http, $resource, $location, $routeParams, authenticateUser){
-	
-	$scope.userContainer = authenticateUser;
-
-
-	$http.get('/api/allUsers').
-	 	then(function(returnData){
-	 		$scope.profiles = returnData.data;
-	 	})
-
-	 // Login Capabilities
-	$scope.login = function(){
-		loginService.login()
-	};
-	$scope.signup = function(){
-		loginService.signup()
-	};
-	$scope.logout = function(){
-		loginService.logout()
-	};
-
-
-});
-
-// Profile controller
-masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout){
-
-	$scope.rand = Math.random();
-
-	$scope.userContainer = authenticateUser;
-
-	$scope.profileUser = userFactory.model.get({username : $routeParams.username})
-
-	$scope.editing = false;
-
-	// Login Capabilities
+// Login Capabilities (Abstract into a service)
 	$scope.showLogin = function(){
 		$scope.loginLightbox = true;		
 	};
@@ -431,7 +382,96 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	};
 
 	// Logout 
-	this.logout = function(){
+	$scope.logout = function(){
+		$http.post('/logout', {msg:'hello word!'}).
+
+	  		then(function(response) {
+	  			$location.path('/login')
+	  			authenticateUser.user = null;
+
+	  		}, function(response) {
+			    console.log('Error logging out: ', response)
+	  	});
+		
+	};
+});
+
+// Search Controller
+masterApp.controller('searchController', function($scope, $http, $resource, $location, $routeParams, authenticateUser){
+	
+	$scope.userContainer = authenticateUser;
+
+
+	$http.get('/api/allUsers').
+	 	then(function(returnData){
+	 		$scope.profiles = returnData.data;
+	 	})
+
+
+// Login Capabilities (Abstract into a service)
+	$scope.showLogin = function(){
+		$scope.loginLightbox = true;		
+	};
+	$scope.closeLogin = function(){
+		$scope.loginLightbox = false;
+	};
+	
+    // Login a user
+	$scope.login = function(){
+		$http.post('/login', $scope.loginFormData).
+
+	  		then(function(response) {
+
+	  			$scope.loginError = false;
+
+	  			// If the HTTP request is successful, but passport has errors:
+		    	if(response.err){
+		    		console.log('Login request complete, but errors:', response.err)
+		    	}
+		    	// Everything successful, so we receive user data
+		    	else{
+		    		authenticateUser.user = response.data;
+	    			$location.url('/profile/' + response.data.username)
+		    	}
+		    	// HTTP error
+	  		}, function(response) {
+			    console.log('Angular login error: ', response.data)
+			    $scope.loginError = true;
+			    
+			})
+		};
+		
+
+	// Signup a user and log them in
+	$scope.signup = function(){
+
+		$http.post('/signup', $scope.signUpFormData).
+
+	  		then(function(response) {
+
+	  			if(response.data.err){
+	  				$scope.signUpError = true;
+
+	  			}
+
+	  			else{
+
+		  			$scope.signUpError = false;	
+
+		    		$scope.userContainer.user = response.data;
+
+		    		$location.url('/profile/' + response.data.username, {user: response.data.data})
+	    		}
+	  		}, function(response) {
+
+			    $scope.signUpError = true;
+
+	  	});
+		
+	};
+
+	// Logout 
+	$scope.logout = function(){
 		$http.post('/logout', {msg:'hello word!'}).
 
 	  		then(function(response) {
@@ -444,12 +484,20 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 		
 	};
 
-	// Get request to get all the user's posts
-	$http.get('/api/allUserPosts?username=' + $routeParams.username).
-		then(function(returnData){
-			$scope.posts = returnData.data.reverse();
 
-		});
+});
+
+// Profile controller
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout){
+
+	$scope.rand = Math.random();
+
+	$scope.userContainer = authenticateUser;
+
+	$scope.profileUser = userFactory.model.get({username : $routeParams.username})
+
+	$scope.editing = false;
+
 
 	// Delete a Post
 	$scope.deletePost = function(post, index){
@@ -627,6 +675,82 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 	};
 
+// Login Capabilities (Abstract into a service)
+	$scope.showLogin = function(){
+		$scope.loginLightbox = true;		
+	};
+	$scope.closeLogin = function(){
+		$scope.loginLightbox = false;
+	};
+	
+    // Login a user
+	$scope.login = function(){
+		$http.post('/login', $scope.loginFormData).
+
+	  		then(function(response) {
+
+	  			$scope.loginError = false;
+
+	  			// If the HTTP request is successful, but passport has errors:
+		    	if(response.err){
+		    		console.log('Login request complete, but errors:', response.err)
+		    	}
+		    	// Everything successful, so we receive user data
+		    	else{
+		    		authenticateUser.user = response.data;
+	    			$location.url('/profile/' + response.data.username)
+		    	}
+		    	// HTTP error
+	  		}, function(response) {
+			    console.log('Angular login error: ', response.data)
+			    $scope.loginError = true;
+			    
+			})
+		};
+		
+
+	// Signup a user and log them in
+	$scope.signup = function(){
+
+		$http.post('/signup', $scope.signUpFormData).
+
+	  		then(function(response) {
+
+	  			if(response.data.err){
+	  				$scope.signUpError = true;
+
+	  			}
+
+	  			else{
+
+		  			$scope.signUpError = false;	
+
+		    		$scope.userContainer.user = response.data;
+
+		    		$location.url('/profile/' + response.data.username, {user: response.data.data})
+	    		}
+	  		}, function(response) {
+
+			    $scope.signUpError = true;
+
+	  	});
+		
+	};
+
+	// Logout 
+	$scope.logout = function(){
+		$http.post('/logout', {msg:'hello word!'}).
+
+	  		then(function(response) {
+	  			$location.path('/login')
+	  			authenticateUser.user = null;
+
+	  		}, function(response) {
+			    console.log('Error logging out: ', response)
+	  	});
+		
+	};
+
 });
 
 // Controls all login/signup/logout functionality (see server.js and authenticate.js for backend routes and functionality)
@@ -738,7 +862,81 @@ masterApp.controller('postController', function($window, $scope, $http, $resourc
 			})
 
 	};
+// Login Capabilities (Abstract into a service)
+	$scope.showLogin = function(){
+		$scope.loginLightbox = true;		
+	};
+	$scope.closeLogin = function(){
+		$scope.loginLightbox = false;
+	};
+	
+    // Login a user
+	$scope.login = function(){
+		$http.post('/login', $scope.loginFormData).
 
+	  		then(function(response) {
+
+	  			$scope.loginError = false;
+
+	  			// If the HTTP request is successful, but passport has errors:
+		    	if(response.err){
+		    		console.log('Login request complete, but errors:', response.err)
+		    	}
+		    	// Everything successful, so we receive user data
+		    	else{
+		    		authenticateUser.user = response.data;
+	    			$location.url('/profile/' + response.data.username)
+		    	}
+		    	// HTTP error
+	  		}, function(response) {
+			    console.log('Angular login error: ', response.data)
+			    $scope.loginError = true;
+			    
+			})
+		};
+		
+
+	// Signup a user and log them in
+	$scope.signup = function(){
+
+		$http.post('/signup', $scope.signUpFormData).
+
+	  		then(function(response) {
+
+	  			if(response.data.err){
+	  				$scope.signUpError = true;
+
+	  			}
+
+	  			else{
+
+		  			$scope.signUpError = false;	
+
+		    		$scope.userContainer.user = response.data;
+
+		    		$location.url('/profile/' + response.data.username, {user: response.data.data})
+	    		}
+	  		}, function(response) {
+
+			    $scope.signUpError = true;
+
+	  	});
+		
+	};
+
+	// Logout 
+	$scope.logout = function(){
+		$http.post('/logout', {msg:'hello word!'}).
+
+	  		then(function(response) {
+	  			$location.path('/login')
+	  			authenticateUser.user = null;
+
+	  		}, function(response) {
+			    console.log('Error logging out: ', response)
+	  	});
+		
+	};
 
 });
 
@@ -779,5 +977,79 @@ masterApp.controller('adminController', function($scope, $http, $resource, $loca
 		
 		
 	};
+// Login Capabilities (Abstract into a service)
+	$scope.showLogin = function(){
+		$scope.loginLightbox = true;		
+	};
+	$scope.closeLogin = function(){
+		$scope.loginLightbox = false;
+	};
+	
+    // Login a user
+	$scope.login = function(){
+		$http.post('/login', $scope.loginFormData).
 
+	  		then(function(response) {
+
+	  			$scope.loginError = false;
+
+	  			// If the HTTP request is successful, but passport has errors:
+		    	if(response.err){
+		    		console.log('Login request complete, but errors:', response.err)
+		    	}
+		    	// Everything successful, so we receive user data
+		    	else{
+		    		authenticateUser.user = response.data;
+	    			$location.url('/profile/' + response.data.username)
+		    	}
+		    	// HTTP error
+	  		}, function(response) {
+			    console.log('Angular login error: ', response.data)
+			    $scope.loginError = true;
+			    
+			})
+		};
+		
+
+	// Signup a user and log them in
+	$scope.signup = function(){
+
+		$http.post('/signup', $scope.signUpFormData).
+
+	  		then(function(response) {
+
+	  			if(response.data.err){
+	  				$scope.signUpError = true;
+
+	  			}
+
+	  			else{
+
+		  			$scope.signUpError = false;	
+
+		    		$scope.userContainer.user = response.data;
+
+		    		$location.url('/profile/' + response.data.username, {user: response.data.data})
+	    		}
+	  		}, function(response) {
+
+			    $scope.signUpError = true;
+
+	  	});
+		
+	};
+
+	// Logout 
+	$scope.logout = function(){
+		$http.post('/logout', {msg:'hello word!'}).
+
+	  		then(function(response) {
+	  			$location.path('/login')
+	  			authenticateUser.user = null;
+
+	  		}, function(response) {
+			    console.log('Error logging out: ', response)
+	  	});
+		
+	};
 });
