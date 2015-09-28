@@ -498,6 +498,12 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 	$scope.editing = false;
 
+	// Get all Posts
+	$http.get('/api/allPosts').
+		then(function(returnData){
+			$scope.posts = returnData.data.reverse();
+		});
+
 
 	// Delete a Post
 	$scope.deletePost = function(post, index){
