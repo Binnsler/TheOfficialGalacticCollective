@@ -750,7 +750,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 		$http.post('/logout', {msg:'hello word!'}).
 
 	  		then(function(response) {
-	  			$location.path('/login')
+	  			$location.path('/community')
 	  			authenticateUser.user = null;
 
 	  		}, function(response) {

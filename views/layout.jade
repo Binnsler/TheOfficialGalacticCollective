@@ -14,25 +14,25 @@ html(lang='en' ng-app="masterApp")
 		script(src="directives/fileModel.js")
 		block headContent
 	body
-
-		nav(ng-controller="profileController")
-			div.nav-wrapper
-				a(href="#/", class="brand-logo left")
-					img(src="/images/Header_Solo_Logo.png", alt="")
-				ul.right
-					li.nav-element
-						a(href="#/", class="nav-element") Search
-					li.nav-element
-						a(href="#/community", class="nav-element") Community
-					li.nav-element(ng-show="userContainer.user", ng-click="logout()")
-						a(href="") Logout
-					li.nav-element(ng-show="!userContainer.user" ng-click="showLogin()")
-						a(href="") Log In/Sign Up
-					li.nav-element(ng-show="userContainer.user")
-						a(ng-href="#/admin/{{userContainer.user.username}}") Admin
-					a.right(class="profile-nav" ng-href="#/profile/{{userContainer.user.username}}" ng-show="userContainer.user")
-						img(src="{{userContainer.user.profilePic}}" alt="" class="circleHeaderProfile")
-			
+		div(ng-controller="loginController")
+			nav
+				div.nav-wrapper
+					a(href="#/", class="brand-logo left")
+						img(src="/images/Header_Solo_Logo.png", alt="")
+					ul.right
+						li.nav-element
+							a(href="#/", class="nav-element") Search
+						li.nav-element
+							a(href="#/community", class="nav-element") Community
+						li.nav-element(ng-show="userContainer.user", ng-click="logout()")
+							a(href="") Logout
+						li.nav-element(ng-show="!userContainer.user" ng-click="showLogin()")
+							a(href="") Log In/Sign Up
+						li.nav-element(ng-show="userContainer.user")
+							a(ng-href="#/admin/{{userContainer.user.username}}") Admin
+						a.right(class="profile-nav" ng-href="#/profile/{{userContainer.user.username}}" ng-show="userContainer.user")
+							img(src="{{userContainer.user.profilePic}}" alt="" class="circleHeaderProfile")
+				
 			div.loginLightbox(ng-show="loginLightbox" ng-click="closeLogin()")
 				div.lightbox-container(class="col s4 offset-s4")
 					div.row(class="col s4 offset-s4 no-space")
@@ -65,8 +65,8 @@ html(lang='en' ng-app="masterApp")
 								label(for="password") 
 							input(type="submit" value="Sign Up" class="waves-effect btn-flat galactic-green col s2 btn-profile")
 
-		block content
+			block content
+			
 		
-	
-	//- script(src="//cdn.quilljs.com/0.20.0/quill.js")
-	//- script(src="services/multipartForm.js")
+		//- script(src="//cdn.quilljs.com/0.20.0/quill.js")
+		//- script(src="services/multipartForm.js")
