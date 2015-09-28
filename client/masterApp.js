@@ -706,6 +706,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 		    	else{
 		    		authenticateUser.user = response.data;
 	    			$location.url('/profile/' + response.data.username)
+	    			$scope.loginLightbox = false;
 		    	}
 		    	// HTTP error
 	  		}, function(response) {
