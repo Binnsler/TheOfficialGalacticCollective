@@ -27,7 +27,7 @@ html(lang='en' ng-app="masterApp")
 					li.nav-element(href="", ng-show="userContainer.user", ng-click="logout()")
 						a(href="") Logout
 					li.nav-element(ng-show="!userContainer.user")
-						button(ng-click="showLogin()", class="nav-element") Log In/Sign Up
+						a(href="", ng-click="showLogin()", class="nav-element") Log In/Sign Up
 					li.nav-element(ng-show="userContainer.user")
 						a(ng-href="#/admin/{{userContainer.user.username}}") Admin
 					a.right(class="profile-nav" ng-href="#/profile/{{userContainer.user.username}}" ng-show="userContainer.user")
