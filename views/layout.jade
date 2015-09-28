@@ -33,7 +33,7 @@ html(lang='en' ng-app="masterApp")
 					a.right(class="profile-nav" ng-href="#/profile/{{userContainer.user.username}}" ng-show="userContainer.user")
 						img(src="{{userContainer.user.profilePic}}" alt="" class="circleHeaderProfile")
 			
-		div.loginLightbox(ng-show="loginLightbox" ng-click="closeLogin()" ng-controller="profileController")
+		div.loginLightbox(ng-show="loginLightbox" ng-click="closeLogin()")
 			div.lightbox-container(class="col s4 offset-s4")
 				div.row(class="col s4 offset-s4 no-space")
 					form(class="col s4 offset-s4 white-background" ng-submit="login()" ng-click="$event.stopPropagation()")
