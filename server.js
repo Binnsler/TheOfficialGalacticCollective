@@ -40,7 +40,7 @@ var app = express();
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 app.set('scripts', __dirname + '/node_modules/ng-quill/src/');
-app.use(express.static(__dirname + '/client'));
+app.use(express.static(__dirname + '/'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
