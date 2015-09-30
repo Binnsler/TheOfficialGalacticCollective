@@ -1,6 +1,10 @@
 
 /*Common Styles*/
 
+.toolbar-container, .editor-container {
+	border: 1px solid #ccc;
+}
+
 .galactic-blue {
 	background-color: #0ea2c9;
 }
