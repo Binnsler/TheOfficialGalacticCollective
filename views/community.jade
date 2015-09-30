@@ -16,7 +16,7 @@ div.container
 
 		form(ng-show="jobForm")
 			div.row
-				ng-quill-editor(ng-model="message" theme="snow" toolbar="true" link-tooltip="true" toolbar-entries="bold bullet italic underline color link" editor-required="true" required="" error-class="input-error")
+				ng-quill-editor(ng-model="message" theme="snow" toolbar="true" link-tooltip="true" toolbar-entries="bold bullet italic underline color link" editor-required="true" required="" error-class="input-error" class="col s8 offset-s2")
 				input(placeholder="Job Title", ng-model="jobFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
 				input(placeholder="Job URL", ng-model="jobFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
 				input(placeholder="Job Description", ng-model="jobFormData.description", type="text", class="validate col s10 offset-s1 profile-form") 
