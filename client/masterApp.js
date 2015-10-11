@@ -9,7 +9,7 @@ masterApp.config(function($routeProvider){
 	});
 	// Home-Search Page
 	$routeProvider
-	.when('/', {
+	.when('/search', {
 		templateUrl : '/views/search', 
 		controller : 'searchController'
 	});
