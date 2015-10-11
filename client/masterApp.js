@@ -1,6 +1,12 @@
 var masterApp = angular.module('masterApp', ['ngResource', 'ngRoute', 'ngQuill']);
 
 masterApp.config(function($routeProvider){
+	// Home Page
+	$routeProvider
+	.when('/', {
+		templateUrl : '/views/home', 
+		controller : 'homeController'
+	});
 	// Home-Search Page
 	$routeProvider
 	.when('/', {
@@ -180,6 +186,12 @@ masterApp.factory('postFactory', function($resource){
 	}
 
 });
+
+// Community Controller
+masterApp.controller('homeController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
+	
+	$scope.userContainer = authenticateUser;
+)};
 
 // Community Controller
 masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
