@@ -191,7 +191,7 @@ masterApp.factory('postFactory', function($resource){
 masterApp.controller('homeController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
 	
 	$scope.userContainer = authenticateUser;
-)};
+});
 
 // Community Controller
 masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
