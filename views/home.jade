@@ -1,6 +1,75 @@
 block headContent
 	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
-	link(rel="stylesheet" href="/client/stylesheets/main.css")
+	link(rel="stylesheet" href="/client/stylesheets/home.css")
 
-div.container
-	h1(class="centerize-me galactic-green-text") Home Page Currently Under Construction
+div.heroImage--Container
+	div.smokescreen
+		h3.heroImage--Slogan Helping Boulder's Creative/Freelance<br />Community Unite
+
+div.partners--Container
+	a(href="www.github.com")
+		img(src="../images/refactoruLogo.png")
+	a(href="github.com")
+		img(src="../images/galvanizeLogo.png")
+	a(href="github.com")
+		img(src="../images/impacthubLogo.png")
+	a(href="github.com")
+		img(src="../images/sparkLogo.png")
+	a(href="github.com")
+		img(src="../images/bdaLogo.png")
+
+div.row.tab--Container
+	div(class="about--Tab col m3 col s12" id="home--Tab")
+		h5 About<br />Galactic
+		p WTF is galactic Collective and why should you join? That is the question.
+
+	div(class="upcomingEvents--Tab col m3 col s12" id="home--Tab")
+		h5 Upcoming<br />Events
+		p Go to these events. Grow your mothereffin network. Get more business!
+
+	div(class="recentJobs--Tab col m3 col s12" id="home--Tab")
+		h5 Recent<br />Job Posts
+		p Our community is constantly posting up new gigs and jobs
+
+	div(class="resources--Tab col m3 col s12" id="home--Tab")
+		h5 Freelance<br /> Resources
+		p A collection of helpful resources for the resourceful freelancer
+
+
+//- open tabs
+div.open--Tab.about--Tab.row(ng-show="aboutTab", ng-click="showAboutTab()")
+	div(class="col s12 col m6")
+		h3 We're here to help Boulder's freelance community Flourish
+
+	div(class="col s12 col m6")
+		p Galactic does everything in it's power to help freelancers and creatives<br />Meet more people<br />Get more gigs
+
+div.open--Tab.upcomingEvents--Tab.row(ng-show="eventsTab", ng-click="showEventsTab()")
+	div(class="col s12 col m6")
+		h3 some text 
+
+	div(class="col s12 col m6")
+		p some way to show upcoming events
+
+
+div.open--Tab.recentJobs--Tab.row(ng-show="jobsTab", ng-click="showJobsTab()")
+	div(class="col s12 col m6")
+		h3 Some text 
+
+	div(class="col s12 col m6")
+		p some way to show recent job posts
+
+div.open--Tab.resources--Tab.row(ng-show="resourcesTab", ng-click="showResourcesTab()")
+	div(class="col s12 col m6")
+		h3 Some text 
+
+	div(class="col s12 col m6")
+		p static list of resources
+
+
+div.callToAction--Container
+	div(class="callToAction--Smokescreen")
+		a(class="waves-effect pink waves-light btn-large") Join the Collective
+	
+
+

@@ -1,1 +1,100 @@
+body {
+	font-family: Geneva;
+}
 
+/************ Hero Image Styling ************/
+
+
+.heroImage--Container {
+	background-image: url("http://www.colorado.edu/studentgroups/CUSEDS/oldwebsite/YNBoulder/2010/images/yuris_night_boulder_2010_5.jpg");
+	height: 450px;
+	width: 100%;
+}
+
+.smokescreen {
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255,255,255,0.955);
+	/*background-color: rgba(0,0,0,.5);*/
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+
+.heroImage--Slogan {
+	color: #2DBFE8;
+	margin-left: 10px;
+}
+
+.partners--Container {
+	max-width: 100%;
+	background-color: white;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+
+
+/************ Tab Styling ************/
+
+.tab--Container {
+	margin:0;
+}
+
+
+#home--Tab {
+	color: grey;
+	height: 250px;
+	margin: none;
+	padding: 20px;
+}
+
+
+.about--Tab {
+	background-color: #2DBFE8;
+}
+
+
+.upcomingEvents--Tab {
+	background-color: #3EFFF6;
+}
+
+.recentJobs--Tab {
+	background-color: #2DE8AA;
+}
+
+.resources--Tab {
+	background-color: #31FF81;
+}
+
+
+.open--Tab {
+	color: white;
+	height: 500px;
+	margin: none;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 0;
+}
+
+
+
+/************ Call-to-Action Styling ************/
+
+.callToAction--Container {
+	max-width: 100%;
+	margin: 0;
+	background-image: url("http://www.colorado.edu/studentgroups/CUSEDS/oldwebsite/YNBoulder/2010/images/yuris_night_boulder_2010_5.jpg");
+	text-align: center;
+	color: white;
+}
+
+.callToAction--Smokescreen {
+	padding: 20px;
+	background-color: rgba(0,0,0,0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

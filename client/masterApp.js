@@ -187,10 +187,48 @@ masterApp.factory('postFactory', function($resource){
 
 });
 
-// Community Controller
+// Home Controller
 masterApp.controller('homeController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
 	
 	$scope.userContainer = authenticateUser;
+
+
+
+	// Show/Hide functionality for home-page tabs
+	$scope.aboutTab = true;
+	$scope.eventsTab = false;
+	$scope.jobsTab = false;
+	$scope.resourcesTab = false;
+
+	$scope.showAboutTab = function() {
+		$scope.aboutTab = true;
+		$scope.eventsTab = false;
+		$scope.jobsTab = false;
+		$scope.resourcesTab = false;
+	};
+
+	$scope.showEventsTab = function() {
+		$scope.aboutTab = false;
+		$scope.eventsTab = true;
+		$scope.jobsTab = false;
+		$scope.resourcesTab = false;
+	};
+
+	$scope.showJobsTab = function() {
+		$scope.aboutTab = false;
+		$scope.eventsTab = false;
+		$scope.jobsTab = true;
+		$scope.resourcesTab = false;
+	};
+
+	$scope.showResourcesTab = function() {
+		$scope.aboutTab = false;
+		$scope.eventsTab = false;
+		$scope.jobsTab = false;
+		$scope.resourcesTab = true;
+	}
+
+
 });
 
 // Community Controller
