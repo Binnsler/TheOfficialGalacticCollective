@@ -203,7 +203,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 			$scope.posts = returnData.data.reverse();
 		});
 
-	// $scope.theDate = post.dateCreated.toISOString();
+	$scope.message = '<p>Testing</p>'
 
 
 	// Delete a Post
@@ -273,7 +273,6 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 	// Submit Posts to database
 	$scope.submitJob = function(jobFormData) {
 		console.log(jobFormData)
-		console.log('Quilljs content: ', $scope.message)
 		jobFormData.type = 'job';
 		$http.post('/api/posts', jobFormData).
 
