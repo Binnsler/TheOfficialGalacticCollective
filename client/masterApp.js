@@ -194,7 +194,7 @@ masterApp.controller('homeController', function($scope, $http, $resource, $locat
 });
 
 // Community Controller
-masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService, ngQuill){
+masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
 	
 	$scope.userContainer = authenticateUser;
 
@@ -273,6 +273,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 	// Submit Posts to database
 	$scope.submitJob = function(jobFormData) {
 		console.log(jobFormData)
+		console.log('Quilljs content: ', $scope.message)
 		jobFormData.type = 'job';
 		$http.post('/api/posts', jobFormData).
 
