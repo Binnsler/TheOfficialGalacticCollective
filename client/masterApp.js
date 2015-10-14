@@ -194,7 +194,7 @@ masterApp.controller('homeController', function($scope, $http, $resource, $locat
 });
 
 // Community Controller
-masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService, $ngQuill){
+masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService, ngQuill){
 	
 	$scope.userContainer = authenticateUser;
 
