@@ -1,4 +1,4 @@
-var masterApp = angular.module('masterApp', ['ngResource', 'ngRoute', 'ngQuill']);
+var masterApp = angular.module('masterApp', ['ngResource', 'ngRoute', 'textAngular']);
 
 masterApp.config(function($routeProvider){
 	// Home Page
@@ -241,8 +241,6 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 			$scope.posts = returnData.data.reverse();
 		});
 
-	$scope.message = '<p>Write your post here!</p>'
-
 
 	// Delete a Post
 	$scope.deletePost = function(post, index){
@@ -310,7 +308,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 	// Submit Posts to database
 	$scope.submitJob = function(jobFormData) {
-		console.log($scope.message)
+
 		console.log(jobFormData)
 		jobFormData.type = 'job';
 		$http.post('/api/posts', jobFormData).
