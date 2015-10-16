@@ -192,8 +192,6 @@ masterApp.controller('homeController', function($scope, $http, $resource, $locat
 	
 	$scope.userContainer = authenticateUser;
 
-	console.log('Yup, got this heroku thing working')
-
 
 	// Show/Hide functionality for home-page tabs
 	$scope.aboutTab = true;
