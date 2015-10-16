@@ -17,10 +17,10 @@ div.container
 
 		form(ng-show="jobForm")
 			div.row
-				text-angular(ng-model="htmlVariable")
+				text-angular(ng-model="jobForData.description")
 				input(placeholder="Job Title", ng-model="jobFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
 				input(placeholder="Job URL", ng-model="jobFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
-				input(placeholder="Job Description", ng-model="jobFormData.description", type="text", class="validate col s10 offset-s1 profile-form") 
+				 
 			div.row
 				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitJob(jobFormData)") Submit
 
