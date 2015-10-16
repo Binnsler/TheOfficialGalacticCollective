@@ -307,7 +307,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 	// Submit Posts to database
 	$scope.submitJob = function(jobFormData) {
-		console.log(jobFormData.html)
+
 		console.log(jobFormData)
 		jobFormData.type = 'job';
 		$http.post('/api/posts', jobFormData).
