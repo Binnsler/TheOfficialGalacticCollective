@@ -240,7 +240,6 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 			$scope.posts = returnData.data.reverse();
 		});
 
-	$scope.post.body = $sce.trustAsHtml($scope.post.body)
 
 	// Delete a Post
 	$scope.deletePost = function(post, index){
