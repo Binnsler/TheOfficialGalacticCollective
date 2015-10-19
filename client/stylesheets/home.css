@@ -37,6 +37,14 @@ body {
 
 /************ Tab Styling ************/
 
+.about-green {color: #0f5959;}
+
+.events-green {color: #17a697;}
+
+.jobs-blue {color: #638ca6;}
+
+.resources-blue {color: #8fd4d9;}
+
 .tab--Container {
 	margin:0;
 }
@@ -55,19 +63,19 @@ body {
 
 
 .about--Tab {
-	background-color: #0f5959;
+	background-color: white;
 }
 
 .upcomingEvents--Tab {
-	background-color: #17a697;
+	background-color: white;
 }
 
 .recentJobs--Tab {
-	background-color: #638ca6;
+	background-color: white;
 }
 
 .resources--Tab {
-	background-color: #8fd4d9;
+	background-color: white;
 }
 
 .glyphicon {
