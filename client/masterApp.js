@@ -231,7 +231,7 @@ masterApp.controller('homeController', function($scope, $http, $resource, $locat
 });
 
 // Community Controller
-masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
+masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService, $sce){
 	
 	$scope.userContainer = authenticateUser;
 
@@ -240,7 +240,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 			$scope.posts = returnData.data.reverse();
 		});
 
-	$scope.post.body = $sce.trustAsHtml($scope.post.body)
+	$scope.post.body = $sce.trustAsHtml($scope.post.body)2
 
 	// Delete a Post
 	$scope.deletePost = function(post, index){
