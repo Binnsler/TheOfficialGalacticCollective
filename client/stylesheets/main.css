@@ -55,6 +55,7 @@ h4 {
 nav {
 	background-color: white;
 	box-shadow: none;
+	padding: 10px;
 }
 
 .nav-element {
