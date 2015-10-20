@@ -91,6 +91,9 @@ body {
 }
 
 .open--Tab {
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
 	color: white;
 	height: 500px;
 	margin: none;
@@ -99,9 +102,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 0;
-	-webkit-box-shadow: 0 8px 6px -6px black;
-	   -moz-box-shadow: 0 8px 6px -6px black;
-	        box-shadow: 0 8px 6px -6px black;
 }
 
 
