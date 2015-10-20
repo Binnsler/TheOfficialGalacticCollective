@@ -52,7 +52,7 @@ h4 {
 }
 
 /*Layout Styling*/
-nav {
+.nav-wrapper {
 	background-color: white;
 	box-shadow: none;
 	padding: 10px;
