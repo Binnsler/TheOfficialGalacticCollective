@@ -7,18 +7,14 @@ body {
 
 .heroImage--Container {
 	background-image: url("http://www.colorado.edu/studentgroups/CUSEDS/oldwebsite/YNBoulder/2010/images/yuris_night_boulder_2010_5.jpg");
-	height: 450px;
+	height: 520px;
 	width: 100%;
-	-webkit-box-shadow: 0 8px 6px -6px black;
-	   -moz-box-shadow: 0 8px 6px -6px black;
-	        box-shadow: 0 8px 6px -6px black;
 }
 
 .smokescreen {
 	height: 100%;
 	width: 100%;
 	background-color: rgba(255,255,255,0.955);
-	/*background-color: rgba(0,0,0,.5);*/
 	display: flex;
 	justify-content: center;
 	align-items: center;	
