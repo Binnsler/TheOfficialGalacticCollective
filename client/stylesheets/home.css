@@ -56,14 +56,13 @@ body {
 
 
 #home--Tab {
-	color: grey;
-	height: 250px;
+	color: white;
+	height: 190px;
 	margin: none;
 	padding: 20px;
 }
 
 #home--Tab:hover {
-	/*background-color: #d93240;*/
 	-webkit-box-shadow: 0 8px 6px -6px black;
 	   -moz-box-shadow: 0 8px 6px -6px black;
 	        box-shadow: 0 8px 6px -6px black;
@@ -86,9 +85,6 @@ body {
 	background-color: #a5c8ca;
 }
 
-.glyphicon {
-	margin-top: 70px;
-}
 
 .open--Tab {
 	-webkit-box-shadow: 0 8px 6px -6px black;
@@ -101,7 +97,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 0;
 }
 
 
