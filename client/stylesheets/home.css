@@ -9,6 +9,9 @@ body {
 	background-image: url("http://www.colorado.edu/studentgroups/CUSEDS/oldwebsite/YNBoulder/2010/images/yuris_night_boulder_2010_5.jpg");
 	height: 450px;
 	width: 100%;
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
 }
 
 .smokescreen {
@@ -61,6 +64,9 @@ body {
 
 #home--Tab:hover {
 	background-color: #d93240;
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
 }
 
 
@@ -93,6 +99,9 @@ body {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 0;
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
 }
 
 
