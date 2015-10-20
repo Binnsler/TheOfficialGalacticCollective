@@ -65,19 +65,19 @@ body {
 
 
 .about--Tab {
-	background-color: white;
+	background-color: #c3e1c7;
 }
 
 .upcomingEvents--Tab {
-	background-color: lightgrey;
+	background-color: #7ad0a0;
 }
 
 .recentJobs--Tab {
-	background-color: grey;
+	background-color: #179b67;
 }
 
 .resources--Tab {
-	background-color: black;
+	background-color: #1a754c;
 }
 
 .glyphicon {
