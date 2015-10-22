@@ -57,7 +57,7 @@ div.container
 							a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
 				div(class="col s8")
 					a.galactic-green-text(ng-href="#/profile/{{post.userCreated.username}}/{{post._id}}" class="postTitle") {{post.title}}
-					div(class="post-body" ng-bind-html="(post.body | limitTo: 200) + ' ...' ")
+					div(class="post-body" ta-bind ng-model="(post.body | limitTo: 200) + ' ...' ")
 					a.post-url(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
 					p.galactic-blue-text(ng-if="post.time") {{post.time}}
 					div 
