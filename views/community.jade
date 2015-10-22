@@ -19,7 +19,7 @@ div.container
 			div.row
 				input(placeholder="Job Title", ng-model="jobFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
 				input(placeholder="Job URL", ng-model="jobFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
-				text-angular(class="col s10 offset-s1" ng-model="jobFormData.description" type="text" ta-toolbar="[['p','bold','italics','underline','strikeThrough'],['undo','redo'],['justifyLeft','justifyRight','justifyCenter']]")
+				text-angular(class="col s10 offset-s1" ng-model="jobFormData.description" type="text" ta-toolbar="[['p','bold','italics','underline','strikeThrough'],['undo','redo','justifyLeft','justifyRight','justifyCenter']]")
 				
 			div.row
 				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitJob(jobFormData)") Submit
