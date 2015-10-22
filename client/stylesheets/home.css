@@ -114,11 +114,18 @@ body {
 	align-items: center;
 }
 
+.about-Container {
+	padding: 50px;
+}
+
 .aboutUs {
 	border-right: 1px solid black;
 	text-align: center;
+	font-size: 80px;
+	height: 100%;
 }
 
 .aboutUs-Copy {
 	text-align: center;
+	height: 100%
 }
