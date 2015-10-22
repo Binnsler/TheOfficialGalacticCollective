@@ -5,13 +5,9 @@ block headContent
 div.heroImage--Container
 	div.smokescreen.row
 		h3.heroImage--Slogan Helping Boulder's Creative/Freelance<br />Community Unite
-		input(type="button" class="btn btn-default btn-lg")
+		
 
 div.row.tab--Container
-	//- div(class="about--Tab col m3 col s12" id="home--Tab" ng-click="showAboutTab()")
-	//- 	h5 About<br />Galactic
-	//- 	p WTF is galactic Collective and why should you join? That is the question.
-	
 
 	div(class="upcomingEvents--Tab col m6 col s12" id="home--Tab" ng-click="showEventsTab()")
 		h5 Upcoming<br />Events
@@ -22,20 +18,6 @@ div.row.tab--Container
 		h5 Recent<br />Job Posts
 		p Our community is constantly posting up new gigs and jobs
 		
-
-	//- div(class="resources--Tab col m3 col s12" id="home--Tab" ng-click="showResourcesTab()")
-	//- 	h5 Freelance<br /> Resources
-	//- 	p A collection of helpful resources for the resourceful freelancer
-		
-
-
-//- open tabs
-//- div.open--Tab.about--Tab.row(ng-show="aboutTab")
-//- 	div(class="col s12 col m6")
-//- 		h3 We're here to help Boulder's freelance community Flourish
-
-//- 	div(class="col s12 col m6")
-//- 		p Galactic does everything in it's power to help freelancers and creatives<br />Meet more people<br />Get more gigs
 
 div.open--Tab.upcomingEvents--Tab.row(ng-show="eventsTab")
 	div(class="col s12 col m6")
@@ -52,17 +34,9 @@ div.open--Tab.recentJobs--Tab.row(ng-show="jobsTab")
 	div(class="col s12 col m6")
 		p some way to show recent job posts
 
-//- div.open--Tab.resources--Tab.row(ng-show="resourcesTab")
-//- 	div(class="col s12 col m6")
-//- 		h3 Some text 
-
-//- 	div(class="col s12 col m6")
-//- 		p static list of resources
-
-	
 div.partners--Container.row
 	div.col-sm-12
-		h4 Our Partners
+	h4 Our Partners
 	a(href="www.github.com")
 		img(src="../images/refactoruLogo.png")
 	a(href="github.com")
