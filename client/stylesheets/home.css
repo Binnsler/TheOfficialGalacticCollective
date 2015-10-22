@@ -13,7 +13,6 @@ body {
 
 .smokescreen {
 	height: 100%;
-	width: 100%;
 	background-color: rgba(255,255,255,0.955);
 	display: flex;
 	justify-content: center;
@@ -53,7 +52,7 @@ body {
 
 #home--Tab {
 	color: white;
-	height: 190px;
+	height: 180px;
 	margin: none;
 	padding: 20px;
 }
@@ -65,21 +64,21 @@ body {
 }
 
 
-.about--Tab {
+/*.about--Tab {
 	background-color: #c0f862;
-}
+}*/
 
 .upcomingEvents--Tab {
-	background-color: #10a690;
+	background-color: #3A4E0E;
 }
 
 .recentJobs--Tab {
-	background-color: #1166a3;
+	background-color: #CC8D08;
 }
 
-.resources--Tab {
+/*.resources--Tab {
 	background-color: #3d4987;
-}
+}*/
 
 
 .open--Tab {
@@ -99,7 +98,7 @@ body {
 
 /************ Call-to-Action Styling ************/
 
-.callToAction--Container {
+.callToAction-Container {
 	max-width: 100%;
 	margin: 0;
 	background-image: url("http://www.colorado.edu/studentgroups/CUSEDS/oldwebsite/YNBoulder/2010/images/yuris_night_boulder_2010_5.jpg");
@@ -107,10 +106,19 @@ body {
 	color: white;
 }
 
-.callToAction--Smokescreen {
+.callToAction-Smokescreen {
 	padding: 20px;
 	background-color: rgba(0,0,0,0.7);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.aboutUs {
+	border-right: 1px solid black;
+	text-align: center;
+}
+
+.aboutUs-Copy {
+	text-align: center;
 }
