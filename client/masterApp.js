@@ -1,4 +1,4 @@
-var masterApp = angular.module('masterApp', ['ngResource', 'ngRoute', 'textAngular', 'blndspt.ngPerformance']);
+var masterApp = angular.module('masterApp', ['ngResource', 'ngRoute', 'textAngular']);
 
 masterApp.config(function($routeProvider){
 	// Home Page
