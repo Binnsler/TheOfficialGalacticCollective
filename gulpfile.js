@@ -1,8 +1,8 @@
 // Require Gulp 
-var require = require('gulp'),
+var gulp = require('gulp'),
 
 	// Require Gulp's plugins. For now we will only be using browser-sync for faster dev updating & testing. 
-	browserSync = ('browser-sync'),
+	browserSync = require('browser-sync'),
 	// this will reload the browser upon updates to either html or css files
 	reload = browserSync.reload
 
@@ -21,7 +21,7 @@ gulp.task('css', function() {
 });
 
 // HTML Tasks 
-gulp.task('jade ', function() {
+gulp.task('jade', function() {
 	gulp.src('../client/views/**/*.jade')
 	.pipe(reload({stream:true}));
 });
@@ -31,7 +31,7 @@ gulp.task('jade ', function() {
 gulp.task('browserSync', function() {
 	browserSync({
 		server: {
-			baseDir: '/galacticcollective/'
+			baseDir: 'galacticcollective/'
 		}
 	});
 })
@@ -40,4 +40,4 @@ gulp.task('browserSync', function() {
 
 
 // Default Tasks
-gulp.task('default', ['browserSync', 'jade', 'css', 'watch']); 
+gulp.task('default', ['jade', 'css', 'browserSync', 'watch']); 
