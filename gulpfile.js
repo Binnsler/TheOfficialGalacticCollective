@@ -17,18 +17,27 @@ gulp.task('watch', function() {
 // CSS Task
 gulp.task('css', function() {
 	gulp.src('../client/stylesheets/**/*.css')
-})
+	.pipe(reload({stream:true}));
+});
 
 // HTML Tasks 
 gulp.task('jade ', function() {
 	gulp.src('../client/views/**/*.jade')
+	.pipe(reload({stream:true}));
+});
+
+
+//browserSync Tasks
+gulp.task('browserSync', function() {
+	browserSync({
+		server: {
+			baseDir: '/galacticcollective/'
+		}
+	});
 })
 
 
-//browserSync Task 
 
 
-
-
-// Default Task
-gulp.task('default', ['watch', 'jade', 'css']); 
+// Default Tasks
+gulp.task('default', ['browserSync', 'jade', 'css', 'watch']); 
