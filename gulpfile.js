@@ -29,11 +29,14 @@ gulp.task('jade', function() {
 
 //browserSync Tasks
 gulp.task('browserSync', function() {
-	browserSync({
-		server: {
-			baseDir: 'galacticcollective/'
-		}
-	});
+	// browserSync({
+	// 	server: {
+	// 		baseDir: 'galacticcollective'
+	// 	}
+	// });
+	 browserSync.init({
+        proxy: "localhost:3000"
+    });
 })
 
 
