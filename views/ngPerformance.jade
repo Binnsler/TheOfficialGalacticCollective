@@ -1,0 +1,89 @@
+div
+	#perfStats
+		#perfStatsPanel
+			h3 ANGULAR STATS
+			table.table.table-condensed
+				tbody
+					tr
+						td Total Scopes:
+						td
+							span#scopes -
+					tr
+						td Total Watchers:
+						td
+							span#watchers -
+					tr
+						td Dirty Checks:
+						td
+							span#dirty-checks -
+					tr
+						td Digest Cycles:
+						td
+							span#digest-cycles -
+					tr
+						td Digest Cycle (last):
+						td
+							span#digest-ms -
+							|  ms
+							br
+							span#digest-fps -
+							|  FPS
+					tr
+						td Digest Cycle (avg):
+						td
+							span#avg-digest-ms -
+							|  ms
+							br
+							span#avg-digest-fps -
+							|  FPS
+					tr
+						td Digest Cycle (max):
+						td
+							span#max-digest-ms -
+							|  ms
+							br
+							span#max-digest-fps -
+							|  FPS
+			h3 PAGELOAD STATS
+			table.table.table-condensed
+				tbody
+					tr
+						td Head Load:
+						td
+							span#head-load -
+							|  ms
+					tr
+						td Body Load:
+						td
+							span#body-load -
+							|  ms
+					tr
+						td Footer Load:
+						td
+							span#footer-load -
+							|  ms
+					tr
+						td Vendor Script Load:
+						td
+							span#vendor-load -
+							|  ms
+					tr
+						td App Load:
+						td
+							span#app-load -
+							|  ms
+					tr
+						td Metrics Load:
+						td
+							span#metrics-load -
+							|  ms
+					tr
+						td Time To End-of-Page:
+						td
+							span#time-to-eop -
+							|  ms
+					tr
+						td Time To Angular:
+						td
+							span#time-to-ng -
+							|  ms
