@@ -469,6 +469,8 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 	$scope.editing = false;
 
+	$scope.imagePreview = '';
+
 	// Get all Posts
 	$http.get('/api/allPosts').
 		then(function(returnData){
