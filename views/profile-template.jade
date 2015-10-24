@@ -14,8 +14,7 @@ div.container
 		div.row
 			label(for="profilePicUpload", class="validate col s4 offset-s1 profile-form") Profile Picture
 		div.row
-			input(type="file" file-model="profileUser.uploadPic", class="validate col s4 offset-s1 profile-form" name="uploadPic" ng-model="imagePreview")
-			img(src="{{imagePreview}}")
+			input(type="file" file-model="profileUser.uploadPic", class="validate col s4 offset-s1 profile-form" name="uploadPic")
 		div.row
 			input(placeholder="Button 1 Text", ng-model="profileUser.buttonOneText", type="text", class="validate col s4 offset-s1 profile-form" maxlength="12")
 			input(placeholder="Button 1 URL", ng-model="profileUser.buttonOneUrl", type="text", class="validate col s4 offset-s2 profile-form")
