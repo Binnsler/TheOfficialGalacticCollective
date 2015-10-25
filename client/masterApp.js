@@ -504,16 +504,13 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 		console.log($scope.profileUser)
 		console.log('I just ran.')
 		$scope.profileUser.$save();
-		multipartForm.postForm('/uploadForm', $scope.profileUser);
+		multipartForm.postForm('/uploadForm', $scope.profileUser)
+			.then(function(response){
+				console.log(response)
+			}, function(response){
+				console.log(response)
+			});
 	
-		// $http.post('/uploadPic', $scope.uploadPic).
-		// then(function(response) {
-		//     		console.log(response.err)
-
-		//   		}, function(response) {
-		// 		    console.log(response.body)
-
-		//   	});
 		$scope.editing = false;
 
 		$timeout(function(){ $window.location.reload(true); }, 1500);
