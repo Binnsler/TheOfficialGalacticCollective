@@ -502,10 +502,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	$scope.submitToServer = function(){
 		
 		$scope.profileUser.$save();
-		multipartForm.postForm('/uploadForm', $scope.profileUser)
-			.then(function(response){
-				console.log(response)
-			});
+		multipartForm.postForm('/uploadForm', $scope.profileUser);
 	
 		$scope.editing = false;
 
