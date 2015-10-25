@@ -501,13 +501,9 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 	// Submit Profile Updates to Server
 	$scope.submitToServer = function(){
 		
-		console.log($scope.profileUser)
-		console.log('I just ran.')
 		$scope.profileUser.$save();
 		multipartForm.postForm('/uploadForm', $scope.profileUser)
 			.then(function(response){
-				console.log(response)
-			}, function(response){
 				console.log(response)
 			});
 	
