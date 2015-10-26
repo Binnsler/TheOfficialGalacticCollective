@@ -46,7 +46,7 @@ div.container
 	ul.collection(class="top-space")
 		li(ng-repeat="post in posts track by $index | orderBy : '-dateCreated'" class="collection-item avatar")
 			div.row
-				div(class="col s2")
+				div(class="col s12 m2")
 					img(src="{{post.userCreated.profilePic}}" alt="" class="circle")
 					a(ng-href="#/profile/{{post.userCreated.username}}" class="galactic-blue-text") {{post.userCreated.profileName}}
 					a.delete-button(ng-show="userContainer.user._id === post.userCreated._id" ng-click="deletePost(post, $index)") Delete
@@ -55,7 +55,7 @@ div.container
 							p(class="col s1 post-likes") {{post.likes}}
 						div.likes-div
 							a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
-				div(class="col s8")
+				div(class="col s12 m8")
 					a.galactic-green-text(ng-href="#/profile/{{post.userCreated.username}}/{{post._id}}" class="postTitle") {{post.title}}
 					div(class="post-body" ta-bind ng-model="post.body")
 					a.post-url(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
