@@ -9,8 +9,8 @@ var gulp = require('gulp'),
 
 // Watch Tasks
 gulp.task('watch', function() {
-    gulp.watch('../client/stylesheets/**/*.css', ['css']);
-    gulp.watch('../client/views/**/*.jade', ['jade']); 
+    gulp.watch('../client/stylesheets/**/*.css', ['css', browserSync.reload]);
+    gulp.watch('../client/views/**/*.jade', ['jade', browserSync.reload]); 
 });
 
 
@@ -33,12 +33,11 @@ gulp.task('browserSync', function() {
 		server: {
 			baseDir: './'
 		}
-		// startPath: "/html"
 	});
 	   // browserSync.init({
-    //     proxy: "localhost:3000"
+    //     proxy: "172.27.19.56:3000"
     // });
-})
+});
 
 
 
