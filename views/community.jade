@@ -7,9 +7,9 @@ div.container
 	div.centerize-me
 		h3.galactic-blue-text(class="bottom-space") The Denver/Boulder Galactic Community
 
-	div(class="centerize-me posting-select")
-		p(ng-if="!userContainer.user" class="galactic-grey-text s10 offset-s1 l4 offset-l4") Sign in to share events, jobs and content with other creatives and freelancers in the Boulder/Denver area. 
-		a(ng-if="!userContainer.user" ng-click="showLogin()" class="waves-effect btn-flat galactic-blue s4 offset-s4 m4 offset-m4 l1 offset-l1 btn-profile") Sign Up / Login
+	div(ng-if="!userContainer.user" class="centerize-me posting-select")
+		p(class="galactic-grey-text s10 offset-s1 l4 offset-l4") Sign in to share events, jobs and content with other creatives and freelancers in the Boulder/Denver area. 
+		a(ng-click="showLogin()" class="waves-effect btn-flat galactic-blue s4 offset-s4 m4 offset-m4 l1 offset-l1 btn-profile") Sign Up / Login
 	div(class="centerize-me posting-select bottom-space" ng-if="userContainer.user")
 		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showJobForm()") Post Job
 		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showContentForm()") Post Content
