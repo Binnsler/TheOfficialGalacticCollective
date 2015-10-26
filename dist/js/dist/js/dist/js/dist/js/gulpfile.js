@@ -1,8 +1,8 @@
 // Require Gulp 
-var gulp = require('gulp'),
+var gulp = require('gulp')
 
-	// Require Gulp's plugins. For now we will only be using browser-sync for faster dev updating & testing. 
-	browserSync = require('browser-sync'),
+// Require Gulp's plugins. For now we will only be using browser-sync for faster dev updating & testing. 
+var browserSync = require('browser-sync'),
 	// this will reload the browser upon updates to either html or css files
 	reload = browserSync.reload
 
@@ -24,14 +24,14 @@ gulp.task('jade', function() {
     return gulp.src('views/**/*.jade')
         .pipe(jade()) // pip to jade plugin
         .pipe(gulp.dest('./dist/')) // tell gulp our output folder
-        // .pipe(reload({stream:true}));
+        .pipe(reload({stream:true}));
 });
 
 // CSS Tasks
 gulp.task('css', function() {
 	return gulp.src('client/stylesheets/**/*.css')
 	.pipe(gulp.dest('./dist/css'))
-	// .pipe(reload({stream:true}));
+	.pipe(reload({stream:true}));
 });
 
 // Watch Tasks
@@ -52,7 +52,6 @@ gulp.task('browserSync', function() {
 });
 
 	
-
 
 
 // Default Tasks
