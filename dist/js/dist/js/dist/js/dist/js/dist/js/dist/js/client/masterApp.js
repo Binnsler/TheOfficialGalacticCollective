@@ -4,7 +4,7 @@ masterApp.config(function($routeProvider){
 	// Home Page
 	$routeProvider
 	.when('/', {
-		templateUrl : 'home.html', 
+		templateUrl : '/dist/home.html', 
 		controller : 'homeController'
 	});
 	// Home-Search Page
