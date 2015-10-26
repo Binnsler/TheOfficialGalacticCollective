@@ -22,24 +22,24 @@ div.container
 				text-angular(class="col s10 offset-s1" ng-model="jobFormData.description" type="text" ta-toolbar="[['p','bold','italics','underline','strikeThrough'],['undo','redo','justifyLeft','justifyRight','justifyCenter']]")
 				
 			div.row
-				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitJob(jobFormData)") Submit
+				a(class="waves-effect btn-flat galactic-green col s4 offset-s4 m1 offset-m1 btn-profile" ng-click="submitJob(jobFormData)") Submit
 
 		form(ng-show="contentForm")
 			div.row
-				input(placeholder="Content Title", ng-model="contentFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
-				input(placeholder="Content URL", ng-model="contentFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
+				input(placeholder="Content Title", ng-model="contentFormData.title", type="text", class="validate col m10 offset-m1 l4 offset-l1 profile-form" maxlength="50")
+				input(placeholder="Content URL", ng-model="contentFormData.url", type="text", class="validate col m10 offset-m1 l4 offset-l2 profile-form")
 				text-angular(class="col s10 offset-s1" ng-model="contentFormData.description" type="text" ta-toolbar="[['p','bold','italics','underline','strikeThrough'],['undo','redo','justifyLeft','justifyRight','justifyCenter']]")
 			div.row
-				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitContent(contentFormData)") Submit
+				a(class="waves-effect btn-flat galactic-green col s4 offset-s4 m1 offset-m1 btn-profile" ng-click="submitContent(contentFormData)") Submit
 
 		form(ng-show="eventForm")
 			div.row
-				input(placeholder="Event Title", ng-model="eventFormData.title", type="text", class="validate col s4 offset-s1 profile-form" maxlength="50")
-				input(placeholder="Event URL", ng-model="eventFormData.url", type="text", class="validate col s4 offset-s2 profile-form")
+				input(placeholder="Event Title", ng-model="eventFormData.title", type="text", class="validate col m10 offset-m1 l4 offset-l1 profile-form" maxlength="50")
+				input(placeholder="Event URL", ng-model="eventFormData.url", type="text", class="validate col m10 offset-m1 l4 offset-l2 profile-form")
 				input(ng-model="eventFormData.time", type="date", class="datepicker col s4 offset-s1 profile-form")
 				text-angular(class="col s10 offset-s1" ng-model="eventFormData.description" type="text" ta-toolbar="[['p','bold','italics','underline','strikeThrough'],['undo','redo','justifyLeft','justifyRight','justifyCenter']]")
 			div.row
-				a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitEvent(eventFormData)") Submit
+				a(class="waves-effect btn-flat galactic-green col s4 offset-s4 m1 offset-m1 btn-profile" ng-click="submitEvent(eventFormData)") Submit
 	
 	div.bottom-space
 
