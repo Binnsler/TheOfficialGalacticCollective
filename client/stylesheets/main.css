@@ -212,12 +212,15 @@ i > input {
 
 /*Community Page*/
 
+.post-content {margin-top:15px;}
+
 .post-body {
 	margin: 1em 0 !important;
 }
 
 .postTitle {
 	font-size: 1.5em;
+	margin-top:1em;
 }
 
 .bottom-space {
