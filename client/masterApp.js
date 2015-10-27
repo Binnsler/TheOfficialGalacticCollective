@@ -313,6 +313,8 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 				    console.log('2nd Response Submit Job')
 
 		  	});
+
+		$scope.postForm = false;
 	};
 
 
