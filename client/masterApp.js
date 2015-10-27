@@ -10,7 +10,7 @@ masterApp.config(function($routeProvider){
 	// Home-Search Page
 	$routeProvider
 	.when('/search', {
-		templateUrl : '/views/search', 
+		templateUrl : 'views/search', 
 		controller : 'searchController'
 	});
 	// Login-Signup Page
@@ -28,7 +28,7 @@ masterApp.config(function($routeProvider){
 	// Community Page
 	$routeProvider
 	.when('/community', {
-		templateUrl : '/views/community',
+		templateUrl : 'views/community',
 		controller : 'communityController'
 	});
 	// Dynamic route for Posts
