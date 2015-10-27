@@ -15,8 +15,7 @@ div.container
 
 		form(ng-show="postForm")
 			div.row
-				select(ng-model="postFormData.type")
-					option(ng-repeat="option in postSelectOptions" value="{{option}}") {{option}}
+				select(ng-model="postFormData.type" ng-options="option for option in postSelectOptions")
 				input(placeholder="Post Title", ng-model="postFormData.title", type="text", class="validate col s10 offset-s1 l4 offset-l1 profile-form" maxlength="50")
 				input(placeholder="Post URL", ng-model="postFormData.url", type="text", class="validate col s10 offset-s1 l4 offset-l2 profile-form")
 				text-angular(class="col s10 offset-s1" ng-model="postFormData.description" type="text" ta-toolbar="[['p','bold','italics','underline','strikeThrough'],['undo','redo','justifyLeft','justifyRight','justifyCenter']]")
