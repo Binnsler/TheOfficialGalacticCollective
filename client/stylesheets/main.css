@@ -212,6 +212,8 @@ i > input {
 
 /*Community Page*/
 
+.postSelect {display: inline-block !important;}
+
 .post-content {margin-top:15px;}
 
 .post-body {
