@@ -240,6 +240,9 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 			$scope.posts = returnData.data.reverse();
 		});
 
+	// Dropdown options for post
+	$scope.postSelectOptions = ['Job', 'Content', 'Event'];
+
 
 	// Delete a Post
 	$scope.deletePost = function(post, index){
@@ -286,31 +289,18 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 	};
 
-	// Show Post forms on respective button click
-	 $scope.showJobForm = function(){
-	 	$scope.contentForm = false;
-	 	$scope.eventForm = false;
-	 	$scope.jobForm = true;
+	// Show Post form on button click
+	 $scope.showPostForm = function(){
+
+	 		$scope.postForm = true;
+
 	 };
 
-	  $scope.showContentForm = function(){
-	 	$scope.eventForm = false;
-	 	$scope.jobForm = false;
-	 	$scope.contentForm = true;
-	 };
-
-	 $scope.showEventForm = function(){
-	 	$scope.jobForm = false;
-	 	$scope.contentForm = false;
-	 	$scope.eventForm = true;
-	 };
 
 	// Submit Posts to database
-	$scope.submitJob = function(jobFormData) {
+	$scope.submitPost = function(postFormData) {
 
-		console.log(jobFormData)
-		jobFormData.type = 'job';
-		$http.post('/api/posts', jobFormData).
+		$http.post('/api/posts', postFormData).
 
 		  		then(function(response) {
 		    		$scope.posts.unshift(response.data)
@@ -323,49 +313,10 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 				    console.log('2nd Response Submit Job')
 
 		  	});
+
+		$scope.postForm = false;
 	};
 
-	$scope.submitContent = function(contentFormData) {
-		contentFormData.type = 'content';
-		$http.post('/api/posts', contentFormData).
-
-		  		then(function(response) {
-		    		$scope.posts.unshift(response.data)
-		    		$scope.posts.forEach(function(post){
-		    			post.dateCreated = (new Date(post.dateCreated)).toDateString();
-		    		})
-
-		  		}, function(response) {
-				    console.log('2nd Response Submit Content')
-
-		  	});
-	};
-
-	$scope.submitEvent = function(eventFormData) {
-		eventFormData.type = 'event';
-		$http.post('/api/posts', eventFormData).
-
-		  		then(function(response) {
-		    		if(response.err){
-		    			console.log('There was an error creating the post.')
-		    		}
-
-		    		else{
-		    			$scope.posts.unshift(response.data)
-		    			$scope.posts.forEach(function(post){
-		    			post.dateCreated = (new Date(post.dateCreated)).toDateString();
-		    			post.time = (new Date(post.time)).toDateString();
-		    			})
-		    			
-		    		}
-
-		    		
-
-		  		}, function(response) {
-				    console.log('2nd Response Submit Event')
-
-		  	});
-	};
 
 // Login Capabilities (Abstract into a service)
 	$scope.showLogin = function(){

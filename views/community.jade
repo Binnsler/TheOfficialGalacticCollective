@@ -7,40 +7,23 @@ div.container
 	div.centerize-me
 		h3.galactic-blue-text(class="bottom-space") The Denver/Boulder Galactic Community
 
-	div(class="centerize-me")
-		p(ng-if="!userContainer.user" class="posting-select galactic-grey-text") Sign in to share events, jobs and content with other creatives and freelancers in the Boulder/Denver area. 
-			a(ng-click="showLogin()" class="waves-effect btn-flat galactic-blue col s1 offset-s1 btn-profile") Sign Up / Login
+	div(ng-if="!userContainer.user" class="centerize-me posting-select")
+		p(class="galactic-grey-text s10 offset-s1 l4 offset-l4") Sign in to share events, jobs and content with other creatives and freelancers in the Boulder/Denver area. 
+		a(ng-click="showLogin()" class="waves-effect btn-flat galactic-blue s4 offset-s4 m4 offset-m4 l1 offset-l1 btn-profile") Sign Up / Login
 	div(class="centerize-me posting-select bottom-space" ng-if="userContainer.user")
-		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showJobForm()") Post Job
-		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showContentForm()") Post Content
-		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showEventForm()") Post Event
+		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showPostForm()") Post to Community
 
-		form(ng-show="jobForm")
+		form(ng-show="postForm")
 			div.row
-				input(placeholder="Job Title", ng-model="jobFormData.title", type="text", class="validate col s10 offset-s1 l4 offset-l1 profile-form" maxlength="50")
-				input(placeholder="Job URL", ng-model="jobFormData.url", type="text", class="validate col s10 offset-s1 l4 offset-l2 profile-form")
-				text-angular(class="col s10 offset-s1" ng-model="jobFormData.description" type="text" ta-toolbar="[['p','bold','italics','underline','strikeThrough'],['undo','redo','justifyLeft','justifyRight','justifyCenter']]")
+				select(ng-model="postFormData.type" ng-options="option for option in postSelectOptions" class="col s4 offset-s4 postSelect")
+					option(value='') Select Post Type
+				input(placeholder="Post Title", ng-model="postFormData.title", type="text", class="validate col s10 offset-s1 l4 offset-l1 profile-form" maxlength="50")
+				input(placeholder="Post URL", ng-model="postFormData.url", type="text", class="validate col s10 offset-s1 l4 offset-l2 profile-form")
+				text-angular(class="col s10 offset-s1" ng-model="postFormData.description" type="text" ta-toolbar="[['p','bold','italics','underline','strikeThrough'],['undo','redo','justifyLeft','justifyRight','justifyCenter']]")
 				
 			div.row
-				a(class="waves-effect btn-flat galactic-green col s4 offset-s4 btn-profile" ng-click="submitJob(jobFormData)") Submit
+				a(class="waves-effect btn-flat galactic-green col s4 offset-s4 btn-profile" ng-click="submitPost(postFormData)") Submit
 
-		form(ng-show="contentForm")
-			div.row
-				input(placeholder="Content Title", ng-model="contentFormData.title", type="text", class="validate col s10 offset-s1 l4 offset-l1 profile-form" maxlength="50")
-				input(placeholder="Content URL", ng-model="contentFormData.url", type="text", class="validate col s10 offset-s1 l4 offset-l2 profile-form")
-				text-angular(class="col s10 offset-s1" ng-model="contentFormData.description" type="text" ta-toolbar="[['p','bold','italics','underline','strikeThrough'],['undo','redo','justifyLeft','justifyRight','justifyCenter']]")
-			div.row
-				a(class="waves-effect btn-flat galactic-green col s4 offset-s4 btn-profile" ng-click="submitContent(contentFormData)") Submit
-
-		form(ng-show="eventForm")
-			div.row
-				input(placeholder="Event Title", ng-model="eventFormData.title", type="text", class="validate col s10 offset-s1 l4 offset-l1 profile-form" maxlength="50")
-				input(placeholder="Event URL", ng-model="eventFormData.url", type="text", class="validate col s10 offset-s1 l4 offset-l2 profile-form")
-				input(ng-model="eventFormData.time", type="date", class="datepicker col s4 offset-s1 profile-form")
-				text-angular(class="col s10 offset-s1" ng-model="eventFormData.description" type="text" ta-toolbar="[['p','bold','italics','underline','strikeThrough'],['undo','redo','justifyLeft','justifyRight','justifyCenter']]")
-			div.row
-				a(class="waves-effect btn-flat galactic-green col s4 offset-s4 btn-profile" ng-click="submitEvent(eventFormData)") Submit
-	
 	div.bottom-space
 
 	ul.collection(class="top-space")
