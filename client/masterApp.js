@@ -292,13 +292,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 	// Show Post form on button click
 	 $scope.showPostForm = function(){
 
-	 	if($scope.postForm = false){
 	 		$scope.postForm = true;
-	 	}
-
-	 	else{
-	 		$scope.postForm = false;
-	 	}
 
 	 };
 
