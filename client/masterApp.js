@@ -240,6 +240,9 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 			$scope.posts = returnData.data.reverse();
 		});
 
+	// Dropdown options for post
+	$scope.postSelectOptions = ['Job', 'Content', 'Event'];
+
 
 	// Delete a Post
 	$scope.deletePost = function(post, index){
