@@ -314,7 +314,6 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 
 		  	});
 
-		$scope.postForm.$setPristine();
 		$scope.postForm = false;
 	};
 
