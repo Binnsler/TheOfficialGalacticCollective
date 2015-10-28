@@ -42,7 +42,6 @@ div.container
 					a.galactic-green-text(ng-href="#/profile/{{post.userCreated.username}}/{{post._id}}" class="postTitle") {{post.title}}
 					div(class="post-body" ta-bind ng-model="post.body")
 					a.post-url(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
-					p.galactic-blue-text(ng-if="post.time") {{post.time}}
 					div 
 						p.galactic-grey-text.date-created {{post.dateCreated | date:'short'}}
 
