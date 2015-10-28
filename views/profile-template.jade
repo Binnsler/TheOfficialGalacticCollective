@@ -4,7 +4,7 @@ block headContent
 
 
 div.container
-	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit Profile					
+	a(class="waves-effect btn-flat galactic-green col s10 offset-s1 btn-profile m1 offset-m1" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit Profile					
 	form.edit-profile(ng-show="editing" enctype="multipart/form-data")
 		div.row
 			input(placeholder="Profile Name", ng-model="profileUser.profileName", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25")
@@ -32,14 +32,14 @@ div.container
 		div.row
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitToServer()") Submit
 			
-	div.top-profile(class="col s12")
+	div.top-profile(class="row")
 		div.row
 			div.centrize-me(class="galactic-blue")
-				div(class="col s2 offset-s3 left-profile")
+				div(class="col s6 offset-s3 m3 offset-m3 left-profile")
 					img.user-profile-pic(src="{{profileUser.profilePic}}?{{rand}}")
 					
 
-				div(class="col s4 right-profile")
+				div(class="col s12 m4 right-profile")
 					h2(class="profile-text") {{profileUser.profileName}}
 					h4(class="profile-text-grey") {{profileUser.profileLocation}}
 					p(class="profile-text-grey profileBlurb") {{profileUser.profileBlurb}}
