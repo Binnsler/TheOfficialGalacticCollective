@@ -52,13 +52,13 @@ div.container
 
 
 
-	div.bottom-profile(class="row")
+	div.bottom-profile
 		div.row
-			div(class="col s10 offset-s1 m10 offset-m1 l4 profile-skills")
+			div(class="col s10 offset-s1 m10 offset-m1 l4 offset-l1 profile-skills")
 					h5.galactic-green-text Skills
 					p.galactic-grey-text {{profileUser.skills}}
 
-			div(class="col s10 offset-s1 m10 offset-m1 l4 profile-bio")
+			div(class="col s10 offset-s1 m10 offset-m1 l4 offset-l1 profile-bio")
 				h5.galactic-green-text Bio
 				p.galactic-grey-text {{profileUser.profileBio}}
 		div.row
@@ -66,13 +66,13 @@ div.container
 				p(class="profile-text centerize-me") {{profileUser.likes}} Likes
 	
 	div.portfolio(class="row")
-		div.portfolioOne(class="col s12 m4 offset-m4" ng-click="viewPortfolioOne()")
+		div.portfolioOne(class="col s12 m4 offset-m4 l4" ng-click="viewPortfolioOne()")
 			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneTitle}}
-		div.portfolioTwo(class="col s12 m4 offset-m4" ng-click="viewPortfolioTwo()")
+		div.portfolioTwo(class="col s12 m4 offset-m4 l4" ng-click="viewPortfolioTwo()")
 			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioTwoTitle}}
-		div.portfolioThree(class="col s12 m4 offset-m4" ng-click="viewPortfolioThree()")
+		div.portfolioThree(class="col s12 m4 offset-m4 l4" ng-click="viewPortfolioThree()")
 			img.portfolio-pic(src="{{profileUser.portfolioThreePic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioThreeTitle}}
 
