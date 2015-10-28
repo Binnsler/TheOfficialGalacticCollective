@@ -4,7 +4,7 @@ block headContent
 
 
 div.container
-	a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit Profile					
+	a(class="waves-effect btn-flat galactic-green col s10 offset-s1 btn-profile m1 offset-m1" ng-if="userContainer.user.username === profileUser.username" ng-click="onEditting()" ng-show="!editing") Edit Profile					
 	form.edit-profile(ng-show="editing" enctype="multipart/form-data")
 		div.row
 			input(placeholder="Profile Name", ng-model="profileUser.profileName", type="text", class="validate col s4 offset-s1 profile-form" maxlength="25")
@@ -32,52 +32,52 @@ div.container
 		div.row
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="submitToServer()") Submit
 			
-	div.top-profile(class="col s12")
+	div.top-profile(class="row")
 		div.row
 			div.centrize-me(class="galactic-blue")
-				div(class="col s2 offset-s3 left-profile")
+				div(class="col s12 m12 l3 offset-l3 left-profile")
 					img.user-profile-pic(src="{{profileUser.profilePic}}?{{rand}}")
 					
 
-				div(class="col s4 right-profile")
+				div(class="col s12 m12 l4 right-profile")
 					h2(class="profile-text") {{profileUser.profileName}}
 					h4(class="profile-text-grey") {{profileUser.profileLocation}}
 					p(class="profile-text-grey profileBlurb") {{profileUser.profileBlurb}}
 
 		div.row
 			div.btn-container
-				a(class="waves-effect btn-flat galactic-green btn-profile" ng-href="https://{{profileUser.buttonOneUrl}}") {{profileUser.buttonOneText}}
-				a(class="waves-effect btn-flat galactic-green btn-profile" ng-href="https://{{profileUser.buttonTwoUrl}}") {{profileUser.buttonTwoText}}
-				a(class="waves-effect btn-flat galactic-green btn-profile" ng-href="https://{{profileUser.buttonThreeUrl}}") {{profileUser.buttonThreeText}}		
+				a(class="waves-effect btn-flat galactic-green btn-profile col s10 offset-s1 m4 offset-m4 l2 offset-l3" ng-href="https://{{profileUser.buttonOneUrl}}") {{profileUser.buttonOneText}}
+				a(class="waves-effect btn-flat galactic-green btn-profile col s10 offset-s1 m4 offset-m4 l2" ng-href="https://{{profileUser.buttonTwoUrl}}") {{profileUser.buttonTwoText}}
+				a(class="waves-effect btn-flat galactic-green btn-profile col s10 offset-s1 m4 offset-m4 l2" ng-href="https://{{profileUser.buttonThreeUrl}}") {{profileUser.buttonThreeText}}		
 
 
 
-	div.bottom-profile(class="col s12")
+	div.bottom-profile
 		div.row
-			div(class="col s4 offset-s2 profile-skills")
+			div(class="col s10 offset-s1 m10 offset-m1 l6 profile-skills")
 					h5.galactic-green-text Skills
 					p.galactic-grey-text {{profileUser.skills}}
 
-			div(class="col s4 profile-bio")
+			div(class="col s10 offset-s1 m10 offset-m1 l6 profile-bio")
 				h5.galactic-green-text Bio
 				p.galactic-grey-text {{profileUser.profileBio}}
 		div.row
 			div
 				p(class="profile-text centerize-me") {{profileUser.likes}} Likes
 	
-	div.portfolio(class="col s12")
-		div.portfolioOne(class="col s4" ng-click="viewPortfolioOne()")
+	div.portfolio(class="row")
+		div.portfolioOne(class="col s12 m4 offset-m4 l4" ng-click="viewPortfolioOne()")
 			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioOneTitle}}
-		div.portfolioTwo(class="col s4" ng-click="viewPortfolioTwo()")
+		div.portfolioTwo(class="col s12 m4 offset-m4 l4" ng-click="viewPortfolioTwo()")
 			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioTwoTitle}}
-		div.portfolioThree(class="col s4" ng-click="viewPortfolioThree()")
+		div.portfolioThree(class="col s12 m4 offset-m4 l4" ng-click="viewPortfolioThree()")
 			img.portfolio-pic(src="{{profileUser.portfolioThreePic}}")
 			h4.portfolio-title(class="galactic-grey-text") {{profileUser.portfolioThreeTitle}}
 
 	div.portfolioOneLightbox(ng-show="viewingPortfolioOne")
-		div.lightbox-container(class="col s4 offset-s4")
+		div.lightbox-container(class="col s12 m4 offset-m4")
 			img.portfolio-pic(src="{{profileUser.portfolioOnePic}}" ng-show="!portfolioOneEditing")
 			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioOneEditing") {{profileUser.portfolioOneTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioOneEditing") {{profileUser.portfolioOneDesc}}
@@ -98,7 +98,7 @@ div.container
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioOne()") Close
 	
 	div.portfolioTwoLightbox(ng-show="viewingPortfolioTwo")
-		div.lightbox-container
+		div.lightbox-container(class="col s12 m4 offset-m4")
 			img.portfolio-pic(src="{{profileUser.portfolioTwoPic}}" ng-show="!portfolioTwoEditing")
 			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioTwoEditing") {{profileUser.portfolioTwoTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioTwoEditing") {{profileUser.portfolioTwoDesc}}
@@ -119,7 +119,7 @@ div.container
 			a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="closePortfolioTwo()") Close
 
 	div.portfolioThreeLightbox(ng-show="viewingPortfolioThree")
-		div.lightbox-container(class="col s4 offset-s4")
+		div.lightbox-container(class="col s12 m4 offset-m4")
 			img.portfolio-pic(src="{{profileUser.portfolioThreePic}}" ng-show="!portfolioThreeEditing")
 			h4.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioThreeEditing") {{profileUser.portfolioThreeTitle}}
 			p.portfolio-lightbox-text(class="galactic-grey-text" ng-show="!portfolioThreeEditing") {{profileUser.portfolioThreeDesc}}
@@ -144,22 +144,19 @@ div.container
 		ul.collection(class="top-space")
 			li(ng-repeat="post in posts track by $index | orderBy : '-dateCreated'" class="collection-item avatar")
 				div.row
-					div(class="col s2")
-						a(ng-show="userContainer.user._id === post.userCreated" ng-click="deletePost(post, $index)") Delete
+					div(class="col s12 m2")
+						a.delete-button(ng-show="userContainer.user._id === post.userCreated._id" ng-click="deletePost(post, $index)") Delete
 						div.likesContainer
 							div.number-div
 								p(class="col s1 post-likes") {{post.likes}}
 							div.likes-div
 								a(class="col s1 fa fa-heart hearts" ng-click="iLikeThisPostCommunity(post)")
-					div(class="col s8 offset-s1")
-						a.galactic-green-text(ng-href="#/profile/{{profileUser.username}}/{{post._id}}" class="postTitle") {{post.title}}
-						p.galactic-grey-text(class="post-body" ta-bind ng-model="post.body") 
-						a(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
-						p.galactic-blue-text(ng-if="post.time") {{post.time}}
+					div(class="col s12 m8 post-content")
+						a.galactic-green-text(ng-href="#/profile/{{post.userCreated.username}}/{{post._id}}" class="postTitle") {{post.title}}
+						div(class="post-body" ta-bind ng-model="post.body")
+						a.post-url(href="https://{{post.url}}" class="galactic-green-text") {{post.url}}
 						div 
 							p.galactic-grey-text.date-created {{post.dateCreated | date:'short'}}
-
-
 
 
 

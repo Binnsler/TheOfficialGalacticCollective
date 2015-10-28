@@ -162,8 +162,8 @@ i > input {
 }
 
 .user-profile-pic {
-	height: 125px;
-	width: 125px;
+	height: 150px;
+	width: 150px;
 }
 
 .post-headline {
@@ -433,4 +433,8 @@ a.col.s1.fa.fa-heart.viewing-hearts {
   text-align: right;
 }
 
+/* Mobile/Tablet Break */
 
+@media (max-width: 992px) {
+.left-profile, .right-profile {text-align:center;}
+}
