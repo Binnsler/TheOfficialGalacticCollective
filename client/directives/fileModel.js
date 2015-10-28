@@ -1,5 +1,4 @@
 // Directive to upload profile pic on profile page
-
 masterApp.directive('fileModel', function($parse){
 
 	return {

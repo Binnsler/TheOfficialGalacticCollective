@@ -13,7 +13,7 @@ var browserSync = require('browser-sync'),
 gulp.task('jade', function() {
     return gulp.src('views/**/*.jade')
         .pipe(jade()) 
-        .pipe(gulp.dest('./dist/')) 
+        .pipe(gulp.dest('./dist/views')) 
         .pipe(reload({stream:true}));
 });
 
@@ -36,7 +36,7 @@ gulp.task('css', function() {
 gulp.task('watch', ['jade', 'css', 'scripts'], function() {
 	browserSync({
     	server: {
-    		baseDir: "./dist"
+    		baseDir: "./dist/views"
 		}
 	});
     gulp.watch('client/stylesheets/**/*.css', ['css'], reload);
