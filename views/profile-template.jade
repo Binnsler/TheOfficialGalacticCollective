@@ -35,30 +35,30 @@ div.container
 	div.top-profile(class="row")
 		div.row
 			div.centrize-me(class="galactic-blue")
-				div(class="col s6 offset-s3 m3 offset-m3 left-profile")
+				div(class="col s12 m12 l3 offset-l3 left-profile")
 					img.user-profile-pic(src="{{profileUser.profilePic}}?{{rand}}")
 					
 
-				div(class="col s12 m4 right-profile")
+				div(class="col s12 m12 l4 right-profile")
 					h2(class="profile-text") {{profileUser.profileName}}
 					h4(class="profile-text-grey") {{profileUser.profileLocation}}
 					p(class="profile-text-grey profileBlurb") {{profileUser.profileBlurb}}
 
 		div.row
 			div.btn-container
-				a(class="waves-effect btn-flat galactic-green btn-profile" ng-href="https://{{profileUser.buttonOneUrl}}") {{profileUser.buttonOneText}}
-				a(class="waves-effect btn-flat galactic-green btn-profile" ng-href="https://{{profileUser.buttonTwoUrl}}") {{profileUser.buttonTwoText}}
-				a(class="waves-effect btn-flat galactic-green btn-profile" ng-href="https://{{profileUser.buttonThreeUrl}}") {{profileUser.buttonThreeText}}		
+				a(class="waves-effect btn-flat galactic-green btn-profile col s10 offset-s1 m10 offset-m1 l2" ng-href="https://{{profileUser.buttonOneUrl}}") {{profileUser.buttonOneText}}
+				a(class="waves-effect btn-flat galactic-green btn-profile col s10 offset-s1 m10 offset-m1 l2" ng-href="https://{{profileUser.buttonTwoUrl}}") {{profileUser.buttonTwoText}}
+				a(class="waves-effect btn-flat galactic-green btn-profile col s10 offset-s1 m10 offset-m1 l2" ng-href="https://{{profileUser.buttonThreeUrl}}") {{profileUser.buttonThreeText}}		
 
 
 
-	div.bottom-profile(class="col s12")
+	div.bottom-profile(class="row")
 		div.row
-			div(class="col s4 offset-s2 profile-skills")
+			div(class="col s10 offset-s1 m10 offset-m1 l4 profile-skills")
 					h5.galactic-green-text Skills
 					p.galactic-grey-text {{profileUser.skills}}
 
-			div(class="col s4 profile-bio")
+			div(class="col s10 offset-s1 m10 offset-m1 l4 profile-bio")
 				h5.galactic-green-text Bio
 				p.galactic-grey-text {{profileUser.profileBio}}
 		div.row
