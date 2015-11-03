@@ -192,3 +192,8 @@ body {
 	height: 350px;
 }
 
+/************ Partner Logos Styling ************/
+
+.partner-logo {height:85px; width:auto;}
+.absolute-center-children {display: -ms-flexbox; -ms-flex-pack: center; -ms-flex-align: center; display: flex; justify-content: center; align-items: center;}
+.home-list li {display:inline;}
