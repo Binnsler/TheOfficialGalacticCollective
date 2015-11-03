@@ -1,0 +1,194 @@
+body {
+	font-family: Geneva;
+}
+
+/************ Hero Image Styling ************/
+
+
+.hero-image-container {
+	background-image: url("http://www.colorado.edu/studentgroups/CUSEDS/oldwebsite/YNBoulder/2010/images/yuris_night_boulder_2010_5.jpg");
+	height: 520px;
+	width: 100%;
+}
+
+.smokescreen {
+	height: 100%;
+	background-color: rgba(255,255,255,0.955);
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+
+.hero-slogan-container {
+	text-align: center;
+}
+
+.hero-slogan {
+	color: #017481;
+	margin-bottom: 30px;
+}
+
+
+.partners-container {
+	max-width: 100%;
+	text-align: center;
+	margin: 0;
+	padding: 10px;
+}
+
+
+
+/************ Events/Jobs Tabs Styling ************/
+
+
+.tab-container {
+	-webkit-box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
+    	-moz-box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
+    		box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
+}
+
+
+#home--Tab {
+	color: white;
+	height: 180px;
+	text-align: left;
+	padding: 40px;
+}
+
+#home--Tab p {
+	color: grey;
+	font-family: Futura;
+}
+
+#home--Tab:hover {
+	background-color: #f5f5f5;
+}
+
+
+.upcomingEvents--Tab h2  {
+	color: #FF483E;
+}
+
+
+.recentJobs--Tab h2  {
+	color: #FF9E45;
+}
+
+
+
+.open--Tab {
+	color: lightgrey;
+	height: 500px;
+	margin: none;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid black;
+}
+
+
+
+
+/************ Information Section Styling ************/
+
+.information-container {
+	padding: 50px;
+}
+
+
+.about-buttons {
+	text-align: left;
+	font-size: 20px;
+	padding-left: 10px;
+}
+
+.about-buttons p {
+	margin: 0 auto;
+	cursor: pointer;
+	padding: 5px;
+	font-family: Futura;
+}
+
+.about-copy-container {
+	text-align: left;
+	font-family: Arial;
+	color: lightgrey;
+	font-size: 20px;
+}
+
+.about-copy-header {
+	font-weight: 700;
+	font-size: 40px;
+	font-family: Helvetica;
+	color: grey;
+}
+
+.reasons-list {
+	color: #017481;
+	font-family: Helvetica;
+	font-weight: 100;
+	font-size: 20px;
+}
+
+.reasons-list li {	
+	margin: 10px;
+}
+
+.photos-container img {
+	width: 100%;
+}
+
+/************ Call-to-Action Styling ************/
+
+.actioncall-container {
+	max-width: 100%;
+	margin: 0;
+	background-image: url("http://www.colorado.edu/studentgroups/CUSEDS/oldwebsite/YNBoulder/2010/images/yuris_night_boulder_2010_5.jpg");
+	text-align: center;
+	color: white;
+}
+
+.callToAction-Smokescreen {
+	padding: 20px;
+	background-color: rgba(0,0,0,0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/************ Recently Joined Section Styling ************/
+
+.recently-joined-container {
+	overflow: hidden;
+}
+
+.recently-joined-header {
+	text-align: center;
+	font-size: 40px;
+	font-family: Futura;
+	font-weight: 900;
+	margin-bottom: 10px;
+	margin-top: 50px;
+	color: grey;
+}
+
+.member-cards-container {
+	text-align: center;
+}
+
+.member-cards-container ul {
+	display: inline-block;
+	padding: 0;
+}
+
+.home-list-joined li {
+	display: inline-block;
+	margin: 20px;
+}
+
+.home-list-joined img {
+	width: 250px;
+	height: 350px;
+}
+

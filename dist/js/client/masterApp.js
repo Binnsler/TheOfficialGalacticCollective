@@ -10,37 +10,37 @@ masterApp.config(function($routeProvider){
 	// Home-Search Page
 	$routeProvider
 	.when('/search', {
-		templateUrl : '/views/search', 
+		templateUrl : 'search.html', 
 		controller : 'searchController'
 	});
 	// Login-Signup Page
 	$routeProvider
 	.when('/login', {
-		templateUrl : '/views/login',
+		templateUrl : 'login.html',
 		controller : 'loginController'
 	});
 	// Dynamic route for Profiles
 	$routeProvider
 	.when('/profile/:username', {
-		templateUrl : '/views/profile-template',
+		templateUrl : 'profile-template.html',
 		controller : 'profileController'
 	});
 	// Community Page
 	$routeProvider
 	.when('/community', {
-		templateUrl : '/views/community',
+		templateUrl : 'community.html',
 		controller : 'communityController'
 	});
 	// Dynamic route for Posts
 	$routeProvider
 	.when('/profile/:username/:_id', {
-		templateUrl : '/views/post',
+		templateUrl : 'post.html',
 		controller : 'postController'
 	});
 	// Dynamic route Admin Page
 	$routeProvider
 	.when('/admin/:username', {
-		templateUrl : '/views/admin',
+		templateUrl : 'admin.html',
 		controller : 'adminController'
 	});
 
@@ -187,47 +187,64 @@ masterApp.factory('postFactory', function($resource){
 
 });
 
+
+
+// Scroll to About Us Section on Home Page
+masterApp.directive('scrollToItem', function() {                                                      
+    return {                                                                                 
+        restrict: 'A',                                                                       
+        scope: {                                                                             
+            scrollTo: "@"                                                                    
+        },                                                                                   
+        link: function(scope, $elm,attr) {                                                   
+
+            $elm.on('click', function() {                                                    
+                $('html,body').animate({scrollTop: $(scope.scrollTo).offset().top }, "slow"); // jquery lite
+            });                                                                              
+        }                                                                                    
+    }})
+
 // Home Controller
 masterApp.controller('homeController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
 	
 	$scope.userContainer = authenticateUser;
 
 
-	// Show/Hide functionality for home-page tabs
-	// $scope.aboutTab = true;
 	$scope.eventsTab = true;
 	$scope.jobsTab = false;
-	// $scope.resourcesTab = false;
 
-	// $scope.showAboutTab = function() {
-	// 	$scope.aboutTab = true;
-	// 	$scope.eventsTab = false;
-	// 	$scope.jobsTab = false;
-	// 	$scope.resourcesTab = false;
-	// };
+	$scope.aboutSection = true;
+	$scope.contactSection = false;
+	$scope.photoSection = false;
 
 	$scope.showEventsTab = function() {
-		// $scope.aboutTab = false;
 		$scope.eventsTab = true;
 		$scope.jobsTab = false;
-		// $scope.resourcesTab = false;
 	};
 
 	$scope.showJobsTab = function() {
-		// $scope.aboutTab = false;
 		$scope.eventsTab = false;
 		$scope.jobsTab = true;
-		// $scope.resourcesTab = false;
 	};
 
-	// $scope.showResourcesTab = function() {
-	// 	$scope.aboutTab = false;
-	// 	$scope.eventsTab = false;
-	// 	$scope.jobsTab = false;
-	// 	$scope.resourcesTab = true;
-	// }
 
+	$scope.showAbout = function() {
+		$scope.aboutSection = true;
+		$scope.contactSection = false;
+		$scope.photoSection = false;	
+	};
 
+	$scope.showContact = function() {
+		$scope.aboutSection = false;
+		$scope.contactSection = true;
+		$scope.photoSection = false;
+	};
+
+	$scope.showPhotos = function() {
+		$scope.aboutSection = false;
+		$scope.contactSection = false;
+		$scope.photoSection = true;
+	};
 });
 
 // Community Controller
@@ -396,7 +413,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 });
 
 // Search Controller
-masterApp.controller('searchController', function($scope, $http, $resource, $location, $routeParams, authenticateUser){
+masterApp.controller('searchController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
 	
 	$scope.userContainer = authenticateUser;
 
@@ -410,7 +427,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout){
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout, loginService){
 
 	$scope.rand = Math.random();
 
@@ -596,7 +613,7 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 });
 
 // Controls all login/signup/logout functionality (see server.js and authenticate.js for backend routes and functionality)
-masterApp.controller('loginController', function($scope, $http, $resource, $location, authenticateUser){
+masterApp.controller('loginController', function($scope, $http, $resource, $location, authenticateUser, loginService){
 
 	$scope.userContainer = authenticateUser;
 
@@ -680,7 +697,7 @@ masterApp.controller('loginController', function($scope, $http, $resource, $loca
 	};
 });
 
-masterApp.controller('postController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, postFactory){
+masterApp.controller('postController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, postFactory, loginService){
 
 	$scope.postData = postFactory.model.get({_id : $routeParams._id});
 
@@ -711,7 +728,7 @@ masterApp.controller('postController', function($window, $scope, $http, $resourc
 	};
 });
 
-masterApp.controller('adminController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory){
+masterApp.controller('adminController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, loginService ){
 
 	$scope.userContainer = authenticateUser;
 

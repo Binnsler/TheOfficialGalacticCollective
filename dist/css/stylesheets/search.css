@@ -1,0 +1,166 @@
+/*Common Styles*/
+
+.toolbar-container, .editor-container {
+	border: 1px solid #ccc;
+}
+
+.galactic-blue {
+	background-color: #0ea2c9;
+}
+.galactic-green-text {
+	color: #1ab193;
+}
+
+.galactic-blue-text {
+	color: #0ea2c9;
+}
+
+.galactic-grey-text {
+	color: #999999;
+}
+
+.centerize-me {
+	text-align: center;
+}
+
+.galactic-green {
+	background-color: #1ab193 !important;
+	color: white;
+}
+
+.galactic-blue {
+	background-color: #0ea2c9;
+	color: white;
+}
+
+.blue-link {
+	color: #0ea2c9;
+}
+
+h1, h2, h3 {
+	font-family: Helvetica;
+}
+
+p, h4, h5 {
+	font-family: Arial;
+}
+
+h4 {
+	font-size: 1.2em;
+	font-style: italic;
+}
+
+/*Search/Home Page*/
+
+.profile-box {
+	padding: 1em 0;
+}
+
+.no-space {
+	margin: 0;
+	padding: 0;
+}
+
+.number-div {
+	text-align: right;
+	display: inline-block;
+	margin-right: none;
+}
+.post-likes {
+	text-align: right;
+	margin-right: none;
+	padding: 0;
+}
+
+
+a.col.s1.fa.fa-heart.hearts {
+	padding: 0;
+}
+
+.likes-div {
+	text-align: left;
+	display: inline-block;
+}
+
+.fa-heart {
+	text-align: left;
+	margin-bottom: 4px;
+}
+
+.likesContainer {
+	position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.splashImageBox {
+	width: 100%;
+}
+
+.splashImageBox img {
+	width: 100%;
+}
+
+.search-intro {
+	margin: 2em 0;
+}
+
+.search-sub-intro {
+	font-size: 1.9em;
+	margin-bottom: 1em;
+	margin-right: 5%;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #0ea2c9;
+    font-size : 1.1em;
+     opacity: 1 !important;
+}
+
+.search-container {
+	padding-top: 1em;
+	margin-top: 7vh;
+	background-color: #F2F2F2;
+}
+
+.search-box {
+	border: 1px solid #1ab193;
+	padding: 1vh 1em;
+}
+
+.thumb {
+	position: relative;
+  	width: 125px;
+  	height: 125px;
+  	overflow: hidden;
+    border-radius: 50%;
+}
+
+.profilePicCircle {
+    position: absolute;
+  	left: 50%;
+  	top: 50%;
+ 	height: 100%;
+  	width: auto;
+  	-webkit-transform: translate(-50%,-50%);
+   	   -ms-transform: translate(-50%,-50%);
+   	       transform: translate(-50%,-50%);
+}
+
+
+
+.collection {
+	border: none;
+}
+
+.profile-nav {
+	font-size: 2em;
+}
+
+.search-location {
+	font-size: 1.2em;
+}
+
+.search-likes {
+	font-size: 1em;
+}
