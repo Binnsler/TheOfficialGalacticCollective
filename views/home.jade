@@ -6,7 +6,9 @@ block headContent
 section.hero-image-container
 	div.smokescreen.row
 		div.hero-slogan-container
-			h1.hero-slogan Helping Boulder's Creative & Freelance<br />Communities Unite
+			h1.hero-slogan Helping Boulder's Creative 
+			h1.hero-slogan & Freelance Communities Unite
+
 			a(class="waves-effect green waves-light btn-large" scroll-to-item scroll-to="#scrolledTo") Learn More 
 		
 section.partners-container.row
@@ -29,11 +31,11 @@ section.partners-container.row
 					img(class="partner-logo" src="images/bdaLogo.svg")
 
 section.tab-container.row
-	div(class="upcomingEvents--Tab col m6 col s12" id="home--Tab" ng-click="showEventsTab()")
-		h2 Upcoming<br />Events
+	div(class="upcomingEvents--Tab col m6 col s6" id="home--Tab" ng-click="showEventsTab()")
+		h2 Upcoming Events
 		p Go to these events. Grow your network. Get more business!
-	div(class="recentJobs--Tab col m6 col s12" id="home--Tab" ng-click="showJobsTab()")
-		h2 Recent<br />Job Posts
+	div(class="recentJobs--Tab col m6 col s6" id="home--Tab" ng-click="showJobsTab()")
+		h2 Recent Job Posts
 		p Our community is constantly posting new Gigs and Jobs
 		
 
@@ -48,20 +50,23 @@ div.open--Tab.recentJobs--Tab(ng-if="jobsTab")
 
 
 section.information-container.row(id="scrolledTo" name="about")
-	div.about-buttons(class="col s12 col m4")
-		p(ng-click="showPhotos()") Latest Event Photos
-		p(ng-click="showAbout()") About Us 
-		p(ng-click="showContact()") Contact Us
-	div.about-copy-container(class="col s8" ng-if="aboutSection")
-		p.about-copy-header About Us
+	div.about-buttons(class="col s12")
+		p(class="col s12 m4 about-us--Tab" ng-click="showAbout()") About Us 
+		p(class="col s12 m4 event-photos--Tab" ng-click="showPhotos()") Latest Event Photos
+		p(class="col s12 m4 contact-us--Tab" ng-click="showContact()") Contact Us
+
+	div.about-copy-container(class="col s12" ng-if="aboutSection")
 		p Founded in Boulder, CO circa. 2015, Boulder Collective is a local group of freelancers, creatives, and developers. We're here to connect and unite Boulder's ever-growing freelance/creative community in a different way. The most successful freelancers today succeed bacause they have large and supportive networks. We're here to:
 
 		ul.reasons-list
 			li Provide MORE freelancers an opportunity to grow their networks via local events, meetups, parties, and more.
 			li Build Boulder's largest events-based community of freelancers and creatives in the hopes that numbers 
 		
-	div.photos-container(class="col s8" ng-if="photoSection")
+	div.photos-container(class="col s12" ng-if="photoSection")
 		img(alt="event photo" src="http://www.colorado.edu/studentgroups/CUSEDS/oldwebsite/YNBoulder/2010/images/yuris_night_boulder_2010_5.jpg")
+
+	div.contact-us-container(class="col s12" ng-if="contactSection")
+		p If you would like more information about the Collective or are interested in sponsoring an event, please reach out to us at media@bouldercollective.com
 
 section.actioncall-container
 	div(class="callToAction-Smokescreen")
