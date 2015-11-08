@@ -1,53 +1,6 @@
-/*********************** Common Styles ********************/
 
-.toolbar-container, .editor-container {
-	border: 1px solid #ccc;
-}
-
-.galactic-blue {
-	background-color: #0ea2c9;
-}
-.galactic-green-text {
-	color: #1ab193;
-}
-
-.galactic-blue-text {
-	color: #0ea2c9;
-}
-
-.galactic-grey-text {
-	color: #999999;
-}
-
-.centerize-me {
-	text-align: center;
-}
-
-.galactic-green {
-	background-color: #1ab193 !important;
-	color: white;
-}
-
-.galactic-blue {
-	background-color: #0ea2c9;
-	color: white;
-}
-
-.blue-link {
-	color: #0ea2c9;
-}
-
-h1, h2, h3 {
-	font-family: Helvetica;
-}
-
-p, h4, h5 {
-	font-family: Arial;
-}
-
-h4 {
-	font-size: 1.2em;
-	font-style: italic;
+.banner-container img {
+	width: 100%;
 }
 
 /*********************** Search Page ********************/
@@ -55,6 +8,34 @@ h4 {
 .profile-box {
 	padding: 1em 0;
 }
+
+section {
+	height: 500px;
+	width: 100%
+}
+
+.search-container {
+	position: relative;
+	top: 30%;
+	text-align: center;
+}
+
+.splash-intro {
+	text-align: center;
+	width: 100%;
+	color: #1ab193;
+	margin-bottom: 20px;
+}
+
+.search-input  {
+	margin: 0 auto;
+	width: 40%;
+	height: 40px;
+}
+
+
+
+
 
 .no-space {
 	margin: 0;
@@ -102,7 +83,7 @@ a.col.s1.fa.fa-heart.hearts {
 }
 
 .search-intro {
-	margin: 2em 0;
+	margin: 0 auto;
 }
 
 .search-sub-intro {
@@ -117,11 +98,6 @@ a.col.s1.fa.fa-heart.hearts {
      opacity: 1 !important;
 }
 
-.search-container {
-	padding-top: 1em;
-	margin-top: 7vh;
-	background-color: #F2F2F2;
-}
 
 .search-box {
 	border: 1px solid #1ab193;

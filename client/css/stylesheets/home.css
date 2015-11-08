@@ -28,7 +28,7 @@ body {
 }
 
 .hero-slogan {
-	color: #017481;
+	color: #1ab193;
 	margin-bottom: 30px;
 }
 
@@ -37,7 +37,7 @@ body {
 	max-width: 100%;
 	text-align: center;
 	margin: 0;
-	padding: 10px;
+	padding: 15px;
 }
 
 
@@ -205,8 +205,12 @@ body {
 	height: 350px;
 }
 
+.see-members-button {
+	text-align: center;
+}
+
 /************ Partner Logos Styling ************/
 
 .partner-logo {height:85px; width:auto;}
 .absolute-center-children {display: -ms-flexbox; -ms-flex-pack: center; -ms-flex-align: center; display: flex; justify-content: center; align-items: center;}
-.home-list li {display:inline;}
+.home-list li {display:inline; padding: 5px;}
