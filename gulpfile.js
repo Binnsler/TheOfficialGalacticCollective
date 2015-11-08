@@ -43,8 +43,8 @@ gulp.task('css', function() {
 
 // Create Heroku Gulp Server
 gulp.task('default', function() {
-  gulp.start('scripts');
-    gulp.start('css');
+    gulp.start('scripts');
+        gulp.start('css');
 });
 
 // Watch Tasks: Watch initiates all other tasks, then initiates browserSync. 
