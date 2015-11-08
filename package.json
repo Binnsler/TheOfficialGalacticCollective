@@ -25,7 +25,6 @@
     "gulp-jade": "^1.1.0"
   },
   "scripts": { 
-    "start": "node dist/js/server.js", 
-    "postinstall": "gulp watch" 
+    "start": "node dist/js/server.js"
   }
 }
