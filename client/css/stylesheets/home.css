@@ -50,18 +50,21 @@ body {
 }
 
 
-#home--Tab {
+#home-tab {
 	color: white;
 	text-align: left;
-	padding: 40px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-right: 40px;
+	padding-left: 40px;
 }
 
-#home--Tab p {
+#home-tab p {
 	color: grey;
 	font-family: Futura;
 }
 
-#home--Tab:hover {
+#home-tab:hover {
 	background-color: #f5f5f5;
 }
 
@@ -92,7 +95,7 @@ body {
 
 /************ Information Section Styling ************/
 
-.information-container {}
+
 
 
 .about-buttons {

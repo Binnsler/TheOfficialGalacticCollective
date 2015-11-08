@@ -1,4 +1,4 @@
-/*Common Styles*/
+/*********************** Common Styles ********************/
 
 .toolbar-container, .editor-container {
 	border: 1px solid #ccc;
@@ -50,7 +50,7 @@ h4 {
 	font-style: italic;
 }
 
-/*Search/Home Page*/
+/*********************** Search Page ********************/
 
 .profile-box {
 	padding: 1em 0;

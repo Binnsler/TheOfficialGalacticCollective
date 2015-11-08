@@ -21,7 +21,7 @@ gulp.task('jade', function() {
 
 // Image Tasks: 
 gulp.task('image', function () {
-  gulp.src('client/images/*')
+  gulp.src(['client/images/*.svg', 'client/images/*.png', 'client/images/*.jpg' ])
     .pipe(image())
     .pipe(gulp.dest('./dist/images'));
 });
