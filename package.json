@@ -1,8 +1,9 @@
 {
+  
   "author": "JamesBinns-MarcMartinez",
   "name": "Boulder-Collective",
-  "version": "0.0.1",
-  "dependencies": {
+  "version": "0.0.1"
+  ,"dependencies": {
     "angular": "^1.4.7",
     "aws-sdk": "*",
     "bcryptjs": "^2.3.0",
@@ -17,12 +18,14 @@
     "mongoose": "~3.8.24",
     "multer": "^1.0.3",
     "passport": "~0.2.1",
-    "passport-local": "~1.0.0"
-  },
-  "devDependencies": {
+    "passport-local": "~1.0.0",
     "browser-sync": "^2.9.11",
     "gulp": "^3.9.0",
     "gulp-image": "^1.1.1",
     "gulp-jade": "^1.1.0"
+  }
+  ,“scripts”: { 
+    “start”: “node server.js”, 
+    “postinstall”: “gulp default” 
   }
 }
