@@ -25,7 +25,6 @@
     "gulp-jade": "^1.1.0"
   },
   "scripts": { 
-    "start": "node server.js", 
     "postinstall": "gulp default" 
   }
 }
