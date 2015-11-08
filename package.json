@@ -2,8 +2,8 @@
   
   "author": "JamesBinns-MarcMartinez",
   "name": "Boulder-Collective",
-  "version": "0.0.1"
-  ,"dependencies": {
+  "version": "0.0.1",
+  "dependencies": {
     "angular": "^1.4.7",
     "aws-sdk": "*",
     "bcryptjs": "^2.3.0",
@@ -23,9 +23,9 @@
     "gulp": "^3.9.0",
     "gulp-image": "^1.1.1",
     "gulp-jade": "^1.1.0"
-  }
-  ,“scripts”: { 
-    “start”: “node server.js”, 
-    “postinstall”: “gulp default” 
+  },
+  "scripts": { 
+    "start": "node server.js", 
+    "postinstall": "gulp default" 
   }
 }
