@@ -50,6 +50,10 @@ div.open--Tab.recentJobs--Tab(ng-if="jobsTab")
 		h3 Jobs Under Construction
 
 
+section.actioncall-container
+	div(class="callToAction-Smokescreen")
+		a(class="waves-effect pink waves-light btn-large" ng-show="!userContainer.user" ng-click="showLogin()") Join the Collective
+		
 section.information-container.row(id="scrolledTo" name="about")
 	div.about-buttons(class="col s12")
 		p(class="col s12 m4 about-us--Tab" ng-click="showAbout()") About Us 
@@ -69,9 +73,6 @@ section.information-container.row(id="scrolledTo" name="about")
 	div.contact-us-container(class="col s12" ng-if="contactSection")
 		p If you would like more information about the Collective or are interested in sponsoring an event, please reach out to us at media@bouldercollective.com
 
-section.actioncall-container
-	div(class="callToAction-Smokescreen")
-		a(class="waves-effect pink waves-light btn-large") Join the Collective
 
 section.recently-joined-container.row
 	div(class="recently-joined-header col s12")

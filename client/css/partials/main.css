@@ -4,69 +4,76 @@ body {
 }
 
 
+/*************** Nav Styling *****************/
 
-/*Common Styles*/
-
-.toolbar-container, .editor-container {
-	border: 1px solid #ccc;
+.nav-logo {
+	margin-left:2%;
 }
 
-.galactic-blue {
-	background-color: #0ea2c9;
-}
-.galactic-green-text {
-	color: #1ab193;
+.nav-wrapper {
+	background-color: white;
+	box-shadow: none;
 }
 
-.galactic-blue-text {
-	color: #0ea2c9;
+.nav-element {
+	color: black;
 }
 
-.galactic-grey-text {
+.nav-element > a {
 	color: #999999;
+	font-size: 15px;
+	font-family: arial,sans-serif;
+	text-decoration: none;
+	margin: 0 10px 0 10px;
 }
 
-.centerize-me {
-	text-align: center;
+.brand-logo img {
+	margin: 1vh 1em;
+	width: 50px;
+	height: 40px;
+	float: left;
 }
 
-.galactic-green {
-	background-color: #1ab193 !important;
-	color: white;
-}
 
-.galactic-blue {
-	background-color: #0ea2c9;
-	color: white;
-}
-
-.blue-link {
-	color: #0ea2c9;
-}
-
-h1, h2, h3 {
-	font-family: Helvetica;
-}
-
-p, h4, h5 {
+.btn-flat {
 	font-family: Arial;
 }
 
-h4 {
-	font-size: 1.2em;
-	font-style: italic;
+.circleHeaderProfile {
+	height: 45px;
+	width: 45px;
 }
 
-
-
-
-/*Login Page Styling*/
-
-.errorText {
-	color: red;
+.profile-nav {
+padding-top: 1vh;
 }
 
-/*Profile Page Styling*/
+i > input {
+	background-color: #1ab193;
+	font-family: Arial;
+	border-style: none;
+}
+
+/*************** All Buttons Styling *****************/
+
+.button {
+	-webkit-user-select: none;
+    background-color: lightgrey;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    color: #757575;
+    cursor: default;
+    font-family: arial,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 11px 4px;
+    min-width: 54px;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+/*************** Profile Page Styling *****************/
 
 .portfolio-pic {
 	height: 250px;
@@ -159,11 +166,6 @@ h4 {
 	background-color: white;
 }
 
-.lightbox-container {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-}
 
 .white-background {
 	background-color: white;
@@ -261,27 +263,7 @@ a.col.s1.fa.fa-heart.viewing-hearts {
 	padding: 2% 0;
 }
 
-/* ngPerformance */
 
-#perfStats {
-  position: fixed;
-  right: 0;
-  bottom: 15px;
-  z-index: 100000;
-  background-color: rgba(250, 249, 244, 0.97);
-  border: 3px solid #843376;
-  border-right: none;
-  border-radius: 5px 0 0 5px;
-  box-shadow: 0 1px 4px black;
-  padding: 0 15px 15px;
-  font-size: 0.65em;
-}
-#perfStats h3 {
-  margin-bottom: 0;
-}
-#perfStats td:last-child {
-  text-align: right;
-}
 
 /* Mobile/Tablet Break */
 

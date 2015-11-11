@@ -62,39 +62,44 @@ masterApp.factory('authenticateUser', function($http){
 // Service for Login/Authenticate
 masterApp.controller('loginController', function($scope, $http, $resource, $location, authenticateUser){
 		
-		//authenticate user
-		$scope.userContainer = authenticateUser;
+	//authenticate user
+	$scope.userContainer = authenticateUser;
 
+	$scope.loginModal = false;
 
-		$scope.loginModal = false;
+	$scope.showLogin = function(){
+		$scope.loginModal = true;
+	};
 
-		$scope.showLogin = function(){
-			$scope.loginModal = true;
-		};
+	$scope.closeLightbox = function() {
+		if ($scope.loginModal === true) {
+			$scope.loginModal = false;
+		}
+	}
 
 		// Login a user
-		this.login = function(controllerScope){
-			$http.post('/login', controllerScope.loginFormData).
+	this.login = function(controllerScope){
+		$http.post('/login', controllerScope.loginFormData).
 
-		  		then(function(response) {
+	  		then(function(response) {
 
-		  			$scope.loginError = false;
+	  			$scope.loginError = false;
 
-		  			// If the HTTP request is successful, but passport has errors:
-			    	if(response.err){
-			    		console.log('Login request complete, but errors:', response.err)
-			    	}
-			    	// Everything successful, so we receive user data
-			    	else{
-			    		authenticateUser.user = response.data;
-		    			$location.url('/profile/' + response.data.username)
-			    	}
-			    	// HTTP error
-		  		}, function(response) {
-				    console.log('Angular login error: ', response.data)
-				    $scope.loginError = true;
-				})
-			};
+	  			// If the HTTP request is successful, but passport has errors:
+		    	if(response.err){
+		    		console.log('Login request complete, but errors:', response.err)
+		    	}
+		    	// Everything successful, so we receive user data
+		    	else{
+		    		authenticateUser.user = response.data;
+	    			$location.url('/profile/' + response.data.username)
+		    	}
+		    	// HTTP error
+	  		}, function(response) {
+			    console.log('Angular login error: ', response.data)
+			    $scope.loginError = true;
+			})
+		};
 		
 
 	// Signup a user and log them in
