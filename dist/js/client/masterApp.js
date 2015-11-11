@@ -73,7 +73,6 @@ masterApp.controller('loginController', function($scope, $http, $resource, $loca
 
 	$scope.closeLightbox = function() {
 		if ($scope.loginModal === true) {
-			console.log('close clicked on')
 			$scope.loginModal = false;
 		}
 	}
