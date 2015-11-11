@@ -60,7 +60,17 @@ masterApp.factory('authenticateUser', function($http){
 });
 
 // Service for Login/Authenticate
-masterApp.service('loginService', function($http, $resource, $location){
+masterApp.controller('loginController', function($scope, $http, $resource, $location, authenticateUser){
+		
+		//authenticate user
+		$scope.userContainer = authenticateUser;
+
+
+		$scope.loginModal = false;
+
+		$scope.showLogin = function(){
+			$scope.loginModal = true;
+		};
 
 		// Login a user
 		this.login = function(controllerScope){
@@ -83,7 +93,6 @@ masterApp.service('loginService', function($http, $resource, $location){
 		  		}, function(response) {
 				    console.log('Angular login error: ', response.data)
 				    $scope.loginError = true;
-				    
 				})
 			};
 		
@@ -205,16 +214,13 @@ masterApp.directive('scrollToItem', function() {
     }})
 
 // Home Controller
-masterApp.controller('homeController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
+masterApp.controller('homeController', function($scope, $http, $resource, $location, $routeParams, authenticateUser){
 	
 	$scope.userContainer = authenticateUser;
 
-
 	$scope.eventsTab = true;
 	$scope.jobsTab = false;
-
 	$scope.aboutSection = true;
-	$scope.contactSection = false;
 	$scope.photoSection = false;
 
 	$scope.showEventsTab = function() {
@@ -234,12 +240,6 @@ masterApp.controller('homeController', function($scope, $http, $resource, $locat
 		$scope.photoSection = false;	
 	};
 
-	$scope.showContact = function() {
-		$scope.aboutSection = false;
-		$scope.contactSection = true;
-		$scope.photoSection = false;
-	};
-
 	$scope.showPhotos = function() {
 		$scope.aboutSection = false;
 		$scope.contactSection = false;
@@ -248,7 +248,7 @@ masterApp.controller('homeController', function($scope, $http, $resource, $locat
 });
 
 // Community Controller
-masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService, $sce){
+masterApp.controller('communityController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, $sce){
 	
 	$scope.userContainer = authenticateUser;
 
@@ -413,7 +413,7 @@ masterApp.controller('communityController', function($scope, $http, $resource, $
 });
 
 // Search Controller
-masterApp.controller('searchController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, loginService){
+masterApp.controller('searchController', function($scope, $http, $resource, $location, $routeParams, authenticateUser){
 	
 	$scope.userContainer = authenticateUser;
 
@@ -427,7 +427,7 @@ masterApp.controller('searchController', function($scope, $http, $resource, $loc
 });
 
 // Profile controller
-masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout, loginService){
+masterApp.controller('profileController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, multipartForm, $timeout){
 
 	$scope.rand = Math.random();
 
@@ -612,92 +612,9 @@ masterApp.controller('profileController', function($window, $scope, $http, $reso
 
 });
 
-// Controls all login/signup/logout functionality (see server.js and authenticate.js for backend routes and functionality)
-masterApp.controller('loginController', function($scope, $http, $resource, $location, authenticateUser, loginService){
 
-	$scope.userContainer = authenticateUser;
 
-	// Show login lightbox
-	$scope.showLogin = function(){
-		$scope.loginLightbox = true;		
-	};
-
-	// Close login lightbox
-	$scope.closeLogin = function(){
-		$scope.loginLightbox = false;
-	};
-
-	// Login a user
-	$scope.login = function(){
-		$http.post('/login', $scope.loginFormData).
-
-	  		then(function(response) {
-
-	  			$scope.loginError = false;
-
-	  			// If the HTTP request is successful, but passport has errors:
-		    	if(response.err){
-		    		console.log('Login request complete, but errors:', response.err)
-		    	}
-		    	// Everything successful, so we receive user data
-		    	else{
-		    		authenticateUser.user = response.data;
-	    			$location.url('/profile/' + response.data.username)
-	    			$scope.loginLightbox = false;
-		    	}
-		    	// HTTP error
-	  		}, function(response) {
-			    console.log('Angular login error: ', response.data)
-			    $scope.loginError = true;
-
-	  	});
-		
-	};
-
-	// Signup a user and log them in
-	$scope.signup = function(){
-
-		$http.post('/signup', $scope.signUpFormData).
-
-	  		then(function(response) {
-
-	  			if(response.data.err){
-	  				$scope.signUpError = true;
-
-	  			}
-
-	  			else{
-
-		  			$scope.signUpError = false;	
-
-		    		$scope.userContainer.user = response.data;
-
-		    		$location.url('/profile/' + response.data.username, {user: response.data.data})
-	    		}
-	  		}, function(response) {
-
-			    $scope.signUpError = true;
-
-	  	});
-		
-	};
-
-	// Logout 
-	$scope.logout = function(){
-		$http.post('/logout', {msg:'hello word!'}).
-
-	  		then(function(response) {
-	  			$location.path('/login')
-	  			authenticateUser.user = null;
-
-	  		}, function(response) {
-			    console.log('Error logging out: ', response)
-	  	});
-		
-	};
-});
-
-masterApp.controller('postController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, postFactory, loginService){
+masterApp.controller('postController', function($window, $scope, $http, $resource, $location, $routeParams, authenticateUser, postFactory){
 
 	$scope.postData = postFactory.model.get({_id : $routeParams._id});
 
@@ -728,7 +645,7 @@ masterApp.controller('postController', function($window, $scope, $http, $resourc
 	};
 });
 
-masterApp.controller('adminController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory, loginService ){
+masterApp.controller('adminController', function($scope, $http, $resource, $location, $routeParams, authenticateUser, userFactory){
 
 	$scope.userContainer = authenticateUser;
 

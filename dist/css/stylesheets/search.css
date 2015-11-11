@@ -3,45 +3,105 @@
 	width: 100%;
 }
 
-/*********************** Search Page ********************/
+/*********************** Search Section Styling ********************/
 
 .profile-box {
 	padding: 1em 0;
 }
 
 section {
-	height: 500px;
-	width: 100%
+	width: 100%;
 }
 
 .search-container {
-	position: relative;
-	top: 15%;
+	margin: 0 auto;
+	padding: 20px;
+	width: 100%;
+	margin-top: 6%;
 	text-align: center;
+
 }
 
 .splash-intro {
 	text-align: center;
 	width: 100%;
-	color: #1ab193;
+	color: #FFCA35;
 	margin-bottom: 30px;
 }
 
 .splash-intro h1 {
-	font-family: Futura;
+	font-family: Tahoma;
+	font-weight: 800;
 	font-size:50px;
+	border: none;
 }
 
 .search-input  {
-	margin: 0 auto;
-	width: 55%;
-	height: 50px;
-	padding-left: 10px;
+	margin: 10px auto 20px;
+	width: 70%;
+	height: 60px;
+	padding-left: 20px;
+	color: #1ab193;
+	background: url("../../images/greensearchicon.png") no-repeat right center;
+	background-size: 45px 45px;
+	border-top: none;
+	border-right: 40px solid white;
+	border-left: none;
+	font-family: Futura;
+}
+
+.search-input:focus {
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(46, 218, 131, 1); ;
+    outline: 0 none;
+}
+
+@media screen and (max-width: 600px) {
+	.search-input {
+		width: 100%;
+	}
+}
+
+.left-button-container {
+	text-align: left ;
+}
+
+.right-button-container {
+	text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+	.right-button-container {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.left-button-container {
+		text-align: center;
+		margin-top: 20px;
+	}
+}
+
+
+.button {
+	-webkit-user-select: none;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+    color: #757575;
+    cursor: default;
+    font-family: arial,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 11px 4px;
+    min-width: 54px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none !important;
 }
 
 
 
-
+/*********************** Search Results ********************/
 
 
 .no-space {
