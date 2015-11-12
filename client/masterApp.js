@@ -231,13 +231,15 @@ masterApp.controller('homeController', function($scope, $http, $resource, $locat
 	$scope.showEventsTab = function() {
 		$scope.eventsTab = true;
 		$scope.jobsTab = false;
-		$scope.clickClass= 'active-home-tab';
+		angular.element('.jobTab').css('color', '#FFAF25');
+		angular.element('.eventTab').css('color', '#F52441');
 	};
 
 	$scope.showJobsTab = function() {
 		$scope.eventsTab = false;
 		$scope.jobsTab = true;
-		$scope.clickClass= 'active-home-tab';
+		angular.element('.eventTab').css('color', '#FFAF25');
+		angular.element('.jobTab').css('color', '#F52441');
 	};
 
 
