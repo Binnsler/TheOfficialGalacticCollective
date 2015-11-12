@@ -33,10 +33,10 @@ section.partners-container.row
 
 section.tab-container.row
 	div(class="upcomingEvents--Tab col s6" id="home-tab" ng-click="showEventsTab()")
-		h2 Upcoming Events
+		h3(ng-class="clickClass") Upcoming Events
 		p Go to these events. Grow your network. Get more business!
 	div(class="recentJobs--Tab col s6" id="home-tab" ng-click="showJobsTab()")
-		h2 Recent Job Posts
+		h3(ng-class="clickClass") Recent Job Posts
 		p Our community is constantly posting new Gigs and Jobs
 		
 
@@ -52,26 +52,16 @@ div.open--Tab.recentJobs--Tab(ng-if="jobsTab")
 
 section.actioncall-container
 	div(class="callToAction-Smokescreen")
-		a(class="waves-effect pink waves-light btn-large" ng-show="!userContainer.user" ng-click="showLogin()") Join the Collective
+		a(class="waves-effect waves-light btn-large join-button" ng-show="!userContainer.user" ng-click="showLogin()") Join the Collective
 		
 section.information-container.row(id="scrolledTo" name="about")
-	div.about-buttons(class="col s12")
-		p(class="col s12 m4 about-us--Tab" ng-click="showAbout()") About Us 
-		p(class="col s12 m4 event-photos--Tab" ng-click="showPhotos()") Latest Event Photos
-		p(class="col s12 m4 contact-us--Tab" ng-click="showContact()") Contact Us
-
 	div.about-copy-container(class="col s12" ng-if="aboutSection")
+		h3(class="col s12" ng-click="showAbout()") About Us 
 		p Founded in Boulder, CO circa. 2015, Boulder Collective is a local group of freelancers, creatives, and developers. We're here to connect and unite Boulder's ever-growing freelance/creative community in a different way. The most successful freelancers today succeed bacause they have large and supportive networks. We're here to:
 
 		ul.reasons-list
 			li Provide MORE freelancers an opportunity to grow their networks via local events, meetups, parties, and more.
 			li Build Boulder's largest events-based community of freelancers and creatives in the hopes that numbers 
-		
-	div.photos-container(class="col s12" ng-if="photoSection")
-		img(alt="event photo" src="http://www.colorado.edu/studentgroups/CUSEDS/oldwebsite/YNBoulder/2010/images/yuris_night_boulder_2010_5.jpg")
-
-	div.contact-us-container(class="col s12" ng-if="contactSection")
-		p If you would like more information about the Collective or are interested in sponsoring an event, please reach out to us at media@bouldercollective.com
 
 
 section.recently-joined-container.row

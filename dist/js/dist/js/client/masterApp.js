@@ -231,13 +231,11 @@ masterApp.controller('homeController', function($scope, $http, $resource, $locat
 	$scope.showEventsTab = function() {
 		$scope.eventsTab = true;
 		$scope.jobsTab = false;
-		$scope.clickClass= 'active-home-tab';
 	};
 
 	$scope.showJobsTab = function() {
 		$scope.eventsTab = false;
 		$scope.jobsTab = true;
-		$scope.clickClass= 'active-home-tab';
 	};
 
 

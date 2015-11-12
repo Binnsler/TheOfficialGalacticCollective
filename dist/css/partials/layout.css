@@ -54,18 +54,26 @@ h4 {
 /*************** Footer Styling *****************/
 
 footer {
-	padding: 20px;
+	padding: 15px;
 	bottom: 0;
 	margin: 0;
 	width: 100%;
+	background-color:#5b5b5b;
+	text-align:center;
 }
 
-.footer-smokescreen {
-	background-image: url("../../images/planet.png");
-	height: 100%;
-	width: 100%;
-	/*background-color: rgba(255,255,255,0.1);*/
-	display: flex;
-	justify-content: center;
-	align-items: center;
+
+.footer-nav li{
+	display:inline-block;
+	margin:0 2%;
+}
+
+.footer-nav a {
+	font-style: none;
+	color:white;
+}
+
+.copyright {
+	color:white;
+	font-size:.6em;
 }

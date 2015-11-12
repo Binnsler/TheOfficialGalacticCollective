@@ -82,9 +82,11 @@ body {
 	align-items: center; !important
 }
 
+.active-home-tab {
+	color: #F52441;
+}
 
 /************ Information Section Styling ************/
-
 
 
 
@@ -110,10 +112,10 @@ body {
 .about-copy-container {
 	text-align: left;
 	font-family: Arial;
-	color: lightgrey;
+	color: white;
 	font-size: 20px;
 	padding:5% 10% !important;
-	background-color:green;
+	background-color:#FFAF25;
 }
 
 .about-copy-header {
@@ -144,17 +146,18 @@ body {
 
 /************ Call-to-Action Styling ************/
 
+.join-button {background-color: #F52441;}
+
 .actioncall-container {
 	max-width: 100%;
-	margin: 0;
-	background-image: url("http://www.colorado.edu/studentgroups/CUSEDS/oldwebsite/YNBoulder/2010/images/yuris_night_boulder_2010_5.jpg");
+	margin: 0;s
 	text-align: center;
 	color: white;
+	background-color:#aaabab;
 }
 
 .callToAction-Smokescreen {
 	padding: 20px;
-	background-color: rgba(0,0,0,0.7);
 	display: flex;
 	justify-content: center;
 	align-items: center;
