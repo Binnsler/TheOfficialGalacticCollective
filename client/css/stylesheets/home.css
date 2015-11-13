@@ -46,12 +46,9 @@ body {
 
 
 #home-tab {
-	color: #FFAF25;
+	color: #a0a4ab;
 	text-align: center;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	padding-right: 40px;
-	padding-left: 40px;
+	padding:20px;
 }
 
 #home-tab h2 {
@@ -115,7 +112,7 @@ body {
 	color: white;
 	font-size: 20px;
 	padding:5% 10% !important;
-	background-color:#FFAF25;
+	background-color:#5b5b5b;
 }
 
 .about-copy-header {

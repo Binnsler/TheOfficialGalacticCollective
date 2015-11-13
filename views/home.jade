@@ -34,18 +34,18 @@ section.partners-container.row
 section.tab-container.row
 	div(class="upcomingEvents--Tab col s6" id="home-tab" ng-click="showEventsTab()")
 		h3(class="eventTab") Upcoming Events
-		p Go to these events. Grow your network. Get more business!
+		p(class="eventTab") Go to these events. Grow your network. Get more business!
 	div(class="recentJobs--Tab col s6" id="home-tab" ng-click="showJobsTab()")
 		h3(class="jobTab") Recent Job Posts
-		p Our community is constantly posting new Gigs and Jobs
+		p(class="jobTab") Our community is constantly posting new Gigs and Jobs
 		
 
-div.open--Tab.upcomingEvents--Tab(ng-if="eventsTab")
+div.open--Tab(ng-if="eventsTab")
 	div(class="col s12 col m6")
 		h3 Events Under Construction
 
 
-div.open--Tab.recentJobs--Tab(ng-if="jobsTab")
+div.open--Tab(ng-if="jobsTab")
 	div(class="col s12 col m6")
 		h3 Jobs Under Construction
 
