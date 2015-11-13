@@ -6,9 +6,12 @@ body {
 
 /*************** Nav Styling *****************/
 
+.nav {box-shadow:none;}
+
 .nav-logo {
 	margin-left:2%;
 }
+
 
 .nav-wrapper {
 	background-color: white;
