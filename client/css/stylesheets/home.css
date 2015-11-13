@@ -2,18 +2,20 @@ body {
 	font-family: Geneva;
 }
 
+ol, ul, p, .row {margin:0;}
+
+.row .col {padding:0;}
 /************ Hero Image Section Styling ************/
 
 
 .hero-image-container {
 	background-image: url("http://www.colorado.edu/studentgroups/CUSEDS/oldwebsite/YNBoulder/2010/images/yuris_night_boulder_2010_5.jpg");
-	height: 520px;
 	width: 100%;
 }
 
 .smokescreen {
 	height: 100%;
-	background-color: rgba(255,255,255,0.955);
+	background-color: rgba(26, 177, 147, 0.96);
 	display: flex;
 	justify-content: center;
 	align-items: center;	
@@ -21,15 +23,25 @@ body {
 
 .hero-slogan-container {
 	text-align: center;
+	margin:100px 0;
 }
 
 .hero-slogan {
-	color: #1ab193;
-	margin-bottom: 30px;
+	color: white;
 }
 
-.button {
-	color: grey;
+.splash-button {
+	color: white;
+	border: 2px solid white;
+	background-color:rgba(26, 177, 147, 0);
+	padding:9px 40px;
+	margin:20px 0;
+
+}
+
+.splash-button:hover {
+	color: #1ab193;
+	background-color:white;
 }
 
 .button:focus {
@@ -143,7 +155,18 @@ body {
 
 /************ Call-to-Action Styling ************/
 
-.join-button {background-color: #F52441;}
+.join-button {
+	color: white;
+	border: 2px solid #F52441;
+	background-color: #F52441;
+	padding:9px 40px;
+	margin:20px 0;
+
+}
+
+.join-button:hover {
+	border:2px solid white;
+}
 
 .actioncall-container {
 	max-width: 100%;
@@ -158,6 +181,12 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+li.circle {
+	list-style-type:circle; 
+	list-style:list-item;
+	margin-left:7%;
 }
 
 /************ Recently Joined Section Styling ************/
@@ -195,8 +224,20 @@ body {
 	height: 350px;
 }
 
+.see-members {	text-align: center;}
+
 .see-members-button {
-	text-align: center;
+	color: #ffaf25;
+	border: 2px solid #ffaf25;
+	background-color:rgba(26, 177, 147, 0);
+	padding:9px 40px;
+	margin:20px 0;
+
+}
+
+.see-members-button:hover {
+	color:white;
+	background-color:#ffaf25;
 }
 
 /************ Partner Logos Styling ************/
@@ -220,5 +261,5 @@ body {
 	/*margin-right: 50px;*/
 }
 
-
+.copyright {padding:15px 0;}
 

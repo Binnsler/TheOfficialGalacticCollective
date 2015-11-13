@@ -3,33 +3,33 @@ block headContent
 	link(rel="stylesheet" href="css/stylesheets/home.css")
 	
 
-section.hero-image-container
-	div.smokescreen.row
-		div.hero-slogan-container
-			h1.hero-slogan Helping Boulder's Creative 
-			h1.hero-slogan & Freelance Communities Unite
+section.hero-image-container(class="row")
+	div.smokescreen(class="col s12")
+		div.hero-slogan-container(class="col s8")
+			h1.hero-slogan(class="col s12") Helping Boulder's Creative 
+			h1.hero-slogan(class="col s12") & Freelance Communities Unite
 
 			//- a(class="waves-effect grey waves-light btn" ) learn more 
-			input.button(type="button" scroll-to-item scroll-to="#scrolledTo" value="Learn More")
+			button(class="splash-button" scroll-to-item scroll-to="#scrolledTo") Learn More
 		
 section.partners-container.row
 	div(class="col s12")
 		ul.home-list
 			li
 				a(href="www.github.com")
-					img(class="partner-logo" mimeType="image/svg+xml" src="images/refactoruLogo.svg")
+					img(class="partner-logo" mimeType="image/png" src="images/refactoruLogo.png")
 			li 
 				a(href="github.com")
-					img(class="partner-logo" mimeType="image/svg+xml" src="images/galvanizeLogo.svg")
+					img(class="partner-logo" mimeType="image/png" src="images/galvanizeLogo.png")
 			li 
 				a(href="github.com")
-					img(class="partner-logo" mimeType="image/svg+xml" src="images/sparkLogo.svg")
+					img(class="partner-logo" mimeType="image/png" src="images/sparkLogo.png")
 			li 
 				a(href="github.com")
-					img(class="partner-logo" mimeType="image/svg+xml" src="images/bdaLogo.svg")
+					img(class="partner-logo" mimeType="image/png" src="images/bdaLogo.png")
 			li 
 				a(href="github.com")
-					img(class="partner-logo" mimeType="image/svg+xml" src="images/impacthubLogo.svg")
+					img(class="partner-logo" mimeType="image/png" src="images/impacthubLogo.png")
 
 section.tab-container.row
 	div(class="upcomingEvents--Tab col s6" id="home-tab" ng-click="showEventsTab()")
@@ -52,16 +52,18 @@ div.open--Tab(ng-if="jobsTab")
 
 section.actioncall-container
 	div(class="callToAction-Smokescreen")
-		a(class="waves-effect waves-light btn-large join-button" ng-show="!userContainer.user" ng-click="showLogin()") Join the Collective
+		button(class="join-button" ng-show="!userContainer.user" ng-click="showLogin()") Join the Collective
 		
 section.information-container.row(id="scrolledTo" name="about")
 	div.about-copy-container(class="col s12" ng-if="aboutSection")
 		h3(class="col s12" ng-click="showAbout()") About Us 
 		p Founded in Boulder, CO circa. 2015, Boulder Collective is a local group of freelancers, creatives, and developers. We're here to connect and unite Boulder's ever-growing freelance/creative community in a different way. The most successful freelancers today succeed bacause they have large and supportive networks. We're here to:
 
-		ul.reasons-list
-			li Provide MORE freelancers an opportunity to grow their networks via local events, meetups, parties, and more.
-			li Build Boulder's largest events-based community of freelancers and creatives in the hopes that numbers 
+		ul.reasons-list(type="circle")
+			li.circle 
+				p Provide MORE freelancers an opportunity to grow their networks via local events, meetups, parties, and more.
+			li.circle 
+				p Build Boulder's largest events-based community of freelancers and creatives in the hopes that numbers 
 
 
 section.recently-joined-container.row
@@ -77,7 +79,8 @@ section.recently-joined-container.row
 				img(src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5y0n12q_bRowNuFD3kW1MxkNzDmnqqBDWtSFhE5QiuPBarGxr")
 			li
 				img(src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5y0n12q_bRowNuFD3kW1MxkNzDmnqqBDWtSFhE5QiuPBarGxr")
-	div.see-members-button
-		a(class="waves-effect waves-light btn", href="#/search") See All Members
+	div.see-members
+		a(href="#/search")
+			button(class="see-members-button") See All Members
 
 
