@@ -5,12 +5,12 @@ block headContent
 
 
 div.container
-	div.centerize-me
-		h3.galactic-blue-text(class="bottom-space") The Denver/Boulder Galactic Community
+	div.centerize-me(class="bottom-space community-header")
+		h1 Welcome to the Boulder Collective
+		p Post up jobs, events, content, and more
 
 	div(ng-if="!userContainer.user" class="centerize-me posting-select")
-		p(class="galactic-grey-text s10 offset-s1 l4 offset-l4") Sign in to share events, jobs and content with other creatives and freelancers in the Boulder/Denver area. 
-		a(ng-click="showLogin()" class="waves-effect btn-flat galactic-blue s4 offset-s4 m4 offset-m4 l1 offset-l1 btn-profile") Sign Up / Login
+		a(ng-click="showLogin()" class="waves-effect btn-flat galactic-green s4 offset-s4 m4 offset-m4 l1 offset-l1 btn-profile") Sign Up / Login To Post
 	div(class="centerize-me posting-select bottom-space" ng-if="userContainer.user")
 		a(class="waves-effect btn-flat galactic-green col s1 offset-s1 btn-profile" ng-click="showPostForm()") Post to Community
 
