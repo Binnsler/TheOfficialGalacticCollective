@@ -6,7 +6,7 @@ body {
 
 /*************** Nav Styling *****************/
 
-.nav {box-shadow:none;}
+nav {box-shadow:none;}
 
 .nav-logo {
 	margin-left:2%;
