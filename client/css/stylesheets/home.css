@@ -15,7 +15,7 @@ ol, ul, p, .row {margin:0;}
 
 .smokescreen {
 	height: 100%;
-	background-color: rgba(26, 177, 147, 0.96);
+	background-color: rgba(26, 177, 147, 0.96); 
 	display: flex;
 	justify-content: center;
 	align-items: center;	

@@ -6,9 +6,12 @@ body {
 
 /*************** Nav Styling *****************/
 
+nav {box-shadow:none;}
+
 .nav-logo {
 	margin-left:2%;
 }
+
 
 .nav-wrapper {
 	background-color: white;
@@ -178,6 +181,8 @@ i > input {
 
 /*Community Page*/
 
+.community-header{color:grey;} 
+
 .postSelect {display: inline-block !important;}
 
 .post-content {margin-top:15px;}
@@ -209,7 +214,7 @@ i > input {
 }
 
 .posting-select {
-	border: 1px solid #0ea2c9;
+	border: 1px solid #1ab193;
 }
 
 .date-created {
