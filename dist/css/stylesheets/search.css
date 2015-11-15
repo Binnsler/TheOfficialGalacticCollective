@@ -42,7 +42,7 @@ section {
 	height: 60px;
 	padding-left: 20px;
 	color: #1ab193;
-	background: url("../../images/greensearchicon2.png") no-repeat 98% 10px;
+	/*background: url("../../images/greensearchicon2.png") no-repeat 98% 10px;*/
 	background-size: 40px 40px;
 	border-radius: 5px;
 	font-family: Arial;
@@ -87,7 +87,16 @@ section {
 }
 
 .button {
-	background-color: #FFCA35;
+	color: #ffaf25;
+    border: 2px solid #ffaf25;
+    background-color: rgba(26, 177, 147, 0);
+    padding: 9px 40px;
+    margin: 20px 0
+}
+
+.button:hover {
+	color: white;
+	background-color: #ffaf25;
 }
 
 /*********************** Search Results ********************/
