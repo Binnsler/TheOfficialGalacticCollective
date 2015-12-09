@@ -3,60 +3,6 @@ body {
 	margin: 0;
 }
 
-
-/*************** Nav Styling *****************/
-
-nav {box-shadow:none;}
-
-.nav-logo {
-	margin-left:2%;
-}
-
-
-.nav-wrapper {
-	background-color: white;
-	box-shadow: none;
-}
-
-.nav-element {
-	color: black;
-}
-
-.nav-element > a {
-	color: #999999;
-	font-size: 15px;
-	font-family: arial,sans-serif;
-	text-decoration: none;
-	margin: 0 10px 0 10px;
-}
-
-.brand-logo img {
-	margin: 1vh 1em;
-	width: 50px;
-	height: 40px;
-	float: left;
-}
-
-
-.btn-flat {
-	font-family: Arial;
-}
-
-.circleHeaderProfile {
-	height: 45px;
-	width: 45px;
-}
-
-.profile-nav {
-padding-top: 1vh;
-}
-
-i > input {
-	background-color: #1ab193;
-	font-family: Arial;
-	border-style: none;
-}
-
 /*************** All Buttons Styling *****************/
 
 .button {

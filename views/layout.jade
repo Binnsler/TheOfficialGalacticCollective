@@ -21,15 +21,13 @@ html(lang='en' ng-app="masterApp")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.4.6/textAngular.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.4.6/textAngularSetup.js")
 
+		block headContent
 		link(rel="stylesheet" href="css/partials/main.css")
 		link(rel="stylesheet" href="css/partials/layout.css")
 		link(rel="stylesheet" href="css/partials/loginModal.css")
-		block headContent
-
-
-
+		link(rel="stylesheet" href="css/partials/nav.css")
 	body(ng-controller="loginController")
-		div
+		section
 			nav
 				div.nav-wrapper
 					a(href="#/", class="nav-logo left")
@@ -49,7 +47,6 @@ html(lang='en' ng-app="masterApp")
 							a(ng-href="#/admin/{{userContainer.user.username}}") Admin
 						a.right(class="profile-nav" ng-href="#/profile/{{userContainer.user.username}}" ng-show="userContainer.user")
 							img(src="{{userContainer.user.profilePic}}" alt="" class="circleHeaderProfile")
-				
 			div.loginLightbox(ng-show="loginModal" ng-click="closeLogin()")
 				button.close-button(type="button" ng-click="closeLightbox()") x
 				div.lightbox-wrapper
@@ -83,7 +80,6 @@ html(lang='en' ng-app="masterApp")
 								label(for="password")
 						div.loginLightbox-button-container
 							input.loginLightbox-button(type="submit" value="Sign Up")
-
 			block content
 	footer
 		ul.footer-nav

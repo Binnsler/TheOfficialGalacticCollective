@@ -232,18 +232,22 @@ masterApp.controller('homeController', function($scope, $http, $resource, $locat
 		$scope.eventsTab = true;
 		$scope.jobsTab = false;
 		angular.element('.jobTab').css('color', '#a0a4ab');
-		angular.element('.eventTab').css('color', 'white');
-		angular.element('.recentJobs--Tab').css('background-color', 'white');		
-		angular.element('.upcomingEvents--Tab').css('background-color', '#FFAF25');		
+		// angular.element('.eventTab').css('color', 'white');
+		// angular.element('.recentJobs-tab').css('background-color', 'white');		
+		// angular.element('.upcomingEvents-tab').css('background-color', '#FFAF25');
+		angular.element('.recentJobs-tab').removeClass('jobTab-color');		
+		angular.element('.upcomingEvents-tab').addClass('eventTab-color');
 	};
 
 	$scope.showJobsTab = function() {
 		$scope.eventsTab = false;
 		$scope.jobsTab = true;
 		angular.element('.eventTab').css('color', '#a0a4ab');
-		angular.element('.jobTab').css('color', 'white');
-		angular.element('.upcomingEvents--Tab').css('background-color', 'white');		
-		angular.element('.recentJobs--Tab').css('background-color', '#f52441');		
+		// angular.element('.jobTab').css('color', 'white');
+		// angular.element('.upcomingEvents-tab').css('background-color', 'white');		
+		// angular.element('.recentJobs-tab').css('background-color', '#f52441');
+		angular.element('.upcomingEvents-tab').removeClass('eventTab-color');
+		angular.element('.recentJobs-tab').addClass('jobTab-color');		
 	};
 
 

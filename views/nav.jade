@@ -1,0 +1,55 @@
+block navContent 
+	div
+		nav
+			div.nav-wrapper
+				a(href="#/", class="nav-logo left")
+					img(src="images/Header_Solo_Logo.png", alt="brand logo")
+				ul.right
+					li.nav-element
+						a(href="#/", class="nav-element") Home
+					li.nav-element
+						a(href="#/search", class="nav-element") Search
+					li.nav-element
+						a(href="#/community", class="nav-element") Community
+					li.nav-element(ng-show="userContainer.user", ng-click="logout()")
+						a(href="") Logout
+					li.nav-element(ng-show="!userContainer.user" ng-click="showLogin()")
+						a(href="") Log In
+					li.nav-element(ng-show="userContainer.user")
+						a(ng-href="#/admin/{{userContainer.user.username}}") Admin
+					a.right(class="profile-nav" ng-href="#/profile/{{userContainer.user.username}}" ng-show="userContainer.user")
+						img(src="{{userContainer.user.profilePic}}" alt="" class="circleHeaderProfile")
+			
+		div.loginLightbox(ng-show="loginModal" ng-click="closeLogin()")
+			button.close-button(type="button" ng-click="closeLightbox()") x
+			div.lightbox-wrapper
+				div(class="form-container")
+					form(ng-submit="login()" ng-click="$event.stopPropagation()")
+						p.form-header Welcome Back
+						p(ng-show="loginError" class="errorText") Username or password is incorrect.
+						div(class="input-field")
+							input(class="validate" placeholder="Username" ng-model="loginFormData.username" type="text")
+							label(for="username")  
+						div(class="input-field")
+							input(class="validate" placeholder="Password" ng-model="loginFormData.password" type="password")
+							label(for="signinPassword")
+					div.loginLightbox-button-container
+						input.loginLightbox-button(type="submit" value="Login")
+
+				//- div(class="col s4 offset-s4 white-background" ng-click="$event.stopPropagation()")
+
+				div(class="form-container")
+					form(ng-submit="signup()" ng-click="$event.stopPropagation()")
+						p.form-header Join the Community
+						p(ng-show="signUpError" class="errorText") User already exists in userbase.
+						div(class="input-field")
+							input(placeholder="Username (displayed as @username)", ng-model="signUpFormData.username", type="text", class="validate")
+							label(for="name") 
+						div(class="input-field")
+							input(placeholder="Email", ng-model="signUpFormData.email", type="email", class="validate")
+							label(for="email") 					
+						div(class="input-field")
+							input(placeholder="Password", ng-model="signUpFormData.password", type="password", class="validate")
+							label(for="password")
+					div.loginLightbox-button-container
+						input.loginLightbox-button(type="submit" value="Sign Up")

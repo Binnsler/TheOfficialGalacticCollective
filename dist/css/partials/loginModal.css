@@ -13,15 +13,13 @@
 	transform: translateY(-50%);
 	margin: 0 auto 0;
 	height: 90%;
-	overflow: scroll;	
 }
 
 .form-container {
 	margin: 0 auto 25px;
 	width: 40%;
 	padding: 5px;
-	border: 1px solid lightgrey;
-	border-radius: 25px;
+	border: 1px solid #FFCA35;
 	color: white;
 	padding: 10px 50px 15px;
 }
@@ -51,11 +49,11 @@
 }
 
 .loginLightbox-button {
-	background-color: #FFCA35;
+	background-color: transparent;
 	-webkit-user-select: none;
-    border: 1px solid #FFCA35;
-    border-radius: 2px;
-    color: #757575;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
     font-family: arial,sans-serif;
     font-size: 15px;
     font-weight: bold;
@@ -63,6 +61,12 @@
     width: 130px;
     padding: 10px 30px;
 }
+
+.loginLightbox-button:hover {
+	background-color: #FFCA35;
+	color: grey;
+	border: 1px solid #FFCA35;
+} 
 
 .input-field {
 	width: 80%;
