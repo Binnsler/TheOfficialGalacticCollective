@@ -22,5 +22,9 @@
     "gulp": "^3.9.0",
     "gulp-image": "^1.1.1",
     "gulp-jade": "^1.1.0"
+  },
+  "scripts": {
+  "start": "node galacticcollective",
+  "postinstall": "gulp watch"
   }
 }
