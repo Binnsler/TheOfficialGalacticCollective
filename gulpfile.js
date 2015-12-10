@@ -2,13 +2,14 @@
 var gulp = require('gulp')
 
 // Require Gulp's plugins.
-var jade = require('gulp-jade')
-var image = require('gulp-image')
+var connect = require('gulp-connect');
+var jade = require('gulp-jade');
+var image = require('gulp-image');
 var browserSync = require('browser-sync'),
 	// this will live-reload the browser upon updates to either html or css files
 	reload = browserSync.reload
 
-    
+
 // HTML Tasks: takes all Jade files in path, converts them to html and places into /dist folder. live reload is being used.
 gulp.task('jade', function() {
     return gulp.src('views/**/*.jade')

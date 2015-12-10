@@ -21,13 +21,11 @@
     "browser-sync": "^2.9.11",
     "gulp": "^3.9.0",
     "gulp-image": "^1.1.1",
-    "gulp-jade": "^1.1.0"
+    "gulp-jade": "^1.1.0",
+    "gulp-connect": "^2.2.0"
   },
   "scripts": {
     "start": "node galacticcollective",
     "postinstall": "gulp watch"
-  },
-  "devDependencies": {
-    "gulp-connect": "^2.2.0"
   }
 }
