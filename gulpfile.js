@@ -43,7 +43,7 @@ gulp.task('css', function() {
 
 // Fire up production server 
 gulp.task('serveprod', function() {
-  connect.server({
+  return connect.server({
     root: dist,
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
