@@ -41,8 +41,17 @@ gulp.task('css', function() {
 	.pipe(reload({stream:true}));
 });
 
-// Watch Tasks: Watch initiates all other tasks, then initiates browserSync. 
-gulp.task('watch', ['jade', 'css', 'image', 'scripts'], function() {
+// Fire up production server 
+gulp.task('serveprod', function() {
+  connect.server({
+    root: dist,
+    port: process.env.PORT || 5000, // localhost:5000
+    livereload: false
+  });
+});
+
+// Watch Tasks: Watch is our build task. initiates all other tasks, then initiates browserSync. 
+gulp.task('watch', ['jade', 'css', 'image', 'scripts', 'serveprod'], function() {
 	browserSync({
     	server: {
     		baseDir: "./dist/"
