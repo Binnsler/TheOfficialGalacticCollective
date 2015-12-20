@@ -44,7 +44,7 @@ gulp.task('css', function() {
 // Fire up production server 
 gulp.task('serveprod', function() {
   return connect.server({
-    root: [galacticcollective],
+    root: ['_public'],
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
