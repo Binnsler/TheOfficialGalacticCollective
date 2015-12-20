@@ -52,7 +52,7 @@ gulp.task('css', function() {
 gulp.task('serveprod', function() {
   return connect.server({
     root: ['_public'],
-    port: process.env.PORT || 5000, // localhost:5000
+    port: process.env.PORT || 8998, // localhost:5000
     livereload: false
   });
 });
