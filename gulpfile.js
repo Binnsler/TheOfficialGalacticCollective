@@ -59,13 +59,13 @@ gulp.task('serveprod', function() {
 
 // Watch Tasks: Watch is our build task. initiates all other tasks, then initiates browserSync. 
 gulp.task('watch', ['jade', 'home', 'css', 'image', 'scripts', 'serveprod'], function() {
-	browserSync({
-    	server: {
-    		baseDir: "./dist/"
-		}
-	});
-    gulp.watch('client/css/**/*.css', ['css'], reload);
-    gulp.watch('views/**/*.jade', ['jade'], reload); 
+	// browserSync({
+ //    	server: {
+ //    		baseDir: "./dist/"
+	// 	}
+	// });
+ //    gulp.watch('client/css/**/*.css', ['css'], reload);
+ //    gulp.watch('views/**/*.jade', ['jade'], reload); 
     // gulp.watch(['./**/*.js', '!./node_modules/**/*.js'], ['scripts'], reload); // dont watch node_modules or call stack will be exceeded in terminal. 
 });
 
