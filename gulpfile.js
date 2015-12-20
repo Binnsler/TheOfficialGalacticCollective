@@ -52,12 +52,21 @@ gulp.task('css', function() {
 gulp.task('serveprod', function() {
   return connect.server({
     root: ['_public'],
-    port: process.env.PORT || 8998, // localhost:5000
+    port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
 });
 
 // Watch Tasks: Watch is our build task. initiates all other tasks, then initiates browserSync. 
-gulp.task('watch', ['jade', 'home', 'css', 'image', 'scripts', 'serveprod']);
+gulp.task('watch', ['jade', 'home', 'css', 'image', 'scripts', 'serveprod'], function() {
+	browserSync({
+    	server: {
+    		baseDir: "./dist/"
+		}
+	});
+    gulp.watch('client/css/**/*.css', ['css'], reload);
+    gulp.watch('views/**/*.jade', ['jade'], reload); 
+    // gulp.watch(['./**/*.js', '!./node_modules/**/*.js'], ['scripts'], reload); // dont watch node_modules or call stack will be exceeded in terminal. 
+});
 
 
