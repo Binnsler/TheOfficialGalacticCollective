@@ -12,9 +12,16 @@ var browserSync = require('browser-sync'),
 
 // HTML Tasks: takes all Jade files in path, converts them to html and places into /dist folder. live reload is being used.
 gulp.task('jade', function() {
-    return gulp.src('views/**/*.jade')
+    return gulp.src(['views/**/*.jade', '!views/**/index.jade'])
         .pipe(jade()) 
-        .pipe(gulp.dest('./dist/')) 
+        .pipe(gulp.dest('./dist/views')) 
+        .pipe(reload({stream:true}));
+});
+
+gulp.task('home', function() {
+    return gulp.src('views/**/index.jade')
+        .pipe(jade()) 
+        .pipe(gulp.dest('./dist')) 
         .pipe(reload({stream:true}));
 });
 
@@ -51,7 +58,7 @@ gulp.task('serveprod', function() {
 });
 
 // Watch Tasks: Watch is our build task. initiates all other tasks, then initiates browserSync. 
-gulp.task('watch', ['jade', 'css', 'image', 'scripts', 'serveprod'], function() {
+gulp.task('watch', ['jade', 'home', 'css', 'image', 'scripts', 'serveprod'], function() {
 	browserSync({
     	server: {
     		baseDir: "./dist/"
