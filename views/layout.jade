@@ -26,7 +26,7 @@ html(lang='en' ng-app="masterApp")
 		link(rel="stylesheet" href="client/css/partials/layout.css")
 		link(rel="stylesheet" href="client/css/partials/loginModal.css")
 		link(rel="stylesheet" href="client/css/partials/nav.css")
-			
+
 	body(ng-controller="loginController")
 		section
 			nav
@@ -81,17 +81,19 @@ html(lang='en' ng-app="masterApp")
 								label(for="password")
 						div.loginLightbox-button-container
 							input.loginLightbox-button(type="submit" value="Sign Up")
-			block content
-	footer
-		ul.footer-nav
-			li(class="col s12 m1") 
-				a(href="#/") Home
-			li(class="col s12 m1") 
-				a(href="#/search") Search
-			li(class="col s12 m1") 
-				a(href="#/community") Community
-			li(class="col s12 m1") 
-				a(ng-click="showLogin()") Join
-			li(class="col s12 m1") 
-				a(href="") Contact Us
-		p.copyright Copyright 2015 Galactic Acid LLC - Boulder, CO
+
+		block content
+			
+		footer
+			ul.footer-nav
+				li(class="col s12 m1") 
+					a(href="#/") Home
+				li(class="col s12 m1") 
+					a(href="#/search") Search
+				li(class="col s12 m1") 
+					a(href="#/community") Community
+				li(class="col s12 m1") 
+					a(ng-click="showLogin()") Join
+				li(class="col s12 m1") 
+					a(href="") Contact Us
+			p.copyright Copyright 2015 Galactic Acid LLC - Boulder, CO
