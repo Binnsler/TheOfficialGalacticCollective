@@ -29,6 +29,6 @@
   },
   "scripts": {
     "build": "gulp watch",
-    "start": "node galacticcollective"
+    "start": "node TheOfficialGalacticCollective"
   }
 }
