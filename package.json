@@ -29,6 +29,6 @@
   },
   "scripts": {
     "build": "gulp watch",
-    "start": "server.js"
+    "start": "node server.js"
   }
 }
