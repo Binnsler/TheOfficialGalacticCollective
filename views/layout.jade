@@ -13,8 +13,8 @@ html(lang='en' ng-app="masterApp")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.js")
 
-		script(src="js/client/masterApp.js")
-		script(src="js/client/directives/fileModel.js")
+		script(src="/client/masterApp.js")
+		script(src="/client/directives/fileModel.js")
 
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.4.6/textAngular-rangy.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.4.6/textAngular-sanitize.min.js")
@@ -22,16 +22,16 @@ html(lang='en' ng-app="masterApp")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.4.6/textAngularSetup.js")
 
 		block headContent
-		link(rel="stylesheet" href="css/partials/main.css")
-		link(rel="stylesheet" href="css/partials/layout.css")
-		link(rel="stylesheet" href="css/partials/loginModal.css")
-		link(rel="stylesheet" href="css/partials/nav.css")
+		link(rel="stylesheet" href="client/css/partials/main.css")
+		link(rel="stylesheet" href="client/css/partials/layout.css")
+		link(rel="stylesheet" href="client/css/partials/loginModal.css")
+		link(rel="stylesheet" href="client/css/partials/nav.css")
 	body(ng-controller="loginController")
 		section
 			nav
 				div.nav-wrapper
 					a(href="#/", class="nav-logo left")
-						img(src="images/Header_Solo_Logo.png", alt="brand logo")
+						img(src="client/images/Header_Solo_Logo.png", alt="brand logo")
 					ul.right
 						li.nav-element
 							a(href="#/", class="nav-element") Home
