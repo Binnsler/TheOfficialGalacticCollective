@@ -2,6 +2,9 @@
   "author": "JamesBinns-MarcMartinez",
   "name": "Boulder-Collective",
   "version": "0.0.1",
+  "engines": {
+    "node": "4.2.3"
+  },
   "dependencies": {
     "angular": "^1.4.7",
     "aws-sdk": "*",
