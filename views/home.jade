@@ -1,81 +1,78 @@
-extends layout
-
 block headContent
 	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
 	link(rel="stylesheet" href="client/css/stylesheets/home.css")
 
-	section.hero-image-container(class="row")
-		div.smokescreen(class="col s12")
-			div.hero-slogan-container(class="col s8")
-				h1.hero-slogan(class="col s12") Helping Boulder's Creative 
-				h1.hero-slogan(class="col s12") & Freelance Communities Unite
-				button(class="splash-button" scroll-to-item scroll-to="#scrolledTo") Learn More		
+section.hero-image-container(class="row")
+	div.smokescreen(class="col s12")
+		div.hero-slogan-container(class="col s8")
+			h1.hero-slogan(class="col s12") Helping Boulder's Creative 
+			h1.hero-slogan(class="col s12") & Freelance Communities Unite
+			button(class="splash-button" scroll-to-item scroll-to="#scrolledTo") Learn More		
 
-block content
-	section.partners-container.row
-		div(class="col s12")
-			ul.home-list
-				li
-					a(href="www.github.com")
-						img(class="partner-logo" mimeType="image/png" src="client/images/refactoruLogo.png")
-				li 
-					a(href="github.com")
-						img(class="partner-logo" mimeType="image/png" src="client/images/galvanizeLogo.png")
-				li 
-					a(href="github.com")
-						img(class="partner-logo" mimeType="image/png" src="client/images/sparkLogo.png")
-				li 
-					a(href="github.com")
-						img(class="partner-logo" mimeType="image/png" src="client/images/bdaLogo.png")
-				li 
-					a(href="github.com")
-						img(class="partner-logo" mimeType="image/png" src="client/images/impacthubLogo.png")
+section.partners-container.row
+	div(class="col s12")
+		ul.home-list
+			li
+				a(href="www.github.com")
+					img(class="partner-logo" mimeType="image/png" src="client/images/refactoruLogo.png")
+			li 
+				a(href="github.com")
+					img(class="partner-logo" mimeType="image/png" src="client/images/galvanizeLogo.png")
+			li 
+				a(href="github.com")
+					img(class="partner-logo" mimeType="image/png" src="client/images/sparkLogo.png")
+			li 
+				a(href="github.com")
+					img(class="partner-logo" mimeType="image/png" src="client/images/bdaLogo.png")
+			li 
+				a(href="github.com")
+					img(class="partner-logo" mimeType="image/png" src="client/images/impacthubLogo.png")
 
-	section.tab-container.row
-		div(class="upcomingEvents-tab col s6" id="home-tab" ng-click="showEventsTab()")
-			h3(class="eventTab") Upcoming Events
-			p(class="eventTab") Go to these events. Grow your network. Get more business!
-		div(class="recentJobs-tab col s6" id="home-tab" ng-click="showJobsTab()")
-			h3(class="jobTab") Recent Job Posts
-			p(class="jobTab") Our community is constantly posting new Gigs and Jobs
+section.tab-container.row
+	div(class="upcomingEvents-tab col s6" id="home-tab" ng-click="showEventsTab()")
+		h3(class="eventTab") Upcoming Events
+		p(class="eventTab") Go to these events. Grow your network. Get more business!
+	div(class="recentJobs-tab col s6" id="home-tab" ng-click="showJobsTab()")
+		h3(class="jobTab") Recent Job Posts
+		p(class="jobTab") Our community is constantly posting new Gigs and Jobs
 
-	div.open--Tab(ng-if="eventsTab")
-		div(class="col s12 col m6")
-			h3 Events Under Construction
+div.open--Tab(ng-if="eventsTab")
+	div(class="col s12 col m6")
+		h3 Events Under Construction
 
-	div.open--Tab(ng-if="jobsTab")
-		div(class="col s12 col m6")
-			h3 Jobs Under Construction
+div.open--Tab(ng-if="jobsTab")
+	div(class="col s12 col m6")
+		h3 Jobs Under Construction
 
-	section.information-container.row(id="scrolledTo" name="about")
-		div.about-copy-container(class="col s12" ng-if="aboutSection")
-			p(class="col s12 about-header" ng-click="showAbout()") About Us 
-			p(class='about-copy') Founded in Boulder, CO circa. 2015, Boulder Collective is a local group of freelancers, creatives, and developers. We're here to connect and unite Boulder's ever-growing freelance/creative community in a different way. The most successful freelancers today succeed bacause they have large and supportive networks. We're here to:
-			ul.reasons-list(type="circle")
-				li.circle 
-					p Provide MORE freelancers an opportunity to grow their networks via local events, meetups, parties, and more.
-				li.circle 
-					p Build Boulder's largest events-based community of freelancers and creatives in the hopes that numbers 
+section.information-container.row(id="scrolledTo" name="about")
+	div.about-copy-container(class="col s12" ng-if="aboutSection")
+		p(class="col s12 about-header" ng-click="showAbout()") About Us 
+		p(class='about-copy') Founded in Boulder, CO circa. 2015, Boulder Collective is a local group of freelancers, creatives, and developers. We're here to connect and unite Boulder's ever-growing freelance/creative community in a different way. The most successful freelancers today succeed bacause they have large and supportive networks. We're here to:
+		ul.reasons-list(type="circle")
+			li.circle 
+				p Provide MORE freelancers an opportunity to grow their networks via local events, meetups, parties, and more.
+			li.circle 
+				p Build Boulder's largest events-based community of freelancers and creatives in the hopes that numbers 
 
-	section.actioncall-container
-		div(class="callToAction-Smokescreen")
-			button(class="join-button" ng-show="!userContainer.user" ng-click="showLogin()") Join the Collective
+section.actioncall-container
+	div(class="callToAction-Smokescreen")
+		button(class="join-button" ng-show="!userContainer.user" ng-click="showLogin()") Join the Collective
 
-	section.recently-joined-container.row
-		div(class="recently-joined-header col s12")
-			p Recently Joined
-		div.member-cards-container
-			ul.home-list-joined
-				li 
-					img(src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5y0n12q_bRowNuFD3kW1MxkNzDmnqqBDWtSFhE5QiuPBarGxr")
-				li 
-					img(src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5y0n12q_bRowNuFD3kW1MxkNzDmnqqBDWtSFhE5QiuPBarGxr")
-				li
-					img(src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5y0n12q_bRowNuFD3kW1MxkNzDmnqqBDWtSFhE5QiuPBarGxr")
-				li
-					img(src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5y0n12q_bRowNuFD3kW1MxkNzDmnqqBDWtSFhE5QiuPBarGxr")
-		div.see-members
-			a(href="#/search")
-				button(class="see-members-button") See All Members
+section.recently-joined-container.row
+	div(class="recently-joined-header col s12")
+		p Recently Joined
+	div.member-cards-container
+		ul.home-list-joined
+			li 
+				img(src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5y0n12q_bRowNuFD3kW1MxkNzDmnqqBDWtSFhE5QiuPBarGxr")
+			li 
+				img(src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5y0n12q_bRowNuFD3kW1MxkNzDmnqqBDWtSFhE5QiuPBarGxr")
+			li
+				img(src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5y0n12q_bRowNuFD3kW1MxkNzDmnqqBDWtSFhE5QiuPBarGxr")
+			li
+				img(src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT5y0n12q_bRowNuFD3kW1MxkNzDmnqqBDWtSFhE5QiuPBarGxr")
+	div.see-members
+		a(href="#/search")
+			button(class="see-members-button") See All Members
 
 
