@@ -1,3 +1,5 @@
+extends layout
+
 block headContent
 	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
 	link(rel="stylesheet" href="client/css/stylesheets/home.css")
@@ -57,7 +59,7 @@ section.information-container.row(id="scrolledTo" name="about")
 section.actioncall-container
 	div(class="callToAction-Smokescreen")
 		button(class="join-button" ng-show="!userContainer.user" ng-click="showLogin()") Join the Collective
-		
+
 section.recently-joined-container.row
 	div(class="recently-joined-header col s12")
 		p Recently Joined
