@@ -4,43 +4,43 @@ masterApp.config(function($routeProvider){
 	// Home Page
 	$routeProvider
 	.when('/', {
-		templateUrl : 'views/home.html', 
+		templateUrl : 'views/home.jade', 
 		controller : 'homeController'
 	});
 	// Home-Search Page
 	$routeProvider
 	.when('/search', {
-		templateUrl : 'views/search.html', 
+		templateUrl : 'views/search.jade', 
 		controller : 'searchController'
 	});
 	// Login-Signup Page
 	$routeProvider
 	.when('/login', {
-		templateUrl : 'views/login.html',
+		templateUrl : 'views/login.jade',
 		controller : 'loginController'
 	});
 	// Dynamic route for Profiles
 	$routeProvider
 	.when('/profile/:username', {
-		templateUrl : 'views/profile-template.html',
+		templateUrl : 'views/profile-template.jade',
 		controller : 'profileController'
 	});
 	// Community Page
 	$routeProvider
 	.when('/community', {
-		templateUrl : 'views/community.html',
+		templateUrl : 'views/community.jade',
 		controller : 'communityController'
 	});
 	// Dynamic route for Posts
 	$routeProvider
 	.when('/profile/:username/:_id', {
-		templateUrl : 'views/post.html',
+		templateUrl : 'views/post.jade',
 		controller : 'postController'
 	});
 	// Dynamic route Admin Page
 	$routeProvider
 	.when('/admin/:username', {
-		templateUrl : 'views/admin.html',
+		templateUrl : 'views/admin.jade',
 		controller : 'adminController'
 	});
 
