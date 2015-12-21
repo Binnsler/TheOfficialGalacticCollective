@@ -1,0 +1,81 @@
+/*************** Common Styles *****************/
+
+.toolbar-container, .editor-container {
+	border: 1px solid #ccc;
+}
+
+.galactic-blue {
+	background-color: #0ea2c9;
+}
+.galactic-green-text {
+	color: #1ab193;
+}
+
+.galactic-blue-text {
+	color: #0ea2c9;
+}
+
+.galactic-grey-text {
+	color: #999999;
+}
+
+.centerize-me {
+	text-align: center;
+}
+
+.galactic-green {
+	background-color: #1ab193 !important;
+	color: white;
+}
+
+.galactic-blue {
+	background-color: #0ea2c9;
+	color: white;
+}
+
+.blue-link {
+	color: #0ea2c9;
+}
+
+h1, h2, h3 {
+	font-family: Helvetica;
+}
+
+p, h4, h5 {
+	font-family: Arial;
+}
+
+h4 {
+	font-size: 1.2em;
+	font-style: italic;
+}
+
+
+/*************** Footer Styling *****************/
+
+footer {
+	padding: 15px;
+	bottom: 0;
+	margin: 0;
+	width: 100%;
+	background-color:#5b5b5b;
+	text-align:center;
+}
+
+
+.footer-nav li{
+	display:inline-block;
+	margin:0 2%;
+}
+
+.footer-nav a {
+	font-style: none;
+	color:white;
+}
+
+.copyright {
+	color:white;
+	font-size:.6em;
+}
+
+li a {cursor:pointer;}

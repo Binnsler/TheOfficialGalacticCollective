@@ -1,0 +1,207 @@
+
+.banner-container img {
+	width: 100%;
+}
+
+/*********************** Search Section Styling ********************/
+
+.profile-box {
+	padding: 1em 0;
+}
+
+section {
+	width: 100%;
+}
+
+.search-container {
+	margin: 0 auto;
+	padding: 20px;
+	width: 100%;
+	margin-top: 3%;
+	text-align: center;
+}
+
+
+.splash-intro {
+	text-align: center;
+	width: 100%;
+	color: grey;
+	margin-bottom: 30px;
+}
+
+.splash-intro h1 {
+	font-family: Tahoma;
+	font-weight: 800;
+	font-size:50px;
+	border: none;
+}
+
+.search-input  {
+	margin: 20px auto 20px;
+	width: 70%;
+	height: 60px;
+	padding-left: 20px;
+	color: #1ab193;
+	/*background: url("../../images/greensearchicon2.png") no-repeat 98% 10px;*/
+	background-size: 40px 40px;
+	border-radius: 5px;
+	font-family: Arial;
+	border: 1px solid lightgrey;
+}
+
+.search-input:focus {
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(46, 218, 131, 1); ;
+    outline: 0 none;
+}
+
+@media screen and (max-width: 600px) {
+	.search-input {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 366px) {
+	.search-input {
+		background-image: none;
+	}
+}
+
+.left-button-container {
+	text-align: left ;
+}
+
+.right-button-container {
+	text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+	.right-button-container {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.left-button-container {
+		text-align: center;
+		margin-top: 20px;
+	}
+}
+
+.button {
+	color: #ffaf25;
+    border: 2px solid #ffaf25;
+    background-color: rgba(26, 177, 147, 0);
+    padding: 9px 40px;
+    margin: 20px 0
+}
+
+.button:hover {
+	color: white;
+	background-color: #ffaf25;
+}
+
+/*********************** Search Results ********************/
+
+
+.no-space {
+	margin: 0;
+	padding: 0;
+}
+
+.number-div {
+	text-align: right;
+	display: inline-block;
+	margin-right: none;
+}
+.post-likes {
+	text-align: right;
+	margin-right: none;
+	padding: 0;
+}
+
+
+a.col.s1.fa.fa-heart.hearts {
+	padding: 0;
+}
+
+.likes-div {
+	text-align: left;
+	display: inline-block;
+}
+
+.fa-heart {
+	text-align: left;
+	margin-bottom: 4px;
+}
+
+.likesContainer {
+	position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.splashImageBox {
+	width: 100%;
+}
+
+.splashImageBox img {
+	width: 100%;
+}
+
+.search-intro {
+	margin: 0 auto;
+}
+
+.search-sub-intro {
+	font-size: 1.9em;
+	margin-bottom: 1em;
+	margin-right: 5%;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #0ea2c9;
+    font-size : 1.1em;
+     opacity: 1 !important;
+}
+
+
+.search-box {
+	border: 1px solid #1ab193;
+	padding: 1vh 1em;
+}
+
+.thumb {
+	position: relative;
+  	width: 125px;
+  	height: 125px;
+  	overflow: hidden;
+    border-radius: 50%;
+}
+
+.profilePicCircle {
+    position: absolute;
+  	left: 50%;
+  	top: 50%;
+ 	height: 100%;
+  	width: auto;
+  	-webkit-transform: translate(-50%,-50%);
+   	   -ms-transform: translate(-50%,-50%);
+   	       transform: translate(-50%,-50%);
+}
+
+
+
+.collection {
+	border: none;
+}
+
+.profile-nav {
+	font-size: 2em;
+}
+
+.search-location {
+	font-size: 1.2em;
+}
+
+.search-likes {
+	font-size: 1em;
+}
